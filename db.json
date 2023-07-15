@@ -6,7 +6,8 @@
             "mascota": "kiko",
             "fecha": "15/08/2023",
             "hora": "14:00",
-            "formaPago": "Efectivo"
+            "formaPago": "Efectivo",
+            "idTurno":1
         }
     ],
 
@@ -22,7 +23,8 @@
             "raza": "persa",
             "fechaNacimiento": "15/02/2020",
             "peso": "12kg",
-            "plan": "C-adulto"
+            "plan": "C-adulto",
+            "idPaciente":1
         }
     ]
 }

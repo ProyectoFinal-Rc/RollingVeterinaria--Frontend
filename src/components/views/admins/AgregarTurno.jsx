@@ -2,14 +2,14 @@ import { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 
 
-const AgregarTurno = ({show, handleClose}) => {
+const AgregarTurno = ({ show, handleClose }) => {
 
     return (
         <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Nuevo Turno</Modal.Title>
-        </Modal.Header>
-        <Modal.Body><Form>
+            <Modal.Header closeButton>
+                <Modal.Title>Nuevo Turno</Modal.Title>
+            </Modal.Header>
+            <Modal.Body><Form>
                 <Form.Group className="mb-3" controlId="formDetalle">
                     <Form.Label>Detalle de turno*</Form.Label>
                     <Form.Control
@@ -17,14 +17,14 @@ const AgregarTurno = ({show, handleClose}) => {
                         placeholder="Ej: Gata persa con infección en los intestinos"
                     />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formVeterinario">
+                <Form.Gokasroup className="mb-3" controlId="formVeterinario">
                     <Form.Label>Veterinario*</Form.Label>
                     <Form.Select aria-label="Default select example">
                         <option>Seleccione un veterinario</option>
                         <option value="1">Juan Paz</option>
                         <option value="2">Gabriela Ramos</option>
                     </Form.Select>
-                </Form.Group>
+                </Form.Gokasroup>
                 <Form.Group className="mb-3" controlId="formMascota">
                     <Form.Label>Nombre Mascota*</Form.Label>
                     <Form.Control type="text" placeholder="Ej: Firulais" />
@@ -51,7 +51,7 @@ const AgregarTurno = ({show, handleClose}) => {
                     Guardar
                 </Button>
             </Form></Modal.Body>
-      </Modal>
+        </Modal>
     );
 };
 
