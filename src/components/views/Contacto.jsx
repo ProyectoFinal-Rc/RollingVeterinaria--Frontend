@@ -4,7 +4,7 @@ export const Contacto = () =>{
     return (
         <Container fluid>
             <Row>
-              <Col xs={6} className="p-3">
+              <Col xs={12} md={6} className="p-3">
                 <div className="p-3">
                     <h1>Contactanos</h1>
                     <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" />
@@ -23,7 +23,7 @@ export const Contacto = () =>{
                     </ul>
                 </div>
               </Col>
-              <Col xs={6} className="p-3 mt-5">
+              <Col xs={12} md={6} className="p-3 mt-5">
                 <h4>Formulario de contacto</h4>
                 <Form className="p-3 bg-white">
                     <Row className="mb-3">
