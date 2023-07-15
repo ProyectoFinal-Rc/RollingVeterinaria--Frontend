@@ -1,0 +1,23 @@
+{
+    "turnos": [
+        {
+            "detalleCita": "Gato con pata quebrada",
+            "veterinario": "Juan Paz",
+            "fecha": "15/08/2023",
+            "hora": "14:00"
+        }
+    ],
+
+    "paciente": [
+        {
+            "nombreDuenio": "Marta",
+            "apellidoDuenio": "Perez",
+            "correo": "hola@gmail.com",
+            "telefono": "3914766320",
+            "direccion": "Santa Rosa 320, Tucuman",
+            "nombreMascota": "Kiko",
+            "especie": "felino",
+            "raza": "persa"
+        }
+    ]
+}
