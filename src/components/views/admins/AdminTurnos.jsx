@@ -1,4 +1,5 @@
 import { Table, Button } from "react-bootstrap";
+import ItemTurno from "./ItemTurno";
 
 const AdminTurnos = () => {
     return (
@@ -21,6 +22,7 @@ const AdminTurnos = () => {
             </tr>
           </thead>
           <tbody>
+            <ItemTurno></ItemTurno>
           </tbody>
         </Table>
       </section>
