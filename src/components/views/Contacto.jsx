@@ -4,13 +4,15 @@ export const Contacto = () =>{
     return (
         <Container fluid>
             <Row>
-              <Col xs={12} md={6} className="p-3">
+              <Col xs={{span:8, offset:2}} className="p-3">
                 <div className="p-3">
                     <h1>Contactanos</h1>
-                    <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" />
+                    <div className="m-3 text-center">
+                        <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" />
+                    </div>
                     <p>Ya sea email, llamada, o completa el formulario para saber como podemos ayudarte con tu consulta y planificar a tu gusto</p>
                     <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
-                    <ul>
+                    <ul style={{listStyle:'none'}}>
                         <li>
                             <a href="mailto:cristiangramajo015@gmail.com">rollingvet@gmail.com</a>
                         </li>
@@ -23,9 +25,9 @@ export const Contacto = () =>{
                     </ul>
                 </div>
               </Col>
-              <Col xs={12} md={6} className="p-3 mt-5">
+              <Col xs={{span:8, offset:2}} className="p-3 mt-5">
                 <h4>Formulario de contacto</h4>
-                <Form className="p-3 bg-white">
+                <Form className="p-3 bg-white border rounded">
                     <Row className="mb-3">
                         <Form.Group as={Col} controlId="formGridEmail">
                         <Form.Label>Nombre</Form.Label>
