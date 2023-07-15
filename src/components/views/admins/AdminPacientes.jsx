@@ -47,7 +47,7 @@ const AdminPacientes = () => {
                                     </Card.Text>
                                     <Button variant="primary">Go somewhere</Button>
                                 </Card.Body>
-                                <Card.Footer className="text-muted">2 days ago</Card.Footer>
+                                <Card.Footer className="text-muted">2 days</Card.Footer>
                             </Card>
                         </Col>
                     </Row>
