@@ -1,55 +1,158 @@
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap");
 
 main {
-  min-height: 100vh;
-  flex-grow: 1;
-  flex-direction: column;
+    min-height: 100vh;
+    flex-grow: 1;
+    flex-direction: column;
 }
+
 .fondo-containerFrase {
-  position: relative;
-  /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+    position: relative;
+    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
 }
 
 .fondo-containerFrase::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-image: url(/img/pexels-binyamin-mellish-116077.jpg);
-  filter: contrast(60%);
-  /* Aplica un desenfoque a la imagen */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(/img/pexels-binyamin-mellish-116077.jpg);
+    filter: contrast(60%);
+    /* Aplica un desenfoque a la imagen */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
 }
+
 /* Fondo de imagen */
 .fondo-container {
-  position: relative;
-  /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+    position: relative;
+    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
 }
 
 .fondo-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  filter: contrast(60%);
-  /* Aplica un desenfoque a la imagen */
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
+    filter: contrast(60%);
+    /* Aplica un desenfoque a la imagen */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
 }
-#tituloFrase{
+
+#tituloFrase {
     font-family: "Syne", sans-serif;
     letter-spacing: 0.52em;
 }
-#video{
-    min-height: 80vh;
-    object-fit: center;
+.rollingVet-naranja{
+    color:#ff914d
+}
+.rollingVet-negro{
+    color:#342823
+}
+#boton{
+    background-color:#ff914d;
+    border-color: #342823;
+}
+#video {
+    min-height: 50vh;
+    background:
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 10%,
+            rgba(88, 62, 13, 0.3) 60%,
+            ),
+        linear-gradient(to bottom, transparent, var(--bs-body-bg));
+        filter:saturate(2.5);
+}
+
+/* Fondo de video */
+#video>video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(2px) grayscale(60%) contrast(70%) brightness(60%);
+}
+
+#video>img {
+    filter: blur(2px) grayscale(10%) contrast(70%) brightness(60%);
+}
+
+.letrero {
+    font-family: 'Black Ops One', cursive;
+}
+
+.texto-naranja {
+    text-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 15px #ffa500,
+        0 0 25px #ffa500;
+}
+
+.texto-azul {
+    text-shadow: 0 0 5px #00bfff85, 0 0 10px #00bfffd0, 0 0 15px #00bfffd0,
+        0 0 25px #00bfffd0;
+}
+
+.stars {
+    color: #cd9932cb;
+}
+
+.custom-paragraph {
+    --max-lines: 10;
+    --line-height: 1.4;
+    display: flex;
+
+    max-height: calc(var(--max-lines) * 1em * var(--line-height));
+    line-height: var(--line-height);
+
+    overflow: hidden;
+    position: relative;
+}
+
+.custom-paragraph::before {
+    content: "";
+    position: absolute;
+    height: calc(2em * var(--line-height));
+    width: 100%;
+    bottom: 0%;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, rgb(45, 134, 170));
+}
+/* Responsive seccion */
+@media only screen and (max-width: 767px) {
+    #video {
+        min-height: 100vh;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 922px) {
+    #carruselIndexTestimonios>.carousel-inner>.carousel-item>.card {
+        min-height: 348px;
+    }
+
+    .textoCard {
+        color: blue;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #textoFraseGrande {
+        display: none;
+    }
+
+    #textoFraseChico {
+        display: block;
+    }
 }
