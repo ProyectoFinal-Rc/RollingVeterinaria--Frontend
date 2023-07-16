@@ -16,14 +16,14 @@ const AgregarTurno = ({ show, handleClose }) => {
                         placeholder="Ej: Gata persa con infección en los intestinos"
                     />
                 </Form.Group>
-                <Form.Gokasroup className="mb-3" controlId="veterinario">
+                <Form.Group className="mb-3" controlId="veterinario">
                     <Form.Label>Veterinario*</Form.Label>
                     <Form.Select aria-label="Default select example">
                         <option>Seleccione un veterinario</option>
                         <option value="1">Juan Paz</option>
                         <option value="2">Gabriela Ramos</option>
                     </Form.Select>
-                </Form.Gokasroup>
+                </Form.Group>
                 <Form.Group className="mb-3" controlId="mascota">
                     <Form.Label>Nombre Mascota*</Form.Label>
                     <Form.Control type="text" placeholder="Ej: Firulais" />
@@ -48,7 +48,7 @@ const AgregarTurno = ({ show, handleClose }) => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formaPago">
-                    <Form.Label>Forma de Pago</Form.Label>
+                    <Form.Label>Forma de Pago*</Form.Label>
                     <Form.Select aria-label="Default select payment">
                         <option>Seleccione uuna Forma de Pago</option>
                         <option value="1">Efectivo</option>

@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Button, Container, Form, InputGroup, Card, Row, Col } from "react-bootstrap";
 import CardPaciente from "./CardPaciente";
 import AgregarPaciente from "./AgregarPaciente"
+import Filtro from "./Filtro";
+
 
 
 
@@ -22,11 +24,7 @@ const AdminPacientes = () => {
                 <Button onClick={handleShow}>Ingrese nuevo paciente</Button>
             </div>
             <div className="container">
-                <InputGroup className="mb-3 py-5">
-                    <InputGroup.Text>Buscar mascota</InputGroup.Text>
-                    <Form.Control aria-label="First name" />
-                    <Form.Control aria-label="Last name" />
-                </InputGroup>
+                <Filtro></Filtro>
             </div>
             <Container>
                 <Row>
