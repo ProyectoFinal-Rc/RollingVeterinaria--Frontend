@@ -25,8 +25,8 @@ const CardPaciente = () => {
                             </ListGroup>
                         </Col>
                         <Col xs={3} md={2} lg={1} className="d-flex justify-content-sm-end align-items-start p-0">
-                            <Button className="btn btn-warning btn-sm"><i class="bi bi-pencil-square p-0"></i></Button>
-                            <Button variant="danger" className="btn-sm"><i class="bi bi-file-x p-0"></i></Button>
+                            <Button className="btn btn-warning btn-sm"><i className="bi bi-pencil-square p-0"></i></Button>
+                            <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0"></i></Button>
                         </Col>
                     </Row>
                     <hr />
