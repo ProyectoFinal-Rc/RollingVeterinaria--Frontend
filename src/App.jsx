@@ -4,6 +4,7 @@ import AdminTurnos from "./components/views/admins/AdminTurnos";
 import AgregarTurno from "./components/views/admins/AgregarTurno";
 import AgregarPaciente from "./components/views/admins/AdminPacientes";
 import CardPaciente from "./components/views/admins/CardPaciente";
+import AdminPaciente from "./components/views/admins/AdminPacientes";
 
 
 
@@ -17,7 +18,8 @@ function App() {
     {/* * <AdminTurnos></AdminTurnos> * */}
     {/* <AgregarTurno></AgregarTurno> */}
     {/* <AgregarPaciente></AgregarPaciente> */}
-    <CardPaciente></CardPaciente>
+    {/* <CardPaciente></CardPaciente> */}
+    <AdminPaciente></AdminPaciente>
     </>
   
   )

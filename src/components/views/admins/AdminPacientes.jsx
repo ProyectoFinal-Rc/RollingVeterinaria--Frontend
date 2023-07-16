@@ -1,5 +1,5 @@
 import { Button, Container, Form, InputGroup, Card, Row, Col } from "react-bootstrap";
-
+import CardPaciente from "./CardPaciente";
 
 
 const AdminPacientes = () => {
@@ -23,34 +23,9 @@ const AdminPacientes = () => {
                 </div>
                 <Container>
                     <Row>
-                        <Col xs={6}>
-                            <Card className="text-center">
-                                <Card.Header>Featured</Card.Header>
-                                <Card.Body>
-                                    <Card.Title>Special title treatment</Card.Title>
-                                    <Card.Text>
-                                        With supporting text below as a natural lead-in to additional content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                                <Card.Footer className="text-muted">2 days ago</Card.Footer>
-                            </Card>
-                        </Col>
-
-                        <Col xs={6}>
-                            <Card className="text-center">
-                                <Card.Header>Featured</Card.Header>
-                                <Card.Body>
-                                    <Card.Title>Special title treatment</Card.Title>
-                                    <Card.Text>
-                                        With supporting text below as a natural lead-in to additional content.
-                                    </Card.Text>
-                                    <Button variant="primary">Go somewhere</Button>
-                                </Card.Body>
-                                <Card.Footer className="text-muted">2 days</Card.Footer>
-                            </Card>
-                        </Col>
+                        <CardPaciente></CardPaciente>
                     </Row>
+
                 </Container>
             </section>
         </>
