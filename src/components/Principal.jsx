@@ -38,6 +38,18 @@ const Principal = () => {
                     </Row>
                 </Container>
             </section>
+            <section id='planes'>
+                <Row>
+                    <Col xs={12} md={6} className='ms-3' >
+                <h1 className='text-start'>Planes de cuidado</h1>
+                <p>Nuestra veterinaria ofrece un servicio exclusivo de planes de cuidado mensuales diseñados para garantizar la salud y el bienestar óptimo de las mascotas a lo largo de diferentes etapas de su vida. Estos planes están diseñados pensando en las necesidades específicas de cada etapa, brindando un enfoque proactivo y completo para el cuidado de las mascotas.</p>
+                    
+                    </Col>
+                    <Col xs={12} md={6} >
+                    
+                    </Col>
+                </Row>
+            </section>
         </>
     );
 };
