@@ -26,6 +26,7 @@ const AdminTurnos = () => {
               <th>Mascota</th>
               <th>Fecha</th>
               <th>Hora</th>
+              <th>Acciones</th>
             </tr>
           </thead>
           <tbody>
