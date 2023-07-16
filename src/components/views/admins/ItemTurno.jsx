@@ -3,7 +3,6 @@ import { Button } from "react-bootstrap";
 const ItemTurno = () => {
   return (
     <tr>
-      <td>id</td>
       <td>Gato con pata quebrada</td>
       <td>Juan Paz</td>
       <td>Kiko</td>
