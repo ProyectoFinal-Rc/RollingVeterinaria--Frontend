@@ -1,4 +1,4 @@
-import { Col, Card, Button, Row, ListGroup } from "react-bootstrap";
+import {Col, Card, Button, Row, ListGroup} from "react-bootstrap";
 
 
 const CardPaciente = () => {
