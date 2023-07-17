@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Black+Ops+One&display=swap");
-
 main {
     min-height: 100vh;
     flex-grow: 1;
@@ -97,43 +95,18 @@ main {
     filter: blur(2px) grayscale(10%) contrast(70%) brightness(60%);
 }
 
-.letrero {
-    font-family: 'Black Ops One', cursive;
-}
-
-.texto-naranja {
-    text-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500, 0 0 15px #ffa500,
-        0 0 25px #ffa500;
-}
 .texto-marron{
     color:#342823;
 }
-.texto-azul {
-    text-shadow: 0 0 5px #00bfff85, 0 0 10px #00bfffd0, 0 0 15px #00bfffd0,
-        0 0 25px #00bfffd0;
+
+.estiloImagenesCarousel{
+    width:"500px";
+    height:"750px";
 }
-
-
-.custom-paragraph {
-    --max-lines: 10;
-    --line-height: 1.4;
-    display: flex;
-
-    max-height: calc(var(--max-lines) * 1em * var(--line-height));
-    line-height: var(--line-height);
-
-    overflow: hidden;
-    position: relative;
-}
-
-.custom-paragraph::before {
-    content: "";
-    position: absolute;
-    height: calc(2em * var(--line-height));
-    width: 100%;
-    bottom: 0%;
-    pointer-events: none;
-    background: linear-gradient(to bottom, transparent, rgb(45, 134, 170));
+.imagenesCard{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
 }
 
 /* Responsive seccion */

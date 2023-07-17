@@ -1,5 +1,5 @@
 import Video from '../assets/VideoRCVet.mp4';
-import { Container, Row, Col, Button, Card ,Carousel} from 'react-bootstrap';
+import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 import PlanA from '../assets/pexels-photo-3198005_1.png';
 import PlanB from '../assets/istockphoto-1324099927-612x612.png';
 import PlanC from '../assets/istockphoto-635820902-612x612.png';
@@ -80,7 +80,7 @@ const Principal = () => {
                                     <Card.Title className='text-center rollingVet-negro'>Adultos</Card.Title>
                                     <Card.Img className='w-100 imagenesCard' src={PlanC} />
                                     <Card.Text className='text-center rollingVet-naranja'>
-                                        Para mascotas de 10 años en adelante.
+                                        Para mascotas mayores de 10 años.
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -141,55 +141,61 @@ const Principal = () => {
             </section>
             <section id='colaboradores'>
                 <Container className='bg-white'>
+                    <h2 className='text-center my-3 display-3'>Nuestros <strong className='rollingVet-naranja '>Profesionales</strong></h2>
+                    <hr className='mx-5 ' />
                     <div className='d-flex'>
-                        <div>
+                        <div className='Container'>
                             <Carousel>
-                                <Carousel.Item>
+                                <Carousel.Item className='d-flex'>
                                     <img
-                                        className="d-block w-100"
+                                        className="d-block estiloImagenesCarousel"
                                         src="https://images.pexels.com/photos/6235666/pexels-photo-6235666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                                         alt="First slide"
                                     />
                                     <Carousel.Caption>
-                                        <h3>First slide label</h3>
-                                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                                        <h3>Diego Casella</h3>
+                                        <p>Espec. en Traumatologia</p>
+                                    </Carousel.Caption>
+                                    <h3>Diego casella</h3>
+                                    <p>
+                                        "El Dr. Juan García es un veterinario especialista en traumatología con 28 años de experiencia. Su pasión por los animales y su compromiso con el bienestar de sus pacientes se reflejan en su dedicación diaria en RollingVet.
+                                        Como profesional, el Dr. García destaca por su destreza y conocimiento en el diagnóstico y tratamiento de lesiones traumáticas en mascotas. Su amplio expertise le permite brindar soluciones efectivas y alivio a aquellos animales que han sufrido traumatismos.
+                                        Sin embargo, su enfoque va más allá de la medicina veterinaria. El Dr. García se enorgullece de establecer conexiones significativas con sus pacientes y sus familias. Su objetivo es transmitir un mensaje de compasión, amor y respeto hacia todos los seres vivos. Promover el bienestar animal y fomentar la confianza entre las personas y sus queridas mascotas son valores fundamentales en su práctica profesional.
+                                        Dentro del equipo de RollingVet, el Dr. García se destaca por su compromiso y liderazgo. Trabaja en colaboración con sus colegas para mejorar la calidad de vida de los animales y difundir un mensaje de cuidado y respeto en la comunidad.
+                                        Si estás buscando un veterinario especializado en traumatología con amplia experiencia y una genuina pasión por los animales, el Dr. Juan García es la elección ideal para brindar el mejor cuidado a tus mascotas."
+                                    </p>
+                                </Carousel.Item>
+                                <Carousel.Item>
+                                    <img
+                                        className="d-block estiloImagenesCarousel"
+                                        src="https://images.pexels.com/photos/6129506/pexels-photo-6129506.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                                        alt="Second slide" style={{ width: "500px", height: "750px" }}
+                                    />
+                                    <Carousel.Caption>
+                                        <h3>Karen Diaz</h3>
+                                        <p>Espec. en Gastroenterologia</p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                                 <Carousel.Item>
                                     <img
-                                        className="d-block w-100"
-                                        src="holder.js/800x400?text=Second slide&bg=282c34"
-                                        alt="Second slide"
+                                        className="d-block estiloImagenesCarousel"
+                                        src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                                        alt="Third slide" style={{ width: "500px", height: "750px" }}
                                     />
-
                                     <Carousel.Caption>
-                                        <h3>Second slide label</h3>
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </Carousel.Caption>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <img
-                                        className="d-block w-100"
-                                        src="holder.js/800x400?text=Third slide&bg=20232a"
-                                        alt="Third slide"
-                                    />
-
-                                    <Carousel.Caption>
-                                        <h3>Third slide label</h3>
+                                        <h3>Gerardo Cases</h3>
                                         <p>
-                                            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                                            Espec. Oncologo.
                                         </p>
                                     </Carousel.Caption>
                                 </Carousel.Item>
                             </Carousel>
                         </div>
-                        <div>
-
-                        </div>
                     </div>
                 </Container>
             </section>
             <section id='testimonios'>
+                
             </section>
         </>
     );
