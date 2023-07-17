@@ -175,7 +175,7 @@ const AgregarPaciente = ({ show, handleClose }) => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="peso">
-                            <Form.Label>Peso (en kg)</Form.Label>
+                            <Form.Label>Peso (en kg)*</Form.Label>
                             <Form.Control type="number" placeholder="Ingrese el peso"
                                 {...register("peso", {
                                     required: "El peso es un dato obligatorio",
@@ -195,7 +195,7 @@ const AgregarPaciente = ({ show, handleClose }) => {
                         </Form.Group>
 
                         <Form.Group className="mb-3" controlId="plan">
-                            <Form.Label>Plan:</Form.Label>
+                            <Form.Label>Plan*</Form.Label>
                             <Form.Select
                                 {...register("plan", {
                                     required: "El plan es obligatorio",
