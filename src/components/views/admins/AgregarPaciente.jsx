@@ -1,7 +1,15 @@
 import { Form, Button, Modal } from "react-bootstrap";
+import { useForm } from "react-hook-form";
 
 
 const AgregarPaciente = ({show,handleClose}) => {
+    const {register, handleSubmit, formState: { errors }, reset} = useForm();
+
+    const onSubmit = (paciente) => {
+        console.log(paciente);
+        reset();
+
+    } 
 
     return (
         <>
@@ -10,12 +18,12 @@ const AgregarPaciente = ({show,handleClose}) => {
                     <Modal.Title>Ingrese un nuevo paciente</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                    <Form>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
                         <Form.Group className="mb-3" controlId="nombreDuenio">
                             <Form.Label>Nombre del dueño:</Form.Label>
                             <Form.Control
                                 type="text"
-                                placeholder="Ej: Juan Pablo"
+                                placeholder="Ej: Juan Pablo"                                
                             />
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="apellidoDuenio">
