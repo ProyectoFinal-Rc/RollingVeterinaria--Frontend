@@ -1,18 +1,27 @@
+/* Video */
 import Video from '../assets/VideoRCVet.mp4';
-import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
+/* Planes */
 import PlanA from '../assets/pexels-photo-3198005_1.png';
 import PlanB from '../assets/istockphoto-1324099927-612x612.png';
 import PlanC from '../assets/istockphoto-635820902-612x612.png';
+/* Servicio */
 import Servicio1 from "../assets/imagenes de animales/pexels-photo-4483327.png";
 import Servicio2 from "../assets/imagenes de animales/MiConv.com__descarga.png";
 import Servicio3 from "../assets/imagenes de animales/comohacercrecertunegociopetshop.png";
 import Servicio4 from "../assets/imagenes de animales/MiConv.com__descarga1.png";
+
+import Presentacion from './Presentacion';
+import Planes from './Planes';
+import Servicios from './Servicios';
+import Colaboradores from './colaboradores';
+/* Comunes */
 import '../App.css';
+import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 
 const Principal = () => {
     return (
         <>
-            <section id="video" className="position-relative overflow-hidden">
+{/*             <section id="video" className="position-relative overflow-hidden">
                 <section className="pb-5 container-fluid">
                     <div id="tituloFraseGrande">
                         <div className="display-2 d-flex flex-column flex-md-row justify-content-center align-items-center gap-md-3 py-3" id="animacionPrincipal">
@@ -43,8 +52,9 @@ const Principal = () => {
                         </Col>
                     </Row>
                 </Container>
-            </section>
-            <section id='planes' className='container my-2 border-rounded'>
+            </section> */}
+            <Presentacion></Presentacion>
+{/*             <section id='planes' className='container my-2 border-rounded'>
                 <Card>
                     <Row className='flex-row justify-content-center my-3'>
                         <Col xs={12} sm={12} md={12} lg={4}>
@@ -90,8 +100,9 @@ const Principal = () => {
                         </Col>
                     </Row>
                 </Card>
-            </section>
-            <section id='servicios' className='container my-2 border-rounded'>
+            </section> */}
+            <Planes></Planes>
+{/*             <section id='servicios' className='container my-2 border-rounded'>
                 <Row id='serviciosContenedor' className='d-flex justify-content-center flex-row mx-3'>
                     <Col className='d-flex justify-content-center flex-column my-3 mx-3'>
                         <div className='container d-flex'>
@@ -144,8 +155,9 @@ const Principal = () => {
                         </div>
                     </Col>
                 </Row>
-            </section>
-            <section id='colaboradores'>
+            </section> */}
+            <Servicios></Servicios>
+{/*             <section id='colaboradores'>
                 <Container className='bg-white'>
                     <h2 className='text-center my-3 display-3'>Nuestros <strong className='rollingVet-naranja '>Profesionales</strong></h2>
                     <hr className='mx-5 ' />
@@ -216,7 +228,8 @@ const Principal = () => {
                         </div>
                     </div>
                 </Container>
-            </section>
+            </section> */}
+            <Colaboradores></Colaboradores>
             <section id='testimonios'>
             </section>
         </>
