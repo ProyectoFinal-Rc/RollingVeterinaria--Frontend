@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Container, Form, InputGroup, Card, Row, Col } from "react-bootstrap";
+import { Button, Container, Row, } from "react-bootstrap";
 import CardPaciente from "./CardPaciente";
 import AgregarPaciente from "./AgregarPaciente"
 import Filtro from "./Filtro";
@@ -11,6 +11,7 @@ const AdminPacientes = () => {
     const [show,setShow] = useState(false);
     const handleClose = () => setShow(false)
     const handleShow = () => setShow (true)
+
 
     return (
 
