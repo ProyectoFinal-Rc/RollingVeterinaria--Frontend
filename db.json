@@ -1,12 +1,12 @@
 {
   "turno": [
     {
-      "detalleCita": "Gato con pata quebrada",
-      "veterinario": "Juan Paz",
+      "detalleCita": "pato con sarampion",
+      "veterinario": "juan paz",
       "mascota": "kiko",
       "fecha": "15/08/2023",
       "hora": "14:00",
-      "formaPago": "Efectivo",
+      "formaPago": "efectivo",
       "id": 1
     },
     {

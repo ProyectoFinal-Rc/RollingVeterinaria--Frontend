@@ -40,3 +40,15 @@ export const editarTurno = async(turno, id)=>{
         console.log(error);
     }
 }
+
+export const obtenerTurno = async(id)=>{
+    console.log(id);
+    try{
+        const respuesta = await fetch(URL_turno+'/'+id);
+        const turno = await respuesta.json();
+        console.log(turno);
+        return turno;
+    }catch(error){
+        console.log(error)
+    }
+}

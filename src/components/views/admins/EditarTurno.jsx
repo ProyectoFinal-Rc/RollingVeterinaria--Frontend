@@ -1,5 +1,10 @@
+import { useEffect } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { useParams } from "react-router-dom";
+import { obtenerTurno, editarTurno } from "../../helpers/turnos";
+import Swal from "sweetalert2";
+
 
 const EditarTurno = ({ show, handleClose }) => {
     const {
@@ -7,12 +12,37 @@ const EditarTurno = ({ show, handleClose }) => {
         handleSubmit,
         formState: { errors },
         reset,
+        setValue
     } = useForm();
 
+    const {id} = useParams();
 
-    const onSubmit=(turno)=>{
-        console.log(turno)
-    }
+    useEffect(()=>{
+       obtenerTurno(id).then((respuesta)=>{
+        if(respuesta){
+            setValue("detalleCita", respuesta.detalleCita)
+            setValue("veterinario", respuesta.veterinario)
+            setValue("mascota", respuesta.mascota)
+            setValue("fecha", respuesta.fecha)
+            setValue("hora", respuesta.hora)
+            setValue("formaPago", respuesta.formaPago)
+        }
+       })
+    },[])
+
+
+
+
+    const onSubmit = (turnoEditado) => {
+        editarTurno(turnoEditado, id).then((respuesta) => {
+            if(respuesta){
+                Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success");
+                reset();
+            }else{
+                Swal.fire("error", "No se pudo editar el turno correctamente, vuelva a intentarlo más tarde", "error");
+            }
+        })
+    };
 
     return (
         <Modal show={show} onHide={handleClose}>
