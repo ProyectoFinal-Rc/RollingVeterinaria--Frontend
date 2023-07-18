@@ -1,30 +1,92 @@
 {
-    "turno": [
-        {
-            "detalleCita": "Gato con pata quebrada",
-            "veterinario": "Juan Paz",
-            "mascota": "kiko",
-            "fecha": "15/08/2023",
-            "hora": "14:00",
-            "formaPago": "Efectivo",
-            "idTurno":1
-        }
-    ],
-
-    "paciente": [
-        {
-            "nombreDuenio": "Marta",
-            "apellidoDuenio": "Perez",
-            "email": "hola@gmail.com",
-            "telefono": "3914766320",
-            "direccion": "Santa Rosa 320, Tucuman",
-            "nombreMascota": "Kiko",
-            "especie": "felino",
-            "raza": "persa",
-            "fechaNacimiento": "15/02/2020",
-            "peso": "12kg",
-            "plan": "C-adulto",
-            "idPaciente":1
-        }
-    ]
+  "turno": [
+    {
+      "detalleCita": "Gato con pata quebrada",
+      "veterinario": "Juan Paz",
+      "mascota": "kiko",
+      "fecha": "15/08/2023",
+      "hora": "14:00",
+      "formaPago": "Efectivo",
+      "id": 1
+    },
+    {
+      "detalleCita": "perrito",
+      "veterinario": "gabriela ramos",
+      "mascota": "atun",
+      "fecha": "15/09/2023",
+      "hora": "13:00",
+      "formaPago": "efectivo",
+      "id": 2
+    },
+    {
+      "detalleCita": "Serpiente con herida en la cabeza",
+      "veterinario": "juan paz",
+      "mascota": "Yara",
+      "fecha": "2023-07-28",
+      "hora": "18:00",
+      "formaPago": "efectivo",
+      "id": 3
+    },
+    {
+      "detalleCita": "asd",
+      "veterinario": "juan paz",
+      "mascota": "Yara",
+      "fecha": "2023-07-20",
+      "hora": "17:00",
+      "formaPago": "efectivo",
+      "id": 4
+    },
+    {
+      "detalleCita": "Serpiente con herida en la cabeza",
+      "veterinario": "juan paz",
+      "mascota": "sdfsdf",
+      "fecha": "2023-07-21",
+      "hora": "18:00",
+      "formaPago": "efectivo",
+      "id": 5
+    },
+    {
+      "detalleCita": "asdasdasdasdd",
+      "veterinario": "gabriela ramos",
+      "mascota": "dddddd",
+      "fecha": "2023-07-22",
+      "hora": "17:00",
+      "formaPago": "efectivo",
+      "id": 6
+    },
+    {
+      "detalleCita": "asd",
+      "veterinario": "juan paz",
+      "mascota": "sdfsdf",
+      "fecha": "2023-07-21",
+      "hora": "12:00<",
+      "formaPago": "efectivo",
+      "id": 7
+    },
+    {
+      "detalleCita": "aaaaa",
+      "veterinario": "gabriela ramos",
+      "mascota": "Yara",
+      "fecha": "2023-07-28",
+      "hora": "17:00",
+      "formaPago": "tarjeta",
+      "id": 8
+    }
+  ],
+  "paciente": [
+    {
+      "nombreDuenio": "Marta",
+      "apellidoDuenio": "Perez",
+      "email": "hola@gmail.com",
+      "telefono": "3914766320",
+      "direccion": "Santa Rosa 320, Tucuman",
+      "nombreMascota": "Kiko",
+      "especie": "felino",
+      "raza": "persa",
+      "fechaNacimiento": "15/02/2020",
+      "peso": "12kg",
+      "plan": "C-adulto",
+      "id": 1
+    }
+  ]
 }

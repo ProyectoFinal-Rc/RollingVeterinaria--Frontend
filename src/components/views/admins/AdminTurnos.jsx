@@ -30,7 +30,7 @@ const AdminTurnos = () => {
         <section className="container">
         <div className="d-flex justify-content-between align-items-center mt-5">
           <h1 className="display-4 ">Turnos</h1>
-          <Button className="btn btn-primary" to='' onClick={handleShow}>
+           <Button className="btn btn-primary" onClick={handleShow}> {/*cambiar a link cuando se protejan las rutas */}
             Agregar turno
           </Button>
         </div>
@@ -48,7 +48,7 @@ const AdminTurnos = () => {
           </thead>
           <tbody>
             {
-              turnos.map((cita)=><ItemTurno key={cita.idTurno} cita={cita} ></ItemTurno>)
+              turnos.map((cita)=><ItemTurno key={cita.id} cita={cita} ></ItemTurno>)
             }
           </tbody>
         </Table>
