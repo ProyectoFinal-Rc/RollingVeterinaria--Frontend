@@ -25,3 +25,18 @@ export const crearTurno = async(turno)=>{
         console.log(error);
     }
 }
+
+export const editarTurno = async(turno, id)=>{
+    try{
+        const respuesta = await fetch(URL_turno+"/"+id,{
+            method:"PUT",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body:JSON.stringify(turno)
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error);
+    }
+}
