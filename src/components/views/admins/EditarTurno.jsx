@@ -6,7 +6,9 @@ import { obtenerTurno, editarTurno } from "../../helpers/turnos";
 import Swal from "sweetalert2";
 
 
-const EditarTurno = ({ show, handleClose }) => {
+const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
+    //estado = useState(datos)
+    //estado.cita
     const {
         register,
         handleSubmit,
@@ -15,10 +17,10 @@ const EditarTurno = ({ show, handleClose }) => {
         setValue
     } = useForm();
 
-    const {id} = useParams();
+    //const {id} = useParams();
 
     useEffect(()=>{
-       obtenerTurno(id).then((respuesta)=>{
+       /*obtenerTurno(id).then((respuesta)=>{
         if(respuesta){
             setValue("detalleCita", respuesta.detalleCita)
             setValue("veterinario", respuesta.veterinario)
@@ -27,25 +29,25 @@ const EditarTurno = ({ show, handleClose }) => {
             setValue("hora", respuesta.hora)
             setValue("formaPago", respuesta.formaPago)
         }
-       })
+       })*/
     },[])
 
 
 
 
     const onSubmit = (turnoEditado) => {
-        editarTurno(turnoEditado, id).then((respuesta) => {
+        /*editarTurno(turnoEditado).then((respuesta) => {
             if(respuesta){
                 Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success");
                 reset();
             }else{
                 Swal.fire("error", "No se pudo editar el turno correctamente, vuelva a intentarlo más tarde", "error");
             }
-        })
+        })*/
     };
 
     return (
-        <Modal show={show} onHide={handleClose}>
+        <Modal show={showEditar} onHide={handleCloseEditar}>
             <Modal.Header closeButton>
                 <Modal.Title>Editar Turno</Modal.Title>
             </Modal.Header>
@@ -149,6 +151,7 @@ const EditarTurno = ({ show, handleClose }) => {
                     <Button variant="primary" type="submit">
                         Guardar
                     </Button>
+                    <button onClick={()=>{console.log(datos)}}>ASDASD</button>
                 </Form>
             </Modal.Body>
         </Modal>
