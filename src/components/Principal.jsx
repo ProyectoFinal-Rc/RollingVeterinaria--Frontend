@@ -3,8 +3,7 @@ import Planes from './Planes';
 import Servicios from './Servicios';
 import Colaboradores from './Colaboradores';
 import Testimonios from './Testimonios';
-import Publicidad from './Publicidad';
-/* Comunes */
+import Marcas from './Marcas';
 import '../App.css';
 
 const Principal = () => {
@@ -12,7 +11,7 @@ const Principal = () => {
         <>
             <Presentacion></Presentacion>
             <Planes></Planes>
-            <Publicidad></Publicidad>
+            <Marcas></Marcas>
             <Servicios></Servicios>
             <Colaboradores></Colaboradores>
             <Testimonios></Testimonios>
