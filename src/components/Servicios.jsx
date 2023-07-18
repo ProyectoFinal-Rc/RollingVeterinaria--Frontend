@@ -10,7 +10,7 @@ import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 const Servicios = () => {
     return (
         <div>
-                    <section id='servicios' className='container my-2 border-rounded'>
+            <section id='servicios' className='container my-2'>
                 <Row id='serviciosContenedor' className='d-flex justify-content-center flex-row mx-3'>
                     <Col className='d-flex justify-content-center flex-column my-3 mx-3'>
                         <div className='container d-flex'>

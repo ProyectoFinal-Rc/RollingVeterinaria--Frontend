@@ -9,7 +9,7 @@ import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 const Planes = () => {
     return (
         <div>
-                    <section id='planes' className='container my-2 border-rounded'>
+                    <section id='planes' className='container my-2 '>
                 <Card>
                     <Row className='flex-row justify-content-center my-3'>
                         <Col xs={12} sm={12} md={12} lg={4}>
@@ -19,7 +19,7 @@ const Planes = () => {
                         <Col xs={12} sm={12} md={12} lg={8} className='d-flex justify-content-center'>
                             <Row xs={1} md={2} lg={3} className='g-4'>
                                 <Col>
-                                    <Card className='mx-1 border-0' rounded>
+                                    <Card className='mx-1 border-0'>
                                         <Card.Body>
                                             <Card.Title className='text-center rollingVet-negro'>Primeros Pasos</Card.Title>
                                             <Card.Img className='w-100 imagenesCard' src={PlanA} />
@@ -30,7 +30,7 @@ const Planes = () => {
                                     </Card>
                                 </Col>
                                 <Col>
-                                    <Card className='mx-1 border-0' rounded>
+                                    <Card className='mx-1 border-0' >
                                         <Card.Body>
                                             <Card.Title className='text-center rollingVet-negro'>Madurando</Card.Title>
                                             <Card.Img className='w-100 imagenesCard' src={PlanB} />
@@ -41,7 +41,7 @@ const Planes = () => {
                                     </Card>
                                 </Col>
                                 <Col>
-                                    <Card className='mx-1 border-0' rounded>
+                                    <Card className='mx-1 border-0'>
                                         <Card.Body>
                                             <Card.Title className='text-center rollingVet-negro'>Adultos</Card.Title>
                                             <Card.Img className='w-100 imagenesCard' src={PlanC} />
