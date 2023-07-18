@@ -201,7 +201,7 @@ const Principal = () => {
                                         />
                                         <div className='d-flex flex-column justify-content-center align-items-center'>
                                             <h1 className='mb-5 display-3'>Gerardo Marruecos</h1>
-                                            <h4 className='rollingVet-naranja'>Especialista en Gastroenterologia Canina</h4>
+                                            <h4 className='rollingVet-naranja'>Especialista en Gastroenterologia</h4>
                                             <p className='mx-4 mt-5'>
                                                 El Dr. Gerardo Marruecos es un especialista destacado en gastroenterología canina en RollingVet. Con 50 años de edad, lleva ejerciendo su labor como veterinario durante los últimos 20 años con una dedicación y alegría inquebrantables. Su pasión por trabajar con los animales no solo lo mantiene joven de espíritu, sino que también le otorga años de vida.Con una trayectoria sólida y un profundo conocimiento en su campo, el Dr. Marruecos se ha convertido en una referencia en el ámbito de la gastroenterología canina. Su experiencia y especialización en enfermedades y trastornos gastrointestinales en perros le permiten brindar diagnósticos precisos y tratamientos efectivos.
                                                 <br />El Dr. Marruecos se destaca por su constante búsqueda de conocimiento y su afán por mantenerse actualizado en los avances médicos y tecnológicos. Ha completado múltiples cursos y maestrías en su especialidad, lo que le permite estar al tanto de los últimos desarrollos en el campo de la gastroenterología veterinaria.

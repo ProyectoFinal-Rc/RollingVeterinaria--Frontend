@@ -92,39 +92,44 @@ body {
     filter: blur(2px) grayscale(10%) contrast(70%) brightness(60%);
 }
 
-.texto-marron{
-    color:#342823;
+.texto-marron {
+    color: #342823;
 }
 
-.estiloImagenesCarousel{
-    width:"500px";
-    height:"750px";
+.estiloImagenesCarousel {
+    width: "500px";
+    height: "750px";
 }
-.imagenesCard{
+
+.imagenesCard {
     height: 150px;
     width: 150px;
     object-fit: cover;
 }
+
 /* Dispositivos chicos */
 /* Responsive seccion */
 @media only screen and (max-width: 767px) {
     #video {
         min-height: 100vh;
     }
+
     #tituloFrase {
         display: flex;
         justify-content: center;
         align-items: flex-end;
         height: 100%;
     }
-    .servicio-imagen{
+
+    .servicio-imagen {
         height: 200px;
         width: 250px;
         object-fit: cover;
         display: flex;
         justify-content: center;
     }
-    .textoServicios{
+
+    .textoServicios {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -133,9 +138,18 @@ body {
         margin-left: 2px;
         margin-right: 2px;
     }
-    .carruseles{
-    display: flex;
-    flex-direction: column;
+
+    .carruseles {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .estiloImagenesCarousel {
+        min-width: 350px;
+        min-height: 525px;
+        max-width: 350px;
+        max-height: 525px;
     }
 }
 
@@ -143,10 +157,10 @@ body {
     #textoFraseGrande {
         display: none;
     }
+
     #textoFraseChico {
         display: block;
     }
-    #planesDeCuidado{
 
-    }
+    #planesDeCuidado {}
 }
