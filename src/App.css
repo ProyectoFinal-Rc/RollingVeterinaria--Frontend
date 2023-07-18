@@ -4,26 +4,28 @@ main {
     flex-direction: column;
 }
 
-.fondo-containerFrase {
-    position: relative;
-    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+body {
+    background: url(https://previews.123rf.com/images/lumitar/lumitar1702/lumitar170200035/70791842-modelo-incons%C3%BAtil-del-vector-con-las-muestras-de-alimentos-proteicos-descritos-animales-de-granja.jpg) no-repeat center fixed;
+    background-size: cover;
+    z-index: -1;
 }
 
-.fondo-containerFrase::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    background-image: url(/img/pexels-binyamin-mellish-116077.jpg);
-    filter: contrast(60%);
-    /* Aplica un desenfoque a la imagen */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+/* Cards */
+.servicio-imagen {
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
+    transform-origin: center center;
 }
+
+.zoom-imagen {
+    transition: transform 0.3s ease;
+}
+
+.zoom-imagen:hover {
+    transform: scale(1.2);
+}
+
 
 /* Fondo de imagen */
 .fondo-container {
@@ -45,11 +47,6 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-}
-
-#tituloFrase {
-    font-family: "Syne", sans-serif;
-    letter-spacing: 0.52em;
 }
 
 .rollingVet-naranja {
@@ -108,55 +105,44 @@ main {
     width: 150px;
     object-fit: cover;
 }
-
+/* Dispositivos chicos */
 /* Responsive seccion */
 @media only screen and (max-width: 767px) {
     #video {
         min-height: 100vh;
     }
+    #tituloFrase {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100%;
+    }
+    .servicio-imagen{
+        height: 200px;
+        width: 250px;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+    }
+    .textoServicios{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 922px) {
-    #carruselIndexTestimonios>.carousel-inner>.carousel-item>.card {
-        min-height: 348px;
-    }
-
-    .textoCard {
-        color: blue;
-        flex-direction: column;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
     #textoFraseGrande {
         display: none;
     }
-
     #textoFraseChico {
         display: block;
     }
-}
+    #planesDeCuidado{
 
-body {
-    background: url(https://previews.123rf.com/images/lumitar/lumitar1702/lumitar170200035/70791842-modelo-incons%C3%BAtil-del-vector-con-las-muestras-de-alimentos-proteicos-descritos-animales-de-granja.jpg) no-repeat center fixed;
-    background-size: cover;
-    z-index: -1
-}
-
-/* Cards */
-.servicio-imagen {
-    height: 300px;
-    width: 500px;
-    object-fit: cover;
-    transform-origin: center center;
-
-}
-
-.zoom-imagen {
-    transition: transform 0.3s ease;
-}
-
-.zoom-imagen:hover {
-    transform: scale(1.2);
+    }
 }
