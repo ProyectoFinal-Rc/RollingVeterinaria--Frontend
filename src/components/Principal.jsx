@@ -20,7 +20,7 @@ const Principal = () => {
                                 <span id="TextoGrupo1" className="slide-texto-fromBottom rollingVet-negro">Estamos Aqui</span>
                             </div>
                             <div className="contenedorTextoAnimacion">
-                                <span id="TextoGrupo2" className=" slide-texto-fromTop  rollingVet-naranja">para Ellos</span>
+                                <span id="TextoGrupo2" className=" slide-texto-fromTop  rollingVet-naranja">Para Ellos</span>
                             </div>
                         </div>
                     </div>
@@ -47,38 +47,46 @@ const Principal = () => {
             <section id='planes' className='container my-2 border-rounded'>
                 <Card>
                     <Row className='flex-row justify-content-center my-3'>
-                        <Col xs={12} sm={12} md={4} lg={4} className=''>
+                        <Col xs={12} sm={12} md={12} lg={4}>
                             <h1 className='text-start ms-3 rollingVet-negro'>Planes de cuidado</h1>
                             <p className='text-start ms-3 rollingVet-naranja'>Nuestra veterinaria ofrece un servicio exclusivo de planes de cuidado mensuales diseñados para garantizar la salud y el bienestar óptimo de las mascotas a lo largo de diferentes etapas de su vida. Estos planes están diseñados pensando en las necesidades específicas de cada etapa, brindando un enfoque proactivo y completo para el cuidado de las mascotas.</p>
                         </Col>
-                        <Col xs={12} sm={12} md={6} lg={6} className='d-flex justify-content-center'>
-                            <Card className='mx-1' rounded>
-                                <Card.Body>
-                                    <Card.Title className='text-center rollingVet-negro'>Primeros Pasos</Card.Title>
-                                    <Card.Img className='w-100 imagenesCard' src={PlanA} />
-                                    <Card.Text className='text-center rollingVet-naranja'>
-                                        Para mascotas de 0 a 5 años.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                            <Card className='mx-1' rounded>
-                                <Card.Body>
-                                    <Card.Title className='text-center rollingVet-negro'>Madurando</Card.Title>
-                                    <Card.Img className='w-100 imagenesCard' src={PlanB} />
-                                    <Card.Text className='text-center rollingVet-naranja'>
-                                        Para mascotas de 5 a 10 años.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
-                            <Card className='mx-1' rounded>
-                                <Card.Body>
-                                    <Card.Title className='text-center rollingVet-negro'>Adultos</Card.Title>
-                                    <Card.Img className='w-100 imagenesCard' src={PlanC} />
-                                    <Card.Text className='text-center rollingVet-naranja'>
-                                        Para mascotas mayores de 10 años.
-                                    </Card.Text>
-                                </Card.Body>
-                            </Card>
+                        <Col xs={12} sm={12} md={12} lg={8} className='d-flex justify-content-center'>
+                            <Row xs={1} md={2} lg={3} className='g-4'>
+                                <Col>
+                                    <Card className='mx-1' rounded>
+                                        <Card.Body>
+                                            <Card.Title className='text-center rollingVet-negro'>Primeros Pasos</Card.Title>
+                                            <Card.Img className='w-100 imagenesCard' src={PlanA} />
+                                            <Card.Text className='text-center rollingVet-naranja'>
+                                                Para mascotas de 0 a 5 años.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                                <Col>
+                                    <Card className='mx-1' rounded>
+                                        <Card.Body>
+                                            <Card.Title className='text-center rollingVet-negro'>Madurando</Card.Title>
+                                            <Card.Img className='w-100 imagenesCard' src={PlanB} />
+                                            <Card.Text className='text-center rollingVet-naranja'>
+                                                Para mascotas de 5 a 10 años.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                                <Col>
+                                    <Card className='mx-1' rounded>
+                                        <Card.Body>
+                                            <Card.Title className='text-center rollingVet-negro'>Adultos</Card.Title>
+                                            <Card.Img className='w-100 imagenesCard' src={PlanC} />
+                                            <Card.Text className='text-center rollingVet-naranja'>
+                                                Para mascotas mayores de 10 años.
+                                            </Card.Text>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            </Row>
                         </Col>
                     </Row>
                 </Card>
@@ -141,11 +149,11 @@ const Principal = () => {
                 <Container className='bg-white'>
                     <h2 className='text-center my-3 display-3'>Nuestros <strong className='rollingVet-naranja '>Profesionales</strong></h2>
                     <hr className='mx-5 ' />
-                    <div className='d-flex'>
-                        <div className='Container'>
+                    <div className=''>
+                        <div className='container'>
                             <Carousel>
                                 <Carousel.Item>
-                                    <div className='d-flex'>
+                                    <div className='d-flex carruseles'>
                                         <img
                                             className="d-block estiloImagenesCarousel"
                                             src="https://images.pexels.com/photos/6235666/pexels-photo-6235666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -165,7 +173,7 @@ const Principal = () => {
                                     </div>
                                 </Carousel.Item>
                                 <Carousel.Item>
-                                    <div className='d-flex'>
+                                    <div className='d-flex carruseles'>
                                         <img
                                             className="d-block estiloImagenesCarousel"
                                             src="https://images.pexels.com/photos/6129506/pexels-photo-6129506.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -185,7 +193,7 @@ const Principal = () => {
                                     </div>
                                 </Carousel.Item>
                                 <Carousel.Item>
-                                    <div className='d-flex'>
+                                    <div className='d-flex carruseles'>
                                         <img
                                             className="d-block estiloImagenesCarousel"
                                             src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1600"

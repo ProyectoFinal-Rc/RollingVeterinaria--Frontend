@@ -133,6 +133,10 @@ body {
         margin-left: 2px;
         margin-right: 2px;
     }
+    .carruseles{
+    display: flex;
+    flex-direction: column;
+    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 922px) {
