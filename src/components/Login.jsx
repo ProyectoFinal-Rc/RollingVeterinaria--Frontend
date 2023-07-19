@@ -1,22 +1,46 @@
 import { Form, Button, Container } from "react-bootstrap"
 import './Login.css'
+import { useForm } from 'react-hook-form'
 
 const Login = () => {
-	
+	const { register, handleSubmit, formState: { errors }, reset } = useForm()
+
+	const onSubmit = () => {
+		reset()
+	}
 
 	return (
 		<Container className="d-flex flex-column contenedor-formulario">
-			<Form className="d-flex flex-column">
+			<Form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
 					<Form.Label>Correo Electronico:</Form.Label>
-					<Form.Control type="email" />
-					<Form.Text className="text-muted">
+					<Form.Control type="email" {...register('email',
+						{
+							required: 'Campo obligatorio',
+							pattern: {
+								value: /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+								message: 'El correo debe tener el siguiente patron: email@dominio.com'
+							}
+						})} />
+					<Form.Text className="text-danger">
+						{errors.email?.message}
 					</Form.Text>
 				</Form.Group>
 
 				<Form.Group className="mb-3" controlId="formBasicPassword">
 					<Form.Label>Contraseña:</Form.Label>
-					<Form.Control type="password" />
+					<Form.Control type="password" {
+						...register('password', {
+							required: 'La contraseña es obligatoria',
+							pattern: {
+								value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
+								message: 'La contraseña debe tener entre 8 y 16 caracteres, al menos una mayuscula, al menos un numero y al menos un caracter especial'
+							}
+						})
+					}/>
+					<Form.Text className="text-danger">
+						{errors.password?.message}
+					</Form.Text>
 				</Form.Group>
 				<Button type="submit" className="w-50 mx-auto">
 					Ingresar
