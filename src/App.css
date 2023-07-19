@@ -5,11 +5,18 @@ main {
 }
 
 body {
-    background: url(https://previews.123rf.com/images/lumitar/lumitar1702/lumitar170200035/70791842-modelo-incons%C3%BAtil-del-vector-con-las-muestras-de-alimentos-proteicos-descritos-animales-de-granja.jpg) no-repeat center fixed;
+    background: url(https://img.freepik.com/vector-gratis/fondo-estampado-pata-animal-lindo-diversion-fauna_1017-44714.jpg?w=1380&t=st=1689736612~exp=1689737212~hmac=3e9a5ac84a99527c15613ebf3e90651b65a34cf306015cebf37c222de0c89ef7) no-repeat center fixed;
     background-size: cover;
-    z-index: -1;
+    cursor: url(../src/assets/patita.png),auto;
 }
+.cursor{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
 
+}
 /* Cards */
 .servicio-imagen {
     height: 300px;
