@@ -157,7 +157,13 @@ body {
         display: flex;
         justify-content: center;
         align-items: flex-end;
+        position: relative;
+        top:200px;
         height: 100%;
+    }
+    #botonFrase{
+        position: relative;
+        top:200px;
     }
 
     .servicio-imagen {
