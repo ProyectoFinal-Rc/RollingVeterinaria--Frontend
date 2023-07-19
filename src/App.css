@@ -116,12 +116,12 @@ body {
 .slider .slide-track{
     display: flex;
     animation: scroll 30s linear infinite;
+    filter: grayscale(100%)/* drop-shadow(10px 10px 20px black)*/;
     width: calc(200px *9);
     -webkit-animation: scroll 30s linear infinite;
 }
 .slider .slide{
     width: 200px;
-
 }
 .slider .slide img{
     width: 100%;
