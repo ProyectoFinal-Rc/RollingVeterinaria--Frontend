@@ -14,7 +14,7 @@ const Login = () => {
 			<Form className="d-flex flex-column" onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
 					<Form.Label>Correo Electronico:</Form.Label>
-					<Form.Control type="email" {...register('email',
+					<Form.Control type="text" min={5} maxLength= {256} required {...register('email',
 						{
 							required: 'Campo obligatorio',
 							pattern: {
@@ -29,7 +29,7 @@ const Login = () => {
 
 				<Form.Group className="mb-3" controlId="formBasicPassword">
 					<Form.Label>Contraseña:</Form.Label>
-					<Form.Control type="password" {
+					<Form.Control type="password"  min={8} maxLength= {16} required {
 						...register('password', {
 							required: 'La contraseña es obligatoria',
 							pattern: {
