@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lilita+One&display=swap');
 main {
     min-height: 100vh;
     flex-grow: 1;
@@ -63,7 +64,9 @@ body {
 .rollingVet-negro {
     color: #342823
 }
-
+.letras{
+    font-family: 'Lilita One', cursive;
+}
 #boton {
     background-color: #ff914d;
     border-color: #342823;

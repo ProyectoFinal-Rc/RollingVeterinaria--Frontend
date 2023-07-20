@@ -35,10 +35,10 @@ const copiarEnlace = () => {
 };
 
 export default function Testimonios() {
-    const [expanded, setExpanded] = React.useState(false);
     return (
         <div className='container d-flex justify-content-center my-4' >
             <Row id='serviciosContenedor' className='py-4'>
+            <h2 className='letras ms-3'>Nuestros Clientes Dicen:</h2>
                 <Col xs={12} sm={12} md={12} lg={4} className='my-3'>
                     <Card sx={{ height: 250, color: 'deepOrange' }}>
                         <CardHeader avatar={
@@ -48,6 +48,7 @@ export default function Testimonios() {
                         }
                             title="Laura Tejerizo"
                             subheader="Septiembre 14, 2022"
+                            sx={{ color: "#ff914d" }}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
@@ -73,6 +74,7 @@ export default function Testimonios() {
                         }
                             title="Marcela Monte"
                             subheader="Abril 05, 2022"
+                            sx={{ color: "#ff914d" }}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
@@ -97,6 +99,7 @@ export default function Testimonios() {
                         }
                             title="Esteban Carrizo"
                             subheader="Abril 02, 2023"
+                            sx={{ color: "#ff914d" }}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
