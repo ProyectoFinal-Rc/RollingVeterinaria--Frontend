@@ -1,3 +1,17 @@
 .contenedor-formulario {
-	max-width: 300px;
+	max-width: 400px;
+}
+
+.boton {
+	opacity: .9;
+	padding: .5rem 1rem;
+	border-radius: 10px;
+	border: thin solid black;
+	background-color: #FF914D;
+	color: black;
+}
+
+.boton:hover {
+	opacity: 1;
+	transform: scale(1.01);
 }
