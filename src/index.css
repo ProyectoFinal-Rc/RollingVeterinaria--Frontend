@@ -1,0 +1,16 @@
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	
+}
+
+footer {
+	margin-top: auto;
+	background-color: rgb(13, 202, 240);
+	color: black;
+}
+
+footer p {
+	color: black;
+}
