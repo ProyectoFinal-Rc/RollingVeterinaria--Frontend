@@ -2,19 +2,14 @@ import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { Row, Col, Button } from "react-bootstrap"
+import { Row, Col } from "react-bootstrap"
 import '../App.css';
 
 const ExpandMore = styled((props) => {
@@ -48,7 +43,7 @@ export default function Testimonios() {
                     <Card sx={{ height: 250, color: 'deepOrange' }}>
                         <CardHeader avatar={
                             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            LT
+                                LT
                             </Avatar>
                         }
                             title="Laura Tejerizo"
@@ -61,7 +56,7 @@ export default function Testimonios() {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing className='align-self-end'>
-                            <IconButton aria-label="share" onClick={copiarEnlace}>
+                            <IconButton sx={{ color: "#ff914d" }} aria-label="share" onClick={copiarEnlace}>
                                 <Typography className='mx-4 my-1'>Compartir Enlace</Typography>
                                 <ShareIcon />
                             </IconButton>
@@ -73,7 +68,7 @@ export default function Testimonios() {
                     <Card sx={{ height: 250, color: 'deepOrange' }}>
                         <CardHeader avatar={
                             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            MM
+                                MM
                             </Avatar>
                         }
                             title="Marcela Monte"
@@ -86,7 +81,7 @@ export default function Testimonios() {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing className=''>
-                            <IconButton aria-label="share">
+                            <IconButton sx={{ color: "#ff914d" }} aria-label="share" onClick={copiarEnlace}>
                                 <Typography className='mx-4 my-1'>Compartir Enlace</Typography>
                                 <ShareIcon />
                             </IconButton>
@@ -97,7 +92,7 @@ export default function Testimonios() {
                     <Card sx={{ height: 250, color: 'deepOrange' }}>
                         <CardHeader avatar={
                             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                            EC
+                                EC
                             </Avatar>
                         }
                             title="Esteban Carrizo"
@@ -110,7 +105,7 @@ export default function Testimonios() {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing className=''>
-                            <IconButton aria-label="share">
+                            <IconButton sx={{ color: "#ff914d" }} aria-label="share" onClick={copiarEnlace}>
                                 <Typography className='mx-4 my-1'>Compartir Enlace</Typography>
                                 <ShareIcon />
                             </IconButton>
@@ -126,6 +121,7 @@ export default function Testimonios() {
                         }
                             title="Lautaro Marquez"
                             subheader="Marzo 25, 2023"
+                            sx={{ color: "#ff914d" }}
                         />
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
@@ -134,7 +130,7 @@ export default function Testimonios() {
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing className=''>
-                            <IconButton aria-label="share">
+                            <IconButton sx={{ color: "#ff914d" }} aria-label="share" onClick={copiarEnlace}>
                                 <Typography className='mx-4 my-1'>Compartir Enlace</Typography>
                                 <ShareIcon />
                             </IconButton>
