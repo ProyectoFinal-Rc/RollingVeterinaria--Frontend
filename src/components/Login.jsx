@@ -1,11 +1,19 @@
 import { Form, Button, Container } from "react-bootstrap"
 import './Login.css'
 import { useForm } from 'react-hook-form'
+import { IniciarSesion } from "./helpers/queriesLogin"
 
 const Login = () => {
 	const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
-	const onSubmit = () => {
+	const onSubmit = (usuario) => {
+		IniciarSesion(usuario).then((respuesta)=> {
+			if (respuesta) {
+				console.log('todo bien con el usuario')
+			} else [
+				console.log('error todo mal pa')
+			]
+		})
 		reset()
 	}
 
