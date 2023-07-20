@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      {<Error404/>}
-      {<Contacto/>}
+      <Error404/>
+      <Contacto/>
     </>
   )
 }
