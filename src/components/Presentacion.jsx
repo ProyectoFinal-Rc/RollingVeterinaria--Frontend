@@ -32,8 +32,8 @@ const Presentacion = () => {
                             </div>
                         </Col>
                         <Col xs={12} md={6} className='text-center'id='botonFrase'>
-                            <Button className="btn btn-primary rollingVet-naranja rounded-pill btn-lg px-5 " id='boton' href="#nuestrosTestimonios" role="button">
-                                ¡Suscribite!
+                            <Button id='boton' className="btn btn-primary rollingVet-naranja rounded-pill btn-lg px-5 " href="" role="button">
+                                ¡Suscribirme!
                             </Button>
                         </Col>
                     </Row>
