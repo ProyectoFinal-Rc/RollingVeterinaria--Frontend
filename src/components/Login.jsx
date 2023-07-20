@@ -2,6 +2,7 @@ import { Form, Button, Container } from "react-bootstrap"
 import './Login.css'
 import { useForm } from 'react-hook-form'
 import { IniciarSesion } from "./helpers/queriesLogin"
+import Swal from "sweetalert2"
 
 const Login = () => {
 	const { register, handleSubmit, formState: { errors }, reset } = useForm()
@@ -9,12 +10,16 @@ const Login = () => {
 	const onSubmit = (usuario) => {
 		IniciarSesion(usuario).then((respuesta)=> {
 			if (respuesta) {
-				console.log('todo bien con el usuario')
+				sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario))
+				reset()
 			} else [
-				console.log('error todo mal pa')
+				Swal.fire(
+					'Error',
+					'Email y/o contraseña incorrecta.',
+					'error'
+				)
 			]
 		})
-		reset()
 	}
 
 	return (
