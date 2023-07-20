@@ -71,6 +71,15 @@
       "hora": "17:00",
       "formaPago": "tarjeta",
       "id": 8
+    },
+    {
+      "detalleCita": "proband",
+      "veterinario": "juan paz",
+      "mascota": "ddddd",
+      "fecha": "2023-07-21",
+      "hora": "11:00",
+      "formaPago": "efectivo",
+      "id": 9
     }
   ],
   "paciente": [

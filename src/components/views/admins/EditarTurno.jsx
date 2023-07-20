@@ -1,14 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useParams } from "react-router-dom";
-import { obtenerTurno, editarTurno } from "../../helpers/turnos";
+import {  editarTurno } from "../../helpers/turnos";
 import Swal from "sweetalert2";
 
 
 const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
     //estado = useState(datos)
     //estado.cita
+
+
+
     const {
         register,
         handleSubmit,
@@ -17,33 +19,32 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
         setValue
     } = useForm();
 
-    //const {id} = useParams();
+     useEffect(() => {
+         showEditar(datos).then((respuesta) => {
+             if (respuesta) {
+                 setValue("detalleCita", respuesta.detalleCita)
+                 setValue("veterinario", respuesta.veterinario)
+                 setValue("mascota", respuesta.mascota)
+                 setValue("fecha", respuesta.fecha)
+                 setValue("hora", respuesta.hora)
+                 setValue("formaPago", respuesta.formaPago)
+             }
+         })
+     }, [])
 
-    useEffect(()=>{
-       /*obtenerTurno(id).then((respuesta)=>{
-        if(respuesta){
-            setValue("detalleCita", respuesta.detalleCita)
-            setValue("veterinario", respuesta.veterinario)
-            setValue("mascota", respuesta.mascota)
-            setValue("fecha", respuesta.fecha)
-            setValue("hora", respuesta.hora)
-            setValue("formaPago", respuesta.formaPago)
-        }
-       })*/
-    },[])
 
 
 
 
     const onSubmit = (turnoEditado) => {
-        /*editarTurno(turnoEditado).then((respuesta) => {
-            if(respuesta){
+        editarTurno(turnoEditado).then((respuesta) => {
+            if (respuesta) {
                 Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success");
                 reset();
-            }else{
+            } else {
                 Swal.fire("error", "No se pudo editar el turno correctamente, vuelva a intentarlo más tarde", "error");
             }
-        })*/
+        })
     };
 
     return (
@@ -76,7 +77,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="veterinario">
                         <Form.Label>Veterinario*</Form.Label>
-                        <Form.Select {...register("veterinario",{
+                        <Form.Select {...register("veterinario", {
                             required: "El veterinario es obligatorio"
                         })}>
                             <option value="">Seleccione un veterinario</option>
@@ -84,43 +85,43 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                             <option value="gabriela ramos">Gabriela Ramos</option>
                         </Form.Select>
                         <Form.Text className="text-danger">
-                                {errors.veterinario?.message}
-                            </Form.Text>
+                            {errors.veterinario?.message}
+                        </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="mascota">
                         <Form.Label>Nombre Mascota*</Form.Label>
-                        <Form.Control type="text" placeholder="Ingrese el nombre de la mascota" 
-                        {...register("mascota", {
-                            required: "El nombre de la mascota es un dato obligatorio",
-                            minLength: {
-                                value: 2,
-                                message: "La cantidad minima de caracteres es de 2 digitos",
-                            },
-                            maxLength: {
-                                value: 100,
-                                message: "La cantidad maxima de caracteres es de 100 digitos",
-                            },
-                        })}/>
+                        <Form.Control type="text" placeholder="Ingrese el nombre de la mascota"
+                            {...register("mascota", {
+                                required: "El nombre de la mascota es un dato obligatorio",
+                                minLength: {
+                                    value: 2,
+                                    message: "La cantidad minima de caracteres es de 2 digitos",
+                                },
+                                maxLength: {
+                                    value: 100,
+                                    message: "La cantidad maxima de caracteres es de 100 digitos",
+                                },
+                            })} />
                         <Form.Text className="text-danger">
-                                {errors.mascota?.message}
-                            </Form.Text>
+                            {errors.mascota?.message}
+                        </Form.Text>
                     </Form.Group>
                     <Form.Group controlId="fecha">
                         <Form.Label>Fecha*</Form.Label>
-                        <Form.Control type="date" name="duedate" placeholder="Due date" 
-                        {...register('fecha', {
-                            required: 'La fecha es un dato obligatorio',
-                        })}/>
+                        <Form.Control type="date" name="duedate" placeholder="Due date"
+                            {...register('fecha', {
+                                required: 'La fecha es un dato obligatorio',
+                            })} />
                         <Form.Text className="text-danger">
-                                {errors.fecha && (
-                                    <span>{errors.fecha.message}</span>
-                                )}
-                            </Form.Text>
+                            {errors.fecha && (
+                                <span>{errors.fecha.message}</span>
+                            )}
+                        </Form.Text>
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="hora">
                         <Form.Label>Horario*</Form.Label>
                         <Form.Select aria-label="Default select option"
-                        {...register("hora", {required: "El horario es un dato obligatorio"})}
+                            {...register("hora", { required: "El horario es un dato obligatorio" })}
                         >
                             <option value="">Seleccione un horario</option>
                             <option value="8:00">8:00</option>
@@ -133,25 +134,25 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                             <option value="19:00">19:00</option>
                         </Form.Select>
                         <Form.Text className="text-danger">
-                                {errors.hora?.message}
-                            </Form.Text>
+                            {errors.hora?.message}
+                        </Form.Text>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formaPago">
                         <Form.Label>Forma de Pago*</Form.Label>
-                        <Form.Select aria-label="Default select payment" {...register("formaPago", {required: "La forma de pago es un dato obligatorio"})}>
+                        <Form.Select aria-label="Default select payment" {...register("formaPago", { required: "La forma de pago es un dato obligatorio" })}>
                             <option value="">Seleccione una forma de pago</option>
                             <option value="efectivo">Efectivo</option>
                             <option value="tarjeta">Tarjeta</option>
                         </Form.Select>
                         <Form.Text className="text-danger">
-                                {errors.formaPago?.message}
-                            </Form.Text>
+                            {errors.formaPago?.message}
+                        </Form.Text>
                     </Form.Group>
                     <Button variant="primary" type="submit">
                         Guardar
                     </Button>
-                    <button onClick={()=>{console.log(datos)}}>ASDASD</button>
+                    <button onClick={() => { console.log(datos) }}>ASDASD</button>
                 </Form>
             </Modal.Body>
         </Modal>

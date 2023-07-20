@@ -6,6 +6,10 @@ import AgregarPaciente from "./components/views/admins/AdminPacientes";
 import CardPaciente from "./components/views/admins/CardPaciente";
 import AdminPacientes from "./components/views/admins/AdminPacientes";
 import CardTurno from "./components/views/admins/CardTurno";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EditarTurno from "./components/views/admins/EditarTurno";
+
+
 
 
 
@@ -15,15 +19,11 @@ import CardTurno from "./components/views/admins/CardTurno";
 function App() {
 
   return (
-    <>
-    {/* <Administrador></Administrador> */}
-      <AdminTurnos></AdminTurnos> 
-    {/* <AgregarTurno></AgregarTurno> */}
-    {/* <AgregarPaciente></AgregarPaciente> */}
-    {/* <CardPaciente></CardPaciente> */}
-     {/* <AdminPacientes></AdminPacientes>  */}
-    {/* <CardTurno></CardTurno>  */}
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route exact path="/admin-turnos" element={<AdminTurnos></AdminTurnos>} ></Route>
+    </Routes>
+    </BrowserRouter>
   
   )
 }
