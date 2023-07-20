@@ -1,13 +1,17 @@
-import Principal from './components/Principal'
+
 import './App.css'
-import Footer from './components/Footer'
-import Navbar from './components/Navbar'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Principal from './components/Principal'
+import Footer from './components/common/Footer'
+import Navegacion from './components/common/Navbar'
+
 
 function App() {
 
   return (
     <>
+      <Navegacion></Navegacion>
+      <Footer></Footer>
     </>
   )
 }
