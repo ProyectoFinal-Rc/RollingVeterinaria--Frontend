@@ -1,14 +1,31 @@
 import { Table, Button } from "react-bootstrap";
 import ItemTurno from "./ItemTurno";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AgregarTurno from "./AgregarTurno";
+import Swal from "sweetalert2";
+import { obtenerListaTurnos } from "../../helpers/turnos";
+
+
+
 
 
 const AdminTurnos = () => {
-    const [show, setShow] = useState(false);
-
+  const [turnos, SetTurnos] = useState([]);
+  const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+
+  useEffect(()=>{
+    obtenerListaTurnos().then((respuestaListaTurnos)=>{
+        if(respuestaListaTurnos){
+            SetTurnos(respuestaListaTurnos);
+        }else {
+            Swal.fire("error", "Intente realizar esta operación más tarde", "error");
+        }
+    })
+},[])
+
     return (
         <section className="container">
         <div className="d-flex justify-content-between align-items-center mt-5">
@@ -30,7 +47,9 @@ const AdminTurnos = () => {
             </tr>
           </thead>
           <tbody>
-            <ItemTurno></ItemTurno>
+            {
+              turnos.map((cita)=><ItemTurno key={cita.idTurno} cita={cita} ></ItemTurno>)
+            }
           </tbody>
         </Table>
         <AgregarTurno show={show} handleClose={handleClose}></AgregarTurno>
