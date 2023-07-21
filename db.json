@@ -1,11 +1,11 @@
 {
   "turno": [
     {
-      "detalleCita": "pato sin una ala",
+      "detalleCita": "pato varicela",
       "veterinario": "juan paz",
-      "mascota": "asdasd",
-      "fecha": "2023-07-05",
-      "hora": "11:00",
+      "mascota": "Yara",
+      "fecha": "2023-07-29",
+      "hora": "19:00",
       "formaPago": "efectivo",
       "id": 1
     },
@@ -19,12 +19,12 @@
       "id": 2
     },
     {
-      "detalleCita": "Serpiente con herida en la cabeza",
-      "veterinario": "juan paz",
-      "mascota": "Yara",
-      "fecha": "2023-07-28",
-      "hora": "18:00",
-      "formaPago": "efectivo",
+      "detalleCita": "Serpiente venenosa",
+      "veterinario": "gabriela ramos",
+      "mascota": "serpentita",
+      "fecha": "2023-08-02",
+      "hora": "19:00",
+      "formaPago": "tarjeta",
       "id": 3
     },
     {
