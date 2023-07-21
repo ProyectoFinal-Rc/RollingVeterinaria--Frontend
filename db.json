@@ -10,11 +10,11 @@
       "id": 1
     },
     {
-      "detalleCita": "perrito",
-      "veterinario": "gabriela ramos",
-      "mascota": "atun",
-      "fecha": "15/09/2023",
-      "hora": "13:00",
+      "detalleCita": "fffff",
+      "veterinario": "juan paz",
+      "mascota": "sdfsdf",
+      "fecha": "2023-07-19",
+      "hora": "12:00",
       "formaPago": "efectivo",
       "id": 2
     },
@@ -116,6 +116,15 @@
       "hora": "8:00",
       "formaPago": "efectivo",
       "id": 13
+    },
+    {
+      "detalleCita": "Malena editando",
+      "veterinario": "juan paz",
+      "mascota": "asdasd",
+      "fecha": "2023-08-02",
+      "hora": "18:00",
+      "formaPago": "efectivo",
+      "id": 14
     }
   ],
   "paciente": [

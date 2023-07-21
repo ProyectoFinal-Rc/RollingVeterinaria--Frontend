@@ -2,7 +2,7 @@ import { Table, Button } from "react-bootstrap";
 import { useState, useEffect, Fragment } from "react";
 import AgregarTurno from "./AgregarTurno";
 import Swal from "sweetalert2";
-import { obtenerListaTurnos, obtenerTurno } from "../../helpers/turnos";
+import { obtenerListaTurnos } from "../../helpers/turnos";
 import EditarTurno from "./EditarTurno";
 
 
@@ -39,7 +39,7 @@ const AdminTurnos = () => {
     <section className="container">
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Turnos</h1>
-        <Button className="btn btn-primary" onClick={handleShow}> {/*cambiar a link cuando se protejan las rutas */}
+        <Button className="btn btn-primary" onClick={handleShow}> 
           Agregar turno
         </Button>
       </div>

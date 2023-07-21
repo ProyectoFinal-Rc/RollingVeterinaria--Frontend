@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {  editarTurno } from "../../helpers/turnos";
@@ -56,8 +56,8 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                             })}
                             onChange={(dato)=>{
                                 setDatosTurnos({
-                                    ...datosTurnos, // Mantener las demás propiedades sin cambios
-                                    detalleCita: dato.target.value, // Actualizar solo la propiedad detalleCita con el nuevo valor
+                                    ...datosTurnos, 
+                                    detalleCita: dato.target.value, 
                                   }); 
                             }}
                         />
@@ -142,7 +142,6 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                     <Button variant="primary" type="submit">
                         Guardar
                     </Button>
-                    <button onClick={() => { console.log(datos) }}>ASDASD</button>
                 </Form>
             </Modal.Body>
         </Modal>
