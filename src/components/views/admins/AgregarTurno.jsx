@@ -1,5 +1,7 @@
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearTurno } from "../../helpers/turnos";
+import Swal from "sweetalert2";
 
 const AgregarTurno = ({ show, handleClose }) => {
     const {
@@ -9,9 +11,16 @@ const AgregarTurno = ({ show, handleClose }) => {
         reset,
     } = useForm();
 
-    const onSubmit = (turno) => {
-        console.log(turno);
-        reset();
+    const onSubmit = (turnoNuevo) => {
+        crearTurno(turnoNuevo).then((respuesta)=>{
+            if(respuesta.status === 201){
+                Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success");
+                reset();
+            }else{
+                Swal.fire("error", "No se pudo crear el turno correctamente, vuelva a intentarlo más tarde", "error");
+            }
+        })
+        // window.location.reload(); CONSULTAR OTRA ALTERNATIVA
     };
 
     return (
@@ -95,7 +104,7 @@ const AgregarTurno = ({ show, handleClose }) => {
                             <option value="9:00">9:00</option>
                             <option value="10:00">10:00</option>
                             <option value="11:00">11:00</option>
-                            <option value="12:00<">12:00</option>
+                            <option value="12:00">12:00</option>
                             <option value="17:00">17:00</option>
                             <option value="18:00">18:00</option>
                             <option value="19:00">19:00</option>
@@ -108,7 +117,7 @@ const AgregarTurno = ({ show, handleClose }) => {
                     <Form.Group className="mb-3" controlId="formaPago">
                         <Form.Label>Forma de Pago*</Form.Label>
                         <Form.Select aria-label="Default select payment" {...register("formaPago", {required: "La forma de pago es un dato obligatorio"})}>
-                            <option value="">Seleccione uuna Forma de Pago</option>
+                            <option value="">Seleccione una forma de pago</option>
                             <option value="efectivo">Efectivo</option>
                             <option value="tarjeta">Tarjeta</option>
                         </Form.Select>

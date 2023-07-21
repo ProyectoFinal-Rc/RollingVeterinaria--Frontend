@@ -10,3 +10,18 @@ export const obtenerListaTurnos = async()=> {
         console.log(error);
     }
 }
+
+export const crearTurno = async(turno)=>{
+    try{
+        const respuesta = await fetch(URL_turno, {
+            method: "POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify(turno)
+        });
+        return respuesta;
+    }catch(error){
+        console.log(error);
+    }
+}
