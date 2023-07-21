@@ -1,15 +1,6 @@
 {
   "turno": [
     {
-      "detalleCita": "pato varicela",
-      "veterinario": "juan paz",
-      "mascota": "Yara",
-      "fecha": "2023-07-29",
-      "hora": "19:00",
-      "formaPago": "efectivo",
-      "id": 1
-    },
-    {
       "detalleCita": "fffff",
       "veterinario": "juan paz",
       "mascota": "sdfsdf",
