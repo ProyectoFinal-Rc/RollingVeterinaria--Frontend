@@ -7,7 +7,7 @@ import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
 const Presentacion = () => {
     return (
         <div>
-            <section id="video" className="position-relative overflow-hidden">
+            <section id="video" className=" position-relative overflow-hidden">
                 <section className="pb-5 container-fluid">
                     <div id="tituloFraseGrande">
                         <div className="display-2 d-flex flex-column flex-md-row justify-content-center align-items-center gap-md-3 py-3" id="animacionPrincipal">

@@ -2,7 +2,7 @@ import './Footer.css'
 
 const Footer = () => {
 	return (
-		<footer className='mb-3 pt-3 d-flex flex-column'>
+		<footer className=' d-flex flex-column'>
 			<div className='d-md-flex justify-content-md-around'>
 				<div className='my-auto'>
 					<p className='text-center mb-1 fs-4'>Nuestras Redes</p>
@@ -18,7 +18,7 @@ const Footer = () => {
 					</div>
 				</section>
 			</div>
-			<p className='text-center fw-bolder'>&copy; Todos los derechos reservados</p>
+			<p className='text-center fw-bolder bg-black text-white m-0  py-5'>&copy; Todos los derechos reservados</p>
 		</footer>
 	)
 }

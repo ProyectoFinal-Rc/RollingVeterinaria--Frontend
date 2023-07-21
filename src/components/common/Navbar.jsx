@@ -10,12 +10,12 @@ const Navegacion = () => {
 				<Navbar.Toggle area-aria-controls='basic-navbar-var'></Navbar.Toggle>
 				<Navbar.Collapse id='basic-navbar-var'>
 					<Nav className='ms-auto'>
-						<Nav.Link href='#'>Pagina Principal</Nav.Link>
-						<Nav.Link href='#'>Acerca de Nosotros</Nav.Link>
-						<Nav.Link href='#'>Contacto</Nav.Link>
-						<Nav.Link href='#'>Productos</Nav.Link>
-						<Nav.Link href='#'>Administrador</Nav.Link>
-						<Nav.Link href='#'>Ingresar</Nav.Link>
+						<Nav.Link className='mx-2 fw-bold' href='#'>Pagina Principal</Nav.Link>
+						<Nav.Link className='mx-2 fw-bold' href='#'>Acerca de Nosotros</Nav.Link>
+						<Nav.Link className='mx-2 fw-bold' href='#'>Contacto</Nav.Link>
+						<Nav.Link className='mx-2 fw-bold' href='#'>Productos</Nav.Link>
+						<Nav.Link className='mx-2 fw-bold' href='#'>Administrador</Nav.Link>
+						<Nav.Link className='mx-2 fw-bold' href='#'>Ingresar</Nav.Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Container>

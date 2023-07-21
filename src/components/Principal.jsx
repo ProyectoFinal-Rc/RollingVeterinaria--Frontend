@@ -8,7 +8,8 @@ import '../App.css';
 
 const Principal = () => {
     return (
-        <>
+        <>  
+            
             <Presentacion></Presentacion>
             <Planes></Planes>
             <Marcas></Marcas>

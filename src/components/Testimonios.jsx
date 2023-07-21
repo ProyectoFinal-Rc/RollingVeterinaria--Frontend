@@ -38,7 +38,7 @@ export default function Testimonios() {
     return (
         <div className='container d-flex justify-content-center my-4' >
             <Row id='serviciosContenedor' className='py-4'>
-            <h2 className='letras ms-3'>Nuestros Clientes Dicen:</h2>
+            <h2 className='letras ms-3 text-white'>Nuestros Clientes Dicen:</h2>
                 <Col xs={12} sm={12} md={12} lg={4} className='my-3'>
                     <Card sx={{ height: 250, color: 'deepOrange' }}>
                         <CardHeader avatar={

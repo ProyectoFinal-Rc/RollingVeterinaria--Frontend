@@ -48,7 +48,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index:0;
     background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
     filter: contrast(60%);
     /* Aplica un desenfoque a la imagen */
@@ -70,9 +70,11 @@ body {
 #boton {
     background-color: #ff914d;
     border-color: #342823;
+    color: black;
 }
 
 #video {
+    padding-top:150px ;
     min-height: 50vh;
     background:
         linear-gradient(180deg,
@@ -95,7 +97,7 @@ body {
 }
 
 #serviciosContenedor {
-    background-color: #ff914d;
+    background-color: #a54103c2;
 }
 
 #video>img {
