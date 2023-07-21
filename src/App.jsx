@@ -17,15 +17,14 @@ function App() {
 
   return (
     <>
-   <Administrador></Administrador> 
-     {/* <AdminTurnos></AdminTurnos> */}
-    {/* <AgregarTurno></AgregarTurno> */}
-    {/* <AgregarPaciente></AgregarPaciente> */}
-    {/* <CardPaciente></CardPaciente> */}
-     {/* <AdminPacientes></AdminPacientes>  */}
-    {/* <CardTurno></CardTurno>  */}
+      <Administrador></Administrador>
+      {/* <AdminTurnos></AdminTurnos> */}
+      {/* <AgregarTurno></AgregarTurno> */}
+      {/* <AgregarPaciente></AgregarPaciente> */}
+      {/* <CardPaciente></CardPaciente> */}
+      {/* <AdminPacientes></AdminPacientes>  */}
+      {/* <CardTurno></CardTurno>  */}
     </>  
-    </>
   )
 }
 
