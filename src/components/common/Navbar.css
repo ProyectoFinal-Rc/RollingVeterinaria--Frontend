@@ -1,0 +1,13 @@
+#navbar {
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+}
+
+#navbar {
+	background-color: #ff914d;
+}
+
+.imagenLogo {
+	max-width: 70px;
+}

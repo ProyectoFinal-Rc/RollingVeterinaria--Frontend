@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lilita+One&display=swap');
+main {
+    min-height: 100vh;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+body {
+    background: url(https://img.freepik.com/vector-gratis/fondo-estampado-pata-animal-lindo-diversion-fauna_1017-44714.jpg?w=1380&t=st=1689736612~exp=1689737212~hmac=3e9a5ac84a99527c15613ebf3e90651b65a34cf306015cebf37c222de0c89ef7) no-repeat center fixed;
+    background-size: cover;
+    cursor: url(../src/assets/patita.png),auto;
+}
+.cursor{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+
+}
+/* Cards */
+.servicio-imagen {
+    height: 300px;
+    width: 500px;
+    object-fit: cover;
+    transform-origin: center center;
+}
+
+.zoom-imagen {
+    transition: transform 0.3s ease;
+}
+
+.zoom-imagen:hover {
+    transform: scale(1.05);
+}
+
+
+/* Fondo de imagen */
+.fondo-container {
+    position: relative;
+    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
+}
+
+.fondo-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:0;
+    background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
+    filter: contrast(60%);
+    /* Aplica un desenfoque a la imagen */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.rollingVet-naranja {
+    color: #ff914d
+}
+
+.rollingVet-negro {
+    color: #342823
+}
+.letras{
+    font-family: 'Lilita One', cursive;
+}
+#boton {
+    background-color: #ff914d;
+    border-color: #342823;
+    color: black;
+}
+
+#video {
+    padding-top:150px ;
+    min-height: 50vh;
+    background:
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 10%,
+            rgba(88, 62, 13, 0.3) 60%,
+        ),
+        linear-gradient(to bottom, transparent, var(--bs-body-bg));
+    filter: saturate(2);
+}
+
+/* Fondo de video */
+#video>video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(2px) grayscale(60%) contrast(70%) brightness(60%);
+}
+
+#serviciosContenedor {
+    background-color: #a54103c2;
+}
+
+#video>img {
+    filter: blur(2px) grayscale(10%) contrast(70%) brightness(60%);
+}
+
+.texto-marron {
+    color: #342823;
+}
+
+.estiloImagenesCarousel {
+    width: "500px";
+    height: "750px";
+}
+
+.imagenesCard {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+/* Slider Infinito */
+.slider{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+.slider .slide-track{
+    display: flex;
+    animation: scroll 5s linear infinite;
+    filter: grayscale(100%)/* drop-shadow(10px 10px 20px black)*/;
+    width: calc(200px *9);
+    -webkit-animation: scroll 30s linear infinite;
+}
+.slider .slide{
+    width: 200px;
+}
+.slider .slide img{
+    width: 100%;
+}
+
+@keyframes scroll{
+    0%{
+        -webkit-transform:translateX(0);
+        transform:translateX(0);
+    }
+    100%{
+        
+        -webkit-transform:translateX(calc(-200px *10));
+        transform:translateX(calc(-200px *10));
+        
+    }
+}
+/* Dispositivos chicos */
+/* Responsive seccion */
+@media only screen and (max-width: 767px) {
+    #video {
+        min-height: 100vh;
+    }
+
+    #tituloFrase {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        top:200px;
+        height: 100%;
+    }
+    #botonFrase{
+        position: relative;
+        top:200px;
+    }
+
+    .servicio-imagen {
+        height: 200px;
+        width: 250px;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+    }
+
+    .textoServicios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .carruseles {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .estiloImagenesCarousel {
+        min-width: 350px;
+        min-height: 525px;
+        max-width: 350px;
+        max-height: 525px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 922px) {
+    #textoFraseGrande {
+        display: none;
+    }
+
+    #textoFraseChico {
+        display: block;
+    }
+
+    #planesDeCuidado {}
+}

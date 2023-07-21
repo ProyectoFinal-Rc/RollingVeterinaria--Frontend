@@ -98,4 +98,12 @@
       "id": 1
     }
   ]
+	"usuarios": [
+		{
+			"id": 1,
+			"nombreUsuario": "administrador",
+			"email": "admin@gmail.com",
+			"password": "Admin123!"
+		}
+	]
 }
