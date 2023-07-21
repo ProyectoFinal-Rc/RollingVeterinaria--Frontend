@@ -3,9 +3,9 @@
     {
       "detalleCita": "pato sin una ala",
       "veterinario": "juan paz",
-      "mascota": "pato negro",
-      "fecha": "2023-07-31",
-      "hora": "19:00",
+      "mascota": "asdasd",
+      "fecha": "2023-07-05",
+      "hora": "11:00",
       "formaPago": "efectivo",
       "id": 1
     },
@@ -107,6 +107,15 @@
       "hora": "8:00",
       "formaPago": "efectivo",
       "id": 12
+    },
+    {
+      "detalleCita": "perro sin una pata",
+      "veterinario": "gabriela ramos",
+      "mascota": "asdasd",
+      "fecha": "2023-07-14",
+      "hora": "8:00",
+      "formaPago": "efectivo",
+      "id": 13
     }
   ],
   "paciente": [

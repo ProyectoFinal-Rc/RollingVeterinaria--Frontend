@@ -6,8 +6,7 @@ import Swal from "sweetalert2";
 
 
 const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
-    //estado = useState(datos)
-    //estado.cita
+
     const [datosTurnos, setDatosTurnos] = useState(datos)
 
     const {
@@ -17,19 +16,6 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
         reset,
         setValue
     } = useForm();
-
-    //  useEffect(() => {
-    //      showEditar(datos).then((respuesta) => {
-    //          if (respuesta) {
-    //              setValue("detalleCita", respuesta.detalleCita)
-    //              setValue("veterinario", respuesta.veterinario)
-    //              setValue("mascota", respuesta.mascota)
-    //              setValue("fecha", respuesta.fecha)
-    //              setValue("hora", respuesta.hora)
-    //              setValue("formaPago", respuesta.formaPago)
-    //          }
-    //      })
-    //  }, [])
 
     const onSubmit = (turnoEditado) => {
         editarTurno(turnoEditado,datos.id).then((respuesta) => {
