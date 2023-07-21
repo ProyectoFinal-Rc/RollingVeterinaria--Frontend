@@ -1,30 +1,30 @@
 {
   "turno": [
     {
-      "detalleCita": "Gato con pata quebrada",
-      "veterinario": "Juan Paz",
-      "mascota": "kiko",
-      "fecha": "15/08/2023",
-      "hora": "14:00",
-      "formaPago": "Efectivo",
+      "detalleCita": "pato varicela",
+      "veterinario": "juan paz",
+      "mascota": "Yara",
+      "fecha": "2023-07-29",
+      "hora": "19:00",
+      "formaPago": "efectivo",
       "id": 1
     },
     {
-      "detalleCita": "perrito",
-      "veterinario": "gabriela ramos",
-      "mascota": "atun",
-      "fecha": "15/09/2023",
-      "hora": "13:00",
+      "detalleCita": "fffff",
+      "veterinario": "juan paz",
+      "mascota": "sdfsdf",
+      "fecha": "2023-07-19",
+      "hora": "12:00",
       "formaPago": "efectivo",
       "id": 2
     },
     {
-      "detalleCita": "Serpiente con herida en la cabeza",
-      "veterinario": "juan paz",
-      "mascota": "Yara",
-      "fecha": "2023-07-28",
-      "hora": "18:00",
-      "formaPago": "efectivo",
+      "detalleCita": "Serpiente venenosa",
+      "veterinario": "gabriela ramos",
+      "mascota": "serpentita",
+      "fecha": "2023-08-02",
+      "hora": "19:00",
+      "formaPago": "tarjeta",
       "id": 3
     },
     {
@@ -71,6 +71,60 @@
       "hora": "17:00",
       "formaPago": "tarjeta",
       "id": 8
+    },
+    {
+      "detalleCita": "proband",
+      "veterinario": "juan paz",
+      "mascota": "ddddd",
+      "fecha": "2023-07-21",
+      "hora": "11:00",
+      "formaPago": "efectivo",
+      "id": 9
+    },
+    {
+      "detalleCita": "asdasd",
+      "veterinario": "juan paz",
+      "mascota": "asdasd",
+      "fecha": "2023-06-28",
+      "hora": "9:00",
+      "formaPago": "efectivo",
+      "id": 10
+    },
+    {
+      "detalleCita": "perro",
+      "veterinario": "gabriela ramos",
+      "mascota": "pattias",
+      "fecha": "2023-07-24",
+      "hora": "9:00",
+      "formaPago": "efectivo",
+      "id": 11
+    },
+    {
+      "detalleCita": "perro enfermo ",
+      "veterinario": "juan paz",
+      "mascota": "probando 123",
+      "fecha": "2023-07-21",
+      "hora": "8:00",
+      "formaPago": "efectivo",
+      "id": 12
+    },
+    {
+      "detalleCita": "perro sin una pata",
+      "veterinario": "gabriela ramos",
+      "mascota": "asdasd",
+      "fecha": "2023-07-14",
+      "hora": "8:00",
+      "formaPago": "efectivo",
+      "id": 13
+    },
+    {
+      "detalleCita": "Malena editando",
+      "veterinario": "juan paz",
+      "mascota": "asdasd",
+      "fecha": "2023-08-02",
+      "hora": "18:00",
+      "formaPago": "efectivo",
+      "id": 14
     }
   ],
   "paciente": [
