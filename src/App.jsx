@@ -19,12 +19,15 @@ import EditarTurno from "./components/views/admins/EditarTurno";
 function App() {
 
   return (
-    <BrowserRouter>
-    <Routes>
-      <Route exact path="/admin-turnos" element={<AdminTurnos></AdminTurnos>} ></Route>
-    </Routes>
-    </BrowserRouter>
-  
+    <>
+    {/* <Administrador></Administrador> */}
+     <AdminTurnos></AdminTurnos>
+    {/* <AgregarTurno></AgregarTurno> */}
+    {/* <AgregarPaciente></AgregarPaciente> */}
+    {/* <CardPaciente></CardPaciente> */}
+     {/* <AdminPacientes></AdminPacientes>  */}
+    {/* <CardTurno></CardTurno>  */}
+    </>  
   )
 }
 

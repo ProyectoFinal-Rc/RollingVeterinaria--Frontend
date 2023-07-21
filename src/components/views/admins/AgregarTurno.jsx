@@ -14,7 +14,7 @@ const AgregarTurno = ({ show, handleClose }) => {
     const onSubmit = (turnoNuevo) => {
         crearTurno(turnoNuevo).then((respuesta)=>{
             if(respuesta.status === 201){
-                Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success");
+                Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success").then(()=>window.location.reload())
                 reset();
             }else{
                 Swal.fire("error", "No se pudo crear el turno correctamente, vuelva a intentarlo más tarde", "error");

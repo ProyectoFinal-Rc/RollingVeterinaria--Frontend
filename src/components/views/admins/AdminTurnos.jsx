@@ -10,6 +10,7 @@ import EditarTurno from "./EditarTurno";
 
 
 const AdminTurnos = () => {
+
   const [turnos, SetTurnos] = useState([]);
   const [turnoEditar, SetTurnoEditar] = useState({});
   const [show, setShow] = useState(false);
@@ -18,11 +19,7 @@ const AdminTurnos = () => {
   const handleShow = () => setShow(true);
 
   const handleCloseEditar = () => setShowEditar(false);
-  const handleShowEditar = (id) => {
-    SetTurnoEditar(turnos.find((turno) => turno.id === id))
-    setShowEditar(true);
-  }
-
+  const handleShowEditar = () => setShowEditar(true);
 
   useEffect(() => {
     obtenerListaTurnos().then((respuestaListaTurnos) => {
@@ -34,9 +31,9 @@ const AdminTurnos = () => {
     })
   }, [])
 
-  // const seleccionar = (id) => {
-  //   SetTurnoEditar(turnos.find((turno) => turno.id === id))
-  // }
+  const seleccionar = (id) => {
+    SetTurnoEditar(turnos.find((turno) => turno.id === id))
+  }
 
   return (
     <section className="container">
@@ -70,7 +67,7 @@ const AdminTurnos = () => {
                     <td>{cita.fecha}</td>
                     <td>{cita.hora}</td>
                     <td className="d-flex justify-content-end align-items-star">
-                      <Button className="btn btn-warning me-2" onClick={() => handleShowEditar(cita.id)} ><i className="bi bi-pencil-square p-0"></i></Button>
+                      <Button className="btn btn-warning me-2" onClick={() => { handleShowEditar(); seleccionar(cita.id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
                       <Button variant="danger"><i className="bi bi-file-x p-0"></i></Button>
                     </td>
                   </tr>
@@ -80,7 +77,7 @@ const AdminTurnos = () => {
           }
         </tbody>
       </Table>
-      <EditarTurno datos={handleShowEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
+      <EditarTurno datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
       <AgregarTurno show={show} handleClose={handleClose}></AgregarTurno>
     </section>
   );//

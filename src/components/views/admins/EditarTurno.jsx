@@ -8,8 +8,7 @@ import Swal from "sweetalert2";
 const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
     //estado = useState(datos)
     //estado.cita
-
-
+    const [datosTurnos, setDatosTurnos] = useState(datos)
 
     const {
         register,
@@ -19,27 +18,23 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
         setValue
     } = useForm();
 
-     useEffect(() => {
-         showEditar(datos).then((respuesta) => {
-             if (respuesta) {
-                 setValue("detalleCita", respuesta.detalleCita)
-                 setValue("veterinario", respuesta.veterinario)
-                 setValue("mascota", respuesta.mascota)
-                 setValue("fecha", respuesta.fecha)
-                 setValue("hora", respuesta.hora)
-                 setValue("formaPago", respuesta.formaPago)
-             }
-         })
-     }, [])
-
-
-
-
+    //  useEffect(() => {
+    //      showEditar(datos).then((respuesta) => {
+    //          if (respuesta) {
+    //              setValue("detalleCita", respuesta.detalleCita)
+    //              setValue("veterinario", respuesta.veterinario)
+    //              setValue("mascota", respuesta.mascota)
+    //              setValue("fecha", respuesta.fecha)
+    //              setValue("hora", respuesta.hora)
+    //              setValue("formaPago", respuesta.formaPago)
+    //          }
+    //      })
+    //  }, [])
 
     const onSubmit = (turnoEditado) => {
-        editarTurno(turnoEditado).then((respuesta) => {
+        editarTurno(turnoEditado,datos.id).then((respuesta) => {
             if (respuesta) {
-                Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success");
+                Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success").then(()=>window.location.reload());
                 reset();
             } else {
                 Swal.fire("error", "No se pudo editar el turno correctamente, vuelva a intentarlo más tarde", "error");
@@ -59,6 +54,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                         <Form.Control
                             type="text"
                             placeholder="Ingrese el detalle de la cita"
+                            defaultValue={datos.detalleCita}
                             {...register("detalleCita", {
                                 required: "El detalle de la cita es un dato obligatorio",
                                 minLength: {
@@ -68,8 +64,16 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                                 maxLength: {
                                     value: 100,
                                     message: "La cantidad maxima de caracteres es de 100 digitos",
+
                                 },
+
                             })}
+                            onChange={(dato)=>{
+                                setDatosTurnos({
+                                    ...datosTurnos, // Mantener las demás propiedades sin cambios
+                                    detalleCita: dato.target.value, // Actualizar solo la propiedad detalleCita con el nuevo valor
+                                  }); 
+                            }}
                         />
                         <Form.Text className="text-danger">
                             {errors.detalleCita?.message}

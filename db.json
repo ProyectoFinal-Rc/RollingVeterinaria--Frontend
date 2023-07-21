@@ -1,11 +1,11 @@
 {
   "turno": [
     {
-      "detalleCita": "pato con sarampion",
+      "detalleCita": "pato sin una ala",
       "veterinario": "juan paz",
-      "mascota": "kiko",
-      "fecha": "15/08/2023",
-      "hora": "14:00",
+      "mascota": "pato negro",
+      "fecha": "2023-07-31",
+      "hora": "19:00",
       "formaPago": "efectivo",
       "id": 1
     },
@@ -80,6 +80,33 @@
       "hora": "11:00",
       "formaPago": "efectivo",
       "id": 9
+    },
+    {
+      "detalleCita": "asdasd",
+      "veterinario": "juan paz",
+      "mascota": "asdasd",
+      "fecha": "2023-06-28",
+      "hora": "9:00",
+      "formaPago": "efectivo",
+      "id": 10
+    },
+    {
+      "detalleCita": "perro",
+      "veterinario": "gabriela ramos",
+      "mascota": "pattias",
+      "fecha": "2023-07-24",
+      "hora": "9:00",
+      "formaPago": "efectivo",
+      "id": 11
+    },
+    {
+      "detalleCita": "perro enfermo ",
+      "veterinario": "juan paz",
+      "mascota": "probando 123",
+      "fecha": "2023-07-21",
+      "hora": "8:00",
+      "formaPago": "efectivo",
+      "id": 12
     }
   ],
   "paciente": [
