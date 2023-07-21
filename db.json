@@ -19,15 +19,6 @@
       "id": 2
     },
     {
-      "detalleCita": "Serpiente venenosa",
-      "veterinario": "gabriela ramos",
-      "mascota": "serpentita",
-      "fecha": "2023-08-02",
-      "hora": "19:00",
-      "formaPago": "tarjeta",
-      "id": 3
-    },
-    {
       "detalleCita": "asd",
       "veterinario": "juan paz",
       "mascota": "Yara",
@@ -35,24 +26,6 @@
       "hora": "17:00",
       "formaPago": "efectivo",
       "id": 4
-    },
-    {
-      "detalleCita": "Serpiente con herida en la cabeza",
-      "veterinario": "juan paz",
-      "mascota": "sdfsdf",
-      "fecha": "2023-07-21",
-      "hora": "18:00",
-      "formaPago": "efectivo",
-      "id": 5
-    },
-    {
-      "detalleCita": "asdasdasdasdd",
-      "veterinario": "gabriela ramos",
-      "mascota": "dddddd",
-      "fecha": "2023-07-22",
-      "hora": "17:00",
-      "formaPago": "efectivo",
-      "id": 6
     },
     {
       "detalleCita": "asd",
@@ -71,15 +44,6 @@
       "hora": "17:00",
       "formaPago": "tarjeta",
       "id": 8
-    },
-    {
-      "detalleCita": "proband",
-      "veterinario": "juan paz",
-      "mascota": "ddddd",
-      "fecha": "2023-07-21",
-      "hora": "11:00",
-      "formaPago": "efectivo",
-      "id": 9
     },
     {
       "detalleCita": "asdasd",

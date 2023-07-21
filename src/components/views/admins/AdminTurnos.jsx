@@ -2,7 +2,7 @@ import { Table, Button } from "react-bootstrap";
 import { useState, useEffect, Fragment } from "react";
 import AgregarTurno from "./AgregarTurno";
 import Swal from "sweetalert2";
-import { obtenerListaTurnos } from "../../helpers/turnos";
+import { obtenerListaTurnos, borrarTurno } from "../../helpers/turnos";
 import EditarTurno from "./EditarTurno";
 
 
@@ -33,6 +33,46 @@ const AdminTurnos = () => {
 
   const seleccionar = (id) => {
     SetTurnoEditar(turnos.find((turno) => turno.id === id))
+  }
+
+  const borrar = (id) => {
+    Swal.fire({
+      title: 'Esta seguro de borrar el siguiente turno?',
+      text: "El siguiente cambio no podra ser revertido",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, quiero borrar!',
+      cancelButtonText: 'Cancelar'
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        borrarTurno(id).then((respuesta)=>{
+          if(respuesta.status === 200){
+            //Pedir la lista de productos a mi back
+            obtenerListaTurnos().then((respuesta)=>{
+              if(respuesta){
+                SetTurnos(respuesta);
+              } else {
+                Swal.fire("Error", "Intente realizar esta operacion en unos minutos", "error");
+              }
+            })
+            Swal.fire(
+              'Borrado!',
+              'El turno fue borrado.',
+              'success'
+            )
+          }else{
+            Swal.fire({
+              title: "Lo siento!",
+              text: "El turno no pudo ser eliminado.",
+              icon: "error",
+              confirmButtonColor: "#fa8072",
+            });
+          }
+        })
+      }
+    })
   }
 
   return (
@@ -68,7 +108,7 @@ const AdminTurnos = () => {
                     <td>{cita.hora}</td>
                     <td className="d-flex justify-content-end align-items-star">
                       <Button className="btn btn-warning me-2" onClick={() => { handleShowEditar(); seleccionar(cita.id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
-                      <Button variant="danger"><i className="bi bi-file-x p-0"></i></Button>
+                      <Button variant="danger" onClick={() => {borrar(cita.id)}}><i className="bi bi-file-x p-0"></i></Button>
                     </td>
                   </tr>
                 </Fragment>
