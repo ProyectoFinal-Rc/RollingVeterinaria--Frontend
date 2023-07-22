@@ -28,6 +28,14 @@ const developers = [
       "Male, una apasionada estudiante de programación fullstack. Con 26 años, su pasión por la tecnología y el desarrollo web la impulsan a aprender y crecer constantemente en este campo en constante evolución. Además de su dedicación a la programación, encuentra equilibrio y satisfacción en sus otros intereses: el deporte y la pintura",
     animalFavorito: "Gato",
   },
+  {
+    nombre: "Cristina Ismael Gramajo",
+    foto: "/src/assets/patita.png",
+    lenguajes: ["HTML", "CSS", "JavaScript"],
+    descripcion:
+      "Un apasionado desarrollador web con experiencia en front-end y diseño de sitios atractivos y funcionales.",
+    animalFavorito: "Gato",
+  },
 
 ];
 
