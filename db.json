@@ -84,17 +84,16 @@
   ],
   "paciente": [
     {
-      "nombreDuenio": "Marta",
-      "apellidoDuenio": "Perez",
-      "email": "hola@gmail.com",
-      "telefono": "3914766320",
-      "direccion": "Santa Rosa 320, Tucuman",
-      "nombreMascota": "Kiko",
-      "especie": "felino",
-      "raza": "persa",
-      "fechaNacimiento": "15/02/2020",
-      "peso": "12kg",
-      "plan": "C-adulto",
+      "nombreDuenio": "juan carlos",
+      "apellidoDuenio": "lopez",
+      "email": "asdmasldk@sdksf.com",
+      "direccion": "asdasd 12234",
+      "nombreMascota": "sdasdasda",
+      "especie": "aves",
+      "raza": "persasdasda",
+      "fechaNacimiento": "2023-07-19",
+      "peso": "100",
+      "plan": "adultos (10 en adelante)",
       "id": 1
     },
     {

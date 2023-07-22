@@ -1,17 +1,31 @@
+import { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
+import { editarPaciente } from "../../helpers/pacientes";
 
 
-const EditarPaciente = ({ show, handleClose }) => {
+const EditarPaciente = ({ showEditar, handleCloseEditar, datos }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+    const [datosPacientes, setDatosPacientes] = useState(datos)
+    const onSubmit = (pacienteEditado) => {
+
+        editarPaciente(pacienteEditado,datos.id).then((respuesta)=>{
+            if(respuesta) {
+                Swal.fire("Paciente editado", `El paciente  ${pacienteEditado.nombreMascota} se editó correctamente`, "success").then(()=>window.location.reload());
+                reset();
+            } else {
+                Swal.fire("error", "No se pudo editar el paciente correctamente, vuelva a intentarlo más tarde", "error");
+            }
+        })
+    } 
 
     return (
         <>
-            <Modal show={show} onHide={handleClose}  >
+            <Modal show={showEditar} onHide={handleCloseEditar}  >
                 <Modal.Header closeButton>
-                    <Modal.Title>Ingrese un nuevo paciente</Modal.Title>
+                    <Modal.Title>EditarPaciente</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit(onSubmit)}>
@@ -20,6 +34,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Ingrese un nombre"
+                                defaultValue={datos.nombreDuenio}
                                 {...register("nombreDuenio", {
                                     required: "El nombre es un dato obligatorio",
                                     minLength: {
@@ -31,6 +46,12 @@ const EditarPaciente = ({ show, handleClose }) => {
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
                                 })}
+                                onChange={(dato)=>{
+                                    setDatosPacientes({
+                                        ...datosPacientes, 
+                                        nombreDuenio: dato.target.value, 
+                                    }); 
+                                }}
                             />
                             <Form.Text className="text-danger">
                                 {errors.nombreDuenio?.message}
@@ -42,6 +63,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Ingrese un apellido"
+                                defaultValue={datos.apellidoDuenio}
                                 {...register("apellidoDuenio", {
                                     required: "El apellido es un dato obligatorio",
                                     minLength: {
@@ -62,6 +84,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Ingrese un correo electronico*</Form.Label>
                             <Form.Control type="email" placeholder="name@email.com"
+                            defaultValue={datos.email}
                                 {...register("email", {
                                     required: "El email es un dato obligatorio",
                                     pattern: {
@@ -82,6 +105,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                             <Form.Control
                                 type="text"
                                 placeholder="Ingrese una direccion."
+                                defaultValue={datos.direccion}
                                 {...register("direccion", {
                                     required: "La direccion es un dato obligatorio",
                                     minLength: {
@@ -102,6 +126,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                         <Form.Group className="mb-3" controlId="nombreMascota">
                             <Form.Label>Nombre Mascota*</Form.Label>
                             <Form.Control type="text" placeholder="Ingrese el nombre de la mascota"
+                            defaultValue={datos.nombreMascota}
                                 {...register("nombreMascota", {
                                     required: "El nombre es un dato obligatorio",
                                     minLength: {
@@ -122,11 +147,11 @@ const EditarPaciente = ({ show, handleClose }) => {
                         <Form.Group className="mb-3" controlId="especie">
                             <Form.Label>Especie*</Form.Label>
                             <Form.Select
+                            defaultValue={datos.especie}
                                 {...register("especie", {
                                     required: "La especie es obligatoria",
                                 })}
                             >
-                                <option value="">Seleccione una especie</option>
                                 <option value="mamiferos">Mamiferos</option>
                                 <option value="aves">Aves</option>
                                 <option value="reptiles">Reptiles</option>
@@ -140,6 +165,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                         <Form.Group className="mb-3" controlId="raza">
                             <Form.Label>Raza*</Form.Label>
                             <Form.Control type="text" placeholder="Ingrese la raza"
+                            defaultValue={datos.raza}
                                 {...register("raza", {
                                     required: "La raza es un dato obligatorio",
                                     minLength: {
@@ -160,6 +186,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                         <Form.Group controlId="fechaNacimiento">
                             <Form.Label>Fecha de Nacimiento*</Form.Label>
                             <Form.Control type="date" name="duedate" placeholder="Seleccione la fecha de nacimiento"
+                            defaultValue={datos.fechaNacimiento}
                                 {...register('fechaNacimiento', {
                                     required: 'La fecha de nacimiento es obligatoria',
                                 })}
@@ -174,6 +201,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                         <Form.Group className="mb-3" controlId="peso">
                             <Form.Label>Peso (en kg)*</Form.Label>
                             <Form.Control type="number" placeholder="Ingrese el peso"
+                            defaultValue={datos.peso}
                                 {...register("peso", {
                                     required: "El peso es un dato obligatorio",
                                     min: {
@@ -194,6 +222,7 @@ const EditarPaciente = ({ show, handleClose }) => {
                         <Form.Group className="mb-3" controlId="plan">
                             <Form.Label>Plan*</Form.Label>
                             <Form.Select
+                            defaultValue={datos.plan}
                                 {...register("plan", {
                                     required: "El plan es obligatorio",
                                 })}

@@ -14,7 +14,6 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
         handleSubmit,
         formState: { errors },
         reset,
-        setValue
     } = useForm();
 
     const onSubmit = (turnoEditado) => {
