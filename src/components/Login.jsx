@@ -3,7 +3,8 @@ import { Form, Container } from "react-bootstrap"
 import { useForm } from 'react-hook-form'
 import { IniciarSesion } from "./helpers/queriesLogin"
 import Swal from "sweetalert2"
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
+
 
 const Login = ({setUsuarioLogueado}) => {
 	const { register, handleSubmit, formState: { errors }, reset } = useForm()
@@ -28,9 +29,9 @@ const Login = ({setUsuarioLogueado}) => {
 
 	return (
 		<Container className='my-3' id='login'>
-			<Form className="contenedor-formulario mx-auto" onSubmit={handleSubmit(onSubmit)}>
+			<Form className="contenedor-formulario mx-auto p-5" onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
-					<Form.Label>Correo Electronico:</Form.Label>
+					<Form.Label className='fw-bold'>Correo Electronico:</Form.Label>
 					<Form.Control type="text" min={5} maxLength={256} required {...register('email',
 						{
 							required: 'Campo obligatorio',
@@ -45,7 +46,7 @@ const Login = ({setUsuarioLogueado}) => {
 				</Form.Group>
 
 				<Form.Group className="mb-3" controlId="formBasicPassword">
-					<Form.Label>Contraseña:</Form.Label>
+					<Form.Label className='fw-bold'>Contraseña:</Form.Label>
 					<Form.Control type="password" min={8} maxLength={16} required {
 						...register('password', {
 							required: 'La contraseña es obligatoria',
@@ -60,14 +61,14 @@ const Login = ({setUsuarioLogueado}) => {
 					</Form.Text>
 				</Form.Group>
 				<div className="d-flex">
-					<button type="submit" className="mx-auto boton">
+					<button type="submit" className="mx-auto boton fw-bold">
 						Ingresar
 					</button>
 				</div>
 			</Form>
 			<div className="my-4 mx-auto d-flex flex-column">
 				<p className="text-center my-2">¿No tenes cuenta?</p>
-				<button className="mx-auto boton fw-bold">Crear cuenta</button>
+				<Link className="mx-auto boton fw-bold" to="/*">Registrarse</Link>
 			</div>
 		</Container>
 	)

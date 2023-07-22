@@ -1,5 +1,3 @@
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
 import { useEffect, useState } from 'react';
 import CardTurno from './admins/CardTurno';
 import { obtenerListaTurnos } from '../helpers/turnos';
@@ -20,9 +18,9 @@ const Administrador = () => {
     }, []);
 
     return (
-        <section className="container">
+        <section className="container pt-5">
             <div className="d-flex justify-content-between align-items-center mt-5">
-                <h1 className="display-4 ">Bienvenido Administrador:</h1>
+                <h1 className="display-4 fw-bold">Bienvenido Administrador:</h1>
             </div>
             <div className='bg-success-subtle p-3 rounded'>
                 <h2 className='text-body-tertiary'>Turnos asignados</h2>

@@ -1,4 +1,4 @@
-import { Nav, Container, Navbar, Button } from 'react-bootstrap'
+import { Nav, Container, Navbar, Button, NavDropdown } from 'react-bootstrap'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import './Navbar.css'
@@ -27,36 +27,36 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
 	return (
 		<Navbar expand='lg' id='navbar' className='px-3'>
-				<Navbar.Brand as={Link} to='/'><img src={logo} className='imagenLogo'></img></Navbar.Brand>
-				<Navbar.Toggle area-aria-controls='basic-navbar-var'></Navbar.Toggle>
-				<Navbar.Collapse id='basic-navbar-var'>
-					<Nav className='ms-auto'>
-						<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/'>
-							Pagina Principal
-						</NavLink>
-						<NavLink end className='mx-2 fw-semibold nav-item nav-link' /* to='/acerca-de-nosotros' */>
-							Acerca de Nosotros
-						</NavLink>
-						<NavLink end className='mx-2 fw-semibold nav-item nav-link' /* to='/contacto' */>
-							Contacto
-						</NavLink>
-						{/* <a end className='mx-2 fw-semibold nav-item nav-link' href='/#servicios'>
-							Productos
-						</a> */}
-						{
-							(usuarioLogueado)
-								? <>
-									<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/administrador'>
-										Administrador
-									</NavLink>
-									<Button onClick={cerrarSesion} variant='mx-2 fw-semibold nav-item nav-link border border-danger'>Cerrar Sesion</Button>
-								</>
-								: <NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/login'>
-									Ingresar
-								</NavLink>
-						}
-					</Nav>
-				</Navbar.Collapse>
+			<Navbar.Brand as={Link} to='/'><img src={logo} className='imagenLogo'></img></Navbar.Brand>
+			<Navbar.Toggle area-aria-controls='basic-navbar-var'></Navbar.Toggle>
+			<Navbar.Collapse id='basic-navbar-var'>
+				<Nav className='ms-auto'>
+					<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/'>
+						Pagina Principal
+					</NavLink>
+					<NavLink end className='mx-2 fw-semibold nav-item nav-link' /* to='/acerca-de-nosotros' */>
+						Acerca de Nosotros
+					</NavLink>
+					<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/contacto'>
+						Contacto
+					</NavLink>
+					{
+						(usuarioLogueado)
+							? <>
+								<NavDropdown title="Administrador" id="navbarScrollingDropdown" end className='mx-2 fw-semibold nav-item nav-link' to='/administrador'>
+									<NavDropdown.Item to="/administrador/paciente">Admin pacientes</NavDropdown.Item>
+									<NavDropdown.Item to="/administrador/turno">
+									Admin turnos
+									</NavDropdown.Item>
+								</NavDropdown>
+								<Button onClick={cerrarSesion} variant='mx-2 fw-semibold nav-item nav-link border border-danger'>Cerrar Sesion</Button>
+							</>
+							: <NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/login'>
+								Ingresar
+							</NavLink>
+					}
+				</Nav>
+			</Navbar.Collapse>
 
 		</Navbar>
 	)
