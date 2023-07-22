@@ -2,7 +2,7 @@ import {Col, Card, Button, Row, ListGroup} from "react-bootstrap";
 
 
 
-const CardPaciente = () => {
+const CardPaciente = ({paciente}) => {
     return (
         <Col xs={12}>
             <Card className="border border-5 border-warning m-2">
@@ -16,12 +16,12 @@ const CardPaciente = () => {
                         /></Col>
                         <Col xs={8} md={9} lg={10} className="p-0">
                             <ListGroup className="list-group-flush border">
-                                <ListGroup.Item>Nombre:</ListGroup.Item>
-                                <ListGroup.Item>Especie:</ListGroup.Item>
-                                <ListGroup.Item>Raza:</ListGroup.Item>
-                                <ListGroup.Item>Fecha de nac:</ListGroup.Item>
-                                <ListGroup.Item>Peso:</ListGroup.Item>
-                                <ListGroup.Item>Plan:</ListGroup.Item>
+                                <ListGroup.Item><strong>Nombre Paciente: </strong>{paciente.nombreMascota}</ListGroup.Item>
+                                <ListGroup.Item><strong>Especie:</strong> {paciente.especie}</ListGroup.Item>
+                                <ListGroup.Item><strong>Raza: </strong>{paciente.raza}</ListGroup.Item>
+                                <ListGroup.Item><strong>Fecha de Nacimiento: </strong>{paciente.fechaNacimiento}</ListGroup.Item>
+                                <ListGroup.Item><strong>Peso: </strong>{paciente.peso}</ListGroup.Item>
+                                <ListGroup.Item><strong>Plan: </strong>{paciente.plan}</ListGroup.Item>
                             </ListGroup>
                         </Col>
                         <Col xs={3} md={2} lg={1} className="d-flex justify-content-sm-end align-items-start p-0">
@@ -32,11 +32,11 @@ const CardPaciente = () => {
                     <hr />
                     <h4>Informacion de los dueños:</h4>
                     <ListGroup className="list-group-flush">
-                        <ListGroup.Item>Nombre:</ListGroup.Item>
-                        <ListGroup.Item>Apellido:</ListGroup.Item>
-                        <ListGroup.Item>Correo:</ListGroup.Item>
-                        <ListGroup.Item>Telefono:</ListGroup.Item>
-                        <ListGroup.Item>Direccion:</ListGroup.Item>
+                        <ListGroup.Item><strong>Nombre Dueño: </strong>{paciente.nombreDuenio}</ListGroup.Item>
+                        <ListGroup.Item><strong>Apellido Dueño: </strong>{paciente.apellidoDuenio}</ListGroup.Item>
+                        <ListGroup.Item><strong>Email: </strong>{paciente.email}</ListGroup.Item>
+                        <ListGroup.Item><strong>Telefono: </strong>{paciente.telefono}</ListGroup.Item>
+                        <ListGroup.Item><strong>Direccion: </strong>{paciente.direccion}</ListGroup.Item>
                     </ListGroup>
                 </Card.Body>
             </Card>
