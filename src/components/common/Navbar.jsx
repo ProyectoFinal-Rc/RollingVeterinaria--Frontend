@@ -1,15 +1,31 @@
 import { Nav, Container, Navbar, Button } from 'react-bootstrap'
-import { Link, NavLink, useNavigate} from 'react-router-dom'
+import { Next } from 'react-bootstrap/esm/PageItem'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 import './Navbar.css'
 import logo from '/logo.png'
 
-const Navegacion = ({usuarioLogueado, setUsuarioLogueado}) => {
+const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 	const navegacion = useNavigate()
 
-	const cerrarSesion = ()=> {
-		sessionStorage.removeItem('usuario')
-		setUsuarioLogueado('')
-		navegacion('/')
+	const cerrarSesion = () => {
+		Swal.fire({
+			title: '¿Desea cerrar sesion?',
+			icon: 'question',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Si, cerrar sesion',
+			cancelButtonText: 'Cancelar'
+		}).then((respuesta) => {
+			if (respuesta.isConfirmed) {
+				sessionStorage.removeItem('usuario')
+				setUsuarioLogueado('')
+				navegacion('/')
+			}
+		})
+
+
 	}
 
 	return (
