@@ -14,8 +14,6 @@ import Footer from './components/common/Footer'
 import Navegacion from './components/common/Navbar'
 import Login from './components/Login'
 import { useState } from 'react'
-import { Acerca } from "./components/AcercaPrueba";
-import { Contacto } from "./components/Contacto";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
 
@@ -31,8 +29,8 @@ function App() {
           <Route exact path="/" element={<Principal></Principal>}></Route>
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
           <Route path="/administrador/*" element={<RutasProtegidas><RutasAdministrador></RutasAdministrador></RutasProtegidas>}></Route>
-          <Route exact path="/acerca-de-nosotros" element={<Acerca></Acerca>}></Route>
-          <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
+          {/* <Route exact path="/acerca-de-nosotros" element={<Acerca></Acerca>}></Route>
+          <Route exact path="/contacto" element={<Contacto></Contacto>}></Route> */}
           {/* <Route exact path="*" element={<ErrorPrueba></ErrorPrueba>}></Route> */}
         </Routes>
         <Footer></Footer>

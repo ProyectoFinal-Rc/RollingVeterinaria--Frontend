@@ -1,5 +1,4 @@
 import { Nav, Container, Navbar, Button } from 'react-bootstrap'
-import { Next } from 'react-bootstrap/esm/PageItem'
 import { Link, NavLink, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import './Navbar.css'
