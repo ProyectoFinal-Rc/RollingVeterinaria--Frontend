@@ -96,14 +96,27 @@
       "peso": "12kg",
       "plan": "C-adulto",
       "id": 1
+    },
+    {
+      "nombreDuenio": "Juan PAblo",
+      "apellidoDuenio": "Alba",
+      "email": "juanpialba@gmail.com",
+      "direccion": "Brasil 2140",
+      "nombreMascota": "sammy",
+      "especie": "mamiferos",
+      "raza": "perro",
+      "fechaNacimiento": "2023-07-12",
+      "peso": "23",
+      "plan": "adultos (10 en adelante)",
+      "id": 2
     }
   ],
-	"usuarios": [
-		{
-			"id": 1,
-			"nombreUsuario": "administrador",
-			"email": "admin@gmail.com",
-			"password": "Admin123!"
-		}
-	]
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "administrador",
+      "email": "admin@gmail.com",
+      "password": "Admin123!"
+    }
+  ]
 }
