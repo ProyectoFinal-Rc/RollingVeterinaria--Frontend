@@ -41,3 +41,13 @@ export const editarPaciente = async (paciente, id) => {
     }
   };
 
+  export const borrarPaciente = async (id) => {
+    try {
+      const respuesta = await fetch(URL_paciente + "/" + id, {
+        method: "DELETE"
+  
+      });
+      return respuesta;
+    } catch (error) {}
+  };
+

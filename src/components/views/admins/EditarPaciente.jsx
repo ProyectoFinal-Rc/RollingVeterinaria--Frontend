@@ -25,7 +25,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos }) => {
         <>
             <Modal show={showEditar} onHide={handleCloseEditar}  >
                 <Modal.Header closeButton>
-                    <Modal.Title>EditarPaciente</Modal.Title>
+                    <Modal.Title>Editar paciente</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <Form onSubmit={handleSubmit(onSubmit)}>
