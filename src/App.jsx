@@ -8,6 +8,8 @@ import CardTurno from "./components/views/admins/CardTurno";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import EditarTurno from "./components/views/admins/EditarTurno";
 import './App.css'
+import { Error404 } from './components/views/Error404'
+import { Contacto } from './components/views/Contacto'
 import Principal from './components/Principal'
 import Footer from './components/common/Footer'
 import Navegacion from './components/common/Navbar'
@@ -17,13 +19,22 @@ function App() {
 
   return (
     <>
-      {/* <Administrador></Administrador>
-      <AdminTurnos></AdminTurnos>
-      <AgregarTurno></AgregarTurno>
-      <AgregarPaciente></AgregarPaciente>
+
+      
+      
+
+      
+
+      <Error404/>
+      <Contacto/>
+      {/* <Administrador></Administrador> */}
+      {/* <AdminTurnos></AdminTurnos> */}
+      {/* <AgregarTurno></AgregarTurno> */}
+      {/* <AgregarPaciente></AgregarPaciente> */}
+
       <AdminPacientes></AdminPacientes> 
       <CardTurno></CardTurno>  */}
-      <About></About>
+      <About/>
     </>  
   )
 }
