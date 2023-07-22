@@ -1,16 +1,29 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button, Container, Row, } from "react-bootstrap";
 import CardPaciente from "./CardPaciente";
 import AgregarPaciente from "./AgregarPaciente"
 import Filtro from "./Filtro";
-
-
+import { obtenerListaPacientes } from "../../helpers/pacientes";
+import Swal from "sweetalert2";
 
 
 const AdminPacientes = () => {
     const [show,setShow] = useState(false);
     const handleClose = () => setShow(false)
     const handleShow = () => setShow (true)
+
+    const [pacientes,setPacientes] = useState([]);
+    
+    useEffect(() => {
+      obtenerListaPacientes().then((respuesta)=>{
+        if(respuesta){
+            setPacientes(respuesta)
+        }else{
+            Swal.fire("error", "Intente realizar esta operación más tarde", "error");
+        }
+      })
+    }, [])
+    
 
 
     return (
@@ -29,7 +42,9 @@ const AdminPacientes = () => {
             </div>
             <Container>
                 <Row>
-                    <CardPaciente></CardPaciente>
+                    {
+                        pacientes.map((paciente)=><CardPaciente key={paciente.id} paciente={paciente} ></CardPaciente>)
+                    }
                 </Row>
             </Container>
             <AgregarPaciente show={show} handleClose={handleClose}></AgregarPaciente>
