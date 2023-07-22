@@ -11,11 +11,11 @@ const Principal = () => {
         <>  
             
             <Presentacion></Presentacion>
-            {/* <Planes></Planes>
+            <Planes></Planes>
             <Marcas></Marcas>
             <Servicios></Servicios>
             <Colaboradores></Colaboradores>
-            <Testimonios></Testimonios> */}
+            <Testimonios></Testimonios>
         </>
     );
 };
