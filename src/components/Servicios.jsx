@@ -11,7 +11,7 @@ const Servicios = () => {
     return (
         <div>
             <section id='servicios' className='container my-2'>
-                <Row id='serviciosContenedor' className='d-flex justify-content-center flex-row mx-3'>
+                <Row id='serviciosContenedor' className='d-flex justify-content-center flex-row mx-3 text-white'>
                     <Col className='d-flex justify-content-center flex-column my-3 mx-3'>
                         <div className='container d-flex'>
                             <img className='servicio-imagen mt-3 zoom-imagen' variant="top" src={Servicio1} />
@@ -21,7 +21,7 @@ const Servicios = () => {
                             <p>
                                 Atención las 24hs para mantener siempre a tu mejor amigo en buen estado, con la seguridad y aval de RollingVet.
                             </p>
-                            <a className='texto-marron'>Ver más</a>
+                            <a className='text-white' href="/*">Ver más</a>
                         </div>
                     </Col>
                     <Col className='d-flex justify-content-center flex-column my-3 mx-3'>
@@ -33,11 +33,11 @@ const Servicios = () => {
                             <p>
                                 Estilizado y baños, a cargo de profesionales capacitados para darle el look que ellos se merecen.
                             </p>
-                            <a className='texto-marron'>Ver más</a>
+                            <a className='text-white' href="/*">Ver más</a>
                         </div>
                     </Col>
                 </Row>
-                <Row id='serviciosContenedor' className='d-flex justify-content-center flex-row mx-3'>
+                <Row id='serviciosContenedor' className='d-flex justify-content-center flex-row mx-3 text-white'>
                     <Col className='d-flex justify-content-center flex-column my-3 mx-3'>
                         <div className='container d-flex '>
                             <img className='servicio-imagen mt-3 zoom-imagen' variant="top" src={Servicio3} />
@@ -47,7 +47,7 @@ const Servicios = () => {
                             <p>
                                 Tenemos la más amplia variedad de juguetes, ropa y accesorios. ¡Vení y mirá cómo ellos también pueden entretenerse con nuestros productos!
                             </p>
-                            <a className='texto-marron'>Ver más</a>
+                            <a className='text-white' href="/*">Ver más</a>
                         </div>
                     </Col>
                     <Col className='d-flex justify-content-center flex-column my-3 mx-3'>
@@ -59,7 +59,7 @@ const Servicios = () => {
                             <p>
                                 Realizadas en nuestra sala de Vacunación, llevamos a cabo el control rutinario de todos los refuerzos necesarios para mantenerlos Sanos y Fuertes.
                             </p>
-                            <a className='texto-marron'>Ver más</a>
+                            <a className='text-white' href="/*">Ver más</a>
                         </div>
                     </Col>
                 </Row>

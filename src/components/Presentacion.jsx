@@ -12,10 +12,10 @@ const Presentacion = () => {
                     <div id="tituloFraseGrande">
                         <div className="display-2 d-flex flex-column flex-md-row justify-content-center align-items-center gap-md-3 py-3" id="animacionPrincipal">
                             <div className="contenedorTextoAnimacion">
-                                <span id="TextoGrupo1" className="slide-texto-fromBottom text-white">Estamos Aqui</span>
+                                <span id="TextoGrupo1" className="slide-texto-fromBottom text-white fw-bold">Estamos aqui</span>
                             </div>
                             <div className="contenedorTextoAnimacion">
-                                <span id="TextoGrupo2" className=" slide-texto-fromTop  rollingVet-naranja">Para Ellos</span>
+                                <span id="TextoGrupo2" className=" slide-texto-fromTop  rollingVet-naranja fw-bold">para ellos</span>
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@ const Presentacion = () => {
                             </div>
                         </Col>
                         <Col xs={12} md={6} className='text-center'id='botonFrase'>
-                            <Button id='boton' className="btn btn-primary rollingVet-naranja rounded-pill btn-lg px-5 fw-bold" href="" role="button">
+                            <Button id='boton' className="btn btn-primary rollingVet-naranja rounded-pill btn-lg px-5 fw-bold" href="/*" role="button">
                                 ¡Suscribirme!
                             </Button>
                         </Col>

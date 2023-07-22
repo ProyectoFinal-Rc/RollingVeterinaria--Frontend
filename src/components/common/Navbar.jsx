@@ -26,8 +26,7 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 	}
 
 	return (
-		<Navbar expand='lg' id='navbar'>
-			<Container>
+		<Navbar expand='lg' id='navbar' className='px-3'>
 				<Navbar.Brand as={Link} to='/'><img src={logo} className='imagenLogo'></img></Navbar.Brand>
 				<Navbar.Toggle area-aria-controls='basic-navbar-var'></Navbar.Toggle>
 				<Navbar.Collapse id='basic-navbar-var'>
@@ -58,7 +57,7 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 						}
 					</Nav>
 				</Navbar.Collapse>
-			</Container>
+
 		</Navbar>
 	)
 }
