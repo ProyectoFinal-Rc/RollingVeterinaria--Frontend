@@ -13,19 +13,28 @@ import { Contacto } from './components/views/Contacto'
 import Principal from './components/Principal'
 import Footer from './components/common/Footer'
 import Navegacion from './components/common/Navbar'
+import About from "./components/About";
 
 function App() {
 
   return (
     <>
+
+      
+      
+
+      
+
       <Error404/>
       <Contacto/>
       {/* <Administrador></Administrador> */}
       {/* <AdminTurnos></AdminTurnos> */}
       {/* <AgregarTurno></AgregarTurno> */}
       {/* <AgregarPaciente></AgregarPaciente> */}
+
       <AdminPacientes></AdminPacientes> 
-      {/* <CardTurno></CardTurno>  */}
+      <CardTurno></CardTurno>  */}
+      <About/>
     </>  
   )
 }
