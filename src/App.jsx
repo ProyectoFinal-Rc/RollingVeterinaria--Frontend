@@ -12,19 +12,34 @@ import './App.css'
 import Principal from './components/Principal'
 import Footer from './components/common/Footer'
 import Navegacion from './components/common/Navbar'
+import Login from './components/Login'
+import ErrorPrueba from "./components/ErrorPrueba";
+import { Acerca } from "./components/AcercaPrueba";
+import { Contacto } from "./components/Contacto";
 
 function App() {
 
   return (
     <>
-      <Administrador></Administrador>
+      <BrowserRouter>
+        <Navegacion></Navegacion>
+        <Routes>
+          <Route exact path="/" element={<Principal></Principal>}></Route>
+          <Route exact path="/login" element={<Login></Login>}></Route>
+          <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
+          <Route exact path="/acerca-de-nosotros" element={<Acerca></Acerca>}></Route>
+          <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>
+          <Route exact path="*" element={<ErrorPrueba></ErrorPrueba>}></Route>
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
       {/* <AdminTurnos></AdminTurnos> */}
       {/* <AgregarTurno></AgregarTurno> */}
       {/* <AgregarPaciente></AgregarPaciente> */}
       {/* <CardPaciente></CardPaciente> */}
       {/* <AdminPacientes></AdminPacientes>  */}
       {/* <CardTurno></CardTurno>  */}
-    </>  
+    </>
   )
 }
 
