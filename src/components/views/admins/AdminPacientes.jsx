@@ -2,10 +2,10 @@ import { useState, useEffect } from "react";
 import { Button, Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import AgregarPaciente from "./AgregarPaciente"
 import Filtro from "./Filtro";
-import { obtenerListaPacientes } from "../../helpers/pacientes";
+import { borrarPaciente, obtenerListaPacientes } from "../../helpers/pacientes";
 import Swal from "sweetalert2";
 import { Fragment } from "react";
-import  EditarPaciente  from "./EditarPaciente";
+import EditarPaciente from "./EditarPaciente";
 
 
 const AdminPacientes = () => {
@@ -31,6 +31,46 @@ const AdminPacientes = () => {
 
     const seleccionar = (id) => {
         setPacienteEditar(pacientes.find((paciente) => paciente.id === id))
+    }
+
+    const borrar = (id) => {
+        Swal.fire({
+          title: 'Esta seguro de borrar este paciente?',
+          text: "El siguiente cambio no podra ser revertido",
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: 'Si, quiero borrar!',
+          cancelButtonText: 'Cancelar'
+        }).then((resultado) => {
+          if (resultado.isConfirmed) {
+            borrarPaciente(id).then((respuesta)=>{
+              if(respuesta.status === 200){
+                //Pedir la lista de productos a mi back
+                obtenerListaPacientes().then((respuesta)=>{
+                  if(respuesta){
+                    setPacientes(respuesta);
+                  } else {
+                    Swal.fire("Error", "Intente realizar esta operacion en unos minutos", "error");
+                  }
+                })
+                Swal.fire(
+                  'Borrado!',
+                  'El paciente fue borrado.',
+                  'success'
+                )
+              }else{
+                Swal.fire({
+                  title: "Lo siento!",
+                  text: "El paciente no pudo ser eliminado.",
+                  icon: "error",
+                  confirmButtonColor: "#fa8072",
+                });
+              }
+            })
+          }
+        })
       }
 
     return (
@@ -41,7 +81,7 @@ const AdminPacientes = () => {
                 </h1>
             </div>
             <div className="d-flex justify-content-end">
-                <Button onClick={handleShowEditar}>Editar Paciente</Button>
+                <Button onClick={handleShow}>Agregar Paciente</Button>
             </div>
             <div className="container">
                 <Filtro></Filtro>
@@ -73,8 +113,8 @@ const AdminPacientes = () => {
                                                         </ListGroup>
                                                     </Col>
                                                     <Col xs={3} md={2} lg={1} className="d-flex justify-content-sm-end align-items-start p-0">
-                                                        <Button className="btn btn-warning btn-sm"  onClick={() => { handleShowEditar(); seleccionar(paciente.id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
-                                                        <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0"></i></Button>
+                                                        <Button className="btn btn-warning btn-sm" onClick={() => { handleShowEditar(); seleccionar(paciente.id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
+                                                        <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0" onClick={() => {borrar(paciente.id)}}></i></Button>
                                                     </Col>
                                                 </Row>
                                                 <hr />

@@ -84,30 +84,17 @@
   ],
   "paciente": [
     {
-      "nombreDuenio": "juan carlos",
-      "apellidoDuenio": "lopez",
-      "email": "asdmasldk@sdksf.com",
-      "direccion": "asdasd 12234",
-      "nombreMascota": "sdasdasda",
-      "especie": "aves",
-      "raza": "persasdasda",
-      "fechaNacimiento": "2023-07-19",
-      "peso": "100",
-      "plan": "adultos (10 en adelante)",
-      "id": 1
-    },
-    {
-      "nombreDuenio": "Juan PAblo",
-      "apellidoDuenio": "Alba",
+      "nombreDuenio": "Juan Pablo",
+      "apellidoDuenio": "Alba Fernandez",
       "email": "juanpialba@gmail.com",
       "direccion": "Brasil 2140",
       "nombreMascota": "sammy",
       "especie": "mamiferos",
       "raza": "perro",
-      "fechaNacimiento": "2023-07-12",
-      "peso": "23",
-      "plan": "adultos (10 en adelante)",
-      "id": 2
+      "fechaNacimiento": "2023-07-31",
+      "peso": "70",
+      "plan": "madurando (5-10 años)",
+      "id": 1
     }
   ],
   "usuarios": [
