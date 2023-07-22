@@ -1,0 +1,108 @@
+{
+  "turno": [
+    {
+      "detalleCita": "fffff",
+      "veterinario": "juan paz",
+      "mascota": "sdfsdf",
+      "fecha": "2023-07-19",
+      "hora": "12:00",
+      "formaPago": "efectivo",
+      "id": 2
+    },
+    {
+      "detalleCita": "asd",
+      "veterinario": "juan paz",
+      "mascota": "Yara",
+      "fecha": "2023-07-20",
+      "hora": "17:00",
+      "formaPago": "efectivo",
+      "id": 4
+    },
+    {
+      "detalleCita": "asd",
+      "veterinario": "juan paz",
+      "mascota": "sdfsdf",
+      "fecha": "2023-07-21",
+      "hora": "12:00<",
+      "formaPago": "efectivo",
+      "id": 7
+    },
+    {
+      "detalleCita": "aaaaa",
+      "veterinario": "gabriela ramos",
+      "mascota": "Yara",
+      "fecha": "2023-07-28",
+      "hora": "17:00",
+      "formaPago": "tarjeta",
+      "id": 8
+    },
+    {
+      "detalleCita": "asdasd",
+      "veterinario": "juan paz",
+      "mascota": "asdasd",
+      "fecha": "2023-06-28",
+      "hora": "9:00",
+      "formaPago": "efectivo",
+      "id": 10
+    },
+    {
+      "detalleCita": "perro",
+      "veterinario": "gabriela ramos",
+      "mascota": "pattias",
+      "fecha": "2023-07-24",
+      "hora": "9:00",
+      "formaPago": "efectivo",
+      "id": 11
+    },
+    {
+      "detalleCita": "perro enfermo ",
+      "veterinario": "juan paz",
+      "mascota": "probando 123",
+      "fecha": "2023-07-21",
+      "hora": "8:00",
+      "formaPago": "efectivo",
+      "id": 12
+    },
+    {
+      "detalleCita": "perro sin una pata",
+      "veterinario": "gabriela ramos",
+      "mascota": "asdasd",
+      "fecha": "2023-07-14",
+      "hora": "8:00",
+      "formaPago": "efectivo",
+      "id": 13
+    },
+    {
+      "detalleCita": "Malena editando",
+      "veterinario": "juan paz",
+      "mascota": "asdasd",
+      "fecha": "2023-08-02",
+      "hora": "18:00",
+      "formaPago": "efectivo",
+      "id": 14
+    }
+  ],
+  "paciente": [
+    {
+      "nombreDuenio": "Juan Pablo",
+      "apellidoDuenio": "Alba Fernandez",
+      "email": "juanpialba@gmail.com",
+      "direccion": "Brasil 2140",
+      "nombreMascota": "sammy",
+      "especie": "mamiferos",
+      "raza": "perro",
+      "fechaNacimiento": "2023-07-31",
+      "peso": "70",
+      "plan": "madurando (5-10 años)",
+      "id": 1
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "administrador",
+      "email": "admin@gmail.com",
+      "password": "Admin123!"
+    }
+  ]
+}
