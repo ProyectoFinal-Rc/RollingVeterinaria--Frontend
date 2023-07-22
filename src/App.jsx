@@ -12,18 +12,20 @@ import './App.css'
 import Principal from './components/Principal'
 import Footer from './components/common/Footer'
 import Navegacion from './components/common/Navbar'
+import About from "./components/About";
 
 function App() {
 
   return (
     <>
-      <Administrador></Administrador>
-      {/* <AdminTurnos></AdminTurnos> */}
-      {/* <AgregarTurno></AgregarTurno> */}
-      {/* <AgregarPaciente></AgregarPaciente> */}
-      {/* <CardPaciente></CardPaciente> */}
-      {/* <AdminPacientes></AdminPacientes>  */}
-      {/* <CardTurno></CardTurno>  */}
+      {/* <Administrador/>
+      <AdminTurnos/>
+      <AgregarTurno/>
+      <AgregarPaciente/>
+      <CardPaciente/>
+      <AdminPacientes/> 
+      <CardTurno/> */}
+      <About/>
     </>  
   )
 }
