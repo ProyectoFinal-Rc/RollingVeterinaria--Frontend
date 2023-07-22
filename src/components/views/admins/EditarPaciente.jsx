@@ -1,24 +1,11 @@
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { crearPaciente } from "../../helpers/pacientes";
 
 
-const AgregarPaciente = ({ show, handleClose }) => {
+const EditarPaciente = ({ show, handleClose }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
-    const onSubmit = (pacienteNuevo) => {
-        crearPaciente(pacienteNuevo).then((respuesta)=>{
-            if(respuesta.status===201){
-                Swal.fire("Paciente creado", `El paciente ${pacienteNuevo.nombreMascota} se creo correctamente`, "success").then(()=>window.location.reload())
-                reset();
-            }else{
-                Swal.fire("error", "No se pudo crear el paciente correctamente, vuelva a intentarlo más tarde", "error");
-            }
-        })
-        
-        reset();
-    }
 
     return (
         <>
@@ -230,4 +217,4 @@ const AgregarPaciente = ({ show, handleClose }) => {
     );
 };
 
-export default AgregarPaciente;
+export default EditarPaciente;
