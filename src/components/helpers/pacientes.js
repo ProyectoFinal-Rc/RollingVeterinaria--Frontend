@@ -26,3 +26,18 @@ export const crearPaciente = async (paciente) => {
     }
 }
 
+export const editarPaciente = async (paciente, id) => {
+    try {
+      const respuesta = await fetch(URL_paciente + "/" + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(paciente),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
