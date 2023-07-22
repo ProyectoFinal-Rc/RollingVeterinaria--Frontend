@@ -46,7 +46,7 @@ const About = () => {
                 <Card.Body className="cardBackgound">
                   <Card.Title className="fuentePatitas">{developer.nombre}</Card.Title>
                   <Card.Img variant="top" src={developer.foto} /><Card.Img />
-                  <Card.Text className="compressed-text"><strong>
+                  <Card.Text className="compressed-text text-truncate overflow-hidden"><strong>
                     {developer.descripcion}
                     </strong>
                     </Card.Text>
