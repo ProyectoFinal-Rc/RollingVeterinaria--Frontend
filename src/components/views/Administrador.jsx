@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import CardTurno from './admins/CardTurno';
 import { obtenerListaTurnos } from '../helpers/turnos';
 import Swal from 'sweetalert2';
-
+import About from '../About';
 
 const Administrador = () => {
     const [turnos, setTurnos] = useState([]);
@@ -25,13 +25,14 @@ const Administrador = () => {
                 <h1 className="display-4 ">Bienvenido Administrador</h1>
             </div>
             <div className='bg-success-subtle p-3 rounded'>
-                <h2 className='text-body-tertiary'>Turnos asignados</h2>
+                <h2 className='text-body-tertiary'>Turnos a</h2>
                 <div>
                     {
                         turnos.map((turno)=> <CardTurno key={turno.id} turno={turno}></CardTurno>)
                     }
                 </div>
             </div>
+            <About/>
         </section>
     );
 };
