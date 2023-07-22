@@ -36,10 +36,10 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 						<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/'>
 							Pagina Principal
 						</NavLink>
-						<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/acerca-de-nosotros'>
+						<NavLink end className='mx-2 fw-semibold nav-item nav-link' /* to='/acerca-de-nosotros' */>
 							Acerca de Nosotros
 						</NavLink>
-						<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/contacto'>
+						<NavLink end className='mx-2 fw-semibold nav-item nav-link' /* to='/contacto' */>
 							Contacto
 						</NavLink>
 						{/* <a end className='mx-2 fw-semibold nav-item nav-link' href='/#servicios'>
