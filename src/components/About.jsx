@@ -20,6 +20,14 @@ const developers = [
       "Apasionado por la tecnología , siempre en busqueda de nuevos conocimientos.",
     animalFavorito: "Perro",
   },
+  {
+    nombre: "Mauricio Soria",
+    foto: "/src/assets/patita.png",
+    lenguajes: ["JavaScript", "React", "Node.js","Html","Css"],
+    descripcion:
+      "Apasionado por la tecnología , siempre en busqueda de nuevos conocimientos.",
+    animalFavorito: "Perro",
+  },
 
 ];
 
@@ -40,7 +48,7 @@ const About = () => {
                   <Card.Img variant="top" src={developer.foto} /><Card.Img />
                   <Card.Text className="a">{developer.descripcion}</Card.Text>
                   <Card.Text>
-                    <strong>Lenguajes:</strong> {developer.lenguajes.join(", ")}
+                    <strong>Lenguajes y Tecnologias:</strong> {developer.lenguajes.join(", ")}
                   </Card.Text>
                   <Card.Text><strong>Animal Favorito:</strong> {developer.animalFavorito}</Card.Text>
                   <div className="social-buttons botonesRedes">

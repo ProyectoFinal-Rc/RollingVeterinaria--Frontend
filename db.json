@@ -84,26 +84,25 @@
   ],
   "paciente": [
     {
-      "nombreDuenio": "Marta",
-      "apellidoDuenio": "Perez",
-      "email": "hola@gmail.com",
-      "telefono": "3914766320",
-      "direccion": "Santa Rosa 320, Tucuman",
-      "nombreMascota": "Kiko",
-      "especie": "felino",
-      "raza": "persa",
-      "fechaNacimiento": "15/02/2020",
-      "peso": "12kg",
-      "plan": "C-adulto",
+      "nombreDuenio": "Juan Pablo",
+      "apellidoDuenio": "Alba Fernandez",
+      "email": "juanpialba@gmail.com",
+      "direccion": "Brasil 2140",
+      "nombreMascota": "sammy",
+      "especie": "mamiferos",
+      "raza": "perro",
+      "fechaNacimiento": "2023-07-31",
+      "peso": "70",
+      "plan": "madurando (5-10 años)",
       "id": 1
     }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombreUsuario": "administrador",
+      "email": "admin@gmail.com",
+      "password": "Admin123!"
+    }
   ]
-	"usuarios": [
-		{
-			"id": 1,
-			"nombreUsuario": "administrador",
-			"email": "admin@gmail.com",
-			"password": "Admin123!"
-		}
-	]
 }

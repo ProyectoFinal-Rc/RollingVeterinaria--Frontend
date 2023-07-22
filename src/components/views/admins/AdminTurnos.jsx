@@ -6,9 +6,6 @@ import { obtenerListaTurnos, borrarTurno } from "../../helpers/turnos";
 import EditarTurno from "./EditarTurno";
 
 
-
-
-
 const AdminTurnos = () => {
 
   const [turnos, SetTurnos] = useState([]);
