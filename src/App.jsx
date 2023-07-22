@@ -13,19 +13,22 @@ import Principal from './components/Principal'
 import Footer from './components/common/Footer'
 import Navegacion from './components/common/Navbar'
 import Login from './components/Login'
+import { useState } from 'react'
 import ErrorPrueba from "./components/ErrorPrueba";
 import { Acerca } from "./components/AcercaPrueba";
 import { Contacto } from "./components/Contacto";
 
 function App() {
+  const usuarioSesionStorage = JSON.parse(sessionStorage.getItem('usuario')) || ''
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuarioSesionStorage)
 
   return (
     <>
       <BrowserRouter>
-        <Navegacion></Navegacion>
+        <Navegacion usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Navegacion>
         <Routes>
           <Route exact path="/" element={<Principal></Principal>}></Route>
-          <Route exact path="/login" element={<Login></Login>}></Route>
+          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
           <Route exact path="/administrador" element={<Administrador></Administrador>}></Route>
           <Route exact path="/acerca-de-nosotros" element={<Acerca></Acerca>}></Route>
           <Route exact path="/contacto" element={<Contacto></Contacto>}></Route>

@@ -3,15 +3,19 @@ import { Form, Container } from "react-bootstrap"
 import { useForm } from 'react-hook-form'
 import { IniciarSesion } from "./helpers/queriesLogin"
 import Swal from "sweetalert2"
+import { useNavigate } from 'react-router-dom'
 
-const Login = () => {
+const Login = ({setUsuarioLogueado}) => {
 	const { register, handleSubmit, formState: { errors }, reset } = useForm()
+	const navegacion = useNavigate()
 
 	const onSubmit = (usuario) => {
 		IniciarSesion(usuario).then((respuesta) => {
 			if (respuesta) {
 				sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario))
+				setUsuarioLogueado(respuesta)
 				reset()
+				navegacion('/administrador')
 			} else[
 				Swal.fire(
 					'Error',
@@ -23,7 +27,7 @@ const Login = () => {
 	}
 
 	return (
-		<Container className='my-3'>
+		<Container className='my-3' id='login'>
 			<Form className="contenedor-formulario mx-auto" onSubmit={handleSubmit(onSubmit)}>
 				<Form.Group className="mb-3" controlId="formBasicEmail">
 					<Form.Label>Correo Electronico:</Form.Label>
