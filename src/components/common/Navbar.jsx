@@ -24,8 +24,6 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 				navegacion('/')
 			}
 		})
-
-
 	}
 
 	return (
