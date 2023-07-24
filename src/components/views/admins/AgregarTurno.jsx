@@ -57,8 +57,8 @@ const AgregarTurno = ({ show, handleClose }) => {
                             required: "El veterinario es obligatorio"
                         })}>
                             <option value="">Seleccione un veterinario</option>
-                            <option value="juan paz">Juan Paz</option>
-                            <option value="gabriela ramos">Gabriela Ramos</option>
+                            <option value="karen diaz">Karen Diaz</option>
+                            <option value="gerardo marruecos">Gerardo Marruecos</option>
                         </Form.Select>
                         <Form.Text className="text-danger">
                                 {errors.veterinario?.message}

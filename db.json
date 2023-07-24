@@ -10,22 +10,13 @@
       "id": 2
     },
     {
-      "detalleCita": "asd",
+      "detalleCita": "Hola estoy modificando",
       "veterinario": "juan paz",
       "mascota": "Yara",
       "fecha": "2023-07-20",
       "hora": "17:00",
       "formaPago": "efectivo",
       "id": 4
-    },
-    {
-      "detalleCita": "asd",
-      "veterinario": "juan paz",
-      "mascota": "sdfsdf",
-      "fecha": "2023-07-21",
-      "hora": "12:00<",
-      "formaPago": "efectivo",
-      "id": 7
     },
     {
       "detalleCita": "aaaaa",
@@ -80,6 +71,15 @@
       "hora": "18:00",
       "formaPago": "efectivo",
       "id": 14
+    },
+    {
+      "detalleCita": "asdjnasjkdnajksdnajksdnkj",
+      "veterinario": "karen diaz",
+      "mascota": "mermelada",
+      "fecha": "2023-07-20",
+      "hora": "17:00",
+      "formaPago": "efectivo",
+      "id": 15
     }
   ],
   "paciente": [

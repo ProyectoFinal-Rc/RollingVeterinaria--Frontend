@@ -10,7 +10,7 @@ import Imagen8 from "../assets/Marcas/nupec.png"
 import Imagen9 from "../assets/Marcas/monello.png"
 const Marcas = () => {
     return (
-        <div className='d-flex justify-content-center align-items-center  bg-white slider'>
+        <div className='d-flex justify-content-center align-items-center  slider'>
             <div className="slide-track">
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
                     <img src={Imagen1}  style={{ width: "250px" }} alt="" />

@@ -21,9 +21,9 @@ function App() {
           <Route exact path="/" element={<Principal></Principal>}></Route>
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
           <Route path="/administrador/*" element={<RutasProtegidas><RutasAdministrador></RutasAdministrador></RutasProtegidas>}></Route>
-          {/* <Route exact path="/acerca-de-nosotros" element={<Acerca></Acerca>}></Route>
-          <Route exact path="/contacto" element={<Contacto></Contacto>}></Route> */}
-          {/* <Route exact path="*" element={<ErrorPrueba></ErrorPrueba>}></Route> */}
+          {/* <Route exact path="/acerca-de-nosotros" element={<Acerca></Acerca>}></Route>*/}
+          <Route exact path="/contacto" element={<Contacto></Contacto>}></Route> 
+          <Route exact path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>
       </BrowserRouter>

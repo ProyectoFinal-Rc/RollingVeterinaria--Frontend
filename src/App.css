@@ -6,7 +6,7 @@ main {
 }
 
 body {
-    background: url(https://img.freepik.com/vector-gratis/fondo-estampado-pata-animal-lindo-diversion-fauna_1017-44714.jpg?w=1380&t=st=1689736612~exp=1689737212~hmac=3e9a5ac84a99527c15613ebf3e90651b65a34cf306015cebf37c222de0c89ef7) no-repeat center fixed;
+    background: url(./assets/fondos/fondo1.png) no-repeat center fixed;
     background-size: cover;
     cursor: url(../src/assets/patita.png),auto;
 }
@@ -18,10 +18,9 @@ body {
     position: absolute;
 
 }
-/* Cards */
+
 .servicio-imagen {
-    height: 300px;
-    width: 500px;
+    width: 100%;
     object-fit: cover;
     transform-origin: center center;
 }
@@ -97,7 +96,7 @@ body {
 }
 
 #serviciosContenedor {
-    background-color: #a54103c2;
+    background-color: #e48347ea;
 }
 
 #video>img {
@@ -128,7 +127,6 @@ body {
 .slider .slide-track{
     display: flex;
     animation: scroll 5s linear infinite;
-    filter: grayscale(100%)/* drop-shadow(10px 10px 20px black)*/;
     width: calc(200px *9);
     -webkit-animation: scroll 30s linear infinite;
 }
@@ -172,8 +170,7 @@ body {
     }
 
     .servicio-imagen {
-        height: 200px;
-        width: 250px;
+        width: 100%;
         object-fit: cover;
         display: flex;
         justify-content: center;
@@ -212,5 +209,4 @@ body {
         display: block;
     }
 
-    #planesDeCuidado {}
 }

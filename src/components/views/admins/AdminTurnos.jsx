@@ -73,10 +73,10 @@ const AdminTurnos = () => {
   }
 
   return (
-    <section className="container">
+    <section className="container mt-5">
       <div className="d-flex justify-content-between align-items-center mt-5">
         <h1 className="display-4 ">Turnos</h1>
-        <Button className="btn btn-primary" onClick={handleShow}> 
+        <Button className="btn btn-success bg-success-subtle text-success fw-bold" onClick={handleShow}> 
           Agregar turno
         </Button>
       </div>
@@ -84,12 +84,12 @@ const AdminTurnos = () => {
       <Table responsive striped bordered hover>
         <thead>
           <tr>
-            <th>Detalle turno</th>
-            <th>Veterinario</th>
-            <th>Mascota</th>
-            <th>Fecha</th>
-            <th>Hora</th>
-            <th>Acciones</th>
+            <th className="bg-danger text-white">Detalle turno</th>
+            <th className="bg-danger text-white">Veterinario</th>
+            <th className="bg-danger text-white">Mascota</th>
+            <th className="bg-danger text-white">Fecha</th>
+            <th className="bg-danger text-white">Hora</th>
+            <th className="bg-danger text-white">Acciones</th>
           </tr>
         </thead>
         <tbody>
