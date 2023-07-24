@@ -1,6 +1,4 @@
-import React from "react";
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import './about.css'
 
 const developers = [

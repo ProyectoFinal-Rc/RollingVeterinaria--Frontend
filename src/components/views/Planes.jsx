@@ -1,10 +1,10 @@
 import React from 'react';
 
-import PlanA from '../assets/pexels-photo-3198005_1.png';
-import PlanB from '../assets/istockphoto-1324099927-612x612.png';
-import PlanC from '../assets/istockphoto-635820902-612x612.png';
-import '../App.css';
-import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
+import PlanA from '../../assets/pexels-photo-3198005_1.png';
+import PlanB from '../../assets/istockphoto-1324099927-612x612.png';
+import PlanC from '../../assets/istockphoto-635820902-612x612.png';
+import '../../App.css';
+import { Row, Col, Card} from 'react-bootstrap';
 
 const Planes = () => {
     return (

@@ -1,9 +1,170 @@
-const Contacto = () => {
-	return(
-		<div>Lorem ipsum dolor sit amet00
-			Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque soluta amet corrupti, quidem error provident. Deleniti eveniet dolor tempore dolore repudiandae sed expedita nesciunt quas iste doloremque itaque soluta perspiciatis, praesentium, mollitia nulla ipsa facere aliquam blanditiis, nisi unde nemo velit eius! Consequatur, eos libero. Nihil officia impedit quam velit corporis quia! Dicta aperiam veritatis possimus, non eveniet fuga voluptatibus accusantium magni omnis quaerat quod eius ad, eligendi nam dolor optio voluptatum assumenda quidem laboriosam. Aut sed fugiat modi quo eaque labore ducimus voluptatibus impedit dicta atque? Maiores magni fugit quaerat! Obcaecati alias officia ratione incidunt debitis recusandae iusto quos cupiditate quo quia vero fugit temporibus placeat reiciendis architecto, nesciunt a maxime. Impedit mollitia aliquid libero consequuntur voluptatem pariatur. Dicta obcaecati beatae itaque non dolorem quam deleniti consectetur inventore dolor. Accusamus voluptas, consequuntur veritatis at ut nostrum vel ducimus amet reprehenderit iure eaque, nam accusantium aut dolores porro ea. Dolorem beatae animi enim odio neque consequuntur dolor eius quia fuga maxime nisi amet sed omnis, porro praesentium commodi, reiciendis natus minima atque earum. Quia eligendi ratione vel, iusto facere labore? Magni nulla delectus quos, illo corporis nobis quidem explicabo adipisci nostrum, dicta nesciunt dolorem, aspernatur fuga accusantium animi doloribus minima. Necessitatibus repellat recusandae animi, eaque, non, velit provident eos dolorum nihil iusto cupiditate quisquam laudantium fugit natus qui. Dignissimos voluptas ducimus amet natus commodi voluptate delectus illum voluptatum. Debitis, veritatis consequatur? Ipsa velit ut excepturi nemo accusamus temporibus, quam aliquam itaque odio iusto iste praesentium perspiciatis vitae? Expedita ab quos est eaque recusandae veritatis, sapiente iste veniam sunt, ut officiis odit magnam consectetur quidem et dolor vero laboriosam tempora temporibus praesentium voluptas eius dicta accusantium! Autem dolore similique hic et, porro, nesciunt mollitia consequatur debitis inventore dolores eveniet! Accusantium officia iusto itaque obcaecati numquam amet. Quo rerum eveniet minima eaque dolore alias iure doloremque, dicta in quos nobis! In sunt expedita architecto aperiam sit itaque dicta corporis natus rerum delectus, iure quisquam labore necessitatibus quaerat pariatur est voluptatem totam debitis facere, ducimus magni sapiente quasi voluptate praesentium. Animi consequuntur quidem illo dolore vitae non dolores? Ut, odio. Accusamus id culpa, velit sit molestiae delectus corporis, dolores perferendis magnam unde veritatis, labore eaque dolorem corrupti suscipit praesentium hic autem. Corporis, ea maxime repudiandae provident reiciendis illo atque? In dolorum voluptatum, velit aliquid iusto repudiandae praesentium soluta vitae consequatur ipsa optio architecto commodi blanditiis sint modi voluptate maxime exercitationem itaque beatae? Illum aspernatur esse et excepturi odio pariatur dignissimos, possimus deserunt ipsum fugiat saepe deleniti sint iste veritatis sequi tenetur cupiditate minus laudantium doloribus! Deleniti pariatur repellendus vel nesciunt est voluptates! Vel incidunt reprehenderit officiis velit! Laboriosam eveniet voluptatem quaerat sequi, accusamus soluta accusantium nulla maiores aliquid veniam enim eos voluptas voluptatibus dicta illo sapiente ipsam commodi. Natus debitis exercitationem nobis, vel adipisci temporibus porro necessitatibus. Ab veniam esse explicabo aspernatur, ea mollitia velit asperiores laborum. Quas esse, vero, fugit recusandae fuga ab cumque voluptates iusto nulla eius laboriosam molestiae ea velit voluptatibus veniam ducimus, dolores deleniti accusantium! Deserunt pariatur nobis libero!
-		</div>
-	)
-}
+import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap"
+import { useForm } from "react-hook-form";
 
-export { Contacto }
+
+const Contacto = () => {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    const onSubmit = () => {
+        reset();
+    }
+
+    return (
+        <Container fluid className="mt-5">
+            <Row className="mt-5">
+                <Col xs={{ span: 8, offset: 2 }} className="p-3 bg-body-tertiary mt-5">
+                    <div className="p-3 text-center">
+                        <h1 className="fw-bold">CONTACTANOS</h1>
+                        <div className="m-3 text-center">
+                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" />
+                        </div>
+                        <p>Ya sea email, llamada, o completa el formulario para saber como podemos ayudarte con tu consulta y planificar a tu gusto</p>
+                        <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
+                        <ul style={{ listStyle: 'none' }}>
+                            <li>
+                                <a href="mailto:cristiangramajo015@gmail.com" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">rollingvet@gmail.com</a>
+                            </li>
+                            <li>
+                                <a href="tel:+543865332311" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">+54 (3865) 332311</a>
+                            </li>
+                            <li>
+                                <a href="#" className="link-warning link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Portal de soporte, chat online.</a>
+                            </li>
+                        </ul>
+                    </div>
+                </Col>
+                <Col xs={{ span: 8, offset: 2 }} className="p-3 mt-5">
+                    <h4 className="text-center fw-bold">Formulario de contacto</h4>
+                    <Form className="p-3 bg-white border rounded" onSubmit={handleSubmit(onSubmit)}>
+                        <Row className="mb-3">
+                            <Col xs={12} md={6} lg={6} className="mt-3" >
+                                <Form.Group controlId="nombre">
+                                    <Form.Label>Nombre</Form.Label>
+                                    <Form.Control type="text" placeholder="Ingrese su nombre" {...register("nombre", {
+                                        required: "El nombre es un dato obligatorio",
+                                        minLength: {
+                                            value: 2,
+                                            message: "La cantidad minima de caracteres es de 2 digitos",
+                                        },
+                                        maxLength: {
+                                            value: 30,
+                                            message: "La cantidad maxima de caracteres es de 30 digitos",
+                                        },
+                                    })} />
+                                    <Form.Text className="text-danger">
+                                        {errors.nombre?.message}
+                                    </Form.Text>
+                                </Form.Group>
+                            </Col>
+
+                            <Col xs={12} md={6} lg={6} className="mt-3" >
+                                <Form.Group controlId="apellido">
+                                    <Form.Label>Apellido</Form.Label>
+                                    <Form.Control type="text" placeholder="Ingrese su apellido" {...register("apellido", {
+                                        required: "El apeliido es un dato obligatorio",
+                                        minLength: {
+                                            value: 2,
+                                            message: "La cantidad minima de caracteres es de 2 digitos",
+                                        },
+                                        maxLength: {
+                                            value: 30,
+                                            message: "La cantidad maxima de caracteres es de 30 digitos",
+                                        },
+                                    })} />
+                                    <Form.Text className="text-danger">
+                                        {errors.apellido?.message}
+                                    </Form.Text>
+                                </Form.Group>
+                            </Col>
+                            <Col xs={12} md={6} lg={6} className="mt-3" >
+                                <Form.Group controlId="email">
+                                    <Form.Label>Email</Form.Label>
+                                    <Form.Control type="email" placeholder="name@email.com"
+                                        {...register("email", {
+                                            required: "El email es un dato obligatorio",
+                                            pattern: {
+                                                value:
+                                                    /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=? ^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a -z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+                                                message:
+                                                    "El email debe tener el siguiente formato: mail@dominio.com",
+                                            },
+                                        })} />
+                                    <Form.Text className="text-danger">
+                                        {errors.email?.message}
+                                    </Form.Text>
+                                </Form.Group>
+                            </Col>
+                            <Col xs={12} md={6} lg={6} className="mt-3" >
+                                <Form.Group controlId="nombreMasco">
+                                    <Form.Label>Nombre de mascota</Form.Label>
+                                    <Form.Control type="text" placeholder="Ingrese el nombre de la mascota" {...register("nombreMasco", {
+                                        required: "El nombre de la mascota es un dato obligatorio",
+                                        minLength: {
+                                            value: 2,
+                                            message: "La cantidad minima de caracteres es de 2 digitos",
+                                        },
+                                        maxLength: {
+                                            value: 30,
+                                            message: "La cantidad maxima de caracteres es de 30 digitos",
+                                        },
+                                    })} />
+                                    <Form.Text className="text-danger">
+                                        {errors.nombreMasco?.message}
+                                    </Form.Text>
+                                </Form.Group>
+                            </Col>
+                            <Col xs={12} md={12} lg={12} className="mt-3" >
+                                    <Form.Label>Telefono</Form.Label>
+                                <InputGroup controlId="telefono" className="mb-3">
+                                    <InputGroup.Text id="telefono">+54</InputGroup.Text>
+                                    <Form.Control type="number" placeholder="+543865332311" aria-describedby="telefono"
+                                        {...register("telefono", {
+                                            required: "El telefono es un dato obligatorio",
+                                            pattern: {
+                                                value:
+                                                    /^\d{10}$/,
+                                                message:
+                                                    "El telefono debe tener el siguiente formato: 3865332311",
+                                            },
+                                        })} />
+                                    <Form.Text className="text-danger">
+                                        {errors.telefono?.message}
+                                    </Form.Text>
+                                </InputGroup>
+                            </Col>
+                            <Col xs={12} md={12} lg={12} className="mt-3" >
+                                <Form.Group>
+                                <Form.Label>Describa su consulta</Form.Label>
+                                    <Form.Control
+                                        as="textarea"
+                                        placeholder="Describa su inconveniente / consulta"
+                                        style={{ height: '100px' }}
+                                        {...register("consulta", {
+                                            required: "La consulta es un dato obligatorio",
+                                            minLength: {
+                                                value: 2,
+                                                message: "La cantidad minima de caracteres es de 2 digitos",
+                                            },
+                                            maxLength: {
+                                                value: 400,
+                                                message: "La cantidad maxima de caracteres es de 30 digitos",
+                                            },
+                                        })}
+                                    />
+                                    <Form.Text className="text-danger">
+                                        {errors.consulta?.message}
+                                    </Form.Text>
+                                </Form.Group>
+                            </Col>
+                        </Row>
+                            <Button variant="primary" type="submit" className="mt-3">
+                                Submit
+                            </Button>
+                    </Form>
+                </Col>
+            </Row>
+        </Container>
+    )
+};
+
+export default Contacto;
