@@ -34,7 +34,7 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/'>
 						Pagina Principal
 					</NavLink>
-					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' /* to='/acerca-de-nosotros' */>
+					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar'  to='/acerca-de-nosotros'>
 						Acerca de Nosotros
 					</NavLink>
 					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/contacto'>
@@ -43,7 +43,7 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 					{
 						(usuarioLogueado)
 							? <>
-								<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/administrador'>
+								<NavLink  className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/administrador'>
                                         Administrador
                                 </NavLink>
 								<Button onClick={cerrarSesion} variant='mx-2 fw-semibold nav-item nav-link border border-danger' id='btn-cerrarSesion'>Cerrar Sesion</Button>

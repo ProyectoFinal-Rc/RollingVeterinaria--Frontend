@@ -1,9 +1,9 @@
-import Presentacion from './Presentacion';
-import Planes from './Planes';
-import Servicios from './Servicios';
-import Colaboradores from './Colaboradores';
-import Testimonios from './Testimonios';
-import Marcas from './Marcas';
+import Presentacion from './views/Presentacion';
+import Planes from './views/Planes';
+import Servicios from './views/Servicios';
+import Colaboradores from './views/Colaboradores';
+import Testimonios from './views/Testimonios';
+import Marcas from './views/Marcas';
 import '../App.css';
 
 const Principal = () => {

@@ -73,8 +73,8 @@
       "id": 14
     },
     {
-      "detalleCita": "asdjnasjkdnajksdnajksdnkj",
-      "veterinario": "karen diaz",
+      "detalleCita": "Hola estoy modificando",
+      "veterinario": "juan paz",
       "mascota": "mermelada",
       "fecha": "2023-07-20",
       "hora": "17:00",
@@ -84,16 +84,16 @@
   ],
   "paciente": [
     {
-      "nombreDuenio": "Juan Pablo",
-      "apellidoDuenio": "Alba Fernandez",
-      "email": "juanpialba@gmail.com",
-      "direccion": "Brasil 2140",
-      "nombreMascota": "sammy",
+      "nombreDuenio": "Malena",
+      "apellidoDuenio": "De Arriba",
+      "email": "dearribamalena@gmail.com",
+      "direccion": "San Lorenzo 987",
+      "nombreMascota": "Atun",
       "especie": "mamiferos",
-      "raza": "perro",
-      "fechaNacimiento": "2023-07-31",
-      "peso": "70",
-      "plan": "madurando (5-10 años)",
+      "raza": "Gato",
+      "fechaNacimiento": "2023-07-29",
+      "peso": "8",
+      "plan": "primeros Pasos (0-5 años)",
       "id": 1
     }
   ],

@@ -10,7 +10,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import ShareIcon from '@mui/icons-material/Share';
 import { Row, Col } from "react-bootstrap"
-import '../App.css';
+import '../../App.css';
 
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;

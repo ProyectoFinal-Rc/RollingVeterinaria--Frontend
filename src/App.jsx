@@ -8,6 +8,9 @@ import Login from './components/Login'
 import { useState } from 'react'
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdministrador from "./components/routes/RutasAdministrador";
+import Contacto from "./components/Contacto";
+import Error404 from "./components/Error404";
+import About from "./components/About";
 
 function App() {
   const usuarioSesionStorage = JSON.parse(sessionStorage.getItem('usuario')) || ''
@@ -21,7 +24,7 @@ function App() {
           <Route exact path="/" element={<Principal></Principal>}></Route>
           <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
           <Route path="/administrador/*" element={<RutasProtegidas><RutasAdministrador></RutasAdministrador></RutasProtegidas>}></Route>
-          {/* <Route exact path="/acerca-de-nosotros" element={<Acerca></Acerca>}></Route>*/}
+          <Route exact path="/acerca-de-nosotros" element={<About></About>}></Route>
           <Route exact path="/contacto" element={<Contacto></Contacto>}></Route> 
           <Route exact path="*" element={<Error404></Error404>}></Route>
         </Routes>

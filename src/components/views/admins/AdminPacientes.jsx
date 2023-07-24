@@ -6,6 +6,7 @@ import { borrarPaciente, obtenerListaPacientes } from "../../helpers/pacientes";
 import Swal from "sweetalert2";
 import { Fragment } from "react";
 import EditarPaciente from "./EditarPaciente";
+import { Link } from "react-router-dom"
 
 
 const AdminPacientes = () => {
@@ -74,13 +75,14 @@ const AdminPacientes = () => {
       }
 
     return (
-        <section className="container">
-            <div className="d-flex justify-content-center">
-                <h1>
-                    Pacientes
+        <section className="container mt-5">
+            <div className="d-flex justify-content-center mt-5">
+                <h1 className="mt-5 fw-bold bg-warning-subtle p-2 border border-5 border-warning m-2">
+                    Listado de pacientes
                 </h1>
             </div>
-            <div className="d-flex justify-content-end">
+            <div className="d-flex justify-content-between">
+                <Link to={"/administrador/turno"} className="btn btn-warning btn-lg">Administrador de turnos</Link>
                 <Button onClick={handleShow}>Agregar Paciente</Button>
             </div>
             <div className="container">

@@ -1,8 +1,8 @@
 import React from 'react';
-import Video from '../assets/VideoRCVet.mp4';
+import Video from '../../assets/VideoRCVet.mp4';
 
-import '../App.css';
-import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
+import '../../App.css';
+import { Container, Row, Col, Button } from 'react-bootstrap';
 
 const Presentacion = () => {
     return (
