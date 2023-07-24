@@ -4,6 +4,7 @@ import AgregarTurno from "./AgregarTurno";
 import Swal from "sweetalert2";
 import { obtenerListaTurnos, borrarTurno } from "../../helpers/turnos";
 import EditarTurno from "./EditarTurno";
+import { Link } from "react-router-dom"
 
 
 const AdminTurnos = () => {
@@ -74,9 +75,12 @@ const AdminTurnos = () => {
 
   return (
     <section className="container mt-5">
+        <div className="d-flex justify-content-center mt-5">
+        <h1 className="mt-5 fw-bold bg-warning-subtle p-2 border border-5 border-warning m-2">Listado de turnos</h1>
+        </div>
       <div className="d-flex justify-content-between align-items-center mt-5">
-        <h1 className="display-4 ">Turnos</h1>
-        <Button className="btn btn-success bg-success-subtle text-success fw-bold" onClick={handleShow}> 
+      <Link to={"/administrador/paciente"} className="btn btn-info btn-lg">Administrador de pacientes</Link>
+        <Button className="btn btn-success  btn-lg text-white" onClick={handleShow}> 
           Agregar turno
         </Button>
       </div>
