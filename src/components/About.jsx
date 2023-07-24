@@ -42,7 +42,7 @@ const About = () => {
   return (
     <>
       <div className="banner">
-        <h1>Nuestro Equipo</h1>
+        <h1 id="titulo-about">Nuestro Equipo</h1>
       </div>
       <Container>
         <Row>
@@ -51,7 +51,7 @@ const About = () => {
               <Card className="mb-4">
                 <Card.Body className="cardBackgound">
                   <Card.Title className="fuentePatitas">{developer.nombre}</Card.Title>
-                  <Card.Img variant="top" src={developer.foto} /><Card.Img />
+                  <Card.Img variant="top" src={developer.foto} className="card-img-top-about" /><Card.Img />
                   <Card.Text className="compressed-text text-truncate overflow-hidden"><strong>
                     {developer.descripcion}
                     </strong>
@@ -62,13 +62,13 @@ const About = () => {
                   <Card.Text><strong>Animal Favorito:</strong> {developer.animalFavorito}</Card.Text>
                   <div className="social-buttons botonesRedes">
                     <Button variant="" href="">
-                      <FaInstagram size={24} />
+                      {/* <FaInstagram size={24} /> cambiar por icono de bootstrap */}
                     </Button>
                     <Button variant="" href="">
-                      <FaLinkedin size={24} />
+                      {/* <FaLinkedin size={24} /> cambiar por icono de bootstrap */}
                     </Button>
                     <Button variant="" href="">
-                      <FaGithub size={24} />
+                      {/* <FaGithub size={24} /> cambiar por icono de bootstrap */}
                     </Button>
                   </div>
                 </Card.Body>

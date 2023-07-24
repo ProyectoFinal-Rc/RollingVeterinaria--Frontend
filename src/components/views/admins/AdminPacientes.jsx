@@ -74,7 +74,7 @@ const AdminPacientes = () => {
       }
 
     return (
-        <section className="container">
+        <section className="container mt-5">
             <div className="d-flex justify-content-center">
                 <h1>
                     Pacientes

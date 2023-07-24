@@ -34,7 +34,7 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/'>
 						Pagina Principal
 					</NavLink>
-					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' /* to='/acerca-de-nosotros' */>
+					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar'  to='/acerca-de-nosotros'>
 						Acerca de Nosotros
 					</NavLink>
 					<NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/contacto'>
