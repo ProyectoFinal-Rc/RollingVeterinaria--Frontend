@@ -11,3 +11,15 @@
 .imagenLogo {
 	max-width: 70px;
 }
+
+.btn-navbar:hover {
+	border-bottom: black solid;
+}
+
+#btn-cerrarSesion {
+	background-color: red;
+}
+
+#btn-cerrarSesion:hover {
+	background-color: rgba(237, 200, 35, 0.815);
+}
