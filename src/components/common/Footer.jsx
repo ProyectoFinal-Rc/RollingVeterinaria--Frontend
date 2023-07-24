@@ -11,8 +11,8 @@ const Footer = () => {
 					/>
 					<p className='text-center mb-1 fs-4 pt-3 fw-bold'>Nuestras Redes</p>
 					<div className='d-flex justify-content-center'>
-						<a href="#"><i className="bi bi-facebook mx-3 fs-1 links-redes"></i></a>
-						<a href="#"><i className="bi bi-instagram mx-3 fs-1 links-redes"></i></a>
+						<a href="/*"><i className="bi bi-facebook mx-3 fs-1 links-redes"></i></a>
+						<a href="/*"><i className="bi bi-instagram mx-3 fs-1 links-redes"></i></a>
 					</div>
 				</div>
 				<section className='my-4'>

@@ -16,14 +16,15 @@ const Login = ({setUsuarioLogueado}) => {
 				sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario))
 				setUsuarioLogueado(respuesta)
 				reset()
+				Swal.fire('Bienvenido administrador')
 				navegacion('/administrador')
-			} else[
+			} else{
 				Swal.fire(
 					'Error',
 					'Email y/o contraseña incorrecta.',
 					'error'
 				)
-			]
+			}
 		})
 	}
 
@@ -56,7 +57,7 @@ const Login = ({setUsuarioLogueado}) => {
 							}
 						})
 					} />
-					<Form.Text className="text-danger">
+					<Form.Text className="text-dark">
 						{errors.password?.message}
 					</Form.Text>
 				</Form.Group>

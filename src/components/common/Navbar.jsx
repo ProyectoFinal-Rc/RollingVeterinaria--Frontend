@@ -43,12 +43,9 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 					{
 						(usuarioLogueado)
 							? <>
-								<NavDropdown title="Administrador" id="navbarScrollingDropdown" end className='mx-2 fw-semibold nav-item nav-link' to='/administrador'>
-									<NavDropdown.Item to="/administrador/paciente">Admin pacientes</NavDropdown.Item>
-									<NavDropdown.Item to="/administrador/turno">
-									Admin turnos
-									</NavDropdown.Item>
-								</NavDropdown>
+								<NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/administrador'>
+                                        Administrador
+                                </NavLink>
 								<Button onClick={cerrarSesion} variant='mx-2 fw-semibold nav-item nav-link border border-danger'>Cerrar Sesion</Button>
 							</>
 							: <NavLink end className='mx-2 fw-semibold nav-item nav-link' to='/login'>
