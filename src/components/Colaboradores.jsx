@@ -1,7 +1,7 @@
 import React from 'react';
 
 import '../App.css';
-import { Container, Row, Col, Button, Card, Carousel } from 'react-bootstrap';
+import { Container, Carousel } from 'react-bootstrap';
 
 const Colaboradores = () => {
     return (
@@ -14,13 +14,13 @@ const Colaboradores = () => {
                         <div className='container'>
                             <Carousel>
                                 <Carousel.Item>
-                                    <div className='d-flex carruseles'>
+                                    <div className='d-flex flex-md-column align-items-center carruseles'>
                                         <img
                                             className="d-block estiloImagenesCarousel"
                                             src="https://images.pexels.com/photos/6129506/pexels-photo-6129506.jpeg?auto=compress&cs=tinysrgb&w=1600"
                                             alt="Second slide" style={{ width: "500px", height: "750px" }}
                                         />
-                                        <div className='d-flex flex-column justify-content-start align-items-center'>
+                                        <div className='d-flex flex-column justify-content-center align-items-center'>
                                             <h1 className='mb-5 display-3 fw-bold'>Karen Diaz</h1>
                                             <h4 className='rollingVet-naranja'>Especialista Oncologa</h4>
                                             <p className='mx-4 mt-5 fs-4'>
@@ -31,13 +31,13 @@ const Colaboradores = () => {
                                     </div>
                                 </Carousel.Item>
                                 <Carousel.Item>
-                                    <div className='d-flex carruseles'>
+                                    <div className='d-flex flex-md-column carruseles align-items-center'>
                                         <img
                                             className="d-block estiloImagenesCarousel"
                                             src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1600"
                                             alt="Third slide" style={{ width: "500px", height: "750px" }}
                                         />
-                                        <div className='d-flex flex-column justify-content-start align-items-center'>
+                                        <div className='d-flex flex-column justify-content-center align-items-center'>
                                             <h1 className='mb-5 display-3 fw-bold'>Gerardo Marruecos</h1>
                                             <h4 className='rollingVet-naranja'>Especialista en Gastroenterologia</h4>
                                             <p className='mx-4 mt-5 fs-4'>
