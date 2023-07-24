@@ -9,6 +9,7 @@ body {
     background: url(./assets/fondos/fondo1.png) no-repeat center fixed;
     background-size: cover;
     cursor: url(../src/assets/patita.png),auto;
+    font-family: 'Rubik', sans-serif;
 }
 .cursor{
     width: 20px;

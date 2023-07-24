@@ -22,13 +22,13 @@ const Contacto = () => {
                         <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
                         <ul style={{ listStyle: 'none' }}>
                             <li>
-                                <a href="mailto:cristiangramajo015@gmail.com" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">rollingvet@gmail.com</a>
+                                <a href="/error404" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">rollingvet@gmail.com</a>
                             </li>
                             <li>
-                                <a href="tel:+543865332311" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">+54 (3865) 332311</a>
+                                <a href="/error404" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">+54 (3865) 332311</a>
                             </li>
                             <li>
-                                <a href="#" className="link-warning link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Portal de soporte, chat online.</a>
+                                <a href="/error404" className="link-warning link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Portal de soporte, chat online.</a>
                             </li>
                         </ul>
                     </div>
