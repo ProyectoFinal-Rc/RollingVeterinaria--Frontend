@@ -38,7 +38,7 @@ const Contacto = () => {
                     <Form className="p-3 bg-white border rounded" onSubmit={handleSubmit(onSubmit)}>
                         <Row className="mb-3">
                             <Col xs={12} md={6} lg={6} className="mt-3" >
-                                <Form.Group controlId="nombre">
+                                <Form.Group >
                                     <Form.Label>Nombre</Form.Label>
                                     <Form.Control type="text" placeholder="Ingrese su nombre" {...register("nombre", {
                                         required: "El nombre es un dato obligatorio",
@@ -58,7 +58,7 @@ const Contacto = () => {
                             </Col>
 
                             <Col xs={12} md={6} lg={6} className="mt-3" >
-                                <Form.Group controlId="apellido">
+                                <Form.Group>
                                     <Form.Label>Apellido</Form.Label>
                                     <Form.Control type="text" placeholder="Ingrese su apellido" {...register("apellido", {
                                         required: "El apeliido es un dato obligatorio",
@@ -77,7 +77,7 @@ const Contacto = () => {
                                 </Form.Group>
                             </Col>
                             <Col xs={12} md={6} lg={6} className="mt-3" >
-                                <Form.Group controlId="email">
+                                <Form.Group >
                                     <Form.Label>Email</Form.Label>
                                     <Form.Control type="email" placeholder="name@email.com"
                                         {...register("email", {
@@ -95,7 +95,7 @@ const Contacto = () => {
                                 </Form.Group>
                             </Col>
                             <Col xs={12} md={6} lg={6} className="mt-3" >
-                                <Form.Group controlId="nombreMasco">
+                                <Form.Group >
                                     <Form.Label>Nombre de mascota</Form.Label>
                                     <Form.Control type="text" placeholder="Ingrese el nombre de la mascota" {...register("nombreMasco", {
                                         required: "El nombre de la mascota es un dato obligatorio",
@@ -115,7 +115,7 @@ const Contacto = () => {
                             </Col>
                             <Col xs={12} md={12} lg={12} className="mt-3" >
                                     <Form.Label>Telefono</Form.Label>
-                                <InputGroup controlId="telefono" className="mb-3">
+                                <InputGroup  className="mb-3">
                                     <InputGroup.Text id="telefono">+54</InputGroup.Text>
                                     <Form.Control type="number" placeholder="+543865332311" aria-describedby="telefono"
                                         {...register("telefono", {
