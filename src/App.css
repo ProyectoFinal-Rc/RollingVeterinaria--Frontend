@@ -18,10 +18,9 @@ body {
     position: absolute;
 
 }
-/* Cards */
+
 .servicio-imagen {
-    height: 300px;
-    width: 500px;
+    width: 100%;
     object-fit: cover;
     transform-origin: center center;
 }
@@ -171,8 +170,7 @@ body {
     }
 
     .servicio-imagen {
-        height: 200px;
-        width: 250px;
+        width: 100%;
         object-fit: cover;
         display: flex;
         justify-content: center;
@@ -211,5 +209,4 @@ body {
         display: block;
     }
 
-    #planesDeCuidado {}
 }
