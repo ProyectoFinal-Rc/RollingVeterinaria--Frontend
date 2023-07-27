@@ -80,6 +80,15 @@
       "hora": "17:00",
       "formaPago": "efectivo",
       "id": 15
+    },
+    {
+      "detalleCita": "probando nuevos horarios",
+      "veterinario": "gabriela ramos",
+      "mascota": "holisss",
+      "fecha": "2023-07-28",
+      "hora": "11:45",
+      "formaPago": "efectivo",
+      "id": 16
     }
   ],
   "paciente": [
