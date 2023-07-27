@@ -10,7 +10,6 @@ export const Error404 = () =>{
               <h1 className="fw-bold">¡Ups! parece que hubo un error</h1>
               <h4>No encontramos lo que estas buscando</h4>
               <img src="../src/assets/error sin fondo.png" alt="" width={400}/>
-              
                 <div className="p-3">
                     <div className="m-3 text-center">
                         <img className="my-3" style={{width:'100%', maxWidth:'32rem'}} src="https://cristian021195.github.io/portfolio/img/svg/puppy-404.svg" alt="Contacto rolling vet" />

@@ -47,7 +47,6 @@ const AdminTurnos = () => {
       if (resultado.isConfirmed) {
         borrarTurno(id).then((respuesta)=>{
           if(respuesta.status === 200){
-            //Pedir la lista de productos a mi back
             obtenerListaTurnos().then((respuesta)=>{
               if(respuesta){
                 SetTurnos(respuesta);
