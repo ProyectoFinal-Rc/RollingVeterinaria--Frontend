@@ -2,19 +2,26 @@ import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearTurno } from "../../helpers/turnos";
 import Swal from "sweetalert2";
+import { fecha } from "../../helpers/turnos";
+import { useState } from "react";
 
-const AgregarTurno = ({ show, handleClose }) => {
+const AgregarTurno = ({ show, handleClose,turnos }) => {
     const {
         register,
         handleSubmit,
         formState: { errors },
         reset,
     } = useForm();
-
+    const [fechaActual,setFechaActual]=useState(fecha());
     const onSubmit = (turnoNuevo) => {
         crearTurno(turnoNuevo).then((respuesta)=>{
+            
             if(respuesta.status === 201){
-                Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success").then(()=>window.location.reload())
+                Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success")
+                .then(()=>{
+                //window.location.reload()
+                turnos.push(turnoNuevo);
+                })
                 reset();
             }else{
                 Swal.fire("error", "No se pudo crear el turno correctamente, vuelva a intentarlo más tarde", "error");
@@ -84,10 +91,15 @@ const AgregarTurno = ({ show, handleClose }) => {
                     </Form.Group>
                     <Form.Group controlId="fecha">
                         <Form.Label>Fecha*</Form.Label>
-                        <Form.Control type="date" name="duedate" placeholder="Due date" 
-                        {...register('fecha', {
-                            required: 'La fecha es un dato obligatorio',
-                        })}/>
+                        <Form.Control
+                            type="date"
+                            name="duedate"
+                            placeholder="Due date"
+                            min={fechaActual}
+                            {...register('fecha', {
+                                required: 'La fecha es un dato obligatorio',
+                            })}
+                        />
                         <Form.Text className="text-danger">
                                 {errors.fecha && (
                                     <span>{errors.fecha.message}</span>
@@ -113,7 +125,6 @@ const AgregarTurno = ({ show, handleClose }) => {
                                 {errors.hora?.message}
                             </Form.Text>
                     </Form.Group>
-
                     <Form.Group className="mb-3" controlId="formaPago">
                         <Form.Label>Forma de Pago*</Form.Label>
                         <Form.Select aria-label="Default select payment" {...register("formaPago", {required: "La forma de pago es un dato obligatorio"})}>
@@ -125,7 +136,7 @@ const AgregarTurno = ({ show, handleClose }) => {
                                 {errors.formaPago?.message}
                             </Form.Text>
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" onClick={handleClose}>
                         Guardar
                     </Button>
                 </Form>

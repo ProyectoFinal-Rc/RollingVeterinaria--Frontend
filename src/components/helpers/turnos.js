@@ -15,6 +15,12 @@ export const fecha=()=>{
   let dia = new Date().getDate()+"";
   return `${anio}-${mes}-${dia}`
 }
+export const fechaParseada = (fechaguardada)=>{
+  let anio =  new Date(fechaguardada).getFullYear()+"";
+  let mes =  new Date(fechaguardada).getMonth()+1 <10 && "0"+(new Date(fechaguardada).getMonth()+1) 
+  let dia = new Date(fechaguardada).getDate()+"";
+  return `${anio}-${mes}-${dia}`
+}
 export const crearTurno = async (turno) => {
   try {
     const respuesta = await fetch(URL_turno, {

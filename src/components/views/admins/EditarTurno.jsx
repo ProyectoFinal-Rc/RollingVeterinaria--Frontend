@@ -1,14 +1,13 @@
-import { useState } from "react";
+import {  useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { editarTurno,fecha } from "../../helpers/turnos";
 import Swal from "sweetalert2";
 
-const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
+const EditarTurno = ({ showEditar, handleCloseEditar, datos,turnos }) => {
 
     const [datosTurnos, setDatosTurnos] = useState(datos)
     const [fechaActual,setFechaActual]=useState(fecha())
-
     const {
         register,
         handleSubmit,
@@ -19,14 +18,17 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
     const onSubmit = (turnoEditado) => {
         editarTurno(turnoEditado, datos._id).then((respuesta) => {
             if (respuesta) {
-                Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success").then(() => {/* window.location.reload() */ });
+                Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success")
+                .then(() => {
+                turnos.push(turnoEditado);
+                });
                 reset();
             } else {
                 Swal.fire("error", "No se pudo editar el turno correctamente, vuelva a intentarlo más tarde", "error");
             }
         })
     };
-
+    
     return (
         <Modal show={showEditar} onHide={handleCloseEditar}>
             <Modal.Header closeButton>
@@ -58,6 +60,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                                     ...datosTurnos,
                                     detalleCita: dato.target.value,
                                 });
+                                
                             }}
                         />
                         <Form.Text className="text-danger">
@@ -150,7 +153,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos }) => {
                             {errors.formaPago?.message}
                         </Form.Text>
                     </Form.Group>
-                    <Button variant="primary" type="submit">
+                    <Button variant="primary" type="submit" >
                         Guardar
                     </Button>
                 </Form>
