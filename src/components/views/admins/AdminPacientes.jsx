@@ -48,7 +48,6 @@ const AdminPacientes = () => {
           if (resultado.isConfirmed) {
             borrarPaciente(id).then((respuesta)=>{
               if(respuesta.status === 200){
-                //Pedir la lista de productos a mi back
                 obtenerListaPacientes().then((respuesta)=>{
                   if(respuesta){
                     setPacientes(respuesta);

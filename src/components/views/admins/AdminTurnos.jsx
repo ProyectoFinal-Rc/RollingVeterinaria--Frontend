@@ -120,7 +120,7 @@ const AdminTurnos = () => {
       <EditarTurno datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
       <AgregarTurno show={show} handleClose={handleClose}></AgregarTurno>
     </section>
-  );//
+  );
 };
 
 export default AdminTurnos;
