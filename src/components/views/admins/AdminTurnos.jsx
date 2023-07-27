@@ -30,7 +30,7 @@ const AdminTurnos = () => {
   }, [])
 
   const seleccionar = (id) => {
-    SetTurnoEditar(turnos.find((turno) => turno.id === id))
+    SetTurnoEditar(turnos.find((turno) => turno._id === id))
   }
 
   const borrar = (id) => {
@@ -100,7 +100,7 @@ const AdminTurnos = () => {
           {
             turnos.map((cita) => {
               return (
-                <Fragment key={cita.id}>
+                <Fragment key={cita._id}>
                   <tr>
                     <td className="text-truncate overflow-hidden">{cita.detalleCita}</td>
                     <td className="text-truncate overflow-hidden">{cita.veterinario}</td>
@@ -108,8 +108,8 @@ const AdminTurnos = () => {
                     <td className="text-truncate overflow-hidden">{cita.fecha}</td>
                     <td className="text-truncate overflow-hidden">{cita.hora}</td>
                     <td className="d-flex justify-content-end align-items-star">
-                      <Button className="btn btn-warning me-2" onClick={() => { handleShowEditar(); seleccionar(cita.id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
-                      <Button variant="danger" onClick={() => {borrar(cita.id)}}><i className="bi bi-file-x p-0"></i></Button>
+                      <Button className="btn btn-warning me-2" onClick={() => { handleShowEditar(); seleccionar(cita._id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
+                      <Button variant="danger" onClick={() => {borrar(cita._id)}}><i className="bi bi-file-x p-0"></i></Button>
                     </td>
                   </tr>
                 </Fragment>

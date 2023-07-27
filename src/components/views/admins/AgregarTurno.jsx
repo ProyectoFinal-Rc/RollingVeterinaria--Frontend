@@ -107,7 +107,7 @@ const AgregarTurno = ({ show, handleClose }) => {
                             <option value="12:00">12:00</option>
                             <option value="17:00">17:00</option>
                             <option value="18:00">18:00</option>
-                            <option value="19:00">19:00</option>
+                            <option value="19:00">19:00</option> 
                         </Form.Select>
                         <Form.Text className="text-danger">
                                 {errors.hora?.message}

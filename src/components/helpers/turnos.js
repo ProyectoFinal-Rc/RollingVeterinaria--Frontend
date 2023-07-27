@@ -9,7 +9,12 @@ export const obtenerListaTurnos = async () => {
     console.log(error);
   }
 };
-
+export const fecha=()=>{
+  let anio =  new Date().getFullYear()+"";
+  let mes =  new Date().getMonth()+1 <10 && "0"+(new Date().getMonth()+1) 
+  let dia = new Date().getDate()+"";
+  return `${anio}-${mes}-${dia}`
+}
 export const crearTurno = async (turno) => {
   try {
     const respuesta = await fetch(URL_turno, {

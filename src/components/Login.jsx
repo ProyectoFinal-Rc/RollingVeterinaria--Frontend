@@ -13,7 +13,8 @@ const Login = ({setUsuarioLogueado}) => {
 	const onSubmit = (usuario) => {
 		IniciarSesion(usuario).then((respuesta) => {
 			if (respuesta) {
-				sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario))
+				console.log(respuesta)
+				sessionStorage.setItem('usuario', JSON.stringify(respuesta.email))
 				setUsuarioLogueado(respuesta)
 				reset()
 				Swal.fire('Bienvenido administrador')
