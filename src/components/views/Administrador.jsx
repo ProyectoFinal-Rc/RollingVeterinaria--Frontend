@@ -30,7 +30,7 @@ const Administrador = () => {
                 <h2 className='text-body-tertiary'>Turnos asignados</h2>
                 <div>
                     {
-                        turnos.map((turno)=> <CardTurno key={turno.id} turno={turno}></CardTurno>)
+                        turnos.map((turno)=> <CardTurno key={turno._id} turno={turno}></CardTurno>)
                     }
                 </div>
             </div>

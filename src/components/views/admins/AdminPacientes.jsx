@@ -31,7 +31,7 @@ const AdminPacientes = () => {
     }, [])
 
     const seleccionar = (id) => {
-        setPacienteEditar(pacientes.find((paciente) => paciente.id === id))
+        setPacienteEditar(pacientes.find((paciente) => paciente._id === id))
     }
 
     const borrar = (id) => {
@@ -92,7 +92,7 @@ const AdminPacientes = () => {
                     {
                         pacientes.map((paciente) => {
                             return (
-                                <Fragment key={paciente.id}>
+                                <Fragment key={paciente._id}>
                                     <Col xs={12}>
                                         <Card className="border border-5 border-warning m-2">
                                             <Card.Body className="container-fluid bg-warning-subtle">
@@ -114,8 +114,8 @@ const AdminPacientes = () => {
                                                         </ListGroup>
                                                     </Col>
                                                     <Col xs={3} md={2} lg={1} className="d-flex justify-content-sm-end align-items-start p-0">
-                                                        <Button className="btn btn-warning btn-sm" onClick={() => { handleShowEditar(); seleccionar(paciente.id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
-                                                        <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0" onClick={() => {borrar(paciente.id)}}></i></Button>
+                                                        <Button className="btn btn-warning btn-sm" onClick={() => { handleShowEditar(); seleccionar(paciente._id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
+                                                        <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0" onClick={() => {borrar(paciente._id)}}></i></Button>
                                                     </Col>
                                                 </Row>
                                                 <hr />

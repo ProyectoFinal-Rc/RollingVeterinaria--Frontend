@@ -2,10 +2,9 @@ import { Table, Button } from "react-bootstrap";
 import { useState, useEffect, Fragment } from "react";
 import AgregarTurno from "./AgregarTurno";
 import Swal from "sweetalert2";
-import { obtenerListaTurnos, borrarTurno } from "../../helpers/turnos";
+import { obtenerListaTurnos, borrarTurno, fecha,fechaParseada } from "../../helpers/turnos";
 import EditarTurno from "./EditarTurno";
 import { Link } from "react-router-dom"
-
 
 const AdminTurnos = () => {
 
@@ -30,7 +29,11 @@ const AdminTurnos = () => {
   }, [])
 
   const seleccionar = (id) => {
-    SetTurnoEditar(turnos.find((turno) => turno.id === id))
+    //SetTurnoEditar(turnos.find((turno) => turno._id === id))
+    const turnoGuardado = turnos.find((turno) => turno._id === id)
+    const res = fechaParseada(turnoGuardado.fecha);
+    turnoGuardado.fecha=res;
+    SetTurnoEditar(turnoGuardado);
   }
 
   const borrar = (id) => {
@@ -99,16 +102,16 @@ const AdminTurnos = () => {
           {
             turnos.map((cita) => {
               return (
-                <Fragment key={cita.id}>
+                <Fragment key={cita._id}>
                   <tr>
                     <td className="text-truncate overflow-hidden">{cita.detalleCita}</td>
                     <td className="text-truncate overflow-hidden">{cita.veterinario}</td>
                     <td className="text-truncate overflow-hidden">{cita.mascota}</td>
-                    <td className="text-truncate overflow-hidden">{cita.fecha}</td>
+                    <td className="text-truncate overflow-hidden">{fechaParseada(cita.fecha).replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')}</td>
                     <td className="text-truncate overflow-hidden">{cita.hora}</td>
                     <td className="d-flex justify-content-end align-items-star">
-                      <Button className="btn btn-warning me-2" onClick={() => { handleShowEditar(); seleccionar(cita.id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
-                      <Button variant="danger" onClick={() => {borrar(cita.id)}}><i className="bi bi-file-x p-0"></i></Button>
+                      <Button className="btn btn-warning me-2" onClick={() => { handleShowEditar(); seleccionar(cita._id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
+                      <Button variant="danger" onClick={() => {borrar(cita._id)}}><i className="bi bi-file-x p-0"></i></Button>
                     </td>
                   </tr>
                 </Fragment>
@@ -117,8 +120,8 @@ const AdminTurnos = () => {
           }
         </tbody>
       </Table>
-      <EditarTurno datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
-      <AgregarTurno show={show} handleClose={handleClose}></AgregarTurno>
+      <EditarTurno turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
+      <AgregarTurno turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
     </section>
   );
 };
