@@ -19,14 +19,16 @@
     border-style: groove;
     border-radius: 10px;
     border-color: black;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
 }
 
-.botonesRedes{
-    justify-content: end;
-    display: flex;
+
+
+#tamaño-icono {
+    font-size:xx-large;
 }
+
 
 #card-nombre{
     color: rgba(255, 145, 77, 1);

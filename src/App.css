@@ -34,11 +34,8 @@ body {
     transform: scale(1.05);
 }
 
-
-/* Fondo de imagen */
 .fondo-container {
     position: relative;
-    /* Establece la posición del contenedor en "relative" para que el pseudo-elemento se posicione correctamente */
 }
 
 .fondo-container::before {
@@ -51,7 +48,6 @@ body {
     z-index:0;
     background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
     filter: contrast(60%);
-    /* Aplica un desenfoque a la imagen */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
@@ -86,7 +82,6 @@ body {
     filter: saturate(2);
 }
 
-/* Fondo de video */
 #video>video {
     top: 50%;
     left: 50%;
@@ -118,7 +113,7 @@ body {
     width: 150px;
     object-fit: cover;
 }
-/* Slider Infinito */
+
 .slider{
     width: 100%;
     height: auto;
@@ -150,8 +145,7 @@ body {
         
     }
 }
-/* Dispositivos chicos */
-/* Responsive seccion */
+
 @media only screen and (max-width: 767px) {
     #video {
         min-height: 100vh;

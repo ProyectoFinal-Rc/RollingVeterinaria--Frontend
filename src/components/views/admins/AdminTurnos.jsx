@@ -50,7 +50,6 @@ const AdminTurnos = () => {
       if (resultado.isConfirmed) {
         borrarTurno(id).then((respuesta)=>{
           if(respuesta.status === 200){
-            //Pedir la lista de productos a mi back
             obtenerListaTurnos().then((respuesta)=>{
               if(respuesta){
                 SetTurnos(respuesta);
@@ -124,7 +123,7 @@ const AdminTurnos = () => {
       <EditarTurno turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
       <AgregarTurno turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
     </section>
-  );//
+  );
 };
 
 export default AdminTurnos;

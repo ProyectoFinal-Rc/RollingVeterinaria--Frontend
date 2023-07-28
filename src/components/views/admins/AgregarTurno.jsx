@@ -27,7 +27,6 @@ const AgregarTurno = ({ show, handleClose,turnos }) => {
                 Swal.fire("error", "No se pudo crear el turno correctamente, vuelva a intentarlo más tarde", "error");
             }
         })
-        // window.location.reload(); CONSULTAR OTRA ALTERNATIVA
     };
 
     return (
@@ -113,12 +112,34 @@ const AgregarTurno = ({ show, handleClose,turnos }) => {
                         >
                             <option value="">Seleccione un horario</option>
                             <option value="8:00">8:00</option>
+                            <option value="8:15">8:15</option>
+                            <option value="8:30">8:30</option>
+                            <option value="8:45">8:45</option>
                             <option value="9:00">9:00</option>
+                            <option value="9:15">9:15</option>
+                            <option value="9:30">9:30</option>
+                            <option value="9:45">9:45</option>
                             <option value="10:00">10:00</option>
+                            <option value="10:15">10:15</option>
+                            <option value="10:30">10:30</option>
+                            <option value="10:45">10:45</option>
                             <option value="11:00">11:00</option>
+                            <option value="11:15">11:15</option>
+                            <option value="11:30">11:30</option>
+                            <option value="11:45">11:45</option>
                             <option value="12:00">12:00</option>
+                            <option value="12:15">12:15</option>
+                            <option value="12:30">12:30</option>
+                            <option value="12:45">12:45</option>
                             <option value="17:00">17:00</option>
+                            <option value="17:15">17:15</option>
+                            <option value="17:30">17:30</option>
+                            <option value="17:45">17:45</option>
                             <option value="18:00">18:00</option>
+                            <option value="18:15">18:15</option>
+                            <option value="18:30">18:30</option>
+                            <option value="18:45">18:45</option>
+                            <option value="19:00">19:00</option>
                             <option value="19:00">19:00</option> 
                         </Form.Select>
                         <Form.Text className="text-danger">
