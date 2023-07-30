@@ -1,9 +1,9 @@
-import {  useState } from "react";
+import {  useEffect, useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { editarTurno,fecha } from "../../helpers/turnos";
 import Swal from "sweetalert2";
-
+import { fechaParseada } from "../../helpers/turnos";
 const EditarTurno = ({ showEditar, handleCloseEditar, datos,turnos }) => {
 
     const [datosTurnos, setDatosTurnos] = useState(datos)
@@ -14,7 +14,10 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,turnos }) => {
         formState: { errors },
         reset,
     } = useForm();
-    
+    useEffect(()=>{
+        //setFechaParseada= fechaParseada(datos.fecha)
+        //console.log(setFechaParseada);
+    },[])
     const onSubmit = (turnoEditado) => {
         editarTurno(turnoEditado, datos._id).then((respuesta) => {
             if (respuesta) {
@@ -51,16 +54,13 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,turnos }) => {
                                 maxLength: {
                                     value: 100,
                                     message: "La cantidad maxima de caracteres es de 100 digitos",
-
                                 },
-
                             })}
                             onChange={(dato) => {
                                 setDatosTurnos({
                                     ...datosTurnos,
                                     detalleCita: dato.target.value,
                                 });
-                                
                             }}
                         />
                         <Form.Text className="text-danger">
@@ -107,7 +107,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,turnos }) => {
                             type="date"
                             name="duedate"
                             placeholder="Due date"
-                            defaultValue={datos.fecha}
+                            defaultValue={fechaParseada(datos.fecha)}
                             min={fechaActual}
                             {...register('fecha', {
                                 required: 'La fecha es un dato obligatorio',

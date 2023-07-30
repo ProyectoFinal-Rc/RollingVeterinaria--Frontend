@@ -11,16 +11,18 @@ export const obtenerListaTurnos = async () => {
 };
 export const fecha=()=>{
   let anio =  new Date().getFullYear()+"";
-  let mes =  new Date().getMonth()+1 <10 && "0"+(new Date().getMonth()+1) 
+  let mes =  new Date().getMonth()+1 <10 && "0"+(new Date().getMonth()+1);
   let dia = new Date().getDate()+"";
   return `${anio}-${mes}-${dia}`
 }
-export const fechaParseada = (fechaguardada)=>{
-  let anio =  new Date(fechaguardada).getFullYear()+"";
-  let mes =  new Date(fechaguardada).getMonth()+1 <10 && "0"+(new Date(fechaguardada).getMonth()+1) 
-  let dia = new Date(fechaguardada).getDate()+"";
-  return `${anio}-${mes}-${dia}`
-}
+  export const fechaParseada = (fechaguardada) => {
+  const fecha = new Date(fechaguardada); 
+  const anio = fecha.getFullYear();
+  const mes = fecha.getMonth() + 1 < 10 ? "0" + (fecha.getMonth() + 1) : fecha.getMonth() + 1;
+  const dia = fecha.getDate() < 10 ? "0" + (fecha.getDate()+1) : fecha.getDate()+1;
+  return `${anio}-${mes}-${dia}`;
+}; 
+
 export const crearTurno = async (turno) => {
   try {
     const respuesta = await fetch(URL_turno, {

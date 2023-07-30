@@ -28,14 +28,22 @@ const AdminTurnos = () => {
     })
   }, [])
 
-  const seleccionar = (id) => {
+/*   const seleccionar = (id) => {
     //SetTurnoEditar(turnos.find((turno) => turno._id === id))
     const turnoGuardado = turnos.find((turno) => turno._id === id)
     const res = fechaParseada(turnoGuardado.fecha);
     turnoGuardado.fecha=res;
+    //console.log(turnoGuardado)
+    //console.log(turnoGuardado.fecha)
+    //console.log(res)
     SetTurnoEditar(turnoGuardado);
   }
-
+ */
+  const seleccionar = (id) => {
+    const turnoGuardado = turnos.find((turno) => turno._id === id);
+    SetTurnoEditar(turnoGuardado);
+  };
+  
   const borrar = (id) => {
     Swal.fire({
       title: 'Esta seguro de borrar el siguiente turno?',
@@ -120,7 +128,7 @@ const AdminTurnos = () => {
           }
         </tbody>
       </Table>
-      <EditarTurno turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
+      <EditarTurno  turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
       <AgregarTurno turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
     </section>
   );
