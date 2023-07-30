@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 import { Fragment } from "react";
 import EditarPaciente from "./EditarPaciente";
 import { Link } from "react-router-dom"
-
+import { fechaParseada } from "../../helpers/turnos";
 
 const AdminPacientes = () => {
     const [show, setShow] = useState(false);
@@ -108,7 +108,7 @@ const AdminPacientes = () => {
                                                             <ListGroup.Item><strong>Nombre Paciente: </strong>{paciente.nombreMascota}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Especie:</strong> {paciente.especie}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Raza: </strong>{paciente.raza}</ListGroup.Item>
-                                                            <ListGroup.Item><strong>Fecha de Nacimiento: </strong>{paciente.fechaNacimiento}</ListGroup.Item>
+                                                            <ListGroup.Item><strong>Fecha de Nacimiento: </strong>{fechaParseada(paciente.fechaNacimiento).replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Peso: </strong>{paciente.peso}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Plan: </strong>{paciente.plan}</ListGroup.Item>
                                                         </ListGroup>

@@ -3,7 +3,7 @@ import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { editarPaciente } from "../../helpers/pacientes";
-
+import { fechaParseada } from "../../helpers/turnos";
 
 const EditarPaciente = ({ showEditar, handleCloseEditar, datos,turnos }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -189,7 +189,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,turnos }) => {
                         <Form.Group controlId="fechaNacimiento">
                             <Form.Label>Fecha de Nacimiento*</Form.Label>
                             <Form.Control type="date" name="duedate" placeholder="Seleccione la fecha de nacimiento"
-                            defaultValue={datos.fechaNacimiento}
+                            defaultValue={fechaParseada(datos.fechaNacimiento)}
                                 {...register('fechaNacimiento', {
                                     required: 'La fecha de nacimiento es obligatoria',
                                 })}
@@ -205,6 +205,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,turnos }) => {
                             <Form.Label>Peso (en kg)*</Form.Label>
                             <Form.Control type="number" placeholder="Ingrese el peso"
                             defaultValue={datos.peso}
+                            min={1}
                                 {...register("peso", {
                                     required: "El peso es un dato obligatorio",
                                     min: {
