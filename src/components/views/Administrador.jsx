@@ -20,7 +20,7 @@ const Administrador = () => {
     }, []);
 
     return (
-        <section className="container pt-5 mt-5">
+        <section className="container pt-5 my-5">
             <div className='container text-center mt-5'>
                 <div className='row justify-content-around'>
                 <Link className='btn btn-info btn-lg col-4' to={"/administrador/paciente"} >Administrador pacientes</Link>

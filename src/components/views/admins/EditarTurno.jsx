@@ -14,17 +14,17 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,turnos }) => {
         formState: { errors },
         reset,
     } = useForm();
-    useEffect(()=>{
-        //setFechaParseada= fechaParseada(datos.fecha)
-        //console.log(setFechaParseada);
-    },[])
+    // useEffect(()=>{
+    //     //setFechaParseada= fechaParseada(datos.fecha)
+    //     //console.log(setFechaParseada);
+    // },[])
     const onSubmit = (turnoEditado) => {
         editarTurno(turnoEditado, datos._id).then((respuesta) => {
             if (respuesta) {
                 Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success")
-                .then(() => {
-                turnos.push(turnoEditado);
-                });
+                // .then(() => {
+                // turnos.push(turnoEditado);
+                // });
                 reset();
             } else {
                 Swal.fire("error", "No se pudo editar el turno correctamente, vuelva a intentarlo más tarde", "error");
