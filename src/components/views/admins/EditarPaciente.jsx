@@ -14,10 +14,8 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,turnos }) => {
         editarPaciente(pacienteEditado,datos._id).then((respuesta)=>{
             if(respuesta) {
                 Swal.fire("Paciente editado", `El paciente  ${pacienteEditado.nombreMascota} se editó correctamente`, "success")
-                .then(()=>{
-                
-                });
                 reset();
+                handleCloseEditar();
             } else {
                 Swal.fire("error", "No se pudo editar el paciente correctamente, vuelva a intentarlo más tarde", "error");
             }
