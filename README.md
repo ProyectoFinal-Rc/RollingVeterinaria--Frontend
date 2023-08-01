@@ -85,7 +85,7 @@ Si tienes alguna pregunta o sugerencia relacionada con este proyecto, por favor 
 
 
 ## Autores
-[<img src="https://avatars.githubusercontent.com/u/97061657?v=4" width=115><br><sub>Facundo Gomez</sub>](https://github.com/Smlich) |  [<img src="https://avatars.githubusercontent.com/u/67029623?v=4" width=115><br><sub>Malena de Arriba</sub>](https://github.com/mmaleducada) | [<img src="https://avatars.githubusercontent.com/u/106267352?v=4" width=115><br><sub>Mauricio Soria</sub>](https://github.com/MauricioSor) | [<img src="https://avatars.githubusercontent.com/u/52725348?v=4" width=115><br><sub>Cristian Ismael Gramajo</sub>](https://github.com/Cristian021195) |  [<img src="https://avatars.githubusercontent.com/u/100169998?v=4" width=115><br><sub>Juan Manuel LLanos</sub>](https://github.com/juanmllanos) |  [<img src="https://avatars.githubusercontent.com/u/108185911?v=4" width=115><br><sub>Juan Pablo Alba</sub>](https://github.com/JuanPiAlba) |
+[Facundo Gomez](https://github.com/Smlich) |  [Malena de Arriba](https://github.com/mmaleducada) | [Mauricio Soria](https://github.com/MauricioSor) | [Cristian Ismael Gramajo](https://github.com/Cristian021195) |  [Juan Manuel LLanos](https://github.com/juanmllanos) |  [Juan Pablo Alba](https://github.com/JuanPiAlba) 
 
 
 
