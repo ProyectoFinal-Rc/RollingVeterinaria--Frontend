@@ -64,11 +64,11 @@ Esto iniciará un servidor local y podrás acceder a la aplicación desde tu nav
 
 ## Construido con
 
-* ![HTML5](https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/200px-HTML5_logo_and_wordmark.svg.png)
-* ![CSS3](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/200px-CSS3_logo_and_wordmark.svg.png)
-* ![Bootstrap](https://getbootstrap.com/)
-* ![JavaScript](https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/200px-Unofficial_JavaScript_logo_2.svg.png)
-* ![React](https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/200px-React-icon.svg.png)
+* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+* ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+* ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+* ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 ### Contribuciones
 ¡Gracias por considerar contribuir a RollingVeterinaria - Frontend! Si deseas enviar un pull request, asegúrate de seguir estas recomendaciones:
@@ -85,13 +85,8 @@ Si tienes alguna pregunta o sugerencia relacionada con este proyecto, por favor 
 
 
 ## Autores
-|  [<img src="https://avatars.githubusercontent.com/u/97061657?v=4" width=115><br><sub>Facundo Gomez</sub>](https://github.com/Smlich)
-|  [<img src="https://avatars.githubusercontent.com/u/67029623?v=4" width=115><br><sub>Malena de Arriba</sub>](https://github.com/mmaleducada)
-|  [<img src="https://avatars.githubusercontent.com/u/106267352?v=4" width=115><br><sub>Mauricio Soria</sub>](https://github.com/MauricioSor)
-| [<img src="https://avatars.githubusercontent.com/u/52725348?v=4" width=115><br><sub>Cristian Ismael Gramajo</sub>](https://github.com/Cristian021195) 
-|  [<img src="https://avatars.githubusercontent.com/u/100169998?v=4" width=115><br><sub>Juan Manuel LLanos</sub>](https://github.com/juanmllanos) 
-|  [<img src="https://avatars.githubusercontent.com/u/108185911?v=4" width=115><br><sub>Juan Pablo Alba</sub>](https://github.com/JuanPiAlba) |
-| :---: | :---: | :---: | :---: | :---: | :---: |
+|  [<img src="https://avatars.githubusercontent.com/u/97061657?v=4" width=115><br><sub>Facundo Gomez</sub>](https://github.com/Smlich) |  [<img src="https://avatars.githubusercontent.com/u/67029623?v=4" width=115><br><sub>Malena de Arriba</sub>](https://github.com/mmaleducada) | [<img src="https://avatars.githubusercontent.com/u/106267352?v=4" width=115><br><sub>Mauricio Soria</sub>](https://github.com/MauricioSor) | [<img src="https://avatars.githubusercontent.com/u/52725348?v=4" width=115><br><sub>Cristian Ismael Gramajo</sub>](https://github.com/Cristian021195) |  [<img src="https://avatars.githubusercontent.com/u/100169998?v=4" width=115><br><sub>Juan Manuel LLanos</sub>](https://github.com/juanmllanos) |  [<img src="https://avatars.githubusercontent.com/u/108185911?v=4" width=115><br><sub>Juan Pablo Alba</sub>](https://github.com/JuanPiAlba) |
+
 
 
 ## Licencia
@@ -113,7 +108,7 @@ Si tienes alguna pregunta o sugerencia relacionada con este proyecto, por favor 
 
 [Emilse Arias](https://github.com/earias08) nuestra querida mentora, que nos apoyo constantemente y, nos ayudo con muchisima paciencia y cariño desde el primer día.
 
-## Expresiones de Gratitud 🎁
+## Expresiones de gratitud 🎁
 - Comenta a otros sobre este proyecto 📢
 - Invita una cerveza 🍺 o un café ☕ a alguien del equipo.
 - Da las gracias públicamente 🤓.
