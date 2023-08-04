@@ -129,7 +129,7 @@ const AdminTurnos = () => {
         </tbody>
       </Table>
       <EditarTurno  turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
-      <AgregarTurno turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
+      <AgregarTurno SetTurnos={SetTurnos}turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
     </section>
   );
 };

@@ -36,42 +36,42 @@ const AdminPacientes = () => {
 
     const borrar = (id) => {
         Swal.fire({
-          title: 'Esta seguro de borrar este paciente?',
-          text: "El siguiente cambio no podra ser revertido",
-          icon: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#3085d6',
-          cancelButtonColor: '#d33',
-          confirmButtonText: 'Si, quiero borrar!',
-          cancelButtonText: 'Cancelar'
+            title: 'Esta seguro de borrar este paciente?',
+            text: "El siguiente cambio no podra ser revertido",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, quiero borrar!',
+            cancelButtonText: 'Cancelar'
         }).then((resultado) => {
-          if (resultado.isConfirmed) {
-            borrarPaciente(id).then((respuesta)=>{
-              if(respuesta.status === 200){
-                obtenerListaPacientes().then((respuesta)=>{
-                  if(respuesta){
-                    setPacientes(respuesta);
-                  } else {
-                    Swal.fire("Error", "Intente realizar esta operacion en unos minutos", "error");
-                  }
+            if (resultado.isConfirmed) {
+                borrarPaciente(id).then((respuesta) => {
+                    if (respuesta.status === 200) {
+                        obtenerListaPacientes().then((respuesta) => {
+                            if (respuesta) {
+                                setPacientes(respuesta);
+                            } else {
+                                Swal.fire("Error", "Intente realizar esta operacion en unos minutos", "error");
+                            }
+                        })
+                        Swal.fire(
+                            'Borrado!',
+                            'El paciente fue borrado.',
+                            'success'
+                        )
+                    } else {
+                        Swal.fire({
+                            title: "Lo siento!",
+                            text: "El paciente no pudo ser eliminado.",
+                            icon: "error",
+                            confirmButtonColor: "#fa8072",
+                        });
+                    }
                 })
-                Swal.fire(
-                  'Borrado!',
-                  'El paciente fue borrado.',
-                  'success'
-                )
-              }else{
-                Swal.fire({
-                  title: "Lo siento!",
-                  text: "El paciente no pudo ser eliminado.",
-                  icon: "error",
-                  confirmButtonColor: "#fa8072",
-                });
-              }
-            })
-          }
+            }
         })
-      }
+    }
 
     return (
         <section className="container mt-5">
@@ -108,14 +108,14 @@ const AdminPacientes = () => {
                                                             <ListGroup.Item><strong>Nombre Paciente: </strong>{paciente.nombreMascota}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Especie:</strong> {paciente.especie}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Raza: </strong>{paciente.raza}</ListGroup.Item>
-                                                            <ListGroup.Item><strong>Fecha de Nacimiento: </strong>{fechaParseada(paciente.fechaNacimiento).replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')}</ListGroup.Item>
+                                                            <ListGroup.Item><strong>Fecha de Nacimiento: </strong>{fechaParseada(paciente.fechaNacimiento).replace(/^(\d{4})-(\d{2})-(\d{2})$/g, '$3/$2/$1')}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Peso: </strong>{paciente.peso}</ListGroup.Item>
                                                             <ListGroup.Item><strong>Plan: </strong>{paciente.plan}</ListGroup.Item>
                                                         </ListGroup>
                                                     </Col>
                                                     <Col xs={3} md={2} lg={1} className="d-flex justify-content-sm-end align-items-start p-0">
                                                         <Button className="btn btn-warning btn-sm" onClick={() => { handleShowEditar(); seleccionar(paciente._id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
-                                                        <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0" onClick={() => {borrar(paciente._id)}}></i></Button>
+                                                        <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0" onClick={() => { borrar(paciente._id) }}></i></Button>
                                                     </Col>
                                                 </Row>
                                                 <hr />
@@ -135,7 +135,7 @@ const AdminPacientes = () => {
                     }
                 </Row>
             </Container>
-            <AgregarPaciente show={show} handleClose={handleClose}></AgregarPaciente>
+            <AgregarPaciente setPacientes={setPacientes} show={show} handleClose={handleClose}></AgregarPaciente>
             <EditarPaciente datos={pacienteEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarPaciente>
         </section>
     );
