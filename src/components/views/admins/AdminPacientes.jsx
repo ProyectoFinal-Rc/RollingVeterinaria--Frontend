@@ -136,7 +136,7 @@ const AdminPacientes = () => {
                 </Row>
             </Container>
             <AgregarPaciente setPacientes={setPacientes} show={show} handleClose={handleClose}></AgregarPaciente>
-            <EditarPaciente datos={pacienteEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarPaciente>
+            <EditarPaciente setPacientes={setPacientes}datos={pacienteEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarPaciente>
         </section>
     );
 };

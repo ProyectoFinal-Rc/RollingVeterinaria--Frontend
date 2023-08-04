@@ -2,22 +2,27 @@ import { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { editarPaciente } from "../../helpers/pacientes";
+import { editarPaciente,obtenerListaPacientes } from "../../helpers/pacientes";
 import { fechaParseada } from "../../helpers/turnos";
 
-const EditarPaciente = ({ showEditar, handleCloseEditar, datos,turnos }) => {
+const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
     const [datosPacientes, setDatosPacientes] = useState(datos)
+    
     const onSubmit = (pacienteEditado) => {
-
         editarPaciente(pacienteEditado,datos._id).then((respuesta)=>{
             if(respuesta) {
                 Swal.fire("Paciente editado", `El paciente  ${pacienteEditado.nombreMascota} se editó correctamente`, "success")
-                .then(()=>{
-                
-                });
+                    obtenerListaPacientes().then((respuesta) => {
+                        console.log("entra")
+                        if (respuesta) {
+                            console.log("entra2")
+                            setPacientes(respuesta)
+                        }
+                    })
                 reset();
+                handleCloseEditar();
             } else {
                 Swal.fire("error", "No se pudo editar el paciente correctamente, vuelva a intentarlo más tarde", "error");
             }
@@ -60,7 +65,6 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,turnos }) => {
                                 {errors.nombreDuenio?.message}
                             </Form.Text>
                         </Form.Group>
-
                         <Form.Group className="mb-3" controlId="apellidoDuenio">
                             <Form.Label>Apellido del dueño*</Form.Label>
                             <Form.Control

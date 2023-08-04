@@ -27,18 +27,6 @@ const AdminTurnos = () => {
       }
     })
   }, [])
-
-/*   const seleccionar = (id) => {
-    //SetTurnoEditar(turnos.find((turno) => turno._id === id))
-    const turnoGuardado = turnos.find((turno) => turno._id === id)
-    const res = fechaParseada(turnoGuardado.fecha);
-    turnoGuardado.fecha=res;
-    //console.log(turnoGuardado)
-    //console.log(turnoGuardado.fecha)
-    //console.log(res)
-    SetTurnoEditar(turnoGuardado);
-  }
- */
   const seleccionar = (id) => {
     const turnoGuardado = turnos.find((turno) => turno._id === id);
     SetTurnoEditar(turnoGuardado);
@@ -108,9 +96,9 @@ const AdminTurnos = () => {
         </thead>
         <tbody>
           {
-            turnos.map((cita) => {
+            turnos.map((cita,pi) => {
               return (
-                <Fragment key={cita._id}>
+                <Fragment key={pi}>
                   <tr>
                     <td className="text-truncate overflow-hidden">{cita.detalleCita}</td>
                     <td className="text-truncate overflow-hidden">{cita.veterinario}</td>
@@ -128,7 +116,7 @@ const AdminTurnos = () => {
           }
         </tbody>
       </Table>
-      <EditarTurno  turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
+      <EditarTurno SetTurnos={SetTurnos} turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
       <AgregarTurno SetTurnos={SetTurnos}turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
     </section>
   );

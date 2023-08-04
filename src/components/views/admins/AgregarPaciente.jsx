@@ -6,7 +6,6 @@ import { crearPaciente,obtenerListaPacientes } from "../../helpers/pacientes";
 
 const AgregarPaciente = ({ show, handleClose,setPacientes }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-
     const onSubmit = (pacienteNuevo) => {
         crearPaciente(pacienteNuevo).then((respuesta)=>{
             if(respuesta.status===201){
