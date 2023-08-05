@@ -9,15 +9,15 @@
 </p>
 
 
-> El código está disponible en la rama [rollingVet - rama main](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend/tree/main)
+> El código está disponible en la rama [rollingVet - main](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend/tree/main)
 
-Este es el repositorio del frontend para el proyecto RollingVeterinaria, una aplicación web para la gestión de una clínica veterinaria. El backend correspondiente se encuentra en [este repositorio](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Backend).
+Este es el repositorio del frontend para el proyecto RollingVet, una aplicación web para la gestión de una clínica veterinaria. El backend correspondiente se encuentra en [este repositorio](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Backend).
 
-## Introduction
+## Introducción
 
-Bienvenido a RollingVeterinaria! Este proyecto es una aplicación web diseñada para facilitar la gestión eficiente de clínicas veterinarias. Nuestro objetivo es proporcionar a los profesionales y dueños de mascotas una herramienta completa y fácil de usar que les permita agilizar sus operaciones diarias y mejorar la calidad de atención a los animales.
+Bienvenido a RollingVet! Este proyecto es una aplicación web diseñada para facilitar la gestión eficiente de clínicas veterinarias. Nuestro objetivo es proporcionar a los profesionales y dueños de mascotas una herramienta completa y fácil de usar que les permita agilizar sus operaciones diarias y mejorar la calidad de atención a los animales.
 
-## ¿Qué ofrece RollingVeterinaria?
+## ¿Qué ofrece RollingVet?
 - Agenda y Citas: Mantén un registro detallado de las citas programadas con nuestros pacientes. Podrás ver las citas del día, semana o mes de un vistazo y gestionar las reservas de manera efectiva.
 
 - Administración de Clientes: Gestiona una base de datos de clientes, con datos de contacto, información de sus mascotas y su historial de visitas. Fomenta relaciones duraderas y mejora la comunicación con los dueños de las mascotas.
@@ -30,16 +30,17 @@ Bienvenido a RollingVeterinaria! Este proyecto es una aplicación web diseñada 
 
 ## Installation
 
-1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
-  `git clone https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend.git`
+`1. Clona este repositorio en tu máquina local utilizando el siguiente comando:`
 
-2. Ve al directorio del proyecto:
+git clone https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend.git
+
+`2. Ve al directorio del proyecto:`
    
-  `cd RollingVeterinaria--Frontend`
+cd RollingVeterinaria--Frontend
 
-3. Instala las dependencias:
+`3. Instala las dependencias:`
 
-  `npm install`
+npm install
 
 ## Configuracion
 
@@ -47,7 +48,7 @@ Antes de ejecutar la aplicación, asegúrate de configurar correctamente los par
 
 ## Uso
 
-   `npm run dev`
+`npm run dev`
 
 Esto iniciará un servidor local y podrás acceder a la aplicación desde tu navegador en la dirección http://localhost:3000.
 
@@ -73,7 +74,7 @@ Esto iniciará un servidor local y podrás acceder a la aplicación desde tu nav
 Si tienes alguna pregunta o sugerencia relacionada con este proyecto, por favor abre un issue en el repositorio.
 
 ## Autores
-[Facundo Gomez](https://github.com/Smlich) |  [Malena de Arriba](https://github.com/mmaleducada) | [Mauricio Soria](https://github.com/MauricioSor) | [Cristian Ismael Gramajo](https://github.com/Cristian021195) |  [Juan Manuel LLanos](https://github.com/juanmllanos) |  [Juan Pablo Alba](https://github.com/JuanPiAlba) 
+[Facundo Gomez](https://github.com/Smlich) | [Malena de Arriba](https://github.com/mmaleducada) | [Mauricio Soria](https://github.com/MauricioSor) | [Cristian Ismael Gramajo](https://github.com/Cristian021195) | [Juan Manuel LLanos](https://github.com/juanmllanos) | [Juan Pablo Alba](https://github.com/JuanPiAlba) 
 
 ## Agradecimientos
 
