@@ -16,7 +16,7 @@ const Contacto = () => {
                     <div className="p-3 text-center">
                         <h1 className="fw-bold">CONTACTANOS</h1>
                         <div className="m-3 text-center">
-                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" />
+                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" width={'100%'}/>
                         </div>
                         <p>Ya sea email, llamada, o completa el formulario para saber como podemos ayudarte con tu consulta y planificar a tu gusto</p>
                         <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
