@@ -1,12 +1,12 @@
 import './Footer.css'
-
+import logo from "../../../public/logo.png"
 const Footer = () => {
 	return (
 		<footer className=' d-flex flex-column pt-4'>
 			<div className='d-md-flex justify-content-md-around pb-3'>
 				<div className='my-auto d-flex flex-column align-items-center'>
 					<img
-					src='../../../public/logo.png'
+					src={logo}
 					id='logoFooter'
 					/>
 					<p className='text-center mb-1 fs-4 pt-3 fw-bold'>Nuestras Redes</p>

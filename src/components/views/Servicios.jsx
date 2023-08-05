@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Servicio1 from "../../assets/pexels-photo-4483327.png";
-import Servicio2 from "../../assets/imagenes de animales/MiConv.com__descarga.png";
-import Servicio3 from "../../assets/imagenes de animales/comohacercrecertunegociopetshop.jpg";
-import Servicio4 from "../../assets/imagenes de animales/MiConv.com__descarga1.png";
+import Servicio2 from "../../assets/imagenes/MiConv.com__descarga.png";
+import Servicio3 from "../../assets/imagenes/comohacercrecertunegociopetshop.jpg";
+import Servicio4 from "../../assets/imagenes/MiConv.com__descarga1.png";
 import '../../App.css';
 import { Row, Col} from 'react-bootstrap';
 
