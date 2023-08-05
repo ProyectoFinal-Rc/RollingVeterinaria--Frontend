@@ -23,7 +23,7 @@ const developers = [
   {
     nombre: "Malena de Arriba",
     foto: "/src/assets/kittens-cat-cat-puppy-rush-45170.png",
-    lenguajes: ["JavaScript", "React", "Node.js","Html","Css"],
+    lenguajes: ["JavaScript", "React", "Node.js", "Html", "Css"],
     descripcion:
       "Male, una apasionada estudiante de programación fullstack. Además de su dedicación a la programación, encuentra equilibrio y satisfacción en sus otros intereses: el deporte y la pintura",
     animalFavorito: "Gato",
@@ -62,33 +62,37 @@ const developers = [
 const About = () => {
 
   return (
-      <Container className="mt-2">
+    <Container className="mt-2">
       <div className="text-center">
-      <h1 id="titulo-about" className="fw-bold text-center">EL EQUIPO</h1>
-      <img src="./src/assets/nosotros.png" alt="Imagenes de animales (dibujos animados)" className="imagen-nosotros" />
+        <h1 id="titulo-about" className="fw-bold text-center">EL EQUIPO</h1>
+        <img src="./src/assets/nosotros.png" alt="Imagenes de animales (dibujos animados)" className="imagen-nosotros" />
       </div>
-        <Row className="mt-4 text-center justify-content-center">
-          {developers.map((developer, index) => (
-            <Col md={6} lg={6} key={index}>
-              <Card className="mb-4" id="card-contenedor-about">
-                <Card.Body className="cardBackgound">
-                  <Card.Title className="fw-bold fs-2" id="card-nombre">{developer.nombre}</Card.Title>
-                  <Card.Text className="compressed-text">
+      <Row className="mt-4 text-center justify-content-center">
+        {developers.map((developer, index) => (
+          <Col md={6} key={index}>
+            <Card className="mb-4" id="card-contenedor-about">
+              <Card.Body className="cardBackgound d-flex flex-column justify-content-between p-3">
+                <div className="mainCard">
+                  <Card.Title className="fw-bold fs-2 my-3" id="card-nombre">{developer.nombre}</Card.Title>
+                  <Card.Text className="compressed-text my-4">
                     {developer.descripcion}
-                    </Card.Text>
+                  </Card.Text>
+                </div>
+                <div className="footerCard">
                   <Card.Text>
                     <strong>Lenguajes y Tecnologias:</strong> {developer.lenguajes.join(", ")}
                   </Card.Text>
                   <Card.Text><strong>Animal Favorito:</strong> {developer.animalFavorito}</Card.Text>
-                    <Button variant="btn btn-lg" className="text-center align-items-end" href={developer.github} >
+                  <Button variant="btn btn-lg" className="text-center" href={developer.github} target='_blank'>
                     <i class="bi bi-github" id="tamaño-icono"></i>
-                    </Button>
-                </Card.Body>
-              </Card>
-            </Col>
-          ))}
-        </Row>
-      </Container>
+                  </Button>
+                </div>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
   )
 }
 
