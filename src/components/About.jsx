@@ -65,11 +65,11 @@ const About = () => {
       <Container className="mt-2">
       <div className="text-center">
       <h1 id="titulo-about" className="fw-bold text-center">EL EQUIPO</h1>
-      <img src="./src/assets/nosotros.png" alt="" className="imagen-nosotros" />
+      <img src="./src/assets/nosotros.png" alt="Imagenes de animales (dibujos animados)" className="imagen-nosotros" />
       </div>
         <Row className="mt-4 text-center justify-content-center">
           {developers.map((developer, index) => (
-            <Col md={6} xs={10} lg={6} key={index}>
+            <Col md={6} lg={6} key={index}>
               <Card className="mb-4" id="card-contenedor-about">
                 <Card.Body className="cardBackgound">
                   <Card.Title className="fw-bold fs-2" id="card-nombre">{developer.nombre}</Card.Title>
