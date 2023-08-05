@@ -5,11 +5,11 @@
 
 <p align="center">
   <a href= "https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg"></a>
-  <a href="netlify"><img src="https://api.netlify.com/api/v1/badges/9e1ff559-4405-4ebe-8718-5e21c0774bc8/deploy-status" alt="Netlify Status"></a>
+  <a href="netlify"><img src="https://img.shields.io/badge/Netlify-page-8A2BE2" alt="Netlify Status"></a>
 </p>
 
 
-> El código está disponible en la rama [rollingVet - main](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend/tree/main)
+> El código está disponible en la rama [rollingVet - rama main](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend/tree/main)
 
 Este es el repositorio del frontend para el proyecto RollingVeterinaria, una aplicación web para la gestión de una clínica veterinaria. El backend correspondiente se encuentra en [este repositorio](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Backend).
 
@@ -17,7 +17,7 @@ Este es el repositorio del frontend para el proyecto RollingVeterinaria, una apl
 
 Bienvenido a RollingVeterinaria! Este proyecto es una aplicación web diseñada para facilitar la gestión eficiente de clínicas veterinarias. Nuestro objetivo es proporcionar a los profesionales y dueños de mascotas una herramienta completa y fácil de usar que les permita agilizar sus operaciones diarias y mejorar la calidad de atención a los animales.
 
-## ¿Qué ofrece RollingVet?
+## ¿Qué ofrece RollingVeterinaria?
 - Agenda y Citas: Mantén un registro detallado de las citas programadas con nuestros pacientes. Podrás ver las citas del día, semana o mes de un vistazo y gestionar las reservas de manera efectiva.
 
 - Administración de Clientes: Gestiona una base de datos de clientes, con datos de contacto, información de sus mascotas y su historial de visitas. Fomenta relaciones duraderas y mejora la comunicación con los dueños de las mascotas.
@@ -28,10 +28,9 @@ Bienvenido a RollingVeterinaria! Este proyecto es una aplicación web diseñada 
 - Node.js 14.x o superior
 - NPM 6.x o superior
 
-## Instalacion
+## Installation
 
 1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
-
   `git clone https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend.git`
 
 2. Ve al directorio del proyecto:
@@ -41,7 +40,6 @@ Bienvenido a RollingVeterinaria! Este proyecto es una aplicación web diseñada 
 3. Instala las dependencias:
 
   `npm install`
-
 
 ## Configuracion
 
@@ -55,11 +53,11 @@ Esto iniciará un servidor local y podrás acceder a la aplicación desde tu nav
 
 ## Construido con
 
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
-![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+* ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+* ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+* ![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)
+* ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)
+* ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 ## Contribuciones
 
