@@ -17,7 +17,7 @@
 }
 
 .btn-navbar:hover {
-	border-bottom: black solid;
+	border-bottom: black solid thin;
 }
 
 #btn-cerrarSesion {
