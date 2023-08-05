@@ -13,20 +13,22 @@ export const PublicacionesCrud = () => {
     const [selected, setSelected] = useState({_id:'',contenido:'', imagen:'', tags:[], titulo:''});
 
     function togglePublicacion(id, active){
-        setData(data.map(d=>{
-            if(d._id == id){
-                d.active = active;
-            }
-            return d;
-        }))
+        setLoading(true)
         fetch(API_URL+"/publicacion/activar/"+id, 
             {method:'PUT', body: JSON.stringify({active:!active}), headers:{"Content-Type":"application/json"}})
-        .then(res=>res.json())
         .then(res=>{
-            toast(res.mensaje, 3000, "bg-success text-white", false);
+            setData(data.map(d=>{
+                if(d._id == id){
+                    d.active = !active;
+                }
+                return d;
+            }))
+            return res.json()
+        })
+        .then(res=>{
+            res.activa ? toast(res.mensaje, 3000, "bg-success text-white", false) : toast(res.mensaje, 3000, "bg-warning text-dark", false);            
         })
         .catch(err=>{
-            console.log(err);
             setData(data.map(d=>{
                 if(d._id == id){
                     d.active = !active;
@@ -34,7 +36,7 @@ export const PublicacionesCrud = () => {
                 return d;
             }))
             toast(err.message+"", 3000, "bg-danger text-white", false);
-        })
+        }).finally(()=>{setLoading(false)})
     }
     function filtrar(e){
         e.preventDefault();
@@ -60,7 +62,7 @@ export const PublicacionesCrud = () => {
         }        
     }
     function enviarPublicacion(e){ // carga o edicion
-        e.preventDefault(); const DTO = {};
+        e.preventDefault(); const DTO = {}; setLoading(true);
         let formData = new FormData(e.target);
 
         formData.forEach((value, key) => {                
@@ -75,7 +77,8 @@ export const PublicacionesCrud = () => {
         });
 
         if(DTO.id === ""){
-            fetch(API_URL+"/publicacion", {
+            delete DTO['id'];
+            fetch(API_URL+"/publicacion", {                
                 method:'POST', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
             }).then((res)=>{
                 if(res.ok){
@@ -91,7 +94,7 @@ export const PublicacionesCrud = () => {
             .catch(err=>{
                 console.log(err);
                 toast(err.message+"", 3000, "bg-danger text-white", false);
-            })
+            }).finally(()=>{setLoading(false)})
         }else{
             fetch(API_URL+"/publicacion/"+DTO.id, {
                 method:'PUT', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
@@ -109,7 +112,7 @@ export const PublicacionesCrud = () => {
             .catch(err=>{
                 console.log(err);
                 toast(err.message+"", 3000, "bg-danger text-white", false);
-            })
+            }).finally(()=>{setLoading(false)})
         }
     }
     useEffect(()=>{
@@ -130,17 +133,23 @@ export const PublicacionesCrud = () => {
     function eliminar(id){
         let conf = window.confirm("¿Eliminar publicacion?");
         if(conf){
+            setLoading(true)
             fetch(API_URL+"/publicacion/"+id, 
             {method:'DELETE', headers:{"Content-Type":"application/json"}})
-            .then(res=>res.json())
             .then(res=>{
+                return res.json()
+            })
+            .then(res=>{
+                if(res.error){
+                    throw new Error(res.mensaje);
+                }
                 setData(data.filter(d=>d._id !== id))
                 toast("Eliminada correctamente", 3000, "bg-success text-white", false);
             })
             .catch(err=>{
                 console.log(err)
                 toast(err.message+"", 3000, "bg-danger text-white", false);
-            })
+            }).finally(()=>{setLoading(false)})
         }
     }
     function editar(id){
@@ -165,11 +174,11 @@ export const PublicacionesCrud = () => {
                     <div>
                         <form id='publicacion-form' onSubmit={(e)=>{filtrar(e)}} className='d-flex align-items-center mb-3'>
                             <label htmlFor="titulo">Titulo: </label><input type="text" name='titulo' placeholder='Ej: #00X o Vacío para buscar todos' className='form-control mx-2'/>
-                            {loading ? <SpinnerLoader color='green' size='2'/> : <LockSpinnerLoader color='#B0BEC5' size='2'/>}
+                            {loading ? <SpinnerLoader color='green' width='3' height='2'/> : <LockSpinnerLoader color='#B0BEC5' width='3' height='2'/>}
                             <div className="btn-group ms-2" role="group" aria-label="Basic mixed styles example">
-                                <button type="submit" className='btn btn-primary'>Buscar</button>
-                                <button type="submit" className='btn btn-success' onClick={()=>{setShow(!show); setSelected({_id:'',contenido:'', imagen:'', tags:[], titulo:''})}}>Nueva</button>
-                                <button type="reset" className='btn btn-warning'>Limpiar</button>
+                                <button type="button" className='btn btn-primary'><i className="bi bi-search"></i></button>
+                                <button type="button" className='btn btn-success' onClick={()=>{setShow(!show); setSelected({_id:'',contenido:'', imagen:'', tags:[], titulo:''})}}><i className="bi bi-plus-square"></i></button>
+                                <button type="reset" className='btn btn-warning'><i className="bi bi-backspace"></i></button>
                             </div>
                         </form>
                     </div>
@@ -189,9 +198,9 @@ export const PublicacionesCrud = () => {
                                         <td>{p.contenido.slice(0,20)+"..."}</td>
                                         <td>
                                         <div className="btn-group" role="group" aria-label="Basic mixed styles example">
-                                            <button type="submit" className='btn btn-sm btn-danger' title='eliminar' onClick={()=>{eliminar(p._id)}}>🗑</button>
-                                            <button type="reset" className='btn btn-sm btn-warning' title='editar' onClick={()=>{editar(p._id)}}>✏</button>
-                                            <button className='btn btn-sm btn-dark' title='activar'><input type="checkbox" onClick={()=>togglePublicacion(p._id, p.active)} defaultChecked={p.active} className='form-check-input' name="activa"/></button>
+                                            <button type="submit" className='btn btn-sm' title='eliminar' onClick={()=>{eliminar(p._id)}}><i className="bi bi-trash text-danger"></i></button>
+                                            <button type="reset" className='btn btn-sm' title='editar' onClick={()=>{editar(p._id)}}><i className="bi bi-pencil-square text-warning"></i></button>
+                                            <button className='btn btn-sm' title='activar'><input type="checkbox" onClick={()=>togglePublicacion(p._id, p.active)} defaultChecked={p.active} className='form-check-input' name="activa"/></button>
                                         </div>
                                         </td>
                                     </tr>)})}
