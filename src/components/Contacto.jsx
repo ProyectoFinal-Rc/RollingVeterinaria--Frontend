@@ -16,7 +16,7 @@ const Contacto = () => {
                     <div className="p-3 text-center">
                         <h1 className="fw-bold">CONTACTANOS</h1>
                         <div className="m-3 text-center">
-                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" style={{width:'100%', maxWidth:'300px'}}/>
+                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" style={{ width: '100%', maxWidth: '300px' }} />
                         </div>
                         <p>Ya sea email, llamada, o completa el formulario para saber como podemos ayudarte con tu consulta y planificar a tu gusto</p>
                         <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
@@ -114,8 +114,8 @@ const Contacto = () => {
                                 </Form.Group>
                             </Col>
                             <Col xs={12} md={12} lg={12} className="mt-3" >
-                                    <Form.Label>Telefono</Form.Label>
-                                <InputGroup  className="mb-3">
+                                <Form.Label>Telefono</Form.Label>
+                                <InputGroup className="mb-3">
                                     <InputGroup.Text id="telefono">+54</InputGroup.Text>
                                     <Form.Control type="number" placeholder="3865332311" aria-describedby="telefono"
                                         {...register("telefono", {
@@ -134,7 +134,7 @@ const Contacto = () => {
                             </Col>
                             <Col xs={12} md={12} lg={12} className="mt-3" >
                                 <Form.Group>
-                                <Form.Label>Describa su consulta</Form.Label>
+                                    <Form.Label>Describa su consulta</Form.Label>
                                     <Form.Control
                                         as="textarea"
                                         placeholder="Describa su inconveniente / consulta"
@@ -157,9 +157,11 @@ const Contacto = () => {
                                 </Form.Group>
                             </Col>
                         </Row>
+                        <div className="d-flex justify-content-center">
                             <Button variant="primary" type="submit" className="mt-3">
                                 Enviar
                             </Button>
+                        </div>
                     </Form>
                 </Col>
             </Row>
