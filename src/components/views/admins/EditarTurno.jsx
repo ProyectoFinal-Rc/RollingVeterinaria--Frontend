@@ -4,21 +4,14 @@ import { useForm } from "react-hook-form";
 import { editarTurno,fecha, obtenerListaTurnos } from "../../helpers/turnos";
 import Swal from "sweetalert2";
 import { fechaParseada } from "../../helpers/turnos";
-const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
-        console.log(datos)
-    const [datosTurnos, setDatosTurnos] = useState()
+const EditarTurno = ({ showEditar, setShowEditar, turnoEditar, setTurnos }) => {    
+    const {register, handleSubmit, formState: { errors }, reset, } = useForm();
+    const [datos, setDatos] = useState(turnoEditar)
     const [fechaActual,setFechaActual]=useState(fecha())
-    const {register,handleSubmit,
-        formState: { errors },
-        reset,
-    } = useForm();
-/*     useEffect(()=>{
-    setDatosTurnos(datos)
-    },[]) */  
-    const onSubmit = (turnoEditado) => {
-        editarTurno(turnoEditado, datos._id).then((respuesta) => {
+    const editar = (e) => {
+        editarTurno(e, datos._id).then((respuesta) => {
             if (respuesta) {
-                Swal.fire("Turno editado", `El turno de ${turnoEditado.mascota} se editó correctamente`, "success")
+                Swal.fire("Turno editado", `El turno de ${e.mascota} se editó correctamente`, "success")
                 obtenerListaTurnos().then((respuesta) => {
                     if (respuesta) {
                         SetTurnos(respuesta)
@@ -31,22 +24,21 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
             }
         })
     };
-    
     return (
-        <Modal show={showEditar} onHide={handleCloseEditar}>
+        <Modal show={showEditar} onHide={()=>{setShowEditar(false)}}>
             <Modal.Header closeButton>
                 <Modal.Title>Editar Turno</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <Form onSubmit={handleSubmit(onSubmit)}>
+                <Form onSubmit={handleSubmit(editar)}>
                     <Form.Group className="mb-3" controlId="detalleCita">
                         <Form.Label>Detalle de turno*</Form.Label>
                         <Form.Control
                             type="text"
                             placeholder="Ingrese el detalle de la cita"
-                            value={datosTurnos.detalleCita}
+                            defaultValue={turnoEditar.detalleCita}
                             {...register("detalleCita", {
-                                required: "El detalle de la cita es un dato obligatorio",
+                                required: "El nombre de la mascota es un dato obligatorio",
                                 minLength: {
                                     value: 2,
                                     message: "La cantidad minima de caracteres es de 2 digitos",
@@ -56,21 +48,22 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
                                     message: "La cantidad maxima de caracteres es de 100 digitos",
                                 },
                             })}
-                            onChange={(dato) => {
-                                setDatosTurnos({
-                                    ...datosTurnos,
-                                    detalleCita: dato.target.value,
-                                });
+                            onChange={(dt)=>{
+                                setDatos({
+                                    ...datos, 
+                                    nombreDuenio: dt.target.value, 
+                                }); 
                             }}
                         />
                         <Form.Text className="text-danger">
                             {errors.detalleCita?.message}
                         </Form.Text>
                     </Form.Group>
+                    
                     <Form.Group className="mb-3" controlId="veterinario">
                         <Form.Label>Veterinario*</Form.Label>
                         <Form.Select
-                            value={datosTurnos.veterinario}
+                            defaultValue={turnoEditar.veterinario}
                             {...register("veterinario", {
                                 required: "El veterinario es obligatorio"
                             })}>
@@ -85,7 +78,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
                     <Form.Group className="mb-3" controlId="mascota">
                         <Form.Label>Nombre Mascota*</Form.Label>
                         <Form.Control type="text" placeholder="Ingrese el nombre de la mascota"
-                            value={datosTurnos.mascota}
+                            defaultValue={turnoEditar.mascota}
                             {...register("mascota", {
                                 required: "El nombre de la mascota es un dato obligatorio",
                                 minLength: {
@@ -107,7 +100,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
                             type="date"
                             name="duedate"
                             placeholder="Due date"
-                            value={fechaParseada(datosTurnos.fecha)}
+                            defaultValue={fechaParseada(turnoEditar.fecha)}
                             min={fechaActual}
                             {...register('fecha', {
                                 required: 'La fecha es un dato obligatorio',
@@ -122,7 +115,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
                     <Form.Group className="mb-3" controlId="hora">
                         <Form.Label>Horario*</Form.Label>
                         <Form.Select aria-label="Default select option"
-                            value={datosTurnos.hora}
+                            defaultValue={turnoEditar.hora}
                             {...register("hora", { required: "El horario es un dato obligatorio" })}
                         >
                             <option value="">Seleccione un horario</option>
@@ -164,7 +157,7 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
                     <Form.Group className="mb-3" controlId="formaPago">
                         <Form.Label>Forma de Pago*</Form.Label>
                         <Form.Select aria-label="Default select payment"
-                            value={datosTurnos.formaPago}
+                            defaultValue={turnoEditar.formaPago}
                             {...register("formaPago", { required: "La forma de pago es un dato obligatorio" })}>
                             <option value="">Seleccione una forma de pago</option>
                             <option value="efectivo">Efectivo</option>
@@ -182,5 +175,4 @@ const EditarTurno = ({ showEditar, handleCloseEditar, datos,SetTurnos }) => {
         </Modal>
     );
 };
-
 export default EditarTurno;

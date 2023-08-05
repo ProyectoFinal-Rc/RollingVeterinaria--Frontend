@@ -8,28 +8,34 @@ import { Link } from "react-router-dom"
 
 const AdminTurnos = () => {
 
-  const [turnos, SetTurnos] = useState([]);
-  const [turnoEditar, SetTurnoEditar] = useState({});
+  const [turnos, setTurnos] = useState([]);
+  const [turnoEditar, setTurnoEditar] = useState({});
   const [show, setShow] = useState(false);
   const [showEditar, setShowEditar] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const handleCloseEditar = () => setShowEditar(false);
-  const handleShowEditar = () => setShowEditar(true);
+  //const handleCloseEditar = () => setShowEditar(false);
+  //const handleShowEditar = () => setShowEditar(true);
 
   useEffect(() => {
     obtenerListaTurnos().then((respuestaListaTurnos) => {
       if (respuestaListaTurnos) {
-        SetTurnos(respuestaListaTurnos);
+        setTurnos(respuestaListaTurnos);
       } else {
         Swal.fire("error", "Intente realizar esta operación más tarde", "error");
       }
     })
   }, [])
-  const seleccionar = (id) => {
+  useEffect(()=>{
+
+  },[turnoEditar])
+  const seleccionar = (id) => {    
     const turnoGuardado = turnos.find((turno) => turno._id === id);
-    SetTurnoEditar(turnoGuardado);
+    if(turnoGuardado){
+      setTurnoEditar(turnoGuardado);
+    }
+    setShowEditar(!showEditar);
   };
   
   const borrar = (id) => {
@@ -48,7 +54,7 @@ const AdminTurnos = () => {
           if(respuesta.status === 200){
             obtenerListaTurnos().then((respuesta)=>{
               if(respuesta){
-                SetTurnos(respuesta);
+                setTurnos(respuesta);
               } else {
                 Swal.fire("Error", "Intente realizar esta operacion en unos minutos", "error");
               }
@@ -106,7 +112,7 @@ const AdminTurnos = () => {
                     <td className="text-truncate overflow-hidden">{fechaParseada(cita.fecha).replace(/^(\d{4})-(\d{2})-(\d{2})$/g,'$3/$2/$1')}</td>
                     <td className="text-truncate overflow-hidden">{cita.hora}</td>
                     <td className="d-flex justify-content-end align-items-star">
-                      <Button className="btn btn-warning me-2" onClick={() => { handleShowEditar(); seleccionar(cita._id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
+                      <Button className="btn btn-warning me-2" onClick={() => { seleccionar(cita._id); }} ><i className="bi bi-pencil-square p-0"></i></Button>
                       <Button variant="danger" onClick={() => {borrar(cita._id)}}><i className="bi bi-file-x p-0"></i></Button>
                     </td>
                   </tr>
@@ -116,8 +122,8 @@ const AdminTurnos = () => {
           }
         </tbody>
       </Table>
-      <EditarTurno SetTurnos={SetTurnos} turnos={turnos} datos={turnoEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarTurno>
-      <AgregarTurno SetTurnos={SetTurnos}turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
+      {showEditar ? <EditarTurno setTurnos={setTurnos} turnoEditar={turnoEditar} setShowEditar={setShowEditar} showEditar={showEditar}></EditarTurno> : <></>}
+      <AgregarTurno setTurnos={setTurnos} turnos={turnos} show={show} handleClose={handleClose}></AgregarTurno>
     </section>
   );
 };
