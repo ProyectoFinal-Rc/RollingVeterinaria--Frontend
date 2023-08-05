@@ -16,7 +16,7 @@ const Contacto = () => {
                     <div className="p-3 text-center">
                         <h1 className="fw-bold">CONTACTANOS</h1>
                         <div className="m-3 text-center">
-                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" width={'100%'}/>
+                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" style={{width:'100%', maxWidth:'300px'}}/>
                         </div>
                         <p>Ya sea email, llamada, o completa el formulario para saber como podemos ayudarte con tu consulta y planificar a tu gusto</p>
                         <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
@@ -117,7 +117,7 @@ const Contacto = () => {
                                     <Form.Label>Telefono</Form.Label>
                                 <InputGroup  className="mb-3">
                                     <InputGroup.Text id="telefono">+54</InputGroup.Text>
-                                    <Form.Control type="number" placeholder="+543865332311" aria-describedby="telefono"
+                                    <Form.Control type="number" placeholder="3865332311" aria-describedby="telefono"
                                         {...register("telefono", {
                                             required: "El telefono es un dato obligatorio",
                                             pattern: {
@@ -158,7 +158,7 @@ const Contacto = () => {
                             </Col>
                         </Row>
                             <Button variant="primary" type="submit" className="mt-3">
-                                Submit
+                                Enviar
                             </Button>
                     </Form>
                 </Col>
