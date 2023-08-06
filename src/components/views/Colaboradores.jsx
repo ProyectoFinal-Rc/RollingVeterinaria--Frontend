@@ -18,7 +18,7 @@ const Colaboradores = () => {
                                         <img
                                             className="d-block estiloImagenesCarousel"
                                             src="https://images.pexels.com/photos/6129506/pexels-photo-6129506.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                                            alt="Second slide" style={{ width: "500px", height: "750px" }}
+                                            alt="Second slide" style={{ width: "500px", height: "750px"}}
                                         />
                                         <div className='d-flex flex-column justify-content-center align-items-center'>
                                             <h1 className='mb-5 display-3 fw-bold'>Karen Diaz</h1>
