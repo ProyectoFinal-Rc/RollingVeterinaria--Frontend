@@ -79,7 +79,7 @@ export default function Testimonios() {
                         <CardContent>
                             <Typography variant="body2" color="text.secondary">
                                 Pensé que seria imposible encontrar un veterinario para mi conejito, Buddy, realmente RollingVet
-                                es la excepcion a todo lo que siempre buscas y no encontras en una veterinaria.
+                                es la excepcion a todo lo que siempre buscas y no encontras.
                             </Typography>
                         </CardContent>
                         <CardActions disableSpacing className=''>

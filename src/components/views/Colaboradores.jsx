@@ -29,29 +29,29 @@ const Colaboradores = () => {
                                             </p>
                                         </div>
                                     </div>
-                                </Carousel.Item>
-                                <Carousel.Item>
-                                    <div className='d-flex flex-md-column carruseles align-items-center'>
-                                        <img
-                                            className="d-block estiloImagenesCarousel"
-                                            src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                                            alt="Third slide" style={{ width: "500px", height: "750px" }}
-                                        />
-                                        <div className='d-flex flex-column justify-content-center align-items-center'>
-                                            <h1 className='mb-5 display-3 fw-bold'>Gerardo Marruecos</h1>
-                                            <h4 className='rollingVet-naranja'>Especialista en Gastroenterologia</h4>
-                                            <p className='mx-4 mt-5 fs-4'>
-                                                El Dr. Gerardo Marruecos es un especialista destacado en gastroenterología canina en RollingVet. Con 50 años de edad, lleva ejerciendo su labor como veterinario durante los últimos 20 años con una dedicación y alegría inquebrantables. Su pasión por trabajar con los animales no solo lo mantiene joven de espíritu, sino que también le otorga años de vida.Con una trayectoria sólida y un profundo conocimiento en su campo, el Dr. Marruecos se ha convertido en una referencia en el ámbito de la gastroenterología canina. Su experiencia y especialización en enfermedades y trastornos gastrointestinales en perros le permiten brindar diagnósticos precisos y tratamientos efectivos.
-                                            </p>
-                                        </div>
+                                </div>
+                            </Carousel.Item>
+                            <Carousel.Item>
+                                <div className='d-flex flex-md-column carruseles align-items-center'>
+                                    <img
+                                        className="d-block estiloImagenesCarousel"
+                                        src="https://images.pexels.com/photos/8460157/pexels-photo-8460157.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                                        alt="Third slide" style={{ width: "500px", height: "750px" }}
+                                    />
+                                    <div className='d-flex flex-column justify-content-center align-items-center'>
+                                        <h1 className='mb-5 display-3 fw-bold'>Gerardo Marruecos</h1>
+                                        <h4 className='rollingVet-naranja'>Especialista en Gastroenterologia</h4>
+                                        <p className='mx-4 mt-5 fs-4'>
+                                            El Dr. Gerardo Marruecos es un especialista destacado en gastroenterología canina en RollingVet. Con 50 años de edad, lleva ejerciendo su labor como veterinario durante los últimos 20 años con una dedicación y alegría inquebrantables. Su pasión por trabajar con los animales no solo lo mantiene joven de espíritu, sino que también le otorga años de vida.Con una trayectoria sólida y un profundo conocimiento en su campo, el Dr. Marruecos se ha convertido en una referencia en el ámbito de la gastroenterología canina. Su experiencia y especialización en enfermedades y trastornos gastrointestinales en perros le permiten brindar diagnósticos precisos y tratamientos efectivos.
+                                        </p>
                                     </div>
-                                </Carousel.Item>
-                            </Carousel>
-                        </div>
+                                </div>
+                            </Carousel.Item>
+                        </Carousel>
                     </div>
-                </Container>
-            </section>
-        </div>
+                </div>
+            </Container>
+        </section>
     );
 };
 
