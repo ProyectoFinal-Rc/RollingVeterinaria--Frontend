@@ -80,9 +80,9 @@ const AdminPacientes = () => {
                     Listado de pacientes
                 </h1>
             </div>
-            <div className="d-flex justify-content-between">
-                <Link to={"/administrador/turno"} className="btn btn-warning btn-lg">Administrador de turnos</Link>
-                <Button onClick={handleShow}>Agregar Paciente</Button>
+            <div className="align-self-center mt-5 row justify-content-around">
+                <Link to={"/administrador/turno"} className="btn btn-warning col-8 col-md-5 mt-3">Administrador de turnos</Link>
+                <Button onClick={handleShow} className="col-8 col-md-5 mt-3">Agregar Paciente</Button>
             </div>
             <div className="container">
                 <Filtro></Filtro>
