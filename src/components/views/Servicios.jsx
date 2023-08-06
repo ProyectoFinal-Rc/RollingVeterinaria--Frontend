@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Servicio1 from "../../assets/pexels-photo-4483327.png";
-import Servicio2 from "../../assets/imagenes/MiConv.com__descarga.png";
+import Servicio2 from "../../assets/imagenes/servicio-2.jpg";
 import Servicio3 from "../../assets/imagenes/comohacercrecertunegociopetshop.jpg";
-import Servicio4 from "../../assets/imagenes/MiConv.com__descarga1.png";
+import Servicio4 from "../../assets/imagenes/servicio-4.jpeg";
 import '../../App.css';
 import { Row, Col} from 'react-bootstrap';
 

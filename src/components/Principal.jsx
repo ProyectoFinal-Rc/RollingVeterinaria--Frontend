@@ -5,6 +5,7 @@ import Colaboradores from './views/Colaboradores';
 import Testimonios from './views/Testimonios';
 import Marcas from './views/Marcas';
 import '../App.css';
+import Publicaciones from './views/Publicaciones';
 
 const Principal = () => {
     return (
@@ -15,6 +16,7 @@ const Principal = () => {
             <Marcas></Marcas>
             <Servicios></Servicios>
             <Colaboradores></Colaboradores>
+            <Publicaciones/>
             <Testimonios></Testimonios>
         </>
     );

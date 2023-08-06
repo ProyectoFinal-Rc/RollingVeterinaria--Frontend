@@ -46,6 +46,9 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 								<NavLink  className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/administrador'>
                                         Administrador
                                 </NavLink>
+								<NavLink  className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/administrador/publicaciones'>
+                                        Publicaciones
+                                </NavLink>
 								<Button onClick={cerrarSesion} variant='mx-2 fw-semibold nav-item nav-link border border-danger' id='btn-cerrarSesion'>Cerrar Sesion</Button>
 							</>
 							: <NavLink end className='mx-2 fw-semibold nav-item nav-link btn-navbar' to='/login'>
