@@ -2,7 +2,7 @@ const URL_paciente = import.meta.env.VITE_API_PACIENTE
 
 export const obtenerListaPacientes = async () => {
     try {
-        const respuesta =  await fetch(URL_paciente);
+      const respuesta =  await fetch(URL_paciente);
         const listaPacientes = await respuesta.json();
         return listaPacientes;
     } catch (error) {

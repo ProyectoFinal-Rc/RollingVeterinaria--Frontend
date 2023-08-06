@@ -5,27 +5,29 @@ import { Container, Carousel } from 'react-bootstrap';
 
 const Colaboradores = () => {
     return (
-        <section id='colaboradores'>
-            <Container className='bg-white'>
-                <h2 className='text-center my-3 display-3 fw-bold'>Nuestros <strong className='rollingVet-naranja '>Profesionales</strong></h2>
-                <hr className='mx-5 ' />
-                <div className=''>
-                    <div className='container'>
-                        <Carousel>
-                            <Carousel.Item className='botonCarrusel'>
-                                <div className='d-flex flex-md-column align-items-center carruseles'>
-                                    <img
-                                        className="d-block estiloImagenesCarousel"
-                                        src="https://images.pexels.com/photos/6129506/pexels-photo-6129506.jpeg?auto=compress&cs=tinysrgb&w=1600"
-                                        alt="Second slide" style={{ width: "500px", height: "750px" }}
-                                    />
-                                    <div className='d-flex flex-column justify-content-center align-items-center'>
-                                        <h1 className='mb-5 display-3 fw-bold'>Karen Diaz</h1>
-                                        <h4 className='rollingVet-naranja'>Especialista Oncologa</h4>
-                                        <p className='mx-4 mt-5 fs-4'>
-                                            La Dra. Karen Díaz es una médica especialista en oncología dedicada a cuidar la salud de las mascotas en RollingVet. Con 33 años de edad, su amor por los animales y su pasión por ver mejorar a los adorables peluditos de cuatro patas son motores impulsores de su trabajo.
-                                            <br />Como oncóloga, la Dra. Díaz se especializa en el diagnóstico y tratamiento de enfermedades relacionadas con el cáncer en animales. Su enfoque principal es asegurarse de que cada paciente reciba la atención y los cuidados necesarios para enfrentar esta enfermedad. Destaca por su experiencia en el manejo de diferentes tipos de cáncer y en la aplicación de tratamientos adecuados para mejorar la calidad de vida de las mascotas.
-                                        </p>
+        <div>
+                    <section id='colaboradores'>
+                <Container className='bg-white'>
+                    <h2 className='text-center my-3 display-3 fw-bold'>Nuestros <strong className='rollingVet-naranja '>Profesionales</strong></h2>
+                    <hr className='mx-5 ' />
+                    <div className=''>
+                        <div className='container'>
+                            <Carousel>
+                                <Carousel.Item>
+                                    <div className='d-flex flex-md-column align-items-center carruseles'>
+                                        <img
+                                            className="d-block estiloImagenesCarousel"
+                                            src="https://images.pexels.com/photos/6129506/pexels-photo-6129506.jpeg?auto=compress&cs=tinysrgb&w=1600"
+                                            alt="Second slide" style={{ width: "500px", height: "750px"}}
+                                        />
+                                        <div className='d-flex flex-column justify-content-center align-items-center'>
+                                            <h1 className='mb-5 display-3 fw-bold'>Karen Diaz</h1>
+                                            <h4 className='rollingVet-naranja'>Especialista Oncologa</h4>
+                                            <p className='mx-4 mt-5 fs-4'>
+                                                La Dra. Karen Díaz es una médica especialista en oncología dedicada a cuidar la salud de las mascotas en RollingVet. Con 33 años de edad, su amor por los animales y su pasión por ver mejorar a los adorables peluditos de cuatro patas son motores impulsores de su trabajo.
+                                                <br />Como oncóloga, la Dra. Díaz se especializa en el diagnóstico y tratamiento de enfermedades relacionadas con el cáncer en animales. Su enfoque principal es asegurarse de que cada paciente reciba la atención y los cuidados necesarios para enfrentar esta enfermedad. Destaca por su experiencia en el manejo de diferentes tipos de cáncer y en la aplicación de tratamientos adecuados para mejorar la calidad de vida de las mascotas.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </Carousel.Item>

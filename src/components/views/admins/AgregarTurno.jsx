@@ -1,11 +1,9 @@
+import {useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearTurno } from "../../helpers/turnos";
+import { crearTurno,fecha,obtenerListaTurnos  } from "../../helpers/turnos";
 import Swal from "sweetalert2";
-import { fecha } from "../../helpers/turnos";
-import { useState } from "react";
-
-const AgregarTurno = ({ show, handleClose,turnos }) => {
+const AgregarTurno = ({ show, handleClose,turnos,SetTurnos }) => {
     const {
         register,
         handleSubmit,
@@ -19,8 +17,11 @@ const AgregarTurno = ({ show, handleClose,turnos }) => {
             if(respuesta.status === 201){
                 Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success")
                 .then(()=>{
-                //window.location.reload()
-                turnos.push(turnoNuevo);
+                obtenerListaTurnos().then((respuestaListaTurnos) => {
+                    if (respuestaListaTurnos) {
+                    SetTurnos(respuestaListaTurnos);
+                    }
+                })
                 })
                 reset();
             }else{

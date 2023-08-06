@@ -11,6 +11,7 @@ import RutasAdministrador from "./components/routes/RutasAdministrador";
 import Contacto from "./components/Contacto";
 import Error404 from "./components/Error404";
 import About from "./components/About";
+import {Publicacion} from "./components/views/publicacion/";
 
 function App() {
   const usuarioSesionStorage = JSON.parse(sessionStorage.getItem('usuario')) || ''
@@ -26,6 +27,7 @@ function App() {
           <Route path="/administrador/*" element={<RutasProtegidas><RutasAdministrador></RutasAdministrador></RutasProtegidas>}></Route>
           <Route exact path="/acerca-de-nosotros" element={<About></About>}></Route>
           <Route exact path="/contacto" element={<Contacto></Contacto>}></Route> 
+          <Route exact path="/publicaciones/:id" element={<Publicacion></Publicacion>}></Route>
           <Route exact path="*" element={<Error404></Error404>}></Route>
         </Routes>
         <Footer></Footer>

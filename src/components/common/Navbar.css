@@ -12,12 +12,17 @@
 	max-width: 70px;
 }
 
+.btn-navbar {
+	max-width: 35vw;
+}
+
 .btn-navbar:hover {
-	border-bottom: black solid;
+	border-bottom: black solid thin;
 }
 
 #btn-cerrarSesion {
 	background-color: red;
+	max-width: 150px;
 }
 
 #btn-cerrarSesion:hover {
