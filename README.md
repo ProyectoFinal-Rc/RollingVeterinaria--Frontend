@@ -30,17 +30,17 @@ Bienvenido a RollingVet! Este proyecto es una aplicación web diseñada para fac
 
 ## Installation
 
-`1. Clona este repositorio en tu máquina local utilizando el siguiente comando:`
+1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
 
-git clone https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend.git
+`git clone` https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend.git
 
-`2. Ve al directorio del proyecto:`
+2. Ve al directorio del proyecto:
    
-cd RollingVeterinaria--Frontend
+`cd RollingVeterinaria--Frontend`
 
-`3. Instala las dependencias:`
+4. Instala las dependencias:
 
-npm install
+`npm install`
 
 ## Configuracion
 
