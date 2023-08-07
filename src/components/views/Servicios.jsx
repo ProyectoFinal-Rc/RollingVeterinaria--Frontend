@@ -15,7 +15,7 @@ const Servicios = () => {
                         <div>
                             <img className='servicio-imagen zoom-imagen' variant="top" src={Servicio1} />
                         </div>
-                        <div>
+                        <div className='mt-3'>
                             <h3>Cirugias Generales</h3>
                             <p>
                                 Atención las 24hs para mantener siempre a tu mejor amigo en buen estado, con la seguridad y aval de RollingVet.
@@ -27,7 +27,7 @@ const Servicios = () => {
                         <div>
                             <img className='servicio-imagen zoom-imagen' variant="top" src={Servicio2} />
                         </div>
-                        <div>
+                        <div className='mt-3'>
                             <h3>Peluqueria</h3>
                             <p>
                                 Estilizado y baños, a cargo de profesionales capacitados para darle el look que ellos se merecen.
@@ -51,7 +51,7 @@ const Servicios = () => {
                         <div >
                             <img className='servicio-imagen zoom-imagen' variant="top" src={Servicio4} />
                         </div>
-                        <div>
+                        <div className='mt-3'>
                             <h3>Vacunación y Control</h3>
                             <p>
                                 Realizadas en nuestra sala de Vacunación, llevamos a cabo el control rutinario de todos nuestros pacientes.

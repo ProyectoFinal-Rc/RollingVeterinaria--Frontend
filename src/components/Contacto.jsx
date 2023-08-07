@@ -16,7 +16,7 @@ const Contacto = () => {
                     <div className="p-3 text-center">
                         <h1 className="fw-bold">CONTACTANOS</h1>
                         <div className="m-3 text-center">
-                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" />
+                            <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" style={{ width: '100%', maxWidth: '300px' }} />
                         </div>
                         <p>Ya sea email, llamada, o completa el formulario para saber como podemos ayudarte con tu consulta y planificar a tu gusto</p>
                         <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
@@ -107,17 +107,17 @@ const Contacto = () => {
                                             value: 30,
                                             message: "La cantidad maxima de caracteres es de 30 digitos",
                                         },
-                                    })} />
+                                    })}/>
                                     <Form.Text className="text-danger">
                                         {errors.nombreMasco?.message}
                                     </Form.Text>
                                 </Form.Group>
                             </Col>
-                            <Col xs={12} md={12} lg={12} className="mt-3" >
-                                    <Form.Label>Telefono</Form.Label>
-                                <InputGroup  className="mb-3">
+                            <Col xs={12} md={12} lg={6} className="mt-3" >
+                                <Form.Label>Telefono</Form.Label>
+                                <InputGroup className="mb-3">
                                     <InputGroup.Text id="telefono">+54</InputGroup.Text>
-                                    <Form.Control type="number" placeholder="+543865332311" aria-describedby="telefono"
+                                    <Form.Control type="number" placeholder="38151323121" aria-describedby="telefono"
                                         {...register("telefono", {
                                             required: "El telefono es un dato obligatorio",
                                             pattern: {
@@ -127,14 +127,14 @@ const Contacto = () => {
                                                     "El telefono debe tener el siguiente formato: 3865332311",
                                             },
                                         })} />
-                                    <Form.Text className="text-danger">
+                                    <Form.Text className="text-danger mx-2">
                                         {errors.telefono?.message}
                                     </Form.Text>
                                 </InputGroup>
                             </Col>
                             <Col xs={12} md={12} lg={12} className="mt-3" >
                                 <Form.Group>
-                                <Form.Label>Describa su consulta</Form.Label>
+                                    <Form.Label>Describa su consulta</Form.Label>
                                     <Form.Control
                                         as="textarea"
                                         placeholder="Describa su inconveniente / consulta"
@@ -157,9 +157,11 @@ const Contacto = () => {
                                 </Form.Group>
                             </Col>
                         </Row>
+                        <div className="d-flex justify-content-center">
                             <Button variant="primary" type="submit" className="mt-3">
-                                Submit
+                                Enviar
                             </Button>
+                        </div>
                     </Form>
                 </Col>
             </Row>

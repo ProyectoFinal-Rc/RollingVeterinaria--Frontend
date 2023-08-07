@@ -9,7 +9,7 @@ export const Error404 = () =>{
               <Col xs={12} md={8} className="p-3 offset-md-2 text-center">
               <h1 className="fw-bold">¡Ups! parece que hubo un error</h1>
               <h4>No encontramos lo que estas buscando</h4>
-              <img src="../src/assets/error-sin-fondo.png" alt="" width={350}/>
+              <img src="../src/assets/error-sin-fondo.png" alt="Error 404" width={350}/>
                 <div className="p-3">
                     <div className="m-3 text-center">
                         <img className="my-3" style={{width:'100%', maxWidth:'32rem'}} src="https://cristian021195.github.io/portfolio/img/svg/puppy-404.svg" alt="Contacto rolling vet" />

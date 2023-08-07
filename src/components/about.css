@@ -8,27 +8,17 @@
     margin-top: 70px;
 }
 
-
-.card-contenedor-about {
-    width: 400px;
-    
-}
-
 .cardBackgound {
-    background-color:  #f9a9785b;
+    background-color: #f9a9785b;
     border-style: groove;
     border-radius: 10px;
     border-color: black;
-    height: 300px;
-    overflow: hidden;
+    height: 450px;
 }
-
-
 
 #tamaño-icono {
     font-size:xx-large;
 }
-
 
 #card-nombre{
     color: rgba(255, 145, 77, 1);
@@ -41,7 +31,6 @@
         border-style: groove;
         border-radius: 10px;
         border-color: black;
-        height: 350px;
         overflow: hidden;
     }
 
@@ -54,8 +43,7 @@
     }
 
     .imagen-nosotros {
-        width: 330px;
-
+        width: 100%;
     }
 }
 
@@ -65,8 +53,6 @@
         border-style: groove;
         border-radius: 10px;
         border-color: black;
-        height: 400px;
         overflow: hidden;
     }
 }
-
