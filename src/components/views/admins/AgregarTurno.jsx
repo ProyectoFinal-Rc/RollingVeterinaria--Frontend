@@ -3,7 +3,7 @@ import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearTurno,fecha,obtenerListaTurnos  } from "../../helpers/turnos";
 import Swal from "sweetalert2";
-const AgregarTurno = ({ show, handleClose,turnos,SetTurnos }) => {
+const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
     const {
         register,
         handleSubmit,
@@ -13,15 +13,12 @@ const AgregarTurno = ({ show, handleClose,turnos,SetTurnos }) => {
     const [fechaActual,setFechaActual]=useState(fecha());
     const onSubmit = (turnoNuevo) => {
         crearTurno(turnoNuevo).then((respuesta)=>{
-            
             if(respuesta.status === 201){
                 Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success")
-                .then(()=>{
                 obtenerListaTurnos().then((respuestaListaTurnos) => {
                     if (respuestaListaTurnos) {
-                    SetTurnos(respuestaListaTurnos);
+                    setTurnos(respuestaListaTurnos);
                     }
-                })
                 })
                 reset();
             }else{

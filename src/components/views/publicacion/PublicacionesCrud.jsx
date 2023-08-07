@@ -3,18 +3,19 @@ import { Button, Col, Container, Modal, Row } from 'react-bootstrap'
 import { LockSpinnerLoader, SpinnerLoader } from '../UI';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { toast } from '../../../utils';
-const API_URL = import.meta.env.VITE_API_DEV;
+/* const API_URL = import.meta.env.VITE_API_DEV; */
+const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 
 export const PublicacionesCrud = () => {
-    const {error, data, loading, renew, setError, setData, setLoading, setRenew} = useFetchGetJson(API_URL+"/publicacion/");
+    const {error, data, loading, renew, setError, setData, setLoading, setRenew} = useFetchGetJson(URL_PUBLICACIONES);
     const [newTags, setNewTags] = useState([]);
     const [show, setShow] = useState(false);
     const [selected, setSelected] = useState({_id:'',contenido:'', imagen:'', tags:[], titulo:''});
 
     function togglePublicacion(id, active){
         setLoading(true)
-        fetch(API_URL+"/publicacion/activar/"+id, 
+        fetch(URL_PUBLICACIONES+"/activar/"+id, 
             {method:'PUT', body: JSON.stringify({active:!active}), headers:{"Content-Type":"application/json"}})
         .then(res=>{
             setData(data.map(d=>{
@@ -42,7 +43,7 @@ export const PublicacionesCrud = () => {
         e.preventDefault();
         let formData = new FormData(e.target);
         setLoading(true);
-        fetch(API_URL+"/publicacion/filtrar/", 
+        fetch(URL_PUBLICACIONES+"/filtrar/", 
             {method:'POST', body: JSON.stringify({titulo: formData.get('titulo')}), headers:{"Content-Type":"application/json"}})
         .then(res=>res.json())
         .then(res=>{
@@ -64,7 +65,6 @@ export const PublicacionesCrud = () => {
     function enviarPublicacion(e){ // carga o edicion
         e.preventDefault(); const DTO = {}; setLoading(true);
         let formData = new FormData(e.target);
-
         formData.forEach((value, key) => {                
             if(!Reflect.has(DTO, key)){
                 DTO[key] = value;
@@ -78,7 +78,7 @@ export const PublicacionesCrud = () => {
 
         if(DTO.id === ""){
             delete DTO['id'];
-            fetch(API_URL+"/publicacion", {                
+            fetch(URL_PUBLICACIONES, {                
                 method:'POST', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
             }).then((res)=>{
                 if(res.ok){
@@ -96,7 +96,7 @@ export const PublicacionesCrud = () => {
                 toast(err.message+"", 3000, "bg-danger text-white", false);
             }).finally(()=>{setLoading(false)})
         }else{
-            fetch(API_URL+"/publicacion/"+DTO.id, {
+            fetch(URL_PUBLICACIONES+"/"+DTO.id, {
                 method:'PUT', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
             }).then((res)=>{
                 if(res.ok){
@@ -134,7 +134,7 @@ export const PublicacionesCrud = () => {
         let conf = window.confirm("¿Eliminar publicacion?");
         if(conf){
             setLoading(true)
-            fetch(API_URL+"/publicacion/"+id, 
+            fetch(URL_PUBLICACIONES+"/"+id, 
             {method:'DELETE', headers:{"Content-Type":"application/json"}})
             .then(res=>{
                 return res.json()

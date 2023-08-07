@@ -3,12 +3,13 @@ import { useParams } from 'react-router-dom';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import { ZoomLoader } from '../UI';
-const API_URL = import.meta.env.VITE_API_DEV;
+
+const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 export function Publicacion(){
     const params = useParams();
     //const [pub, setPub] = useState({});
-    const {error, data, loading, setError, setData, setLoading} = useFetchGetJson(API_URL+"/publicacion/"+params.id);
+    const {error, data, loading, setError, setData, setLoading} = useFetchGetJson(URL_PUBLICACIONES+"/"+params.id);
     if(data?.active){
         return (
             <Container fluid className="my-5">

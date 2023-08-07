@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { fechaParseada } from "../../helpers/turnos";
 const EditarTurno = ({ showEditar, setShowEditar, turnoEditar, setTurnos }) => {    
     const {register, handleSubmit, formState: { errors }, reset, } = useForm();
-    const [datos, setDatos] = useState(turnoEditar)
+    const [datos, setDatos] = useState(turnoEditar) 
     const [fechaActual,setFechaActual]=useState(fecha())
     const editar = (e) => {
         editarTurno(e, datos._id).then((respuesta) => {
@@ -14,8 +14,8 @@ const EditarTurno = ({ showEditar, setShowEditar, turnoEditar, setTurnos }) => {
                 Swal.fire("Turno editado", `El turno de ${e.mascota} se editó correctamente`, "success")
                 obtenerListaTurnos().then((respuesta) => {
                     if (respuesta) {
-                        SetTurnos(respuesta)
-                        handleCloseEditar();
+                        setTurnos(respuesta)
+                        setShowEditar(false);
                     }
                 })
                 reset();
