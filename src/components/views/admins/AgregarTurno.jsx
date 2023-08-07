@@ -2,6 +2,7 @@ import {useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearTurno,fecha,obtenerListaTurnos  } from "../../helpers/turnos";
+import {obtenerFechaParaHTML} from "../../helpers"
 import Swal from "sweetalert2";
 const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
     const {
@@ -10,8 +11,10 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
         formState: { errors },
         reset,
     } = useForm();
-    const [fechaActual,setFechaActual]=useState(fecha());
+    const [fechaActual,setFechaActual]=useState(obtenerFechaParaHTML());
+    const [loading,setLoading]=useState(false);
     const onSubmit = (turnoNuevo) => {
+        setLoading(true)
         crearTurno(turnoNuevo).then((respuesta)=>{
             if(respuesta.status === 201){
                 Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success")
@@ -24,6 +27,11 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
             }else{
                 Swal.fire("error", "No se pudo crear el turno correctamente, vuelva a intentarlo más tarde", "error");
             }
+        }).catch((err)=>{
+            console.log(err);
+            Swal.fire("error", "Error: "+err.message, "error");
+        }).finally(()=>{
+            setLoading(false);
         })
     };
 
@@ -155,7 +163,7 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
                                 {errors.formaPago?.message}
                             </Form.Text>
                     </Form.Group>
-                    <Button variant="primary" type="submit" onClick={handleClose}>
+                    <Button variant="primary" type="submit" onClick={handleClose} disabled={loading}>
                         Guardar
                     </Button>
                 </Form>

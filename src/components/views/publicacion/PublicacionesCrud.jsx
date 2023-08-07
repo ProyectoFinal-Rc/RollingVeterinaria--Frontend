@@ -76,15 +76,16 @@ export const PublicacionesCrud = () => {
             DTO[key].push(value);
         });
 
+        if(!Array.isArray(DTO.tags)){
+            DTO.tags = [DTO.tags];
+        }
         if(DTO.id === ""){
             delete DTO['id'];
             fetch(URL_PUBLICACIONES, {                
                 method:'POST', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
             }).then((res)=>{
                 if(res.ok){
-                    e.target.reset();
-                    setShow(false);setNewTags([]);
-                    setRenew(!renew);
+                    e.target.reset(); setRenew(!renew);
                     return res.json();
                 }            
             })
@@ -94,14 +95,16 @@ export const PublicacionesCrud = () => {
             .catch(err=>{
                 console.log(err);
                 toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{setLoading(false)})
+            }).finally(()=>{
+                setShow(false);setNewTags([]);
+                setLoading(false)
+            })
         }else{
             fetch(URL_PUBLICACIONES+"/"+DTO.id, {
                 method:'PUT', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
             }).then((res)=>{
                 if(res.ok){
                     e.target.reset();
-                    setShow(false);setNewTags([]);
                     setRenew(!renew);
                     return res.json();
                 }            
@@ -112,7 +115,10 @@ export const PublicacionesCrud = () => {
             .catch(err=>{
                 console.log(err);
                 toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{setLoading(false)})
+            }).finally(()=>{
+                setShow(false);setNewTags([]);
+                setLoading(false);
+            })
         }
     }
     useEffect(()=>{
@@ -168,8 +174,9 @@ export const PublicacionesCrud = () => {
         }, 100);
     }
     return (
-        <Container fluid className="my-5">
-            <Row className="mt-5">
+        <Container fluid className="my-3 fade-up">
+            <Row>
+                <h1 className="fw-bold text-center titular">Publicaciones</h1>
                 <Col xs={{ span: 10, offset: 1 }} className="p-3 bg-body-tertiary mt-5">
                     <div>
                         <form id='publicacion-form' onSubmit={(e)=>{filtrar(e)}} className='d-flex align-items-center mb-3'>
@@ -210,9 +217,9 @@ export const PublicacionesCrud = () => {
                 </Col>
             </Row>
             <>
-            <Modal show={show} onHide={()=>{setShow(!show)}}>
+            <Modal show={show} onHide={()=>{setShow(!show); setNewTags([])}}>
                 <Modal.Header closeButton>
-                <Modal.Title>Nueva Noticia</Modal.Title>
+                <Modal.Title>Crear / Editar: Nueva Noticia</Modal.Title>
                 </Modal.Header>
                 <form id='cargaformulario' onSubmit={(e)=>{enviarPublicacion(e);}}>
                     <Modal.Body>
@@ -244,7 +251,7 @@ export const PublicacionesCrud = () => {
 
                     </Modal.Body>
                     <Modal.Footer>
-                        <button type='submit' className='btn btn-primary'>Guardar</button>
+                        <button type='submit' className='btn btn-primary d-flex' disabled={loading}>Guardar &nbsp;{loading && <SpinnerLoader color='white' height='1' width='1'/>} </button>
                     </Modal.Footer>
                 </form>
             </Modal>

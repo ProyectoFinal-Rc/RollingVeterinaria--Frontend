@@ -4,11 +4,14 @@ import { useForm } from "react-hook-form";
 import { editarTurno,fecha, obtenerListaTurnos } from "../../helpers/turnos";
 import Swal from "sweetalert2";
 import { fechaParseada } from "../../helpers/turnos";
+import {obtenerFechaParaHTML} from "../../helpers"
 const EditarTurno = ({ showEditar, setShowEditar, turnoEditar, setTurnos }) => {    
     const {register, handleSubmit, formState: { errors }, reset, } = useForm();
-    const [datos, setDatos] = useState(turnoEditar) 
-    const [fechaActual,setFechaActual]=useState(fecha())
+    const [loading, setLoading] = useState(false);
+    const [datos, setDatos] = useState(turnoEditar);
+    const [fechaActual,setFechaActual]=useState(obtenerFechaParaHTML())
     const editar = (e) => {
+        setLoading(true);
         editarTurno(e, datos._id).then((respuesta) => {
             if (respuesta) {
                 Swal.fire("Turno editado", `El turno de ${e.mascota} se editó correctamente`, "success")
@@ -22,6 +25,11 @@ const EditarTurno = ({ showEditar, setShowEditar, turnoEditar, setTurnos }) => {
             } else {
                 Swal.fire("error", "No se pudo editar el turno correctamente, vuelva a intentarlo más tarde", "error");
             }
+        }).catch((err)=>{
+            console.log(err);
+            Swal.fire("error", "Error: "+err.message, "error");
+        }).finally(()=>{
+            setLoading(false);
         })
     };
     return (
@@ -167,7 +175,7 @@ const EditarTurno = ({ showEditar, setShowEditar, turnoEditar, setTurnos }) => {
                             {errors.formaPago?.message}
                         </Form.Text>
                     </Form.Group>
-                    <Button variant="primary" type="submit" >
+                    <Button variant="primary" type="submit" disabled={loading}>
                         Guardar
                     </Button>
                 </Form>

@@ -4,16 +4,20 @@ import { useForm } from 'react-hook-form'
 import { IniciarSesion } from "./helpers/queriesLogin"
 import Swal from "sweetalert2"
 import { useNavigate, Link } from 'react-router-dom'
+import { useState } from 'react'
+import {toast} from "../utils"
+import {SpinnerLoader} from "./views/UI/SpinnerLoader"
 
 
 const Login = ({setUsuarioLogueado}) => {
 	const { register, handleSubmit, formState: { errors }, reset } = useForm()
+	const [loading, setLoading] = useState(false);
 	const navegacion = useNavigate()
 
 	const onSubmit = (usuario) => {
+		setLoading(true);
 		IniciarSesion(usuario).then((respuesta) => {
 			if (respuesta) {
-				console.log(respuesta)
 				sessionStorage.setItem('usuario', JSON.stringify(respuesta.email))
 				setUsuarioLogueado(respuesta)
 				reset()
@@ -26,6 +30,11 @@ const Login = ({setUsuarioLogueado}) => {
 					'error'
 				)
 			}
+		}).catch(err=>{
+			console.log(err);
+			toast("Error: "+err?.message, 3000, "text-white bg-danger", false);
+		}).finally(()=>{
+			setLoading(false);
 		})
 	}
 
@@ -63,8 +72,8 @@ const Login = ({setUsuarioLogueado}) => {
 					</Form.Text>
 				</Form.Group>
 				<div className="d-flex">
-					<button type="submit" className="mx-auto boton fw-bold">
-						Ingresar
+					<button type="submit" disabled={loading} className="mx-auto boton fw-bold">
+						{loading ? <SpinnerLoader color='#ffeee3' height='2' width='2'/> : "Ingresar" }
 					</button>
 				</div>
 			</Form>
@@ -74,6 +83,6 @@ const Login = ({setUsuarioLogueado}) => {
 			</div>
 		</Container>
 	)
-}
+}//{loading ? <SpinnerLoader color='blue' height='2' width='2'/> : "Ingresar" }
 
 export default Login

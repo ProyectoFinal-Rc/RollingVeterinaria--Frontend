@@ -10,11 +10,11 @@ const Contacto = () => {
     }
 
     return (
-        <Container fluid className="mt-5">
-            <Row className="mt-5">
+        <Container fluid className="my-3 fade-up">
+            <Row>
+                <h1 className="fw-bold text-center titular">Contacto</h1>
                 <Col xs={{ span: 8, offset: 2 }} className="p-3 bg-body-tertiary mt-5">
                     <div className="p-3 text-center">
-                        <h1 className="fw-bold">CONTACTANOS</h1>
                         <div className="m-3 text-center">
                             <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" style={{ width: '100%', maxWidth: '300px' }} />
                         </div>
