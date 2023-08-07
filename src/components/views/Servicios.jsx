@@ -1,9 +1,9 @@
 import React from 'react';
 
 import Servicio1 from "../../assets/pexels-photo-4483327.png";
-import Servicio2 from "../../assets/imagenes/servicio-2.jpg";
-import Servicio3 from "../../assets/imagenes/comohacercrecertunegociopetshop.jpg";
-import Servicio4 from "../../assets/imagenes/servicio-4.jpeg";
+import Servicio2 from "../../assets/peliqueria1.jpg";
+import Servicio3 from "../../assets/petsshop1.jpeg";
+import Servicio4 from "../../assets/vacunacion1.jpeg";
 import '../../App.css';
 import { Row, Col} from 'react-bootstrap';
 
@@ -39,8 +39,8 @@ const Servicios = () => {
                         <div >
                             <img className='servicio-imagen zoom-imagen' variant="top" src={Servicio3} />
                         </div>
-                        <div className='mt-3'>
-                            <h3>Pet Shop</h3>
+                        <div>
+                            <h3>Pets Shop</h3>
                             <p>
                                 Tenemos la más amplia variedad de juguetes, ropa y accesorios. ¡Vení y mirá cómo ellos también pueden entretenerse con nuestros productos!
                             </p>

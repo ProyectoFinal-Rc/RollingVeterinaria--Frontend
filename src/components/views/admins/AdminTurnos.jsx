@@ -15,8 +15,6 @@ const AdminTurnos = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //const handleCloseEditar = () => setShowEditar(false);
-  //const handleShowEditar = () => setShowEditar(true);
 
   useEffect(() => {
     obtenerListaTurnos().then((respuestaListaTurnos) => {
@@ -79,12 +77,12 @@ const AdminTurnos = () => {
 
   return (
     <section className="container mt-5">
-        <div className="d-flex justify-content-center mt-5">
+      <div className="d-flex justify-content-center mt-5">
         <h1 className="mt-5 fw-bold bg-warning-subtle p-2 border border-5 border-warning m-2">Listado de turnos</h1>
-        </div>
-      <div className="d-flex justify-content-between align-items-center mt-5">
-      <Link to={"/administrador/paciente"} className="btn btn-info btn-lg">Administrador de pacientes</Link>
-        <Button className="btn btn-success  btn-lg text-white" onClick={handleShow}> 
+      </div>
+      <div className="align-self-center mt-5 row justify-content-around">
+        <Link to={"/administrador/paciente"} className="btn btn-info col-8 col-md-5 mt-3">Administrador de pacientes</Link>
+        <Button className="btn btn-success  text-white col-8 col-md-5 mt-3" onClick={handleShow}> 
           Agregar turno
         </Button>
       </div>

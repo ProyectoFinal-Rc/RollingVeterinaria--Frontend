@@ -22,8 +22,8 @@ const Administrador = () => {
         <section className="container pt-5 mt-5">
             <div className='container text-center mt-5'>
                 <div className='row justify-content-around'>
-                <Link className='btn btn-info btn-lg col-4' to={"/administrador/paciente"} >Administrador pacientes</Link>
-                <Link className='btn btn-warning btn-lg col-4' to={"/administrador/turno"}>Administrador turnos</Link>
+                <Link className='btn btn-info col-8 col-md-5 mt-3' to={"/administrador/paciente"} >Administrador Pacientes</Link>
+                <Link className='btn btn-warning col-8 col-md-5 mt-3' to={"/administrador/turno"}>Administrador Turnos</Link>
                 </div>
             </div>
             <div className='bg-success-subtle p-3 rounded mt-5'>

@@ -21,8 +21,7 @@
 }
 
 #btn-cerrarSesion {
-	background-color: red;
-	max-width: 150px;
+	background-color: rgb(246, 109, 109);
 }
 
 #btn-cerrarSesion:hover {
