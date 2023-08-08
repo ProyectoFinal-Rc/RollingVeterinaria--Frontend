@@ -25,7 +25,7 @@ export function Publicacion(){
                                     <div className="m-3 text-center">
                                         {
                                             loading ? <div style={{height:'200px'}}><ZoomLoader/></div>
-                                            : <img className="my-3" onLoad={(e)=>{e.target.className = 'my-3'}} style={{height:'200px'}} src={data?.imagen+""} alt="Contacto rolling vet" />
+                                            : <img className="my-3" onError={(e)=>{e.target.src = "https://cristian021195.github.io/portfolio/img/others/404-image.svg";}} onLoad={(e)=>{e.target.className = 'my-3 bg-secondary rounded p-2'}} style={{height:'200px'}} src={data?.imagen+""} alt="Contacto rolling vet" />
                                         }
                                         
                                     </div>                        
