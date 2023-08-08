@@ -3,6 +3,7 @@ import { Button, Col, Container, Modal, Row } from 'react-bootstrap'
 import { LockSpinnerLoader, SpinnerLoader } from '../UI';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { toast } from '../../../utils';
+import Swal from 'sweetalert2';
 /* const API_URL = import.meta.env.VITE_API_DEV; */
 const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
@@ -137,26 +138,38 @@ export const PublicacionesCrud = () => {
         }
     },[newTags])
     function eliminar(id){
-        let conf = window.confirm("¿Eliminar publicacion?");
-        if(conf){
-            setLoading(true)
-            fetch(URL_PUBLICACIONES+"/"+id, 
-            {method:'DELETE', headers:{"Content-Type":"application/json"}})
-            .then(res=>{
-                return res.json()
-            })
-            .then(res=>{
-                if(res.error){
-                    throw new Error(res.mensaje);
-                }
-                setData(data.filter(d=>d._id !== id))
-                toast("Eliminada correctamente", 3000, "bg-success text-white", false);
-            })
-            .catch(err=>{
-                console.log(err)
-                toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{setLoading(false)})
-        }
+        // let conf = window.confirm("¿Eliminar publicacion?");
+        Swal.fire({
+            title: 'Esta seguro de borrar esta publicación?',
+            text: "El siguiente cambio no podra ser revertido",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, quiero borrar!',
+            cancelButtonText: 'Cancelar'
+        }).then((resultado) =>{
+            if(resultado.isConfirmed){
+                setLoading(true)
+                fetch(URL_PUBLICACIONES+"/"+id, 
+                {method:'DELETE', headers:{"Content-Type":"application/json"}})
+                .then(res=>{
+                    return res.json()
+                })
+                .then(res=>{
+                    if(res.error){
+                        throw new Error(res.mensaje);
+                    }
+                    setData(data.filter(d=>d._id !== id))
+                    toast("Eliminada correctamente", 3000, "bg-success text-white", false);
+                })
+                .catch(err=>{
+                    console.log(err)
+                    toast(err.message+"", 3000, "bg-danger text-white", false);
+                }).finally(()=>{setLoading(false)})
+            }
+        })
+
     }
     function editar(id){
         const sel = data.find(d=>d._id === id);
