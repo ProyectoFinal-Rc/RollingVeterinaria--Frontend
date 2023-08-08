@@ -32,9 +32,9 @@ const developers = [
   {
     nombre: "Cristina Ismael Gramajo",
     foto: "/src/assets/patita.png",
-    lenguajes: ["HTML", "CSS", "JavaScript"],
+    lenguajes: ["HTML", "CSS", "JavaScript", "PHP", "C#", "ReactJS", "NodeJS", "MySQL", "MongoDB"],
     descripcion:
-      "Un estudiante de desarrollo web con experiencia en front-end y diseño de sitios atractivos y funcionales.",
+      "Un estudiante de Licenciatura en informatica, experiencia en front-end y diseño de sitios atractivos y funcionales.",
     animalFavorito: "Gato",
     github: "https://github.com/Cristian021195"
   },
@@ -84,7 +84,7 @@ const About = () => {
                   </Card.Text>
                   <Card.Text><strong>Animal Favorito:</strong> {developer.animalFavorito}</Card.Text>
                   <Button variant="btn btn-lg" className="text-center" href={developer.github} target='_blank'>
-                    <i class="bi bi-github" id="tamaño-icono"></i>
+                    <i className="bi bi-github" id="tamaño-icono"></i>
                   </Button>
                 </div>
               </Card.Body>

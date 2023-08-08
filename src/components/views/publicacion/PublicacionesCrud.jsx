@@ -196,7 +196,7 @@ export const PublicacionesCrud = () => {
                             <label htmlFor="titulo">Titulo: </label><input type="text" name='titulo' placeholder='Ej: #00X o Vacío para buscar todos' className='form-control mx-2'/>
                             {loading ? <SpinnerLoader color='green' width='3' height='2'/> : <LockSpinnerLoader color='#B0BEC5' width='3' height='2'/>}
                             <div className="btn-group ms-2" role="group" aria-label="Basic mixed styles example">
-                                <button type="button" className='btn btn-primary'><i className="bi bi-search"></i></button>
+                                <button type="submit" className='btn btn-primary'><i className="bi bi-search"></i></button>
                                 <button type="button" className='btn btn-success' onClick={()=>{setShow(!show); setSelected({_id:'',contenido:'', imagen:'', tags:[], titulo:''})}}><i className="bi bi-plus-square"></i></button>
                                 <button type="reset" className='btn btn-warning'><i className="bi bi-backspace"></i></button>
                             </div>

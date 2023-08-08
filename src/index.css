@@ -57,6 +57,7 @@ footer p {
 	color: #ff8437;
 }
 .fade-up {
+	min-height: 90vh;
     animation-name: fadeUp;
     animation-duration: .5s;
 }
