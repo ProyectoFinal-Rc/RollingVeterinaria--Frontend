@@ -1,20 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Button, Col, Container, Modal, Row } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Col, Container, Modal, Row } from 'react-bootstrap'
 import { LockSpinnerLoader, SpinnerLoader } from '../UI';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { toast } from '../../../utils';
-const API_URL = import.meta.env.VITE_API_DEV;
+import Swal from 'sweetalert2';
+/* const API_URL = import.meta.env.VITE_API_DEV; */
+const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 
 export const PublicacionesCrud = () => {
-    const {error, data, loading, renew, setError, setData, setLoading, setRenew} = useFetchGetJson(API_URL+"/publicacion/");
+    const {error, data, loading, renew, setError, setData, setLoading, setRenew} = useFetchGetJson(URL_PUBLICACIONES);
     const [newTags, setNewTags] = useState([]);
     const [show, setShow] = useState(false);
     const [selected, setSelected] = useState({_id:'',contenido:'', imagen:'', tags:[], titulo:''});
 
     function togglePublicacion(id, active){
         setLoading(true)
-        fetch(API_URL+"/publicacion/activar/"+id, 
+        fetch(URL_PUBLICACIONES+"/activar/"+id, 
             {method:'PUT', body: JSON.stringify({active:!active}), headers:{"Content-Type":"application/json"}})
         .then(res=>{
             setData(data.map(d=>{
@@ -38,11 +40,12 @@ export const PublicacionesCrud = () => {
             toast(err.message+"", 3000, "bg-danger text-white", false);
         }).finally(()=>{setLoading(false)})
     }
+
     function filtrar(e){
         e.preventDefault();
         let formData = new FormData(e.target);
         setLoading(true);
-        fetch(API_URL+"/publicacion/filtrar/", 
+        fetch(URL_PUBLICACIONES+"/filtrar/", 
             {method:'POST', body: JSON.stringify({titulo: formData.get('titulo')}), headers:{"Content-Type":"application/json"}})
         .then(res=>res.json())
         .then(res=>{
@@ -61,10 +64,9 @@ export const PublicacionesCrud = () => {
             setNewTags((p)=>p.filter(pf=>pf!==tag))
         }        
     }
-    function enviarPublicacion(e){ // carga o edicion
+    function enviarPublicacion(e){
         e.preventDefault(); const DTO = {}; setLoading(true);
         let formData = new FormData(e.target);
-
         formData.forEach((value, key) => {                
             if(!Reflect.has(DTO, key)){
                 DTO[key] = value;
@@ -76,15 +78,16 @@ export const PublicacionesCrud = () => {
             DTO[key].push(value);
         });
 
+        if(!Array.isArray(DTO.tags)){
+            DTO.tags = [DTO.tags];
+        }
         if(DTO.id === ""){
             delete DTO['id'];
-            fetch(API_URL+"/publicacion", {                
+            fetch(URL_PUBLICACIONES, {                
                 method:'POST', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
             }).then((res)=>{
                 if(res.ok){
-                    e.target.reset();
-                    setShow(false);setNewTags([]);
-                    setRenew(!renew);
+                    e.target.reset(); setRenew(!renew);
                     return res.json();
                 }            
             })
@@ -94,14 +97,16 @@ export const PublicacionesCrud = () => {
             .catch(err=>{
                 console.log(err);
                 toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{setLoading(false)})
+            }).finally(()=>{
+                setShow(false);setNewTags([]);
+                setLoading(false)
+            })
         }else{
-            fetch(API_URL+"/publicacion/"+DTO.id, {
+            fetch(URL_PUBLICACIONES+"/"+DTO.id, {
                 method:'PUT', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
             }).then((res)=>{
                 if(res.ok){
                     e.target.reset();
-                    setShow(false);setNewTags([]);
                     setRenew(!renew);
                     return res.json();
                 }            
@@ -112,7 +117,10 @@ export const PublicacionesCrud = () => {
             .catch(err=>{
                 console.log(err);
                 toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{setLoading(false)})
+            }).finally(()=>{
+                setShow(false);setNewTags([]);
+                setLoading(false);
+            })
         }
     }
     useEffect(()=>{
@@ -131,26 +139,37 @@ export const PublicacionesCrud = () => {
         }
     },[newTags])
     function eliminar(id){
-        let conf = window.confirm("¿Eliminar publicacion?");
-        if(conf){
-            setLoading(true)
-            fetch(API_URL+"/publicacion/"+id, 
-            {method:'DELETE', headers:{"Content-Type":"application/json"}})
-            .then(res=>{
-                return res.json()
-            })
-            .then(res=>{
-                if(res.error){
-                    throw new Error(res.mensaje);
-                }
-                setData(data.filter(d=>d._id !== id))
-                toast("Eliminada correctamente", 3000, "bg-success text-white", false);
-            })
-            .catch(err=>{
-                console.log(err)
-                toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{setLoading(false)})
-        }
+        Swal.fire({
+            title: 'Esta seguro de borrar esta publicación?',
+            text: "El siguiente cambio no podra ser revertido",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Si, quiero borrar!',
+            cancelButtonText: 'Cancelar'
+        }).then((resultado) =>{
+            if(resultado.isConfirmed){
+                setLoading(true)
+                fetch(URL_PUBLICACIONES+"/"+id, 
+                {method:'DELETE', headers:{"Content-Type":"application/json"}})
+                .then(res=>{
+                    return res.json()
+                })
+                .then(res=>{
+                    if(res.error){
+                        throw new Error(res.mensaje);
+                    }
+                    setData(data.filter(d=>d._id !== id))
+                    toast("Eliminada correctamente", 3000, "bg-success text-white", false);
+                })
+                .catch(err=>{
+                    console.log(err)
+                    toast(err.message+"", 3000, "bg-danger text-white", false);
+                }).finally(()=>{setLoading(false)})
+            }
+        })
+
     }
     function editar(id){
         const sel = data.find(d=>d._id === id);
@@ -168,15 +187,16 @@ export const PublicacionesCrud = () => {
         }, 100);
     }
     return (
-        <Container fluid className="my-5">
-            <Row className="mt-5">
+        <Container fluid className="my-3 fade-up">
+            <Row>
+                <h1 className="fw-bold text-center titular">Publicaciones</h1>
                 <Col xs={{ span: 10, offset: 1 }} className="p-3 bg-body-tertiary mt-5">
                     <div>
                         <form id='publicacion-form' onSubmit={(e)=>{filtrar(e)}} className='d-flex align-items-center mb-3'>
                             <label htmlFor="titulo">Titulo: </label><input type="text" name='titulo' placeholder='Ej: #00X o Vacío para buscar todos' className='form-control mx-2'/>
                             {loading ? <SpinnerLoader color='green' width='3' height='2'/> : <LockSpinnerLoader color='#B0BEC5' width='3' height='2'/>}
                             <div className="btn-group ms-2" role="group" aria-label="Basic mixed styles example">
-                                <button type="button" className='btn btn-primary'><i className="bi bi-search"></i></button>
+                                <button type="submit" className='btn btn-primary'><i className="bi bi-search"></i></button>
                                 <button type="button" className='btn btn-success' onClick={()=>{setShow(!show); setSelected({_id:'',contenido:'', imagen:'', tags:[], titulo:''})}}><i className="bi bi-plus-square"></i></button>
                                 <button type="reset" className='btn btn-warning'><i className="bi bi-backspace"></i></button>
                             </div>
@@ -210,9 +230,9 @@ export const PublicacionesCrud = () => {
                 </Col>
             </Row>
             <>
-            <Modal show={show} onHide={()=>{setShow(!show)}}>
+            <Modal show={show} onHide={()=>{setShow(!show); setNewTags([])}}>
                 <Modal.Header closeButton>
-                <Modal.Title>Nueva Noticia</Modal.Title>
+                <Modal.Title>Crear / Editar: Nueva Noticia</Modal.Title>
                 </Modal.Header>
                 <form id='cargaformulario' onSubmit={(e)=>{enviarPublicacion(e);}}>
                     <Modal.Body>
@@ -244,7 +264,7 @@ export const PublicacionesCrud = () => {
 
                     </Modal.Body>
                     <Modal.Footer>
-                        <button type='submit' className='btn btn-primary'>Guardar</button>
+                        <button type='submit' className='btn btn-primary d-flex' disabled={loading}>Guardar &nbsp;{loading && <SpinnerLoader color='white' height='1' width='1'/>} </button>
                     </Modal.Footer>
                 </form>
             </Modal>

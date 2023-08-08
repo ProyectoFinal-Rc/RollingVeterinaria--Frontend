@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import { ZoomLoader } from '../UI';
-const API_URL = import.meta.env.VITE_API_DEV;
+
+const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 export function Publicacion(){
     const params = useParams();
-    //const [pub, setPub] = useState({});
-    const {error, data, loading, setError, setData, setLoading} = useFetchGetJson(API_URL+"/publicacion/"+params.id);
+    const {error, data, loading, setError, setData, setLoading} = useFetchGetJson(URL_PUBLICACIONES+"/"+params.id);
     if(data?.active){
         return (
             <Container fluid className="my-5">
@@ -26,7 +25,7 @@ export function Publicacion(){
                                     <div className="m-3 text-center">
                                         {
                                             loading ? <div style={{height:'200px'}}><ZoomLoader/></div>
-                                            : <img className="my-3" onLoad={(e)=>{e.target.className = 'my-3'}} style={{height:'200px'}} src={data?.imagen+""} alt="Contacto rolling vet" />
+                                            : <img className="my-3" onError={(e)=>{e.target.src = "https://cristian021195.github.io/portfolio/img/others/404-image.svg";}} onLoad={(e)=>{e.target.className = 'my-3 bg-secondary rounded p-2'}} style={{height:'200px'}} src={data?.imagen+""} alt="Contacto rolling vet" />
                                         }
                                         
                                     </div>                        
@@ -53,19 +52,3 @@ export function Publicacion(){
     )
 }
 
-/*
-"_id": "64c99f36aa182162470388ab",
-    "titulo": "publicacion #001",
-    "contenido": "contenido de la publicacion #001",
-    "imagen": "https://picsum.photos/300/200",
-    "active": true,
-    "tags": [
-        "ofertas",
-        "alimento",
-        "descuentos"
-    ],
-    "push": false,
-    "createdAt": "2023-08-02T00:11:34.155Z",
-    "updatedAt": "2023-08-02T00:20:01.210Z",
-    "__v": 0
-*/

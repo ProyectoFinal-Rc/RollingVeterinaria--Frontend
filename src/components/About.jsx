@@ -32,9 +32,9 @@ const developers = [
   {
     nombre: "Cristina Ismael Gramajo",
     foto: "/src/assets/patita.png",
-    lenguajes: ["HTML", "CSS", "JavaScript"],
+    lenguajes: ["HTML", "CSS", "JavaScript", "PHP", "C#", "ReactJS", "NodeJS", "MySQL", "MongoDB"],
     descripcion:
-      "Un estudiante de desarrollo web con experiencia en front-end y diseño de sitios atractivos y funcionales.",
+      "Un estudiante de Licenciatura en informatica, experiencia en front-end y diseño de sitios atractivos y funcionales.",
     animalFavorito: "Gato",
     github: "https://github.com/Cristian021195"
   },
@@ -62,9 +62,9 @@ const developers = [
 const About = () => {
 
   return (
-    <Container className="mt-2">
-      <div className="text-center">
-        <h1 id="titulo-about" className="fw-bold text-center">EL EQUIPO</h1>
+    <Container className="mt-3 fade-up">
+      <div className="text-center mt-5">
+        <h1 className="fw-bold text-center titular">El equipo</h1>
         <img src="./src/assets/nosotros.png" alt="Imagenes de animales (dibujos animados)" className="imagen-nosotros" />
       </div>
       <Row className="mt-4 text-center justify-content-center">
@@ -84,7 +84,7 @@ const About = () => {
                   </Card.Text>
                   <Card.Text><strong>Animal Favorito:</strong> {developer.animalFavorito}</Card.Text>
                   <Button variant="btn btn-lg" className="text-center" href={developer.github} target='_blank'>
-                    <i class="bi bi-github" id="tamaño-icono"></i>
+                    <i className="bi bi-github" id="tamaño-icono"></i>
                   </Button>
                 </div>
               </Card.Body>

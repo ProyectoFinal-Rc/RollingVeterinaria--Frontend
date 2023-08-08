@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button, Container, Row, Col, Card, ListGroup } from "react-bootstrap";
 import AgregarPaciente from "./AgregarPaciente"
-import Filtro from "./Filtro";
 import { borrarPaciente, obtenerListaPacientes } from "../../helpers/pacientes";
 import Swal from "sweetalert2";
 import { Fragment } from "react";
@@ -83,9 +82,6 @@ const AdminPacientes = () => {
             <div className="align-self-center mt-5 row justify-content-around">
                 <Link to={"/administrador/turno"} className="btn btn-warning col-8 col-md-5 mt-3">Administrador de turnos</Link>
                 <Button onClick={handleShow} className="col-8 col-md-5 mt-3">Agregar Paciente</Button>
-            </div>
-            <div className="container">
-                <Filtro></Filtro>
             </div>
             <Container>
                 <Row>

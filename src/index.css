@@ -49,3 +49,26 @@ footer p {
 .position-absolute {
 	position: absolute !important;
 }
+.titular{
+	font-size: 4rem;	
+	margin-top: 10rem;
+}
+.titular::first-letter{
+	color: #ff8437;
+}
+.fade-up {
+	min-height: 90vh;
+    animation-name: fadeUp;
+    animation-duration: .5s;
+}
+
+@keyframes fadeUp {
+	0% {
+	    transform: translate3d(0,40px,0);
+	    opacity: 0;
+	}
+	100% {
+	    transform: translateZ(0);
+	    opacity: 1;
+	}
+}

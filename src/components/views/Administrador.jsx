@@ -19,7 +19,8 @@ const Administrador = () => {
     }, []);
 
     return (
-        <section className="container pt-5 mt-5">
+        <section className="container my-3 fade-up">
+            <h1 className="fw-bold text-center titular">Panel Administrador</h1>
             <div className='container text-center mt-5'>
                 <div className='row justify-content-around'>
                 <Link className='btn btn-info col-8 col-md-5 mt-3' to={"/administrador/paciente"} >Administrador Pacientes</Link>
