@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
@@ -8,7 +7,6 @@ const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 export function Publicacion(){
     const params = useParams();
-    //const [pub, setPub] = useState({});
     const {error, data, loading, setError, setData, setLoading} = useFetchGetJson(URL_PUBLICACIONES+"/"+params.id);
     if(data?.active){
         return (
@@ -54,19 +52,3 @@ export function Publicacion(){
     )
 }
 
-/*
-"_id": "64c99f36aa182162470388ab",
-    "titulo": "publicacion #001",
-    "contenido": "contenido de la publicacion #001",
-    "imagen": "https://picsum.photos/300/200",
-    "active": true,
-    "tags": [
-        "ofertas",
-        "alimento",
-        "descuentos"
-    ],
-    "push": false,
-    "createdAt": "2023-08-02T00:11:34.155Z",
-    "updatedAt": "2023-08-02T00:20:01.210Z",
-    "__v": 0
-*/

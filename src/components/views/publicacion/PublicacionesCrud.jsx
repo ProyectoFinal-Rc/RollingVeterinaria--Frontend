@@ -1,5 +1,5 @@
-import React, { useEffect, useRef, useState } from 'react'
-import { Button, Col, Container, Modal, Row } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Col, Container, Modal, Row } from 'react-bootstrap'
 import { LockSpinnerLoader, SpinnerLoader } from '../UI';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { toast } from '../../../utils';
@@ -40,6 +40,7 @@ export const PublicacionesCrud = () => {
             toast(err.message+"", 3000, "bg-danger text-white", false);
         }).finally(()=>{setLoading(false)})
     }
+
     function filtrar(e){
         e.preventDefault();
         let formData = new FormData(e.target);
@@ -63,7 +64,7 @@ export const PublicacionesCrud = () => {
             setNewTags((p)=>p.filter(pf=>pf!==tag))
         }        
     }
-    function enviarPublicacion(e){ // carga o edicion
+    function enviarPublicacion(e){
         e.preventDefault(); const DTO = {}; setLoading(true);
         let formData = new FormData(e.target);
         formData.forEach((value, key) => {                
@@ -138,7 +139,6 @@ export const PublicacionesCrud = () => {
         }
     },[newTags])
     function eliminar(id){
-        // let conf = window.confirm("¿Eliminar publicacion?");
         Swal.fire({
             title: 'Esta seguro de borrar esta publicación?',
             text: "El siguiente cambio no podra ser revertido",
