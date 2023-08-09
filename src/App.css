@@ -38,6 +38,13 @@ body {
     position: relative;
 }
 
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    filter: invert(1);
+}
+button[aria-label="Slide 1"],button[aria-label="Slide 2"]{
+    filter: invert(1);
+}
+
 .fondo-container::before {
     content: "";
     position: absolute;

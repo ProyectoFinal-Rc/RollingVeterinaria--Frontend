@@ -1,19 +1,16 @@
 import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap"
 import { useForm } from "react-hook-form";
 
-
 const Contacto = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-
     const onSubmit = () => {
         reset();
     }
-
     return (
         <Container fluid className="my-3 fade-up">
             <Row>
                 <h1 className="fw-bold text-center titular">Contacto</h1>
-                <Col xs={{ span: 8, offset: 2 }} className="p-3 bg-body-tertiary mt-5">
+                <Col xs={{ span: 12 }} md={{ span: 8 ,offset:2}}  className="p-3 bg-body-tertiary mt-5">
                     <div className="p-3 text-center">
                         <div className="m-3 text-center">
                             <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" style={{ width: '100%', maxWidth: '300px' }} />
@@ -33,7 +30,7 @@ const Contacto = () => {
                         </ul>
                     </div>
                 </Col>
-                <Col xs={{ span: 8, offset: 2 }} className="p-3 mt-5">
+                <Col xs={{ span: 12 }} md={{ span: 8 ,offset:2}} className="p-3 bg-white mt-5">
                     <h4 className="text-center fw-bold">Formulario de contacto</h4>
                     <Form className="p-3 bg-white border rounded" onSubmit={handleSubmit(onSubmit)}>
                         <Row className="mb-3">
@@ -56,7 +53,6 @@ const Contacto = () => {
                                     </Form.Text>
                                 </Form.Group>
                             </Col>
-
                             <Col xs={12} md={6} lg={6} className="mt-3" >
                                 <Form.Group>
                                     <Form.Label>Apellido</Form.Label>
