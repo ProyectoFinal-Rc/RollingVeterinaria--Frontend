@@ -78,7 +78,7 @@ const AdminTurnos = () => {
   return (
     <section className="container mt-5">
       <div className="d-flex justify-content-center mt-5">
-        <h1 className="mt-5 fw-bold bg-warning-subtle p-2 border border-5 border-warning m-2">Listado de turnos</h1>
+        <h1 className="mt-5 fw-bold  p-2 titular fs-1">Listado de turnos</h1>
       </div>
       <div className="align-self-center mt-5 row justify-content-around">
         <Link to={"/administrador/paciente"} className="btn btn-info col-8 col-md-5 mt-3">Administrador de pacientes</Link>

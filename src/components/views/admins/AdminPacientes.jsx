@@ -75,7 +75,7 @@ const AdminPacientes = () => {
     return (
         <section className="container mt-5">
             <div className="d-flex justify-content-center mt-5">
-                <h1 className="mt-5 fw-bold bg-warning-subtle p-2 border border-5 border-warning m-2">
+                <h1 className="mt-5 fw-bold  p-2 titular fs-1">
                     Listado de pacientes
                 </h1>
             </div>
@@ -83,7 +83,7 @@ const AdminPacientes = () => {
                 <Link to={"/administrador/turno"} className="btn btn-warning col-8 col-md-5 mt-3">Administrador de turnos</Link>
                 <Button onClick={handleShow} className="col-8 col-md-5 mt-3">Agregar Paciente</Button>
             </div>
-            <Container>
+            <Container className="mt-5 mb-3">
                 <Row>
                     {
                         pacientes.map((paciente) => {
