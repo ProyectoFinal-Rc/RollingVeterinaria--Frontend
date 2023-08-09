@@ -1,6 +1,7 @@
 import './Footer.css'
 import logo from "../../../public/logo.png"
 import QRCode from "react-qr-code";
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
 	return (
@@ -13,8 +14,8 @@ const Footer = () => {
 					/>
 					<p className='text-center mb-1 fs-4 pt-3 fw-bold'>Nuestras Redes</p>
 					<div className='d-flex justify-content-center'>
-						<a href="/*"><i className="bi bi-facebook mx-3 fs-1 links-redes"></i></a>
-						<a href="/*"><i className="bi bi-instagram mx-3 fs-1 links-redes"></i></a>
+						<Link to="/*"><i className="bi bi-facebook mx-3 fs-1 links-redes"></i></Link>
+						<Link to="/*"><i className="bi bi-instagram mx-3 fs-1 links-redes"></i></Link>
 					</div>
 				</div>
 				<div>
