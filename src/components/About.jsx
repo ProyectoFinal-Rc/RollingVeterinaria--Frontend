@@ -1,4 +1,11 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import Juanpi from "../assets/imagenes/juampi.jpg"
+import Mauri from "../assets/imagenes/mauricio.jpeg"
+import Male from "../assets/imagenes/male.jpeg"
+import Juanma from "../assets/imagenes/juanma.jpg"
+import Cristian from "../assets/imagenes/Cristian.jpeg"
+import Facu from "../assets/imagenes/facundo.jpg"
+import Nosotros from "../assets/nosotros.png"
 import './about.css'
 
 const developers = [
@@ -10,7 +17,7 @@ const developers = [
       "Un dedicado estudiante de programación. Tiene sólidas habilidades técnicas, así como excelentes habilidades interpersonales que le permiten liderar equipos.",
     animalFavorito: "Perro",
     github: "https://github.com/JuanPiAlba",
-    avatar:"/src/assets/imagenes/juampi.jpg"
+    avatar:{Juanpi}
   },
   {
     nombre: "Mauricio Soria",
@@ -20,7 +27,7 @@ const developers = [
       "Apasionado por la tecnología, siempre en busqueda de nuevos conocimientos, Mauricio disfruta del trabajo en equipo y la constante retroalimentación. ",
     animalFavorito: "Perro",
     github: "https://github.com/MauricioSor",
-    avatar:"/src/assets/imagenes/mauricio.jpeg"
+    avatar:{Mauri}
   },
   {
     nombre: "Malena de Arriba",
@@ -30,7 +37,7 @@ const developers = [
       "Male, una apasionada estudiante de programación fullstack. Además de su dedicación a la programación, encuentra equilibrio y satisfacción en sus otros intereses: el deporte y la pintura.",
     animalFavorito: "Gato",
     github: "https://github.com/mmaleducada",
-    avatar:"/src/assets/imagenes/male.jpeg"
+    avatar:{Male}
   },
   {
     nombre: "Cristina Ismael Gramajo",
@@ -40,7 +47,7 @@ const developers = [
       "Un estudiante de Licenciatura en informatica, experiencia en front-end y diseño de sitios atractivos y funcionales.",
     animalFavorito: "Gato",
     github: "https://github.com/Cristian021195",
-    avatar:"/src/assets/imagenes/cristian.jpeg"
+    avatar:{Cristian}
   },
   {
     nombre: "Juan Manuel Llanos",
@@ -50,7 +57,7 @@ const developers = [
       "Un apasionado del mundo de la programacion, disfruta de la resolución de problemas y el trabajo en equipo.",
     animalFavorito: "Gato",
     github: "https://github.com/juanmllanos",
-    avatar:"/src/assets/imagenes/juanma.jpg"
+    avatar:{Juanma}
   },
   {
     nombre: "Facundo Gomez",
@@ -60,7 +67,7 @@ const developers = [
       "Un dedicado desarrollador web novato. Aunque es relativamente nuevo en el campo de la programación, su entusiasmo y sed de conocimiento son palpables.",
     animalFavorito: "Gato",
     github: "https://github.com/Smlich",
-    avatar:"/src/assets/imagenes/facundo.jpg"
+    avatar:{Facu}
   }
 
 ];
@@ -71,7 +78,7 @@ const About = () => {
     <Container className="mt-3 fade-up">
       <div className="text-center mt-5">
         <h1 className="fw-bold text-center titular">El equipo</h1>
-        <img src="./src/assets/nosotros.png" alt="Imagenes de animales (dibujos animados)" className="imagen-nosotros" />
+        <img src={Nosotros} alt="Imagenes de animales (dibujos animados)" className="imagen-nosotros" />
       </div>
       <Row className="mt-4 text-center justify-content-center">
         {developers.map((developer, index) => (
