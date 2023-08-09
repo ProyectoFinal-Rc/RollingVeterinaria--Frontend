@@ -6,7 +6,6 @@ import logo from '/logo.png'
 
 const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 	const navegacion = useNavigate()
-
 	const cerrarSesion = () => {
 		Swal.fire({
 			title: '¿Desea cerrar sesion?',
@@ -24,7 +23,6 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 			}
 		})
 	}
-
 	return (
 		<Navbar expand='lg' id='navbar' className='px-3 px-lg-5'>
 			<Navbar.Brand as={Link} to='/'><img src={logo} className='imagenLogo'></img></Navbar.Brand>
@@ -57,7 +55,6 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 					}
 				</Nav>
 			</Navbar.Collapse>
-
 		</Navbar>
 	)
 }

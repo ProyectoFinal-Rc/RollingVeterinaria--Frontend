@@ -20,6 +20,10 @@ body {
 
 }
 
+#color-fondo-carrousel {
+    background-color: rgba(247, 238, 227, 0.601);
+}
+
 .servicio-imagen {
     width: 100%;
     object-fit: cover;
@@ -36,6 +40,13 @@ body {
 
 .fondo-container {
     position: relative;
+}
+
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    filter: invert(1);
+}
+button[aria-label="Slide 1"],button[aria-label="Slide 2"]{
+    filter: invert(1);
 }
 
 .fondo-container::before {

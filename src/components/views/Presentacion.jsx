@@ -1,8 +1,9 @@
-import React from 'react';
 import Video from '../../assets/VideoRCVet.mp4';
 
 import '../../App.css';
 import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+
 
 const Presentacion = () => {
     return (
@@ -32,9 +33,9 @@ const Presentacion = () => {
                             </div>
                         </Col>
                         <Col xs={12} md={6} className='text-center'id='botonFrase'>
-                            <Button id='boton' className="btn btn-primary rollingVet-naranja rounded-pill btn-lg px-5 fw-bold" href="/*" role="button">
+                            <Link id='boton' className="btn btn-primary rollingVet-naranja rounded-pill btn-lg px-5 fw-bold" to="/*" role="button">
                                 ¡Suscribirme!
-                            </Button>
+                            </Link>
                         </Col>
                     </Row>
                 </Container>

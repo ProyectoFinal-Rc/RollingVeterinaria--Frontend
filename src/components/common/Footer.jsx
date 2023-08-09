@@ -1,5 +1,8 @@
 import './Footer.css'
 import logo from "../../../public/logo.png"
+import QRCode from "react-qr-code";
+import { Link } from 'react-router-dom';
+
 const Footer = () => {
 	return (
 		<footer className=' d-flex flex-column pt-4'>
@@ -11,9 +14,15 @@ const Footer = () => {
 					/>
 					<p className='text-center mb-1 fs-4 pt-3 fw-bold'>Nuestras Redes</p>
 					<div className='d-flex justify-content-center'>
-						<a href="/*"><i className="bi bi-facebook mx-3 fs-1 links-redes"></i></a>
-						<a href="/*"><i className="bi bi-instagram mx-3 fs-1 links-redes"></i></a>
+						<Link to="/*"><i className="bi bi-facebook mx-3 fs-1 links-redes"></i></Link>
+						<Link to="/*"><i className="bi bi-instagram mx-3 fs-1 links-redes"></i></Link>
 					</div>
+				</div>
+				<div>
+				<p className='text-center fs-4 pt-3 fw-bold'>Escanea Nuestro QR!</p>
+				<div className='d-flex justify-content-center'>
+				<QRCode value={window.location.origin} style={{maxWidth:"10rem",maxHeight:"10rem"}}/>
+				</div>
 				</div>
 				<section className='my-4'>
 					<p className='text-center mb-2 fs-4 fw-bold'>¿Donde estamos?</p>

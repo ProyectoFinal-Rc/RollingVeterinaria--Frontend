@@ -1,19 +1,17 @@
 import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap"
 import { useForm } from "react-hook-form";
-
+import { Link } from "react-router-dom";
 
 const Contacto = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
-
     const onSubmit = () => {
         reset();
     }
-
     return (
         <Container fluid className="my-3 fade-up">
             <Row>
                 <h1 className="fw-bold text-center titular">Contacto</h1>
-                <Col xs={{ span: 8, offset: 2 }} className="p-3 bg-body-tertiary mt-5">
+                <Col xs={{ span: 12 }} md={{ span: 8 ,offset:2}}  className="p-3 bg-body-tertiary mt-5">
                     <div className="p-3 text-center">
                         <div className="m-3 text-center">
                             <img className="my-3" src="https://cristiangramajo.vercel.app/_next/static/media/main.87519bdd.svg" alt="Contacto rolling vet" style={{ width: '100%', maxWidth: '300px' }} />
@@ -22,19 +20,19 @@ const Contacto = () => {
                         <small><i><b>*Para urgencias recomendamos que llame a la linea habiltada 24hs</b></i></small>
                         <ul style={{ listStyle: 'none' }}>
                             <li>
-                                <a href="/error404" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">rollingvet@gmail.com</a>
+                                <Link to="/*" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">rollingvet@gmail.com</Link>
                             </li>
                             <li>
-                                <a href="/error404" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">+54 (3865) 332311</a>
+                                <Link to="/*" className="link-dark link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">+54 (3865) 332311</Link>
                             </li>
                             <li>
-                                <a href="/error404" className="link-warning link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Portal de soporte, chat online.</a>
+                                <Link to="/*" className="link-warning link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Portal de soporte, chat online.</Link>
                             </li>
                         </ul>
                     </div>
                 </Col>
-                <Col xs={{ span: 8, offset: 2 }} className="p-3 mt-5">
-                    <h4 className="text-center fw-bold">Formulario de contacto</h4>
+                <Col xs={{ span: 12 }} md={{ span: 8 ,offset:2}} className="p-3 bg-white mt-5">
+                    <h4 className="text-center fw-bold titular mt-1 fs-2">Formulario de contacto</h4>
                     <Form className="p-3 bg-white border rounded" onSubmit={handleSubmit(onSubmit)}>
                         <Row className="mb-3">
                             <Col xs={12} md={6} lg={6} className="mt-3" >
@@ -56,7 +54,6 @@ const Contacto = () => {
                                     </Form.Text>
                                 </Form.Group>
                             </Col>
-
                             <Col xs={12} md={6} lg={6} className="mt-3" >
                                 <Form.Group>
                                     <Form.Label>Apellido</Form.Label>
@@ -158,9 +155,9 @@ const Contacto = () => {
                             </Col>
                         </Row>
                         <div className="d-flex justify-content-center">
-                            <Button variant="primary" type="submit" className="mt-3">
+                            <Link className="primary mt-3 btn btn-warning" to={"/*"} >
                                 Enviar
-                            </Button>
+                            </Link>
                         </div>
                     </Form>
                 </Col>

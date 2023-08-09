@@ -22,8 +22,7 @@ export function copiarTexto(texto){
     if (window) {
         if (navigator) {
             if (navigator.clipboard) {
-                navigator.clipboard.writeText(texto).then(//res=>{alert("¡copiado!")}
-                ).catch(() => { alert("¡Erro al copiar dato!") }
+                navigator.clipboard.writeText(texto).then().catch(() => { alert("¡Error al copiar dato!") }
                 );
                 return true;
             } else {

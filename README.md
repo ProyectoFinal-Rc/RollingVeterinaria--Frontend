@@ -5,7 +5,7 @@
 
 <p align="center">
   <a href= "https://github.com/prettier/prettier"><img alt="code style: prettier" src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg"></a>
-  <a href="netlify"><img src="https://img.shields.io/badge/Netlify-page-8A2BE2" alt="Netlify Status"></a>
+  <a href="https://rolling-vet-gt.vercel.app/"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Vercel"></a>
 </p>
 
 

@@ -1,7 +1,7 @@
-import {  useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, Button, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { editarTurno,fecha, obtenerListaTurnos } from "../../helpers/turnos";
+import { editarTurno, obtenerListaTurnos } from "../../helpers/turnos";
 import Swal from "sweetalert2";
 import { fechaParseada } from "../../helpers/turnos";
 import {obtenerFechaParaHTML} from "../../helpers"
@@ -10,6 +10,7 @@ const EditarTurno = ({ showEditar, setShowEditar, turnoEditar, setTurnos }) => {
     const [loading, setLoading] = useState(false);
     const [datos, setDatos] = useState(turnoEditar);
     const [fechaActual,setFechaActual]=useState(obtenerFechaParaHTML())
+    
     const editar = (e) => {
         setLoading(true);
         editarTurno(e, datos._id).then((respuesta) => {

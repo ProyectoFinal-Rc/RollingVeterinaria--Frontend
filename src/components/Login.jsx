@@ -83,6 +83,6 @@ const Login = ({setUsuarioLogueado}) => {
 			</div>
 		</Container>
 	)
-}//{loading ? <SpinnerLoader color='blue' height='2' width='2'/> : "Ingresar" }
+}
 
 export default Login

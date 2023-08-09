@@ -7,27 +7,30 @@ const developers = [
     foto: "/src/assets/patita.png",
     lenguajes: ["HTML", "CSS", "JavaScript"],
     descripcion:
-      "Un dedicado estudiante de programación. Tiene sólidas habilidades técnicas, así como excelentes habilidades interpersonales que le permiten liderar equipos",
+      "Un dedicado estudiante de programación. Tiene sólidas habilidades técnicas, así como excelentes habilidades interpersonales que le permiten liderar equipos.",
     animalFavorito: "Perro",
-    github: "https://github.com/JuanPiAlba"
+    github: "https://github.com/JuanPiAlba",
+    avatar:"/src/assets/imagenes/juampi.jpg"
   },
   {
     nombre: "Mauricio Soria",
     foto: "/src/assets/patita.png",
     lenguajes: ["JavaScript", "React", "Node.js"],
     descripcion:
-      "Apasionado por la tecnología , siempre en busqueda de nuevos conocimientos.",
+      "Apasionado por la tecnología, siempre en busqueda de nuevos conocimientos, Mauricio disfruta del trabajo en equipo y la constante retroalimentación. ",
     animalFavorito: "Perro",
-    github: "https://github.com/MauricioSor"
+    github: "https://github.com/MauricioSor",
+    avatar:"/src/assets/imagenes/mauricio.jpeg"
   },
   {
     nombre: "Malena de Arriba",
     foto: "/src/assets/kittens-cat-cat-puppy-rush-45170.png",
     lenguajes: ["JavaScript", "React", "Node.js", "Html", "Css"],
     descripcion:
-      "Male, una apasionada estudiante de programación fullstack. Además de su dedicación a la programación, encuentra equilibrio y satisfacción en sus otros intereses: el deporte y la pintura",
+      "Male, una apasionada estudiante de programación fullstack. Además de su dedicación a la programación, encuentra equilibrio y satisfacción en sus otros intereses: el deporte y la pintura.",
     animalFavorito: "Gato",
-    github: "https://github.com/mmaleducada"
+    github: "https://github.com/mmaleducada",
+    avatar:"/src/assets/imagenes/male.jpeg"
   },
   {
     nombre: "Cristina Ismael Gramajo",
@@ -36,16 +39,18 @@ const developers = [
     descripcion:
       "Un estudiante de Licenciatura en informatica, experiencia en front-end y diseño de sitios atractivos y funcionales.",
     animalFavorito: "Gato",
-    github: "https://github.com/Cristian021195"
+    github: "https://github.com/Cristian021195",
+    avatar:"/src/assets/imagenes/cristian.jpeg"
   },
   {
     nombre: "Juan Manuel Llanos",
     foto: "/src/assets/patita.png",
     lenguajes: ["HTML", "CSS", "JavaScript"],
     descripcion:
-      "Un apasionado del mundo de la programacion, disfruta de la resolución de problemas y el trabajo en equipo",
+      "Un apasionado del mundo de la programacion, disfruta de la resolución de problemas y el trabajo en equipo.",
     animalFavorito: "Gato",
-    github: "https://github.com/juanmllanos"
+    github: "https://github.com/juanmllanos",
+    avatar:"/src/assets/imagenes/juanma.jpg"
   },
   {
     nombre: "Facundo Gomez",
@@ -54,7 +59,8 @@ const developers = [
     descripcion:
       "Un dedicado desarrollador web novato. Aunque es relativamente nuevo en el campo de la programación, su entusiasmo y sed de conocimiento son palpables.",
     animalFavorito: "Gato",
-    github: "https://github.com/Smlich"
+    github: "https://github.com/Smlich",
+    avatar:"/src/assets/imagenes/facundo.jpg"
   }
 
 ];
@@ -79,6 +85,7 @@ const About = () => {
                   </Card.Text>
                 </div>
                 <div className="footerCard">
+                  <Card.Img src={developer.avatar} className="rounded-circle w-50"></Card.Img>
                   <Card.Text>
                     <strong>Lenguajes y Tecnologias:</strong> {developer.lenguajes.join(", ")}
                   </Card.Text>
