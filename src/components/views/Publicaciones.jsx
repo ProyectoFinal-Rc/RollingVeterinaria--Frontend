@@ -22,7 +22,7 @@ return (
     <section>
         <div className='container my-4 bg-white' >
             <Row id='publicacionesContenedor' className='py-4'>
-            <h2 className='letras text-dark'>Ultimas noticias:</h2>
+            <h2 className='letras text-dark fs-2'>Ultimas noticias:</h2>
             <div className="d-flex justify-content-center gap-3 flex-wrap">
                 {
                     mensajeError != "" && <div><b>Error al cargar las publicaciones</b></div> 

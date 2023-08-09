@@ -20,6 +20,10 @@ body {
 
 }
 
+#color-fondo-carrousel {
+    background-color: rgba(247, 238, 227, 0.601);
+}
+
 .servicio-imagen {
     width: 100%;
     object-fit: cover;
