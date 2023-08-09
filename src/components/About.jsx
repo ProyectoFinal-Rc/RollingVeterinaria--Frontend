@@ -1,14 +1,9 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import Juanpi from "../assets/imagenes/juampi.jpg"
-import Mauri from "../assets/imagenes/mauricio.jpeg"
-import Male from "../assets/imagenes/male.jpeg"
-import Juanma from "../assets/imagenes/juanma.jpg"
-import Cristian from "../assets/imagenes/Cristian.jpeg"
-import Facu from "../assets/imagenes/facundo.jpg"
 import Nosotros from "../assets/nosotros.png"
 import './about.css'
+import Avatares from "./Avatares";
 
-const developers = [
+/* const developers = [
   {
     nombre: "Juan Pablo Alba",
     foto: "/src/assets/patita.png",
@@ -70,7 +65,7 @@ const developers = [
     avatar:{Facu}
   }
 
-];
+]; */
 
 const About = () => {
 
@@ -81,30 +76,7 @@ const About = () => {
         <img src={Nosotros} alt="Imagenes de animales (dibujos animados)" className="imagen-nosotros" />
       </div>
       <Row className="mt-4 text-center justify-content-center">
-        {developers.map((developer, index) => (
-          <Col md={6} key={index}>
-            <Card className="mb-4" id="card-contenedor-about">
-              <Card.Body className="cardBackgound d-flex flex-column justify-content-between p-3">
-                <div className="mainCard">
-                  <Card.Title className="fw-bold fs-2 my-3" id="card-nombre">{developer.nombre}</Card.Title>
-                  <Card.Text className="compressed-text my-4">
-                    {developer.descripcion}
-                  </Card.Text>
-                </div>
-                <div className="footerCard">
-                  <Card.Img src={developer.avatar} className="rounded-circle w-50"></Card.Img>
-                  <Card.Text>
-                    <strong>Lenguajes y Tecnologias:</strong> {developer.lenguajes.join(", ")}
-                  </Card.Text>
-                  <Card.Text><strong>Animal Favorito:</strong> {developer.animalFavorito}</Card.Text>
-                  <Button variant="btn btn-lg" className="text-center" href={developer.github} target='_blank'>
-                    <i className="bi bi-github" id="tamaño-icono"></i>
-                  </Button>
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
+      <Avatares/>
       </Row>
     </Container>
   )
