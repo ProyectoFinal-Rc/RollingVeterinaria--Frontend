@@ -3,9 +3,8 @@ import { Container, Carousel } from 'react-bootstrap';
 
 const Colaboradores = () => {
     return (
-        <div>
         <section id='colaboradores'>
-            <Container className='bg-white'>
+            <Container className='bg-white pt-4'>
                 <h2 className='text-center my-3 display-3 fw-bold'>Nuestros <strong className='rollingVet-naranja '>Profesionales</strong></h2>
                 <hr className='mx-5 ' />
                 <div className=''>
@@ -49,7 +48,6 @@ const Colaboradores = () => {
                 </div>
             </Container>
         </section>
-    </div>
     );
 };
 
