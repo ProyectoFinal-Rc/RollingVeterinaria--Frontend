@@ -2,7 +2,7 @@ import { Table, Button } from "react-bootstrap";
 import { useState, useEffect, Fragment } from "react";
 import AgregarTurno from "./AgregarTurno";
 import Swal from "sweetalert2";
-import { obtenerListaTurnos, borrarTurno, fecha,fechaParseada } from "../../helpers/turnos";
+import { obtenerListaTurnos, borrarTurno, fechaParseada } from "../../helpers/turnos";
 import EditarTurno from "./EditarTurno";
 import { Link } from "react-router-dom"
 
