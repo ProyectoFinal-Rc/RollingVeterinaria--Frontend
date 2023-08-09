@@ -13,7 +13,6 @@ export function useFetchGetJson(url="", timeout=3000, extraHeaders={}){
             if(res.ok){
                 return res.json()
             }else{
-                //return Promise.reject()
                 throw new Error("Error al parsear la peticion")
             }            
         })
@@ -30,7 +29,6 @@ export function useFetchPostJson(url="", timeout=3000, body, extraHeaders){
     const[data,setData] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    //useEffect(()=>{
         setLoading(true);
         fetch(url, {
             method:'POST',
@@ -41,7 +39,7 @@ export function useFetchPostJson(url="", timeout=3000, body, extraHeaders){
         .then(res=>setData(res))
         .catch(err=>setError(err))
         .finally(f=>{setLoading(false)})
-    //},[])
+        
     return {error, data, loading}
 }
 

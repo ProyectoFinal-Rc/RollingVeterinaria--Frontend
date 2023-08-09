@@ -1,4 +1,3 @@
-import React from 'react';
 import Video from '../../assets/VideoRCVet.mp4';
 
 import '../../App.css';

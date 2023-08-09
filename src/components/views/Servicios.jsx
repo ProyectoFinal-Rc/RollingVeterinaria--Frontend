@@ -1,5 +1,3 @@
-import React from 'react';
-
 import Servicio1 from "../../assets/pexels-photo-4483327.png";
 import Servicio2 from "../../assets/peliqueria1.jpg";
 import Servicio3 from "../../assets/petsshop1.jpeg";
