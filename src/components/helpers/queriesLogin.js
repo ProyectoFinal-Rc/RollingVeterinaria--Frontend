@@ -10,17 +10,6 @@ export const IniciarSesion = async (usuario)=> {
 		const respuesta= await consulta.json()
 		localStorage.setItem("token",respuesta.token)
 		return usuario;
-/* 		const listaUsuarios = await respuesta.json()
-		const usuarioBuscado = listaUsuarios.find((itemUsuario) => itemUsuario.email === usuario.email)
-		if(usuarioBuscado) {
-			if(usuarioBuscado.password === usuario.password) {
-				return usuarioBuscado
-			} else {
-				return null
-			}
-		} else {
-			return null
-		} */
 	} catch (error) {
 		console.log(error)
 	}
