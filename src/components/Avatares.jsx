@@ -1,11 +1,11 @@
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import Juanpi from "../assets/imagenes/juampi.jpg"
-import Mauri from "../assets/imagenes/mauricio.jpeg"
-import Male from "../assets/imagenes/male.jpeg"
-import Juanma from "../assets/imagenes/juanma.jpg"
-import Cristian from "../assets/imagenes/Cristian.jpeg"
-import Facu from "../assets/imagenes/facundo.jpg"
-
+import { Col, Card, Button } from "react-bootstrap";
+import Juanpi from "../assets/juampi.jpg"
+import Mauri from "../assets/mauricio.jpeg"
+import Male from "../assets/male.jpeg"
+import Juanma from "../assets/juanma.jpg"
+import Cristian from "../assets/Cristian.jpeg"
+import Facu from "../assets/facundo.jpg"
+import './about.css'
 const Avatares = () => {
     return (
         <>
@@ -22,8 +22,7 @@ const Avatares = () => {
                             <Card.Img src={Cristian} className="rounded-circle w-50"></Card.Img>
                             <Card.Text>
                                 <strong>Lenguajes y Tecnologias:
-                                HTML, CSS, JavaScript, PHP, C#, ReactJS, NodeJS, MySQL, MongoDB
-                                </strong>
+                                </strong> HTML, CSS, JavaScript, PHP, C#, ReactJS, NodeJS, MySQL, MongoDB
                             </Card.Text>
                             <Card.Text><strong>Animal Favorito:</strong>Gatos</Card.Text>
                             <Button variant="btn btn-lg" className="text-center" href="https://github.com/Cristian021195" target='_blank'>
@@ -46,7 +45,7 @@ const Avatares = () => {
                         <div className="footerCard">
                             <Card.Img src={Male} className="rounded-circle w-50"></Card.Img>
                             <Card.Text>
-                                <strong>Lenguajes y Tecnologias:</strong> JavaScript,React,Node.js,Html,Css
+                                <strong>Lenguajes y Tecnologias:</strong> HTML, CSS, JavaScript, React, Node.js, MongoDB
                             </Card.Text>
                             <Card.Text><strong>Animal Favorito:</strong> Gatos</Card.Text>
                             <Button variant="btn btn-lg" className="text-center" href="https://github.com/mmaleducada" target='_blank'>
@@ -68,7 +67,7 @@ const Avatares = () => {
                         <div className="footerCard">
                             <Card.Img src={Juanma} className="rounded-circle w-50"></Card.Img>
                             <Card.Text>
-                                <strong>Lenguajes y Tecnologias:</strong> HTML,CSS,JavaScript
+                                <strong>Lenguajes y Tecnologias:</strong> HTML, CSS, JavaScript, React, Node.js, MongoDB
                             </Card.Text>
                             <Card.Text><strong>Animal Favorito:</strong> Gatos</Card.Text>
                             <Button variant="btn btn-lg" className="text-center" href="https://github.com/juanmllanos" target='_blank'>
@@ -90,7 +89,7 @@ const Avatares = () => {
                         <div className="footerCard">
                             <Card.Img src={Juanpi} className="rounded-circle w-50"></Card.Img>
                             <Card.Text>
-                                <strong>Lenguajes y Tecnologias:</strong> HTML,CSS,JavaScript
+                                <strong>Lenguajes y Tecnologias:</strong> HTML, CSS, JavaScript, React, Node.js, MongoDB
                             </Card.Text>
                             <Card.Text><strong>Animal Favorito:</strong> Perros</Card.Text>
                             <Button variant="btn btn-lg" className="text-center" href="https://github.com/JuanPiAlba" target='_blank'>
@@ -112,7 +111,7 @@ const Avatares = () => {
                         <div className="footerCard">
                             <Card.Img src={Mauri} className="rounded-circle w-50"></Card.Img>
                             <Card.Text>
-                                <strong>Lenguajes y Tecnologias:</strong> JavaScript,React,Node.js
+                                <strong>Lenguajes y Tecnologias:</strong> HTML, CSS, JavaScript, React, Node.js, MongoDB
                             </Card.Text>
                             <Card.Text><strong>Animal Favorito:</strong> Perros</Card.Text>
                             <Button variant="btn btn-lg" className="text-center" href="https://github.com/MauricioSor" target='_blank'>
@@ -134,7 +133,7 @@ const Avatares = () => {
                         <div className="footerCard">
                             <Card.Img src={Facu} className="rounded-circle w-50"></Card.Img>
                             <Card.Text>
-                                <strong>Lenguajes y Tecnologias:</strong> HTML,CSS,JavaScript
+                                <strong>Lenguajes y Tecnologias:</strong> HTML, CSS, JavaScript, React, Node.js, MongoDB
                             </Card.Text>
                             <Card.Text><strong>Animal Favorito:</strong> Gatos</Card.Text>
                             <Button variant="btn btn-lg" className="text-center" href="https://github.com/Smlich" target='_blank'>

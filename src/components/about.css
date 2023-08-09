@@ -13,7 +13,7 @@
     border-style: groove;
     border-radius: 10px;
     border-color: black;
-    height: 600px;
+    height: 650px;
 }
 
 #tamaño-icono {
@@ -32,6 +32,7 @@
         border-radius: 10px;
         border-color: black;
         overflow: hidden;
+        height: 570px;
     }
 
     #titulo-about {
@@ -54,5 +55,6 @@
         border-radius: 10px;
         border-color: black;
         overflow: hidden;
+        height: 600px;
     }
 }
