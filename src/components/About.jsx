@@ -1,10 +1,10 @@
 import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import Juanpi from "../assets/imagenes/juampi.jpg"
-import Mauri from "../assets/imagenes/mauricio.jpeg"
-import Male from "../assets/imagenes/male.jpeg"
-import Juanma from "../assets/imagenes/juanma.jpg"
-import Cristian from "../assets/imagenes/Cristian.jpeg"
-import Facu from "../assets/imagenes/facundo.jpg"
+import Juanpi from "../assets/juampi.jpg"
+import Mauri from "../assets/mauricio.jpeg"
+import Male from "../assets/male.jpeg"
+import Juanma from "../assets/juanma.jpg"
+import Cristian from "../assets/Cristian.jpeg"
+import Facu from "../assets/facundo.jpg"
 import Nosotros from "../assets/nosotros.png"
 import './about.css'
 
