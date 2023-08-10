@@ -1,69 +1,86 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+footer {
+	margin-top: auto;
+	color: black;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+footer p {
+	color: black;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.skeleton {
+	background-color: #e2e5e7;
+	background-image: linear-gradient(90deg, #ffffff00, #ffffff80, #ffffff00);
+	background-size: 40px 100%;
+	background-repeat: no-repeat;
+	background-position: left -40px top 0;
+	-webkit-animation: shine 1s ease infinite;
+			animation: shine 1s ease infinite;
+}
+  
+@-webkit-keyframes shine {
+	to {
+	  background-position: right -40px top 0;
+	}
+}
+  
+@keyframes shine {
+	to {
+	  background-position: right -40px top 0;
+	}
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#custom-target {
+	position: relative;
+	width: 600px;
+	height: 300px;
+	border-style: solid;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+  
+.position-absolute {
+	position: absolute !important;
+}
+.titular{
+	font-size: 4rem;	
+	margin-top: 10rem;
+}
+.titular::first-letter{
+	color: #ff8437;
+}
+.fade-up {
+	min-height: 90vh;
+    animation-name: fadeUp;
+    animation-duration: .5s;
+}
+
+@keyframes fadeUp {
+	0% {
+	    transform: translate3d(0,40px,0);
+	    opacity: 0;
+	}
+	100% {
+	    transform: translateZ(0);
+	    opacity: 1;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.titular{
+		font-size: 2rem;	
+		margin-top: 10rem;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 922px){
+	.titular{
+		font-size: 2.5rem;	
+		margin-top: 10rem;
+	}
 }

@@ -1,0 +1,60 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+#titulo-about {
+    font-size: 120px;
+    width: 100%;
+    color: rgba(255, 145, 77, 1);
+    text-shadow: 3px 3px 2px rgb(0, 0, 0);
+    margin-top: 70px;
+}
+
+.cardBackgound {
+    background-color: #f9a9785b;
+    border-style: groove;
+    border-radius: 10px;
+    border-color: black;
+    height: 650px;
+}
+
+#tamaño-icono {
+    font-size:xx-large;
+}
+
+#card-nombre{
+    color: rgba(255, 145, 77, 1);
+    text-shadow: 3px 3px 2px rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 767px){
+    .cardBackgound {
+        background-color: #f9a9785b;
+        border-style: groove;
+        border-radius: 10px;
+        border-color: black;
+        overflow: hidden;
+        height: 570px;
+    }
+
+    #titulo-about {
+        font-size: 50px;
+        width: 100%;
+        color: rgba(255, 145, 77, 1);
+        text-shadow: 3px 3px 2px rgb(0, 0, 0);
+        margin-top: 100px;
+    }
+
+    .imagen-nosotros {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 922px){
+    .cardBackgound {
+        background-color:#f9a9785b;
+        border-style: groove;
+        border-radius: 10px;
+        border-color: black;
+        overflow: hidden;
+        height: 600px;
+    }
+}

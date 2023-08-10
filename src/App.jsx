@@ -1,33 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css'
+import Principal from './components/Principal'
+import Footer from './components/common/Footer'
+import Navegacion from './components/common/Navbar'
+import Login from './components/Login'
+import { useState } from 'react'
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdministrador from "./components/routes/RutasAdministrador";
+import Contacto from "./components/Contacto";
+import Error404 from "./components/Error404";
+import About from "./components/About";
+import {Publicacion} from "./components/views/publicacion/";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const usuarioSesionStorage = JSON.parse(sessionStorage.getItem('usuario')) || ''
+  const [usuarioLogueado, setUsuarioLogueado] = useState(usuarioSesionStorage)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <BrowserRouter>
+        <Navegacion usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Navegacion>
+        <Routes>
+          <Route exact path="/" element={<Principal></Principal>}></Route>
+          <Route exact path="/login" element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}></Route>
+          <Route path="/administrador/*" element={<RutasProtegidas><RutasAdministrador></RutasAdministrador></RutasProtegidas>}></Route>
+          <Route exact path="/acerca-de-nosotros" element={<About></About>}></Route>
+          <Route exact path="/contacto" element={<Contacto></Contacto>}></Route> 
+          <Route exact path="/publicaciones/:id" element={<Publicacion></Publicacion>}></Route>
+          <Route exact path="*" element={<Error404></Error404>}></Route>
+        </Routes>
+        <Footer></Footer>
+      </BrowserRouter>
     </>
   )
 }

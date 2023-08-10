@@ -1,0 +1,27 @@
+.contenedor-formulario {
+	max-width: 400px;
+	background-color: #f9a978a2;
+	margin-top: 200px;
+	padding: 30px;
+}
+
+
+
+.boton {
+	opacity: .9;
+	padding: .5rem 1rem;
+	border-radius: 10px;
+	border: thin solid black;
+	background-color: #FF914D;
+	color: black;
+	text-decoration: none;
+}
+
+.boton:hover {
+	opacity: 1;
+	transform: scale(1.01);
+}
+
+#login {
+	padding-top: 150px;
+}

@@ -1,42 +1,218 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lilita+One&display=swap');
+main {
+    min-height: 100vh;
+    flex-grow: 1;
+    flex-direction: column;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+body {
+    background: url(./assets/fondos/fondo1.png) no-repeat center fixed;
+    background-size: cover;
+    cursor: url(../src/assets/patita.png),auto;
+    font-family: 'Rubik', sans-serif;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.cursor{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    position: absolute;
+
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#color-fondo-carrousel {
+    background-color: rgba(247, 238, 227, 0.601);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.servicio-imagen {
+    width: 100%;
+    object-fit: cover;
+    transform-origin: center center;
 }
 
-.card {
-  padding: 2em;
+.zoom-imagen {
+    transition: transform 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.zoom-imagen:hover {
+    transform: scale(1.05);
+}
+
+.fondo-container {
+    position: relative;
+}
+
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    filter: invert(1);
+}
+button[aria-label="Slide 1"],button[aria-label="Slide 2"]{
+    filter: invert(1);
+}
+
+.fondo-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index:0;
+    background-image: url(/img/cierrese-arriba-muchas-pesas-gimnasia-metal-estante-gimnasio-deporte.jpg);
+    filter: contrast(60%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.rollingVet-naranja {
+    color: #ff914d
+}
+
+.rollingVet-negro {
+    color: #342823
+}
+.letras{
+    font-family: 'Lilita One', cursive;
+}
+#boton {
+    background-color: #ff914d;
+    border-color: #342823;
+    color: black;
+}
+
+#video {
+    padding-top:150px ;
+    min-height: 50vh;
+    background:
+        linear-gradient(180deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.3) 10%,
+            rgba(88, 62, 13, 0.3) 60%,
+        ),
+        linear-gradient(to bottom, transparent, var(--bs-body-bg));
+    filter: saturate(2);
+}
+
+#video>video {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    filter: blur(2px) grayscale(60%) contrast(70%) brightness(60%);
+}
+
+#serviciosContenedor {
+    background-color: #e48347ea;
+}
+
+#video>img {
+    filter: blur(2px) grayscale(10%) contrast(70%) brightness(60%);
+}
+
+.texto-marron {
+    color: #342823;
+}
+
+.estiloImagenesCarousel {
+    width: "500px";
+    height: "750px";
+}
+
+.imagenesCard {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+}
+
+.slider{
+    width: 100%;
+    height: auto;
+    margin: auto;
+    overflow: hidden;
+}
+.slider .slide-track{
+    display: flex;
+    animation: scroll 5s linear infinite;
+    width: calc(200px *9);
+    -webkit-animation: scroll 30s linear infinite;
+}
+.slider .slide{
+    width: 200px;
+}
+.slider .slide img{
+    width: 100%;
+}
+
+@keyframes scroll{
+    0%{
+        -webkit-transform:translateX(0);
+        transform:translateX(0);
+    }
+    100%{
+        
+        -webkit-transform:translateX(calc(-200px *10));
+        transform:translateX(calc(-200px *10));
+        
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    #video {
+        min-height: 100vh;
+    }
+
+    #tituloFrase {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+        top:200px;
+        height: 100%;
+    }
+    #botonFrase{
+        position: relative;
+        top:200px;
+    }
+
+    .servicio-imagen {
+        width: 100%;
+        object-fit: cover;
+        display: flex;
+        justify-content: center;
+    }
+
+    .textoServicios {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+
+    .carruseles {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .estiloImagenesCarousel {
+        min-width: 350px;
+        min-height: 525px;
+        max-width: 350px;
+        max-height: 525px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 922px) {
+    #textoFraseGrande {
+        display: none;
+    }
+
+    #textoFraseChico {
+        display: block;
+    }
+
 }

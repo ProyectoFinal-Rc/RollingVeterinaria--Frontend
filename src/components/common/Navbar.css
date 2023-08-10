@@ -1,0 +1,29 @@
+#navbar {
+	position: fixed;
+	z-index: 3;
+	width: 100%;
+}
+
+#navbar {
+	background-color: #ff914d;
+}
+
+.imagenLogo {
+	max-width: 70px;
+}
+
+.btn-navbar {
+	max-width: 35vw;
+}
+
+.btn-navbar:hover {
+	border-bottom: black solid thin;
+}
+
+#btn-cerrarSesion {
+	background-color: rgb(246, 109, 109);
+}
+
+#btn-cerrarSesion:hover {
+	background-color: rgba(237, 200, 35, 0.815);
+}
