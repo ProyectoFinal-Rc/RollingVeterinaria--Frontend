@@ -9,7 +9,7 @@ const Login = () => {
 
 	const onSubmit = (usuario) => {
 		IniciarSesion(usuario).then((respuesta) => {
-			if (respuesta) {
+			if (respuesta.error === false) {
 				sessionStorage.setItem('usuario', JSON.stringify(respuesta.nombreUsuario))
 				reset()
 			} else[
