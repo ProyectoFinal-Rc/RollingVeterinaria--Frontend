@@ -24,4 +24,4 @@ export const PublicacionCard = ({titulo="", contenido="", imagen="https://picsum
         
     </Card>
   )
-}//<Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+}
