@@ -12,89 +12,89 @@ const Marcas = () => {
         <div className='d-flex justify-content-center align-items-center  slider'>
             <div className="slide-track">
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen1}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen1}  style={{ width: "250px" }} alt="Sponsor eukanuba" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen2}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen2}  style={{ width: "250px" }} alt="Sponsor  Royal Canin" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen3}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen3}  style={{ width: "250px" }} alt="Sponsor Whiskas" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen4}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen4}  style={{ width: "250px" }} alt="Sponsor Proplan" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen5}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen5}  style={{ width: "250px" }} alt="Sponsor Vitalcan" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen6}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen6}  style={{ width: "250px" }} alt="Sponsor Sieger" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen7}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen7}  style={{ width: "250px" }} alt="Sponsor Agility" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen8}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen8}  style={{ width: "250px" }} alt="Sponsor Nupec" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen9}  style={{ width: "250px" }} alt="" />
-                </div>
-
-
-
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen1}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen2}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen3}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen4}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen5}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen6}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen7}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen8}  style={{ width: "250px" }} alt="" />
-                </div>
-                <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen9}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen9}  style={{ width: "250px" }} alt="Sponsor Monello" />
                 </div>
 
+
+
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen1}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen1}  style={{ width: "250px" }} alt="Sponsor eukanuba" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen2}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen2}  style={{ width: "250px" }} alt="Sponsor  Royal Canin" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen3}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen3}  style={{ width: "250px" }} alt="Sponsor Whiskas" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen4}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen4}  style={{ width: "250px" }} alt="Sponsor Proplan" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen5}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen5}  style={{ width: "250px" }} alt="Sponsor Vitalcan" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen6}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen6}  style={{ width: "250px" }} alt="Sponsor Sieger" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen7}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen7}  style={{ width: "250px" }} alt="Sponsor Agility" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen8}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen8}  style={{ width: "250px" }} alt="Sponsor Nupec" />
                 </div>
                 <div className="slide d-flex justify-content-center align-items-center mx-3">
-                    <img src={Imagen9}  style={{ width: "250px" }} alt="" />
+                    <img src={Imagen9}  style={{ width: "250px" }} alt="Sponsor Monello" />
+                </div>
+
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen1}  style={{ width: "250px" }} alt="Sponsor eukanuba" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen2}  style={{ width: "250px" }} alt="Sponsor  Royal Canin" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen3}  style={{ width: "250px" }} alt="Sponsor Whiskas" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen4}  style={{ width: "250px" }} alt="Sponsor Proplan" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen5}  style={{ width: "250px" }} alt="Sponsor Vitalcan" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen6}  style={{ width: "250px" }} alt="Sponsor Sieger" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen7}  style={{ width: "250px" }} alt="Sponsor Agility" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen8}  style={{ width: "250px" }} alt="Sponsor Nupec" />
+                </div>
+                <div className="slide d-flex justify-content-center align-items-center mx-3">
+                    <img src={Imagen9}  style={{ width: "250px" }} alt="Sponsor Monello" />
                 </div>
 
             </div>

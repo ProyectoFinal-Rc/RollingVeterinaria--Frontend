@@ -7,7 +7,6 @@ const Colaboradores = () => {
             <Container className='pt-4 rounded' id='color-fondo-carrousel'>
                 <h2 className='text-center my-3 display-3 fw-bold fs-2'>Nuestros <strong className='rollingVet-naranja '>Profesionales</strong></h2>
                 <hr className='mx-5 ' />
-                <div className=''>
                     <div className='container'>
                         <Carousel>
                             <Carousel.Item className='my-5'>
@@ -45,7 +44,6 @@ const Colaboradores = () => {
                         </Carousel.Item>
                     </Carousel>
                     </div>
-                </div>
             </Container>
         </section>
     );

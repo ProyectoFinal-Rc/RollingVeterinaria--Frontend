@@ -1,11 +1,13 @@
 import { Button, Col, Container, Form, Row, InputGroup } from "react-bootstrap"
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Contacto = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const navegacion = useNavigate()
     const onSubmit = () => {
         reset();
+        navegacion("/*");
     }
     return (
         <Container fluid className="my-3 fade-up">
@@ -48,6 +50,10 @@ const Contacto = () => {
                                             value: 30,
                                             message: "La cantidad maxima de caracteres es de 30 digitos",
                                         },
+                                        pattern:{
+                                            value:/^[A-Z][a-zA-Z0-9]*(?: [A-Z][a-zA-Z0-9]*)?$/,
+                                            message:"No debe contener caracteres especiales (Pj. @#:;) y cada nombre debe comenzar con mayuscula"
+                                        }
                                     })} />
                                     <Form.Text className="text-danger">
                                         {errors.nombre?.message}
@@ -67,6 +73,10 @@ const Contacto = () => {
                                             value: 30,
                                             message: "La cantidad maxima de caracteres es de 30 digitos",
                                         },
+                                        pattern:{
+                                            value:/^[A-Z][a-zA-Z0-9]*$/,
+                                            message:"No debe contener caracteres especiales(Pj. @#:;) y debe comenzar con mayuscula"
+                                        }
                                     })} />
                                     <Form.Text className="text-danger">
                                         {errors.apellido?.message}
@@ -104,6 +114,10 @@ const Contacto = () => {
                                             value: 30,
                                             message: "La cantidad maxima de caracteres es de 30 digitos",
                                         },
+                                        pattern:{
+                                            value:/^[a-zA-Z][a-zA-Z0-9]*$/,
+                                            message:"No debe contener caracteres especiales ni espacios en blanco"
+                                        }
                                     })}/>
                                     <Form.Text className="text-danger">
                                         {errors.nombreMasco?.message}
@@ -123,6 +137,14 @@ const Contacto = () => {
                                                 message:
                                                     "El telefono debe tener el siguiente formato: 3865332311",
                                             },
+                                            minLength:{
+                                                value:10,
+                                                message:"Debe ser un numero de telefono verdadero"
+                                            }, 
+                                            maxLength:{
+                                                value:10,
+                                                message:"Debe ser un numero de telefono verdadero"
+                                            }
                                         })} />
                                     <Form.Text className="text-danger mx-2">
                                         {errors.telefono?.message}
@@ -152,13 +174,9 @@ const Contacto = () => {
                                         {errors.consulta?.message}
                                     </Form.Text>
                                 </Form.Group>
+                            <Button className="primary mt-3 btn btn-warning" type="submit" >Enviar</Button>
                             </Col>
                         </Row>
-                        <div className="d-flex justify-content-center">
-                            <Link className="primary mt-3 btn btn-warning" to={"/*"} >
-                                Enviar
-                            </Link>
-                        </div>
                     </Form>
                 </Col>
             </Row>
