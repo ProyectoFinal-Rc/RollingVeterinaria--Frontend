@@ -13,7 +13,7 @@ const AdminPacientes = () => {
     const handleClose = () => setShow(false)
     const handleShow = () => setShow(true)
     const [pacientes, setPacientes] = useState([]);
-    const [pacienteEditar, setPacienteEditar] = useState({})
+    const [pacienteEditar, setPacienteEditar] = useState({});
     const [showEditar, setShowEditar] = useState(false);
     const handleCloseEditar = () => setShowEditar(false);
     const handleShowEditar = () => setShowEditar(true);
@@ -30,7 +30,8 @@ const AdminPacientes = () => {
     }, [])
 
     const seleccionar = (id) => {
-        setPacienteEditar(pacientes.find((paciente) => paciente._id === id))
+        let pacien = pacientes.find((paciente) => paciente._id === id);
+        setPacienteEditar(pacien);
     }
 
     const borrar = (id) => {
@@ -110,8 +111,12 @@ const AdminPacientes = () => {
                                                         </ListGroup>
                                                     </Col>
                                                     <Col xs={3} md={2} lg={1} className="d-flex justify-content-sm-end align-items-start p-0">
-                                                        <Button className="btn btn-warning btn-sm" onClick={() => { handleShowEditar(); seleccionar(paciente._id) }} ><i className="bi bi-pencil-square p-0"></i></Button>
-                                                        <Button variant="danger" className="btn-sm"><i className="bi bi-file-x p-0" onClick={() => { borrar(paciente._id) }}></i></Button>
+                                                        <Button className="btn btn-warning btn-sm" onClick={() => { handleShowEditar(); seleccionar(paciente._id) }}>
+                                                            <i className="bi bi-pencil-square p-0"></i>
+                                                        </Button>
+                                                        <Button variant="danger" className="btn-sm">
+                                                            <i className="bi bi-file-x p-0" onClick={() => { borrar(paciente._id) }}></i>
+                                                        </Button>
                                                     </Col>
                                                 </Row>
                                                 <hr />
@@ -131,8 +136,8 @@ const AdminPacientes = () => {
                     }
                 </Row>
             </Container>
-            <AgregarPaciente setPacientes={setPacientes} show={show} handleClose={handleClose}></AgregarPaciente>
-            <EditarPaciente setPacientes={setPacientes}datos={pacienteEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarPaciente>
+            { show ? <AgregarPaciente setPacientes={setPacientes} show={show} handleClose={handleClose}></AgregarPaciente> : <></> }
+            {showEditar ? <EditarPaciente setPacientes={setPacientes} datos={pacienteEditar} showEditar={showEditar} handleCloseEditar={handleCloseEditar}></EditarPaciente> : <></> }
         </section>
     );
 };

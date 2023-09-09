@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { editarPaciente,obtenerListaPacientes } from "../../helpers/pacientes";
 import { fechaParseada } from "../../helpers/turnos";
+import { useEffect } from "react";
 
 const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
@@ -27,7 +28,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                 Swal.fire("error", "No se pudo editar el paciente correctamente, vuelva a intentarlo más tarde", "error");
             }
         })
-    } 
+    }
 
     return (
         <>

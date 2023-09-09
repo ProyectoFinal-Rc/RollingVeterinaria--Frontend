@@ -39,7 +39,7 @@ export function Publicacion() {
                                         </Col>
                                         <Col xs={12}  >
                                             Etiquetas:
-                                            {data?.tags.map((t, ti) => <Badge key={ti} bg="dark m-1">{t + ""}</Badge>)}
+                                            {data?.tags.map((t, ti) => <Badge key={ti} bg="dark m-1">#{t + ""}</Badge>)}
                                         </Col>
                                     </Row>
                                 </Container>
