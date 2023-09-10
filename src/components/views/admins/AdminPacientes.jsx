@@ -115,7 +115,7 @@ const AdminPacientes = () => {
                                                             <i className="bi bi-pencil-square p-0"></i>
                                                         </Button>
                                                         <Button variant="danger" className="btn-sm">
-                                                            <i className="bi bi-file-x p-0" onClick={() => { borrar(paciente._id) }}></i>
+                                                            <i className="bi bi-file-x p-1" onClick={() => { borrar(paciente._id) }}></i>
                                                         </Button>
                                                     </Col>
                                                 </Row>
