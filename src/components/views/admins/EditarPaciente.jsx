@@ -16,7 +16,9 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
             if(respuesta) {
                 Swal.fire("Paciente editado", `El paciente  ${pacienteEditado.nombreMascota} se editó correctamente`, "success")
                     obtenerListaPacientes().then((respuesta) => {
+                        console.log("entra")
                         if (respuesta) {
+                            console.log("entra2")
                             setPacientes(respuesta)
                         }
                     })
@@ -35,12 +37,13 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                     <Modal.Title>Editar paciente</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
-                <Form onSubmit={handleSubmit(onSubmit)}>
+                    <Form onSubmit={handleSubmit(onSubmit)}>
                         <Form.Group className="mb-3" controlId="nombreDuenio">
                             <Form.Label>Nombre del dueño*</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Ingrese un nombre"
+                                defaultValue={datos.nombreDuenio}
                                 {...register("nombreDuenio", {
                                     required: "El nombre es un dato obligatorio",
                                     minLength: {
@@ -51,11 +54,13 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
-                                    pattern:{
-                                        value:/^[A-Z][a-zA-Z0-9]*(?: [A-Z][a-zA-Z0-9]*)?$/,
-                                        message:"No debe contener caracteres especiales (Pj. @#:;) y cada nombre debe comenzar con mayuscula"
-                                    }
                                 })}
+                                onChange={(dato)=>{
+                                    setDatosPacientes({
+                                        ...datosPacientes, 
+                                        nombreDuenio: dato.target.value, 
+                                    }); 
+                                }}
                             />
                             <Form.Text className="text-danger">
                                 {errors.nombreDuenio?.message}
@@ -66,6 +71,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                             <Form.Control
                                 type="text"
                                 placeholder="Ingrese un apellido"
+                                defaultValue={datos.apellidoDuenio}
                                 {...register("apellidoDuenio", {
                                     required: "El apellido es un dato obligatorio",
                                     minLength: {
@@ -76,19 +82,17 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
-                                    pattern:{
-                                        value:/^[A-Z][a-zA-Z0-9]*$/,
-                                        message:"No debe contener caracteres especiales(Pj. @#:;) y debe comenzar con mayuscula"
-                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
                                 {errors.apellidoDuenio?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="email">
                             <Form.Label>Ingrese un correo electronico*</Form.Label>
                             <Form.Control type="email" placeholder="name@email.com"
+                            defaultValue={datos.email}
                                 {...register("email", {
                                     required: "El email es un dato obligatorio",
                                     pattern: {
@@ -103,11 +107,13 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                 {errors.email?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="direccion">
                             <Form.Label>Ingrese el domicilio*</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Ingrese una direccion."
+                                defaultValue={datos.direccion}
                                 {...register("direccion", {
                                     required: "La direccion es un dato obligatorio",
                                     minLength: {
@@ -118,19 +124,17 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 50,
                                         message: "La cantidad maxima de caracteres es de 50 digitos",
                                     },
-                                    pattern:{
-                                        value:/^[A-Za-z][a-zA-Z0-9. ]*$/,
-                                        message:"No debe contener caracteres especiales Pj. @#:;"
-                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
                                 {errors.direccion?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="nombreMascota">
                             <Form.Label>Nombre Mascota*</Form.Label>
                             <Form.Control type="text" placeholder="Ingrese el nombre de la mascota"
+                            defaultValue={datos.nombreMascota}
                                 {...register("nombreMascota", {
                                     required: "El nombre es un dato obligatorio",
                                     minLength: {
@@ -141,23 +145,21 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
-                                    pattern:{
-                                        value:/^[a-zA-Z][a-zA-Z0-9]*$/,
-                                        message:"No debe contener caracteres especiales ni espacios en blanco"
-                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
                                 {errors.nombreMascota?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="especie">
                             <Form.Label>Especie*</Form.Label>
                             <Form.Select
+                            defaultValue={datos.especie}
                                 {...register("especie", {
                                     required: "La especie es obligatoria",
-                                })}>
-                                <option value="">Seleccione una especie</option>
+                                })}
+                            >
                                 <option value="mamiferos">Mamiferos</option>
                                 <option value="aves">Aves</option>
                                 <option value="reptiles">Reptiles</option>
@@ -167,9 +169,11 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                 {errors.especie?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="raza">
                             <Form.Label>Raza*</Form.Label>
                             <Form.Control type="text" placeholder="Ingrese la raza"
+                            defaultValue={datos.raza}
                                 {...register("raza", {
                                     required: "La raza es un dato obligatorio",
                                     minLength: {
@@ -180,35 +184,38 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
-                                    pattern:{
-                                        value:/^[a-zA-Z][a-zA-Z0-9]*$/,
-                                        message:"No debe contener caracteres especiales ni espacios en blanco Pj. @#:;"
-                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
                                 {errors.raza?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group controlId="fechaNacimiento">
                             <Form.Label>Fecha de Nacimiento*</Form.Label>
                             <Form.Control type="date" name="duedate" placeholder="Seleccione la fecha de nacimiento"
+                            defaultValue={fechaParseada(datos.fechaNacimiento)}
                                 {...register('fechaNacimiento', {
                                     required: 'La fecha de nacimiento es obligatoria',
-                                })}/>
+                                })}
+                            />
                             <Form.Text className="text-danger">
                                 {errors.fechaNacimiento && (
-                                    <span>{errors.fechaNacimiento.message}</span>)}
+                                    <span>{errors.fechaNacimiento.message}</span>
+                                )}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="peso">
                             <Form.Label>Peso (en kg)*</Form.Label>
                             <Form.Control type="number" placeholder="Ingrese el peso"
+                            defaultValue={datos.peso}
+                            min={1}
                                 {...register("peso", {
                                     required: "El peso es un dato obligatorio",
                                     min: {
-                                        value: 0,
-                                        message: "El peso minimo es de 0.1kg",
+                                        value: 1,
+                                        message: "El peso minimo es de 1kg",
                                     },
                                     max: {
                                         value: 100,
@@ -220,12 +227,15 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                 {errors.peso?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="plan">
                             <Form.Label>Plan*</Form.Label>
                             <Form.Select
+                            defaultValue={datos.plan}
                                 {...register("plan", {
                                     required: "El plan es obligatorio",
-                                })}>
+                                })}
+                            >
                                 <option value="">Seleccione una especie</option>
                                 <option value="primeros Pasos (0-5 años)">Primeros Pasos (0-5 años)</option>
                                 <option value="madurando (5-10 años)">Madurando (5-10 años)</option>
@@ -235,7 +245,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                 {errors.plan?.message}
                             </Form.Text>
                         </Form.Group>
-                        <Button variant="primary" type="submit" >
+                        <Button variant="primary" type="submit">
                             Guardar
                         </Button>
                     </Form>

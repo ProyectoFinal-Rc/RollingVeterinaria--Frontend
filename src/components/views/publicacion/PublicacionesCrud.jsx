@@ -4,6 +4,7 @@ import { LockSpinnerLoader, SpinnerLoader } from '../UI';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { toast } from '../../../utils';
 import Swal from 'sweetalert2';
+/* const API_URL = import.meta.env.VITE_API_DEV; */
 const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 

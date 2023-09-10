@@ -58,12 +58,12 @@ const Login = ({setUsuarioLogueado}) => {
 
 				<Form.Group className="mb-3" controlId="formBasicPassword">
 					<Form.Label className='fw-bold'>Contraseña:</Form.Label>
-					<Form.Control type="password" min={8} maxLength={32} required {
+					<Form.Control type="password" min={8} maxLength={16} required {
 						...register('password', {
 							required: 'La contraseña es obligatoria',
 							pattern: {
 								value: /^(?=.*\d)(?=.*[\u0021-\u002b\u003c-\u0040])(?=.*[A-Z])(?=.*[a-z])\S{8,16}$/,
-								message: 'La contraseña debe tener entre 8 y 32 caracteres, al menos una mayuscula, al menos un numero y al menos un caracter especial'
+								message: 'La contraseña debe tener entre 8 y 16 caracteres, al menos una mayuscula, al menos un numero y al menos un caracter especial'
 							}
 						})
 					} />
