@@ -4,6 +4,7 @@ import { LockSpinnerLoader, SpinnerLoader } from '../UI';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { toast } from '../../../utils';
 import Swal from 'sweetalert2';
+/* const API_URL = import.meta.env.VITE_API_DEV; */
 const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 
@@ -18,7 +19,7 @@ export const PublicacionesCrud = () => {
         fetch(URL_PUBLICACIONES+"/activar/"+id, 
             {method:'PUT', body: JSON.stringify({active:!active}), headers:{"Content-Type":"application/json"}})
         .then(res=>{
-            setData(data.map(d=>{
+            setData(data?.map(d=>{
                 if(d._id == id){
                     d.active = !active;
                 }
@@ -30,7 +31,7 @@ export const PublicacionesCrud = () => {
             res.activa ? toast(res.mensaje, 3000, "bg-success text-white", false) : toast(res.mensaje, 3000, "bg-warning text-dark", false);            
         })
         .catch(err=>{
-            setData(data.map(d=>{
+            setData(data?.map(d=>{
                 if(d._id == id){
                     d.active = !active;
                 }
@@ -48,7 +49,13 @@ export const PublicacionesCrud = () => {
             {method:'POST', body: JSON.stringify({titulo: formData.get('titulo')}), headers:{"Content-Type":"application/json"}})
         .then(res=>res.json())
         .then(res=>{
+            if(res.error){
+                throw new Error("Hubo un error de bd");
+            }
             setData(res);
+            if(res?.length === 0){
+                toast("No se encontraron coincidencias", 3000, "bg-warning text-white", false);
+            }
         })
         .catch(err=>{
             console.log(err);

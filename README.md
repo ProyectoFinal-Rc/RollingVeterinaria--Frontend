@@ -11,7 +11,7 @@
 
 > El código está disponible en la rama [rollingVet - main](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Frontend/tree/main)
 
-Este es el repositorio del frontend para el proyecto RollingVet, una aplicación web para la gestión de una clínica veterinaria. El backend correspondiente se encuentra en [este repositorio](https://github.com/ProyectoFinal-Rc/RollingVeterinaria-Backend).
+Este es el repositorio del frontend para el proyecto RollingVet, una aplicación web para la gestión de una clínica veterinaria. El backend correspondiente se encuentra en [este repositorio](https://github.com/ProyectoFinal-Rc/RollingVeterinaria--Backend).
 
 ## Introducción
 

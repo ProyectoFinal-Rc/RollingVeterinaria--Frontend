@@ -169,6 +169,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                 {errors.especie?.message}
                             </Form.Text>
                         </Form.Group>
+
                         <Form.Group className="mb-3" controlId="raza">
                             <Form.Label>Raza*</Form.Label>
                             <Form.Control type="text" placeholder="Ingrese la raza"
