@@ -16,9 +16,7 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
             if(respuesta) {
                 Swal.fire("Paciente editado", `El paciente  ${pacienteEditado.nombreMascota} se editó correctamente`, "success")
                     obtenerListaPacientes().then((respuesta) => {
-                        console.log("entra")
                         if (respuesta) {
-                            console.log("entra2")
                             setPacientes(respuesta)
                         }
                     })
@@ -54,6 +52,10 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
+                                    pattern:{
+                                        value:/^[A-Z][a-zA-Z0-9]*(?: [A-Z][a-zA-Z0-9]*)?$/,
+                                        message:"No debe contener caracteres especiales (Pj. @#:;) y cada nombre debe comenzar con mayuscula"
+                                    }
                                 })}
                                 onChange={(dato)=>{
                                     setDatosPacientes({
@@ -82,6 +84,10 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
+                                    pattern:{
+                                        value:/^[A-Z][a-zA-Z0-9]*$/,
+                                        message:"No debe contener caracteres especiales(Pj. @#:;) y debe comenzar con mayuscula"
+                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
@@ -124,6 +130,10 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 50,
                                         message: "La cantidad maxima de caracteres es de 50 digitos",
                                     },
+                                    pattern:{
+                                        value:/^[A-Za-z][a-zA-Z0-9. ]*$/,
+                                        message:"No debe contener caracteres especiales Pj. @#:;"
+                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
@@ -145,6 +155,10 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
+                                    pattern:{
+                                        value:/^[a-zA-Z][a-zA-Z0-9]*$/,
+                                        message:"No debe contener caracteres especiales ni espacios en blanco"
+                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
@@ -169,7 +183,6 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                 {errors.especie?.message}
                             </Form.Text>
                         </Form.Group>
-
                         <Form.Group className="mb-3" controlId="raza">
                             <Form.Label>Raza*</Form.Label>
                             <Form.Control type="text" placeholder="Ingrese la raza"
@@ -184,6 +197,10 @@ const EditarPaciente = ({ showEditar, handleCloseEditar, datos,setPacientes }) =
                                         value: 30,
                                         message: "La cantidad maxima de caracteres es de 30 digitos",
                                     },
+                                    pattern:{
+                                        value:/^[a-zA-Z][a-zA-Z0-9]*$/,
+                                        message:"No debe contener caracteres especiales ni espacios en blanco Pj. @#:;"
+                                    }
                                 })}
                             />
                             <Form.Text className="text-danger">
