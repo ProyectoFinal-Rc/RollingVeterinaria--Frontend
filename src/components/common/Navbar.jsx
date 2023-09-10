@@ -31,6 +31,9 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 	};
 	const handleMenuButtonClick  = ()=>{
 		setNavbarExpanded(true);
+		if(navbarExpanded==true){
+			setNavbarExpanded(false);
+		}
 	}
 	return (
 		<Navbar collapseOnSelect expand='md' expanded={navbarExpanded}id='navbar' className='px-3 px-lg-5 site-wrap'>
