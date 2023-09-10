@@ -23,6 +23,16 @@ const Navegacion = ({ usuarioLogueado, setUsuarioLogueado }) => {
 			}
 		})
 	}
+
+	const handleNavLinkClick = () => {
+	setNavbarExpanded(false);
+	};
+	const handleMenuButtonClick  = ()=>{
+		setNavbarExpanded(true);
+		if(navbarExpanded==true){
+			setNavbarExpanded(false);
+		}
+	}
 	return (
 		<Navbar expand='lg' id='navbar' className='px-3 px-lg-5'>
 			<Navbar.Brand as={Link} to='/'><img src={logo} className='imagenLogo'></img></Navbar.Brand>
