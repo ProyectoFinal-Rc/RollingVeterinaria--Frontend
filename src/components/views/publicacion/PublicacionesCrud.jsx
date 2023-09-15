@@ -152,14 +152,14 @@ export const PublicacionesCrud = () => {
                     ic.disabled=true;
                 }
             })
-            tags.current.textContent = "Minimo 1 tag, maximo 3";
+            //tags.current?.textContent = "Minimo 1 tag, maximo 3";
         }else{
             document.querySelectorAll('form input[type="checkbox"]').forEach((ic)=>{
                 if(ic.disabled == true){
                     ic.disabled = false;
                 }
             })
-            tags.current.textContent = "";
+            //tags.current?.textContent = "";
         }
     },[newTags])
     function eliminar(id){
@@ -316,7 +316,7 @@ export const PublicacionesCrud = () => {
                                 <input type="checkbox" onChange={(e)=>{addTags(e.target.value, e.target.checked)}} className='form-check-input me-3' name="tags" value={"castraciones"}/>
                             </label>
                         </div>
-                        <small className='text-danger' ref={tags}></small>
+                        <small className='text-danger' ref={tags}>{newTags.length == 0 && '¡Entre 1 y 3 tags!'}</small>
 
                     </Modal.Body>
                     <Modal.Footer>
