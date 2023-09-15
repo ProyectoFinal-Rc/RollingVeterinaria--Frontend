@@ -1,4 +1,4 @@
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Spinner } from "react-bootstrap";
 import { useState, useEffect, Fragment } from "react";
 import AgregarTurno from "./AgregarTurno";
 import Swal from "sweetalert2";
@@ -14,6 +14,7 @@ const AdminTurnos = () => {
   const [showEditar, setShowEditar] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+  const [loading, setLoading] = useState(true);
 
 
   useEffect(() => {
@@ -23,11 +24,13 @@ const AdminTurnos = () => {
       } else {
         Swal.fire("error", "Intente realizar esta operación más tarde", "error");
       }
+    }).catch(err=>{
+      Swal.fire("error", err?.message, "error");
+      console.log(error);
+    }).finally(()=>{
+      setLoading(false);
     })
-  }, [])
-  useEffect(()=>{
-
-  },[turnoEditar])
+  }, []);
   const seleccionar = (id) => {    
     const turnoGuardado = turnos.find((turno) => turno._id === id);
     if(turnoGuardado){
@@ -87,6 +90,7 @@ const AdminTurnos = () => {
         </Button>
       </div>
       <hr />
+      {loading && <div className="d-flex justify-content-center pb-3"><Spinner/></div>}
       <Table responsive striped bordered hover>
         <thead>
           <tr>
@@ -99,6 +103,7 @@ const AdminTurnos = () => {
           </tr>
         </thead>
         <tbody>
+          
           {
             turnos.map((cita,pi) => {
               return (

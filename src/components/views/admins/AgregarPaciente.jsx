@@ -16,10 +16,14 @@ const AgregarPaciente = ({ show, handleClose,setPacientes }) => {
                     if (respuesta) {
                         setPacientes(respuesta)
                     }
+                }).catch((err)=>{
+                    Swal.fire("Error", "Excepión no controlada o Error de servidor, vuelva a intentar mas tarde: "+err.message, "error");
                 })
             }else{
-                Swal.fire("error", "No se pudo crear el paciente correctamente, vuelva a intentarlo más tarde", "error");
+                Swal.fire("Error", "Excepcion no contralada o Error de servidor. No se pudo crear el paciente correctamente, vuelva a intentarlo más tarde", "error");
             }
+        }).catch((err)=>{
+            Swal.fire("Error", "Excepión no controlada o Error de servidor, vuelva a intentar mas tarde: "+err.message, "error");
         })
         reset();
     }
@@ -43,12 +47,12 @@ const AgregarPaciente = ({ show, handleClose,setPacientes }) => {
                                         message: "La cantidad minima de caracteres es de 2 digitos",
                                     },
                                     maxLength: {
-                                        value: 30,
-                                        message: "La cantidad maxima de caracteres es de 30 digitos",
+                                        value: 60,
+                                        message: "La cantidad maxima de caracteres es de 60 digitos",
                                     },
                                     pattern:{
-                                        value:/^[A-Z][a-zA-Z0-9]*(?: [A-Z][a-zA-Z0-9]*)?$/,
-                                        message:"No debe contener caracteres especiales (Pj. @#:;) y cada nombre debe comenzar con mayuscula"
+                                        value:/^[A-Z][a-zA-Z0-9\u00f1\u00d1]*(?: [A-Z][a-zA-Z0-9\u00f1\u00d1]*)*(?: [A-Z][a-zA-Z0-9\u00f1\u00d1]*)?$/,
+                                        message:"No debe contener caracteres especiales (Pj. @#:;), cada nombre debe comenzar con mayuscula, maximo tres nombres"
                                     }
                                 })}
                             />
@@ -68,12 +72,12 @@ const AgregarPaciente = ({ show, handleClose,setPacientes }) => {
                                         message: "La cantidad minima de caracteres es de 2 digitos",
                                     },
                                     maxLength: {
-                                        value: 30,
-                                        message: "La cantidad maxima de caracteres es de 30 digitos",
+                                        value: 60,
+                                        message: "La cantidad maxima de caracteres es de 60 digitos",
                                     },
                                     pattern:{
-                                        value:/^[A-Z][a-zA-Z0-9]*$/,
-                                        message:"No debe contener caracteres especiales(Pj. @#:;) y debe comenzar con mayuscula"
+                                        value:/^[A-Z][a-zA-Z0-9\u00f1\u00d1]*(?: [A-Z][a-zA-Z0-9\u00f1\u00d1]*)*(?: [A-Z][a-zA-Z0-9\u00f1\u00d1]*)?$/,
+                                        message:"No debe contener caracteres especiales(Pj. @#:;), cada nombre debe comenzar con mayuscula, maximo tres apellidos"
                                     }
                                 })}
                             />
@@ -133,12 +137,12 @@ const AgregarPaciente = ({ show, handleClose,setPacientes }) => {
                                         message: "La cantidad minima de caracteres es de 2 digitos",
                                     },
                                     maxLength: {
-                                        value: 30,
-                                        message: "La cantidad maxima de caracteres es de 30 digitos",
+                                        value: 60,
+                                        message: "La cantidad maxima de caracteres es de 60 digitos",
                                     },
                                     pattern:{
-                                        value:/^[a-zA-Z][a-zA-Z0-9]*$/,
-                                        message:"No debe contener caracteres especiales ni espacios en blanco"
+                                        value:/^[A-Z][a-zA-Z0-9]*(?: [A-Z][a-zA-Z0-9]*)*(?: [A-Z][a-zA-Z0-9]*)?$/,
+                                        message:"No debe contener caracteres especiales(Pj. @#:;), cada nombre debe comenzar con mayuscula, maximo tres nombres"
                                     }
                                 })}
                             />
@@ -173,12 +177,12 @@ const AgregarPaciente = ({ show, handleClose,setPacientes }) => {
                                         message: "La cantidad minima de caracteres es de 2 digitos",
                                     },
                                     maxLength: {
-                                        value: 30,
-                                        message: "La cantidad maxima de caracteres es de 30 digitos",
+                                        value: 60,
+                                        message: "La cantidad maxima de caracteres es de 60 digitos",
                                     },
                                     pattern:{
-                                        value:/^[a-zA-Z][a-zA-Z0-9]*$/,
-                                        message:"No debe contener caracteres especiales ni espacios en blanco Pj. @#:;"
+                                        value:/^[A-Z][a-zA-Z0-9]*(?: [A-Z][a-zA-Z0-9]*)*(?: [A-Z][a-zA-Z0-9]*)?$/,
+                                        message:"No debe contener caracteres especiales(Pj. @#:;), cada palabra debe comenzar con mayuscula, maximo tres palabras"
                                     }
                                 })}
                             />
@@ -199,11 +203,11 @@ const AgregarPaciente = ({ show, handleClose,setPacientes }) => {
                         </Form.Group>
                         <Form.Group className="mb-3" controlId="peso">
                             <Form.Label>Peso (en kg)*</Form.Label>
-                            <Form.Control type="number" placeholder="Ingrese el peso"
+                            <Form.Control type="number" placeholder="Ingrese el peso" step={0.1} min={0.1} max={100}
                                 {...register("peso", {
                                     required: "El peso es un dato obligatorio",
                                     min: {
-                                        value: 0,
+                                        value: 0.1,
                                         message: "El peso minimo es de 0.1kg",
                                     },
                                     max: {

@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Col, Container, Modal, Row } from 'react-bootstrap'
 import { LockSpinnerLoader, SpinnerLoader } from '../UI';
 import { useFetchGetJson } from '../../../hooks/useFetch';
 import { toast } from '../../../utils';
 import Swal from 'sweetalert2';
+import { useForm } from 'react-hook-form';
 const URL_PUBLICACIONES = import.meta.env.VITE_API_PUBLICACIONES
 
 
 export const PublicacionesCrud = () => {
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const {error, data, loading, renew, setError, setData, setLoading, setRenew} = useFetchGetJson(URL_PUBLICACIONES);
     const [newTags, setNewTags] = useState([]);
     const [show, setShow] = useState(false);
     const [selected, setSelected] = useState({_id:'',contenido:'', imagen:'', tags:[], titulo:''});
+    const titulo = useRef(); const imagen = useRef(); const contenido = useRef(); const tags = useRef();
 
     function togglePublicacion(id, active){
         setLoading(true)
@@ -36,7 +39,7 @@ export const PublicacionesCrud = () => {
                 }
                 return d;
             }))
-            toast(err.message+"", 3000, "bg-danger text-white", false);
+            toast(err.message+", Excepcion no controlada o error de Servidor", 3000, "bg-danger text-white", false);
         }).finally(()=>{setLoading(false)})
     }
 
@@ -58,16 +61,16 @@ export const PublicacionesCrud = () => {
         })
         .catch(err=>{
             console.log(err);
-            toast(err.message+"", 3000, "bg-danger text-white", false);
+            toast(err.message+", Excepcion no controlada o error de Servidor", 3000, "bg-danger text-white", false);
         })
         .finally(()=>{setLoading(false);})        
     }
     function addTags(tag, checked){
         if(checked){
-            setNewTags((p)=>[...p, tag])
+            setNewTags((p)=>[...p, tag]);
         }else{
-            setNewTags((p)=>p.filter(pf=>pf!==tag))
-        }        
+            setNewTags((p)=>p.filter(pf=>pf!==tag));
+        }
     }
     function enviarPublicacion(e){
         e.preventDefault(); const DTO = {}; setLoading(true);
@@ -88,59 +91,75 @@ export const PublicacionesCrud = () => {
         }
         if(DTO.id === ""){
             delete DTO['id'];
-            fetch(URL_PUBLICACIONES, {                
-                method:'POST', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
-            }).then((res)=>{
-                if(res.ok){
-                    e.target.reset(); setRenew(!renew);
-                    return res.json();
-                }            
-            })
-            .then(res=>{
-                toast(res.mensaje, 3000, "bg-success text-white", false);
-            })
-            .catch(err=>{
-                console.log(err);
-                toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{
-                setShow(false);setNewTags([]);
-                setLoading(false)
-            })
-        }else{
-            fetch(URL_PUBLICACIONES+"/"+DTO.id, {
-                method:'PUT', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
-            }).then((res)=>{
-                if(res.ok){
-                    e.target.reset();
-                    setRenew(!renew);
-                    return res.json();
-                }            
-            })
-            .then(res=>{
-                toast("Modificada correctamente", 3000, "bg-success text-white", false);
-            })
-            .catch(err=>{
-                console.log(err);
-                toast(err.message+"", 3000, "bg-danger text-white", false);
-            }).finally(()=>{
-                setShow(false);setNewTags([]);
+            if(newTags.length !== 0 ){
+                tags.current.textContent = "";
+                fetch(URL_PUBLICACIONES, {                
+                    method:'POST', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
+                }).then((res)=>{
+                    if(res.ok){
+                        e.target.reset(); setRenew(!renew);
+                        return res.json();
+                    }            
+                })
+                .then(res=>{
+                    toast(res.mensaje, 3000, "bg-success text-white", false);
+                })
+                .catch(err=>{
+                    console.log(err);
+                    toast(err.message+", Excepcion no controlada o error de Servidor", 3000, "bg-danger text-white", false);
+                }).finally(()=>{
+                    setShow(false);setNewTags([]);
+                    setLoading(false)
+                })
+            }else{
+                tags.current.textContent = "¡Minimo una tag!";
                 setLoading(false);
-            })
+            }
+                
+        }else{
+            if(newTags.length !== 0){
+                tags.current.textContent = "";
+                fetch(URL_PUBLICACIONES+"/"+DTO.id, {
+                    method:'PUT', body:JSON.stringify(DTO), headers:{"Content-Type":"application/json"}
+                }).then((res)=>{
+                    if(res.ok){
+                        e.target.reset();
+                        setRenew(!renew);
+                        return res.json();
+                    }            
+                })
+                .then(res=>{
+                    toast("Modificada correctamente", 3000, "bg-success text-white", false);
+                })
+                .catch(err=>{
+                    console.log(err);
+                    toast(err.message+", Excepcion no controlada o error de Servidor", 3000, "bg-danger text-white", false);
+                }).finally(()=>{
+                    setShow(false);setNewTags([]);
+                    setLoading(false);
+                })
+            }else{
+                tags.current.textContent = "¡Minimo una tag!";
+                setLoading(false);
+            }
+            
         }
     }
     useEffect(()=>{
-        if(newTags.length >= 3){
+        if(newTags.length >= 3 || newTags.length < 0){
             document.querySelectorAll('form input[type="checkbox"]').forEach((ic)=>{
                 if(ic.checked == false){
                     ic.disabled=true;
                 }
             })
+            tags.current.textContent = "Minimo 1 tag, maximo 3";
         }else{
             document.querySelectorAll('form input[type="checkbox"]').forEach((ic)=>{
                 if(ic.disabled == true){
                     ic.disabled = false;
                 }
             })
+            tags.current.textContent = "";
         }
     },[newTags])
     function eliminar(id){
@@ -170,7 +189,7 @@ export const PublicacionesCrud = () => {
                 })
                 .catch(err=>{
                     console.log(err)
-                    toast(err.message+"", 3000, "bg-danger text-white", false);
+                    toast(err.message+", Excepcion no controlada o error de Servidor", 3000, "bg-danger text-white", false);
                 }).finally(()=>{setLoading(false)})
             }
         })
@@ -191,6 +210,7 @@ export const PublicacionesCrud = () => {
             setNewTags(aux); aux = [];
         }, 100);
     }
+
     return (
         <Container fluid className="my-3 fade-up">
             <Row>
@@ -239,14 +259,44 @@ export const PublicacionesCrud = () => {
                 <Modal.Header closeButton>
                 <Modal.Title>Crear / Editar: Nueva Noticia</Modal.Title>
                 </Modal.Header>
-                <form id='cargaformulario' onSubmit={(e)=>{enviarPublicacion(e);}}>
+                <form id='cargaformulario' onSubmit={(e)=>enviarPublicacion(e)}>
                     <Modal.Body>
                         <label htmlFor="titulo">Titulo: </label>
-                        <input className='form-control mb-3' type="text" id="titulo" name="titulo" placeholder='Titulo de la publicacion' defaultValue={selected.titulo || ''} maxLength={20} minLength={2} required/>
+                        <input className='form-control' type="text" id="titulo" name="titulo" placeholder='Titulo de la publicacion' defaultValue={selected.titulo || ''}
+                        required minLength={2} maxLength={20}
+                         onChange={(e)=>{
+                            if(e.target.value.length < 2 || e.target.value.length > 20){
+                                titulo.current.textContent = "Entre 2 y 20 caracteres, no vacío."
+                            }else{
+                                titulo.current.textContent = "";
+                            }
+                            }}
+                         />
+                         <small className='text-danger d-flex mb-3' ref={titulo}></small>
                         <label htmlFor="imagen">Imagen: </label>
-                        <input className='form-control mb-3' type="text" id="imagen" name="imagen" placeholder='https://picsum.photos/300/200' defaultValue={selected.imagen || ''} maxLength={550} minLength={15} required/>
+                        <input className='form-control' type="text" id="imagen" name="imagen" placeholder='https://picsum.photos/300/200' required minLength={10} maxLength={550}
+                         defaultValue={selected.imagen || ''}
+                         onChange={(e)=>{
+                            if(e.target.value.length <= 10 || e.target.value.length > 550){
+                                imagen.current.textContent = "Entre 10 y 550 caracteres, no vacío."
+                            }else{
+                                imagen.current.textContent = "";
+                            }
+                            }}
+                         />
+                         <small className='text-danger d-flex mb-3' ref={imagen}></small>
                         <label htmlFor="contenido">Contenido: </label>
-                        <textarea className='form-control mb-3' id="contenido" name="contenido" defaultValue={selected.contenido || ''} cols="30" rows="10" minLength={15} maxLength={550} placeholder='Contenido de la publicacion' required></textarea>
+                        <textarea className='form-control' id="contenido" name="contenido" defaultValue={selected.contenido || ''} cols="30" rows="10" placeholder='Contenido de la publicacion'
+                        required minLength={10} maxLength={550}
+                        onChange={(e)=>{
+                            if(e.target.value.length <= 10 || e.target.value.length > 550){
+                                contenido.current.textContent = "Entre 10 y 550 caracteres, no vacío."
+                            }else{
+                                contenido.current.textContent = "";
+                            }
+                            }}
+                        ></textarea>
+                        <small className='text-danger d-flex mb-3' ref={contenido}></small>
                         <label htmlFor="tags">Tags: (solo 3) {newTags.length}/3</label>
                         <input type="hidden" name="id" value={selected._id || ''}/>
                         <div className='border rounded p-2'>
@@ -266,6 +316,7 @@ export const PublicacionesCrud = () => {
                                 <input type="checkbox" onChange={(e)=>{addTags(e.target.value, e.target.checked)}} className='form-check-input me-3' name="tags" value={"castraciones"}/>
                             </label>
                         </div>
+                        <small className='text-danger' ref={tags}></small>
 
                     </Modal.Body>
                     <Modal.Footer>

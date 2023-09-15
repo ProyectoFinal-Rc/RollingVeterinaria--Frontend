@@ -22,7 +22,7 @@ const ExpandMore = styled((props) => {
     }),
 }));
 const copiarEnlace = () => {
-    const enlace = "https://www.RollingVet.com";
+    const enlace = "https://rolling-veterinaria-frontend.vercel.app/";
     navigator.clipboard.writeText(enlace)
         .then(() => {
             alert("Enlace copiado al portapapeles: " + enlace);

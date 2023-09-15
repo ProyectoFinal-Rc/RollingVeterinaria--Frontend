@@ -1,5 +1,5 @@
 import {useState } from "react";
-import { Form, Button, Modal } from "react-bootstrap";
+import { Form, Button, Modal, Spinner } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { crearTurno, obtenerListaTurnos  } from "../../helpers/turnos";
 import {obtenerFechaParaHTML} from "../../helpers"
@@ -17,7 +17,8 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
         setLoading(true)
         crearTurno(turnoNuevo).then((respuesta)=>{
             if(respuesta.status === 201){
-                Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success")
+                Swal.fire("Turno creado", `El turno de ${turnoNuevo.mascota} se creo correctamente`, "success");
+                handleClose();
                 obtenerListaTurnos().then((respuestaListaTurnos) => {
                     if (respuestaListaTurnos) {
                     setTurnos(respuestaListaTurnos);
@@ -25,14 +26,14 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
                 })
                 reset();
             }else{
-                Swal.fire("error", "No se pudo crear el turno correctamente, vuelva a intentarlo más tarde", "error");
+                Swal.fire("error", "No se pudo crear el turno correctamente, Excepcion no controlada o Error de Servidor, vuelva a intentarlo más tarde", "error");
             }
         }).catch((err)=>{
             console.log(err);
-            Swal.fire("error", "Error: "+err.message, "error");
+            Swal.fire("error", "Error, Excepcion no controlada o Error de Servidor: "+err.message, "error");
         }).finally(()=>{
             setLoading(false);
-        })
+        })//^(?!\s*$).+
     };
 
     return (
@@ -57,6 +58,10 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
                                     value: 100,
                                     message: "La cantidad maxima de caracteres es de 100 digitos",
                                 },
+                                pattern:{
+                                    value:/^(?!\s*$).+/,
+                                    message:"Debe escribir algo coherente"
+                                }
                             })}
                         />
                         <Form.Text className="text-danger">
@@ -89,6 +94,10 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
                                 value: 100,
                                 message: "La cantidad maxima de caracteres es de 100 digitos",
                             },
+                            pattern:{
+                                value:/^[A-Z][a-zA-Z0-9\u00f1\u00d1]*(?: [A-Z][a-zA-Z0-9\u00f1\u00d1]*)*(?: [A-Z][a-zA-Z0-9\u00f1\u00d1]*)?$/,
+                                message:"No debe contener caracteres especiales(Pj. @#:;), cada nombre debe comenzar con mayuscula, maximo tres apellidos"
+                            }
                         })}/>
                         <Form.Text className="text-danger">
                                 {errors.mascota?.message}
@@ -163,7 +172,7 @@ const AgregarTurno = ({ show, handleClose,turnos,setTurnos }) => {
                                 {errors.formaPago?.message}
                             </Form.Text>
                     </Form.Group>
-                    <Button variant="primary" type="submit" onClick={handleClose} disabled={loading}>
+                    <Button variant="primary" type="submit" disabled={loading}>
                         Guardar
                     </Button>
                 </Form>

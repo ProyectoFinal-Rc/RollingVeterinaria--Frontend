@@ -47,6 +47,6 @@ export const editarPaciente = async (paciente, id) => {
         method: "DELETE"
       });
       return respuesta;
-    } catch (error) {}
+    } catch (error) {console.log(error)}
   };
 
